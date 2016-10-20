@@ -1,0 +1,109 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "out_m_discard_en",
+					"strict" : false
+				},
+				{
+					"name" : "out_frame[0]",
+					"strict" : false
+				},
+				{
+					"name" : "out_frame[1]",
+					"strict" : false
+				},
+				{
+					"name" : "out_frame[2]",
+					"strict" : false
+				},
+				{
+					"name" : "out_frame[3]",
+					"strict" : false
+				},
+				{
+					"name" : "out_frame[4]",
+					"strict" : false
+				},
+				{
+					"name" : "out_frame[5]",
+					"strict" : false
+				},
+				{
+					"name" : "out_frame[6]",
+					"strict" : false
+				},
+				{
+					"name" : "out_frame[7]",
+					"strict" : false
+				},
+				{
+					"name" : "out_wren",
+					"strict" : false
+				},
+				{
+					"name" : "out_priority",
+					"strict" : false
+				},
+				{
+					"name" : "in_frame[0]",
+					"strict" : false
+				},
+				{
+					"name" : "in_frame[1]",
+					"strict" : false
+				},
+				{
+					"name" : "in_frame[2]",
+					"strict" : false
+				},
+				{
+					"name" : "in_frame[3]",
+					"strict" : false
+				},
+				{
+					"name" : "in_frame[4]",
+					"strict" : false
+				},
+				{
+					"name" : "in_frame[5]",
+					"strict" : false
+				},
+				{
+					"name" : "in_frame[6]",
+					"strict" : false
+				},
+				{
+					"name" : "in_frame[7]",
+					"strict" : false
+				},
+				{
+					"name" : "in_priority",
+					"strict" : false
+				},
+				{
+					"name" : "in_hi_overflow",
+					"strict" : false
+				},
+				{
+					"name" : "in_low_overflow",
+					"strict" : false
+				},
+				{
+					"name" : "clk_sys",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "in_f_rdv",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

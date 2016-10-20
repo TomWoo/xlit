@@ -1,0 +1,17 @@
+library ieee;
+
+entity xMit is 
+port(f_hi_priority 	in std_logic;
+	f_rec_data_valid 	in std_logic;
+	f_data_in			in std_logic_vector(7 downto 0);
+	f_ctrl_in 			in std_logic_vector(24 downto 0);
+	clk_sys 				in std_logic;
+	clk_phy 				in std_logic;
+	phy_data_out 		out std_logic_vector(3 downto 0);
+	m_discard_en 		out std_logic;
+	m_discard_frame	out std_logic_vector(7 downto 0);
+	m_frame				out std_logic_vector(7 downto 0);
+	m_tx_done			out std_logic
+	reset					in std_logic);
+end xMit;
+

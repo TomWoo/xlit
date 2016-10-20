@@ -1,0 +1,287 @@
+// Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "10/18/2016 09:53:35"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          in_FSM
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module in_FSM_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk_sys;
+reg in_f_rdv;
+reg [7:0] in_frame;
+reg in_hi_overflow;
+reg in_low_overflow;
+reg in_priority;
+reg reset;
+// wires                                               
+wire [7:0] out_frame;
+wire out_m_discard_en;
+wire out_priority;
+wire out_wren;
+
+// assign statements (if any)                          
+in_FSM i1 (
+// port map - connection between master ports and signals/registers   
+	.clk_sys(clk_sys),
+	.in_f_rdv(in_f_rdv),
+	.in_frame(in_frame),
+	.in_hi_overflow(in_hi_overflow),
+	.in_low_overflow(in_low_overflow),
+	.in_priority(in_priority),
+	.out_frame(out_frame),
+	.out_m_discard_en(out_m_discard_en),
+	.out_priority(out_priority),
+	.out_wren(out_wren),
+	.reset(reset)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// clk_sys
+always
+begin
+	clk_sys = 1'b0;
+	clk_sys = #10000 1'b1;
+	#10000;
+end 
+
+// in_f_rdv
+initial
+begin
+	in_f_rdv = 1'b0;
+	in_f_rdv = #40000 1'b1;
+	in_f_rdv = #40000 1'b0;
+	in_f_rdv = #240000 1'b1;
+	in_f_rdv = #40000 1'b0;
+	in_f_rdv = #40000 1'b1;
+	in_f_rdv = #40000 1'b0;
+	in_f_rdv = #40000 1'b1;
+	in_f_rdv = #80000 1'b0;
+	in_f_rdv = #40000 1'b1;
+	in_f_rdv = #40000 1'b0;
+	in_f_rdv = #40000 1'b1;
+	in_f_rdv = #80000 1'b0;
+	in_f_rdv = #40000 1'b1;
+	in_f_rdv = #40000 1'b0;
+	in_f_rdv = #40000 1'b1;
+	in_f_rdv = #40000 1'b0;
+	in_f_rdv = #40000 1'b1;
+end 
+// in_frame[ 7 ]
+initial
+begin
+	in_frame[7] = 1'b0;
+	in_frame[7] = #200000 1'b1;
+	in_frame[7] = #80000 1'b0;
+	in_frame[7] = #200000 1'b1;
+	in_frame[7] = #40000 1'b0;
+	in_frame[7] = #160000 1'b1;
+	in_frame[7] = #200000 1'b0;
+	in_frame[7] = #80000 1'b1;
+end 
+// in_frame[ 6 ]
+initial
+begin
+	in_frame[6] = 1'b1;
+	in_frame[6] = #40000 1'b0;
+	in_frame[6] = #40000 1'b1;
+	in_frame[6] = #40000 1'b0;
+	in_frame[6] = #40000 1'b1;
+	in_frame[6] = #40000 1'b0;
+	in_frame[6] = #200000 1'b1;
+	in_frame[6] = #160000 1'b0;
+	in_frame[6] = #80000 1'b1;
+	in_frame[6] = #40000 1'b0;
+	in_frame[6] = #80000 1'b1;
+	in_frame[6] = #40000 1'b0;
+	in_frame[6] = #40000 1'b1;
+	in_frame[6] = #40000 1'b0;
+	in_frame[6] = #80000 1'b1;
+end 
+// in_frame[ 5 ]
+initial
+begin
+	in_frame[5] = 1'b1;
+	in_frame[5] = #280000 1'b0;
+	in_frame[5] = #240000 1'b1;
+	in_frame[5] = #160000 1'b0;
+	in_frame[5] = #120000 1'b1;
+end 
+// in_frame[ 4 ]
+initial
+begin
+	in_frame[4] = 1'b0;
+	in_frame[4] = #40000 1'b1;
+	in_frame[4] = #80000 1'b0;
+	in_frame[4] = #120000 1'b1;
+	in_frame[4] = #40000 1'b0;
+	in_frame[4] = #80000 1'b1;
+	in_frame[4] = #40000 1'b0;
+	in_frame[4] = #40000 1'b1;
+	in_frame[4] = #160000 1'b0;
+	in_frame[4] = #240000 1'b1;
+	in_frame[4] = #40000 1'b0;
+	in_frame[4] = #40000 1'b1;
+	in_frame[4] = #40000 1'b0;
+end 
+// in_frame[ 3 ]
+initial
+begin
+	in_frame[3] = 1'b1;
+	in_frame[3] = #280000 1'b0;
+	in_frame[3] = #80000 1'b1;
+	in_frame[3] = #40000 1'b0;
+	in_frame[3] = #40000 1'b1;
+	in_frame[3] = #40000 1'b0;
+	in_frame[3] = #120000 1'b1;
+	in_frame[3] = #80000 1'b0;
+	in_frame[3] = #40000 1'b1;
+	in_frame[3] = #40000 1'b0;
+	in_frame[3] = #40000 1'b1;
+	in_frame[3] = #120000 1'b0;
+	in_frame[3] = #40000 1'b1;
+end 
+// in_frame[ 2 ]
+initial
+begin
+	in_frame[2] = 1'b1;
+	in_frame[2] = #80000 1'b0;
+	in_frame[2] = #120000 1'b1;
+	in_frame[2] = #40000 1'b0;
+	in_frame[2] = #40000 1'b1;
+	in_frame[2] = #40000 1'b0;
+	in_frame[2] = #80000 1'b1;
+	in_frame[2] = #40000 1'b0;
+	in_frame[2] = #40000 1'b1;
+	in_frame[2] = #40000 1'b0;
+	in_frame[2] = #40000 1'b1;
+	in_frame[2] = #40000 1'b0;
+	in_frame[2] = #80000 1'b1;
+	in_frame[2] = #40000 1'b0;
+	in_frame[2] = #120000 1'b1;
+end 
+// in_frame[ 1 ]
+initial
+begin
+	in_frame[1] = 1'b1;
+	in_frame[1] = #40000 1'b0;
+	in_frame[1] = #40000 1'b1;
+	in_frame[1] = #40000 1'b0;
+	in_frame[1] = #40000 1'b1;
+	in_frame[1] = #40000 1'b0;
+	in_frame[1] = #40000 1'b1;
+	in_frame[1] = #40000 1'b0;
+	in_frame[1] = #40000 1'b1;
+	in_frame[1] = #40000 1'b0;
+	in_frame[1] = #120000 1'b1;
+	in_frame[1] = #40000 1'b0;
+	in_frame[1] = #80000 1'b1;
+	in_frame[1] = #80000 1'b0;
+	in_frame[1] = #80000 1'b1;
+	in_frame[1] = #80000 1'b0;
+	in_frame[1] = #40000 1'b1;
+end 
+// in_frame[ 0 ]
+initial
+begin
+	in_frame[0] = 1'b1;
+	in_frame[0] = #40000 1'b0;
+	in_frame[0] = #40000 1'b1;
+	in_frame[0] = #200000 1'b0;
+	in_frame[0] = #40000 1'b1;
+	in_frame[0] = #80000 1'b0;
+	in_frame[0] = #160000 1'b1;
+	in_frame[0] = #200000 1'b0;
+	in_frame[0] = #40000 1'b1;
+	in_frame[0] = #120000 1'b0;
+end 
+
+// in_hi_overflow
+initial
+begin
+	in_hi_overflow = 1'b1;
+	in_hi_overflow = #40000 1'b0;
+	in_hi_overflow = #40000 1'b1;
+	in_hi_overflow = #120000 1'b0;
+	in_hi_overflow = #40000 1'b1;
+	in_hi_overflow = #80000 1'b0;
+	in_hi_overflow = #40000 1'b1;
+	in_hi_overflow = #40000 1'b0;
+	in_hi_overflow = #80000 1'b1;
+	in_hi_overflow = #40000 1'b0;
+	in_hi_overflow = #80000 1'b1;
+	in_hi_overflow = #40000 1'b0;
+	in_hi_overflow = #40000 1'b1;
+	in_hi_overflow = #280000 1'b0;
+end 
+
+// in_low_overflow
+initial
+begin
+	in_low_overflow = 1'b0;
+	in_low_overflow = #40000 1'b1;
+	in_low_overflow = #40000 1'b0;
+	in_low_overflow = #120000 1'b1;
+	in_low_overflow = #80000 1'b0;
+	in_low_overflow = #40000 1'b1;
+	in_low_overflow = #40000 1'b0;
+	in_low_overflow = #40000 1'b1;
+	in_low_overflow = #40000 1'b0;
+	in_low_overflow = #80000 1'b1;
+	in_low_overflow = #160000 1'b0;
+	in_low_overflow = #40000 1'b1;
+	in_low_overflow = #40000 1'b0;
+	in_low_overflow = #40000 1'b1;
+	in_low_overflow = #40000 1'b0;
+	in_low_overflow = #40000 1'b1;
+end 
+
+// in_priority
+initial
+begin
+	in_priority = 1'b0;
+	in_priority = #80000 1'b1;
+	in_priority = #40000 1'b0;
+	in_priority = #40000 1'b1;
+	in_priority = #40000 1'b0;
+	in_priority = #280000 1'b1;
+	in_priority = #40000 1'b0;
+	in_priority = #160000 1'b1;
+	in_priority = #40000 1'b0;
+	in_priority = #40000 1'b1;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b1;
+	reset = #40000 1'b0;
+end 
+endmodule
+
