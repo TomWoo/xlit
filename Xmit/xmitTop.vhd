@@ -17,7 +17,7 @@ entity xmitTop is port(
 );
 end entity;
 
-architecture rtl of xmitTop is
+architecture rtl of xmitTop is====
 	signal overflow_low:		std_logic; -- TODO
 	signal overflow_high:	std_logic;
 	signal out_wren:			std_logic;
@@ -57,4 +57,3 @@ begin
 	);
 	
 end architecture;
-
