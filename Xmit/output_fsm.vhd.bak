@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity output_fsm is			
+	port(
+			clk, reset: 		in std_logic;
+			fr_count:			in std_logic_vector (7 downto 0);
+			dest_addr:			in std_logic_vector (47 downto 0);
+			fr_count_out:		out std_logic_vector (7 downto 0);
+			ctrl_out:			out std_logic_vector (24 downto 0);
+			xmit_done:			out std_logic;
+end output_fsm;
+
+architecture machine of output_fsm is
+	
+begin
+	
+end machine;
