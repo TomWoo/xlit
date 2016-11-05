@@ -2,16 +2,16 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module in_FSM
+# -- Compiling module out_FSM
 # 
 # Top level modules:
-# 	in_FSM
+# 	out_FSM
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module in_FSM_vlg_vec_tst
+# -- Compiling module out_FSM_vlg_vec_tst
 # 
 # Top level modules:
-# 	in_FSM_vlg_vec_tst
-# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver -c -voptargs=\"+acc\" -t 1ps -novopt work.in_FSM_vlg_vec_tst 
+# 	out_FSM_vlg_vec_tst
+# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver -c -voptargs=\"+acc\" -t 1ps -novopt work.out_FSM_vlg_vec_tst 
 # //  ModelSim ALTERA 10.1d Nov  2 2012 
 # //
 # //  Copyright 1991-2012 Mentor Graphics Corporation
@@ -21,21 +21,9 @@
 # //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
-# Loading work.in_FSM_vlg_vec_tst
-# Loading work.in_FSM
+# Loading work.out_FSM_vlg_vec_tst
+# Loading work.out_FSM
 # Loading cycloneive_ver.cycloneive_io_obuf
 # Loading cycloneive_ver.cycloneive_io_ibuf
-# Loading cycloneive_ver.cycloneive_clkctrl
-# Loading cycloneive_ver.cycloneive_mux41
-# Loading cycloneive_ver.cycloneive_ena_reg
-# Loading cycloneive_ver.cycloneive_lcell_comb
-# Loading altera_ver.dffeas
-# SDF 10.1d Compiler 2012.11 Nov  2 2012
-# 
-# Loading instances from Xmit_v.sdo
-# Loading altera_ver.PRIM_GDFF_LOW
-# Loading timing data from Xmit_v.sdo
-# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
-#    Time: 0 ps  Iteration: 0  Instance: /in_FSM_vlg_vec_tst File: Waveform_in_FSM.vwf.vt
-# ** Note: $finish    : Waveform_in_FSM.vwf.vt(63)
-#    Time: 1 us  Iteration: 0  Instance: /in_FSM_vlg_vec_tst
+# ** Note: $finish    : Waveform.vwf.vt(55)
+#    Time: 1 us  Iteration: 0  Instance: /out_FSM_vlg_vec_tst

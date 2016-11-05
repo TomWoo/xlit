@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Oct 18 09:51:53 2016
+Analysis & Synthesis Status : Successful - Wed Nov 02 02:17:40 2016
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : Xmit
-Top-level Entity Name : in_FSM
+Top-level Entity Name : out_FSM
 Family : Cyclone IV E
-Total logic elements : 2
-    Total combinational functions : 1
-    Dedicated logic registers : 2
-Total registers : 2
-Total pins : 25
+Total logic elements : 0
+    Total combinational functions : 0
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 51
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

@@ -1,7 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-
 entity in_FSM is 
 port(
 	in_frame:				in std_logic_vector(7 downto 0);
@@ -25,7 +24,7 @@ architecture arch of in_FSM is
 begin
 
 	process(clk_sys, reset)
-	begin 
+	begin
 		if(reset = '1') then
 			out_m_discard_en <= '0';
 		elsif (clk_sys'event and clk_sys='1') then

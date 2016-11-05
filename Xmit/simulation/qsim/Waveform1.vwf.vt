@@ -1,0 +1,1819 @@
+// Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "11/02/2016 02:20:34"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          out_FSM
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module out_FSM_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk_phy;
+reg [23:0] ctrl_block_in;
+reg [7:0] data_in;
+reg reset;
+// wires                                               
+wire [3:0] data_out;
+wire [11:0] frame_seq_out;
+wire xmit_done_out;
+
+// assign statements (if any)                          
+out_FSM i1 (
+// port map - connection between master ports and signals/registers   
+	.clk_phy(clk_phy),
+	.ctrl_block_in(ctrl_block_in),
+	.data_in(data_in),
+	.data_out(data_out),
+	.frame_seq_out(frame_seq_out),
+	.reset(reset),
+	.xmit_done_out(xmit_done_out)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// clk_phy
+always
+begin
+	clk_phy = 1'b0;
+	clk_phy = #5000 1'b1;
+	#5000;
+end 
+// ctrl_block_in[ 23 ]
+initial
+begin
+	ctrl_block_in[23] = 1'b1;
+	ctrl_block_in[23] = #60000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #10000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #30000 1'b0;
+	ctrl_block_in[23] = #40000 1'b1;
+	ctrl_block_in[23] = #10000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #10000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #10000 1'b0;
+	ctrl_block_in[23] = #30000 1'b1;
+	ctrl_block_in[23] = #40000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #30000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #10000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #10000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #30000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #20000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #10000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #30000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #30000 1'b0;
+	ctrl_block_in[23] = #30000 1'b1;
+	ctrl_block_in[23] = #30000 1'b0;
+	ctrl_block_in[23] = #60000 1'b1;
+	ctrl_block_in[23] = #10000 1'b0;
+	ctrl_block_in[23] = #30000 1'b1;
+	ctrl_block_in[23] = #10000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #10000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #10000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #40000 1'b0;
+	ctrl_block_in[23] = #20000 1'b1;
+	ctrl_block_in[23] = #10000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #30000 1'b0;
+	ctrl_block_in[23] = #20000 1'b1;
+	ctrl_block_in[23] = #10000 1'b0;
+	ctrl_block_in[23] = #20000 1'b1;
+	ctrl_block_in[23] = #30000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+	ctrl_block_in[23] = #30000 1'b0;
+	ctrl_block_in[23] = #10000 1'b1;
+end 
+// ctrl_block_in[ 22 ]
+initial
+begin
+	ctrl_block_in[22] = 1'b1;
+	ctrl_block_in[22] = #10000 1'b0;
+	ctrl_block_in[22] = #10000 1'b1;
+	ctrl_block_in[22] = #30000 1'b0;
+	ctrl_block_in[22] = #20000 1'b1;
+	ctrl_block_in[22] = #20000 1'b0;
+	ctrl_block_in[22] = #50000 1'b1;
+	ctrl_block_in[22] = #20000 1'b0;
+	ctrl_block_in[22] = #10000 1'b1;
+	ctrl_block_in[22] = #10000 1'b0;
+	ctrl_block_in[22] = #30000 1'b1;
+	ctrl_block_in[22] = #30000 1'b0;
+	ctrl_block_in[22] = #30000 1'b1;
+	ctrl_block_in[22] = #20000 1'b0;
+	ctrl_block_in[22] = #60000 1'b1;
+	ctrl_block_in[22] = #10000 1'b0;
+	ctrl_block_in[22] = #20000 1'b1;
+	ctrl_block_in[22] = #40000 1'b0;
+	ctrl_block_in[22] = #20000 1'b1;
+	ctrl_block_in[22] = #20000 1'b0;
+	ctrl_block_in[22] = #50000 1'b1;
+	ctrl_block_in[22] = #20000 1'b0;
+	ctrl_block_in[22] = #30000 1'b1;
+	ctrl_block_in[22] = #10000 1'b0;
+	ctrl_block_in[22] = #80000 1'b1;
+	ctrl_block_in[22] = #60000 1'b0;
+	ctrl_block_in[22] = #10000 1'b1;
+	ctrl_block_in[22] = #10000 1'b0;
+	ctrl_block_in[22] = #20000 1'b1;
+	ctrl_block_in[22] = #50000 1'b0;
+	ctrl_block_in[22] = #30000 1'b1;
+	ctrl_block_in[22] = #10000 1'b0;
+	ctrl_block_in[22] = #20000 1'b1;
+	ctrl_block_in[22] = #40000 1'b0;
+	ctrl_block_in[22] = #10000 1'b1;
+	ctrl_block_in[22] = #30000 1'b0;
+	ctrl_block_in[22] = #20000 1'b1;
+	ctrl_block_in[22] = #10000 1'b0;
+	ctrl_block_in[22] = #10000 1'b1;
+	ctrl_block_in[22] = #10000 1'b0;
+end 
+// ctrl_block_in[ 21 ]
+initial
+begin
+	ctrl_block_in[21] = 1'b0;
+	ctrl_block_in[21] = #10000 1'b1;
+	ctrl_block_in[21] = #10000 1'b0;
+	ctrl_block_in[21] = #10000 1'b1;
+	ctrl_block_in[21] = #40000 1'b0;
+	ctrl_block_in[21] = #20000 1'b1;
+	ctrl_block_in[21] = #20000 1'b0;
+	ctrl_block_in[21] = #10000 1'b1;
+	ctrl_block_in[21] = #10000 1'b0;
+	ctrl_block_in[21] = #10000 1'b1;
+	ctrl_block_in[21] = #20000 1'b0;
+	ctrl_block_in[21] = #20000 1'b1;
+	ctrl_block_in[21] = #10000 1'b0;
+	ctrl_block_in[21] = #10000 1'b1;
+	ctrl_block_in[21] = #10000 1'b0;
+	ctrl_block_in[21] = #10000 1'b1;
+	ctrl_block_in[21] = #10000 1'b0;
+	ctrl_block_in[21] = #10000 1'b1;
+	ctrl_block_in[21] = #20000 1'b0;
+	ctrl_block_in[21] = #10000 1'b1;
+	ctrl_block_in[21] = #20000 1'b0;
+	ctrl_block_in[21] = #50000 1'b1;
+	ctrl_block_in[21] = #20000 1'b0;
+	ctrl_block_in[21] = #20000 1'b1;
+	ctrl_block_in[21] = #10000 1'b0;
+	ctrl_block_in[21] = #50000 1'b1;
+	ctrl_block_in[21] = #20000 1'b0;
+	ctrl_block_in[21] = #40000 1'b1;
+	ctrl_block_in[21] = #10000 1'b0;
+	ctrl_block_in[21] = #10000 1'b1;
+	ctrl_block_in[21] = #40000 1'b0;
+	ctrl_block_in[21] = #40000 1'b1;
+	ctrl_block_in[21] = #20000 1'b0;
+	ctrl_block_in[21] = #40000 1'b1;
+	ctrl_block_in[21] = #40000 1'b0;
+	ctrl_block_in[21] = #10000 1'b1;
+	ctrl_block_in[21] = #80000 1'b0;
+	ctrl_block_in[21] = #30000 1'b1;
+	ctrl_block_in[21] = #10000 1'b0;
+	ctrl_block_in[21] = #40000 1'b1;
+	ctrl_block_in[21] = #20000 1'b0;
+	ctrl_block_in[21] = #30000 1'b1;
+	ctrl_block_in[21] = #10000 1'b0;
+	ctrl_block_in[21] = #30000 1'b1;
+	ctrl_block_in[21] = #20000 1'b0;
+	ctrl_block_in[21] = #10000 1'b1;
+end 
+// ctrl_block_in[ 20 ]
+initial
+begin
+	ctrl_block_in[20] = 1'b0;
+	ctrl_block_in[20] = #20000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #10000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #40000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #20000 1'b1;
+	ctrl_block_in[20] = #50000 1'b0;
+	ctrl_block_in[20] = #10000 1'b1;
+	ctrl_block_in[20] = #40000 1'b0;
+	ctrl_block_in[20] = #20000 1'b1;
+	ctrl_block_in[20] = #30000 1'b0;
+	ctrl_block_in[20] = #10000 1'b1;
+	ctrl_block_in[20] = #20000 1'b0;
+	ctrl_block_in[20] = #30000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #10000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #20000 1'b1;
+	ctrl_block_in[20] = #20000 1'b0;
+	ctrl_block_in[20] = #10000 1'b1;
+	ctrl_block_in[20] = #20000 1'b0;
+	ctrl_block_in[20] = #20000 1'b1;
+	ctrl_block_in[20] = #20000 1'b0;
+	ctrl_block_in[20] = #20000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #10000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #40000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #10000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #40000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #20000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #30000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #10000 1'b1;
+	ctrl_block_in[20] = #90000 1'b0;
+	ctrl_block_in[20] = #10000 1'b1;
+	ctrl_block_in[20] = #60000 1'b0;
+	ctrl_block_in[20] = #10000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #30000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #10000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+	ctrl_block_in[20] = #10000 1'b1;
+	ctrl_block_in[20] = #10000 1'b0;
+end 
+// ctrl_block_in[ 19 ]
+initial
+begin
+	ctrl_block_in[19] = 1'b0;
+	ctrl_block_in[19] = #30000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #10000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #10000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #10000 1'b1;
+	ctrl_block_in[19] = #30000 1'b0;
+	ctrl_block_in[19] = #10000 1'b1;
+	ctrl_block_in[19] = #20000 1'b0;
+	ctrl_block_in[19] = #20000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #20000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #20000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #30000 1'b1;
+	ctrl_block_in[19] = #30000 1'b0;
+	ctrl_block_in[19] = #20000 1'b1;
+	ctrl_block_in[19] = #40000 1'b0;
+	ctrl_block_in[19] = #10000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #10000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #20000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #10000 1'b1;
+	ctrl_block_in[19] = #30000 1'b0;
+	ctrl_block_in[19] = #20000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #30000 1'b1;
+	ctrl_block_in[19] = #20000 1'b0;
+	ctrl_block_in[19] = #20000 1'b1;
+	ctrl_block_in[19] = #20000 1'b0;
+	ctrl_block_in[19] = #10000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #40000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #30000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #40000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #60000 1'b1;
+	ctrl_block_in[19] = #20000 1'b0;
+	ctrl_block_in[19] = #10000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #10000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #30000 1'b1;
+	ctrl_block_in[19] = #30000 1'b0;
+	ctrl_block_in[19] = #30000 1'b1;
+	ctrl_block_in[19] = #10000 1'b0;
+	ctrl_block_in[19] = #10000 1'b1;
+end 
+// ctrl_block_in[ 18 ]
+initial
+begin
+	ctrl_block_in[18] = 1'b0;
+	ctrl_block_in[18] = #20000 1'b1;
+	ctrl_block_in[18] = #50000 1'b0;
+	ctrl_block_in[18] = #10000 1'b1;
+	ctrl_block_in[18] = #10000 1'b0;
+	ctrl_block_in[18] = #10000 1'b1;
+	ctrl_block_in[18] = #20000 1'b0;
+	ctrl_block_in[18] = #10000 1'b1;
+	ctrl_block_in[18] = #10000 1'b0;
+	ctrl_block_in[18] = #10000 1'b1;
+	ctrl_block_in[18] = #10000 1'b0;
+	ctrl_block_in[18] = #30000 1'b1;
+	ctrl_block_in[18] = #30000 1'b0;
+	ctrl_block_in[18] = #30000 1'b1;
+	ctrl_block_in[18] = #10000 1'b0;
+	ctrl_block_in[18] = #10000 1'b1;
+	ctrl_block_in[18] = #10000 1'b0;
+	ctrl_block_in[18] = #20000 1'b1;
+	ctrl_block_in[18] = #30000 1'b0;
+	ctrl_block_in[18] = #10000 1'b1;
+	ctrl_block_in[18] = #20000 1'b0;
+	ctrl_block_in[18] = #20000 1'b1;
+	ctrl_block_in[18] = #20000 1'b0;
+	ctrl_block_in[18] = #10000 1'b1;
+	ctrl_block_in[18] = #20000 1'b0;
+	ctrl_block_in[18] = #10000 1'b1;
+	ctrl_block_in[18] = #10000 1'b0;
+	ctrl_block_in[18] = #10000 1'b1;
+	ctrl_block_in[18] = #10000 1'b0;
+	ctrl_block_in[18] = #20000 1'b1;
+	ctrl_block_in[18] = #10000 1'b0;
+	ctrl_block_in[18] = #20000 1'b1;
+	ctrl_block_in[18] = #30000 1'b0;
+	ctrl_block_in[18] = #20000 1'b1;
+	ctrl_block_in[18] = #10000 1'b0;
+	ctrl_block_in[18] = #10000 1'b1;
+	ctrl_block_in[18] = #10000 1'b0;
+	ctrl_block_in[18] = #80000 1'b1;
+	ctrl_block_in[18] = #20000 1'b0;
+	ctrl_block_in[18] = #20000 1'b1;
+	ctrl_block_in[18] = #30000 1'b0;
+	ctrl_block_in[18] = #20000 1'b1;
+	ctrl_block_in[18] = #10000 1'b0;
+	ctrl_block_in[18] = #10000 1'b1;
+	ctrl_block_in[18] = #40000 1'b0;
+	ctrl_block_in[18] = #10000 1'b1;
+	ctrl_block_in[18] = #40000 1'b0;
+	ctrl_block_in[18] = #10000 1'b1;
+	ctrl_block_in[18] = #30000 1'b0;
+	ctrl_block_in[18] = #40000 1'b1;
+end 
+// ctrl_block_in[ 17 ]
+initial
+begin
+	ctrl_block_in[17] = 1'b0;
+	ctrl_block_in[17] = #10000 1'b1;
+	ctrl_block_in[17] = #20000 1'b0;
+	ctrl_block_in[17] = #20000 1'b1;
+	ctrl_block_in[17] = #10000 1'b0;
+	ctrl_block_in[17] = #20000 1'b1;
+	ctrl_block_in[17] = #10000 1'b0;
+	ctrl_block_in[17] = #10000 1'b1;
+	ctrl_block_in[17] = #30000 1'b0;
+	ctrl_block_in[17] = #10000 1'b1;
+	ctrl_block_in[17] = #10000 1'b0;
+	ctrl_block_in[17] = #20000 1'b1;
+	ctrl_block_in[17] = #40000 1'b0;
+	ctrl_block_in[17] = #20000 1'b1;
+	ctrl_block_in[17] = #40000 1'b0;
+	ctrl_block_in[17] = #10000 1'b1;
+	ctrl_block_in[17] = #20000 1'b0;
+	ctrl_block_in[17] = #50000 1'b1;
+	ctrl_block_in[17] = #20000 1'b0;
+	ctrl_block_in[17] = #10000 1'b1;
+	ctrl_block_in[17] = #20000 1'b0;
+	ctrl_block_in[17] = #20000 1'b1;
+	ctrl_block_in[17] = #10000 1'b0;
+	ctrl_block_in[17] = #10000 1'b1;
+	ctrl_block_in[17] = #10000 1'b0;
+	ctrl_block_in[17] = #10000 1'b1;
+	ctrl_block_in[17] = #20000 1'b0;
+	ctrl_block_in[17] = #30000 1'b1;
+	ctrl_block_in[17] = #20000 1'b0;
+	ctrl_block_in[17] = #20000 1'b1;
+	ctrl_block_in[17] = #20000 1'b0;
+	ctrl_block_in[17] = #20000 1'b1;
+	ctrl_block_in[17] = #10000 1'b0;
+	ctrl_block_in[17] = #20000 1'b1;
+	ctrl_block_in[17] = #10000 1'b0;
+	ctrl_block_in[17] = #20000 1'b1;
+	ctrl_block_in[17] = #30000 1'b0;
+	ctrl_block_in[17] = #30000 1'b1;
+	ctrl_block_in[17] = #10000 1'b0;
+	ctrl_block_in[17] = #10000 1'b1;
+	ctrl_block_in[17] = #30000 1'b0;
+	ctrl_block_in[17] = #10000 1'b1;
+	ctrl_block_in[17] = #10000 1'b0;
+	ctrl_block_in[17] = #10000 1'b1;
+	ctrl_block_in[17] = #10000 1'b0;
+	ctrl_block_in[17] = #20000 1'b1;
+	ctrl_block_in[17] = #10000 1'b0;
+	ctrl_block_in[17] = #60000 1'b1;
+	ctrl_block_in[17] = #10000 1'b0;
+	ctrl_block_in[17] = #10000 1'b1;
+	ctrl_block_in[17] = #20000 1'b0;
+	ctrl_block_in[17] = #20000 1'b1;
+	ctrl_block_in[17] = #10000 1'b0;
+	ctrl_block_in[17] = #20000 1'b1;
+end 
+// ctrl_block_in[ 16 ]
+initial
+begin
+	ctrl_block_in[16] = 1'b0;
+	ctrl_block_in[16] = #20000 1'b1;
+	ctrl_block_in[16] = #20000 1'b0;
+	ctrl_block_in[16] = #10000 1'b1;
+	ctrl_block_in[16] = #10000 1'b0;
+	ctrl_block_in[16] = #30000 1'b1;
+	ctrl_block_in[16] = #10000 1'b0;
+	ctrl_block_in[16] = #10000 1'b1;
+	ctrl_block_in[16] = #40000 1'b0;
+	ctrl_block_in[16] = #10000 1'b1;
+	ctrl_block_in[16] = #10000 1'b0;
+	ctrl_block_in[16] = #10000 1'b1;
+	ctrl_block_in[16] = #20000 1'b0;
+	ctrl_block_in[16] = #20000 1'b1;
+	ctrl_block_in[16] = #10000 1'b0;
+	ctrl_block_in[16] = #20000 1'b1;
+	ctrl_block_in[16] = #10000 1'b0;
+	ctrl_block_in[16] = #20000 1'b1;
+	ctrl_block_in[16] = #20000 1'b0;
+	ctrl_block_in[16] = #10000 1'b1;
+	ctrl_block_in[16] = #10000 1'b0;
+	ctrl_block_in[16] = #40000 1'b1;
+	ctrl_block_in[16] = #10000 1'b0;
+	ctrl_block_in[16] = #10000 1'b1;
+	ctrl_block_in[16] = #10000 1'b0;
+	ctrl_block_in[16] = #10000 1'b1;
+	ctrl_block_in[16] = #40000 1'b0;
+	ctrl_block_in[16] = #10000 1'b1;
+	ctrl_block_in[16] = #40000 1'b0;
+	ctrl_block_in[16] = #30000 1'b1;
+	ctrl_block_in[16] = #40000 1'b0;
+	ctrl_block_in[16] = #80000 1'b1;
+	ctrl_block_in[16] = #10000 1'b0;
+	ctrl_block_in[16] = #20000 1'b1;
+	ctrl_block_in[16] = #10000 1'b0;
+	ctrl_block_in[16] = #20000 1'b1;
+	ctrl_block_in[16] = #10000 1'b0;
+	ctrl_block_in[16] = #50000 1'b1;
+	ctrl_block_in[16] = #10000 1'b0;
+	ctrl_block_in[16] = #30000 1'b1;
+	ctrl_block_in[16] = #10000 1'b0;
+	ctrl_block_in[16] = #20000 1'b1;
+	ctrl_block_in[16] = #20000 1'b0;
+	ctrl_block_in[16] = #40000 1'b1;
+	ctrl_block_in[16] = #10000 1'b0;
+	ctrl_block_in[16] = #10000 1'b1;
+	ctrl_block_in[16] = #60000 1'b0;
+	ctrl_block_in[16] = #20000 1'b1;
+end 
+// ctrl_block_in[ 15 ]
+initial
+begin
+	ctrl_block_in[15] = 1'b1;
+	ctrl_block_in[15] = #20000 1'b0;
+	ctrl_block_in[15] = #20000 1'b1;
+	ctrl_block_in[15] = #10000 1'b0;
+	ctrl_block_in[15] = #10000 1'b1;
+	ctrl_block_in[15] = #10000 1'b0;
+	ctrl_block_in[15] = #40000 1'b1;
+	ctrl_block_in[15] = #10000 1'b0;
+	ctrl_block_in[15] = #30000 1'b1;
+	ctrl_block_in[15] = #10000 1'b0;
+	ctrl_block_in[15] = #10000 1'b1;
+	ctrl_block_in[15] = #20000 1'b0;
+	ctrl_block_in[15] = #50000 1'b1;
+	ctrl_block_in[15] = #20000 1'b0;
+	ctrl_block_in[15] = #10000 1'b1;
+	ctrl_block_in[15] = #10000 1'b0;
+	ctrl_block_in[15] = #30000 1'b1;
+	ctrl_block_in[15] = #10000 1'b0;
+	ctrl_block_in[15] = #10000 1'b1;
+	ctrl_block_in[15] = #10000 1'b0;
+	ctrl_block_in[15] = #10000 1'b1;
+	ctrl_block_in[15] = #10000 1'b0;
+	ctrl_block_in[15] = #50000 1'b1;
+	ctrl_block_in[15] = #30000 1'b0;
+	ctrl_block_in[15] = #60000 1'b1;
+	ctrl_block_in[15] = #10000 1'b0;
+	ctrl_block_in[15] = #10000 1'b1;
+	ctrl_block_in[15] = #20000 1'b0;
+	ctrl_block_in[15] = #10000 1'b1;
+	ctrl_block_in[15] = #30000 1'b0;
+	ctrl_block_in[15] = #10000 1'b1;
+	ctrl_block_in[15] = #30000 1'b0;
+	ctrl_block_in[15] = #30000 1'b1;
+	ctrl_block_in[15] = #40000 1'b0;
+	ctrl_block_in[15] = #10000 1'b1;
+	ctrl_block_in[15] = #20000 1'b0;
+	ctrl_block_in[15] = #20000 1'b1;
+	ctrl_block_in[15] = #10000 1'b0;
+	ctrl_block_in[15] = #10000 1'b1;
+	ctrl_block_in[15] = #20000 1'b0;
+	ctrl_block_in[15] = #10000 1'b1;
+	ctrl_block_in[15] = #20000 1'b0;
+	ctrl_block_in[15] = #20000 1'b1;
+	ctrl_block_in[15] = #10000 1'b0;
+	ctrl_block_in[15] = #20000 1'b1;
+	ctrl_block_in[15] = #80000 1'b0;
+	ctrl_block_in[15] = #10000 1'b1;
+	ctrl_block_in[15] = #10000 1'b0;
+	ctrl_block_in[15] = #10000 1'b1;
+	ctrl_block_in[15] = #10000 1'b0;
+	ctrl_block_in[15] = #10000 1'b1;
+end 
+// ctrl_block_in[ 14 ]
+initial
+begin
+	ctrl_block_in[14] = 1'b1;
+	ctrl_block_in[14] = #10000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #10000 1'b0;
+	ctrl_block_in[14] = #20000 1'b1;
+	ctrl_block_in[14] = #20000 1'b0;
+	ctrl_block_in[14] = #20000 1'b1;
+	ctrl_block_in[14] = #30000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #10000 1'b0;
+	ctrl_block_in[14] = #30000 1'b1;
+	ctrl_block_in[14] = #20000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #10000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #10000 1'b0;
+	ctrl_block_in[14] = #20000 1'b1;
+	ctrl_block_in[14] = #30000 1'b0;
+	ctrl_block_in[14] = #20000 1'b1;
+	ctrl_block_in[14] = #30000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #10000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #20000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #10000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #30000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #40000 1'b0;
+	ctrl_block_in[14] = #20000 1'b1;
+	ctrl_block_in[14] = #10000 1'b0;
+	ctrl_block_in[14] = #30000 1'b1;
+	ctrl_block_in[14] = #20000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #10000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #20000 1'b0;
+	ctrl_block_in[14] = #20000 1'b1;
+	ctrl_block_in[14] = #10000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #20000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #10000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #20000 1'b0;
+	ctrl_block_in[14] = #60000 1'b1;
+	ctrl_block_in[14] = #50000 1'b0;
+	ctrl_block_in[14] = #10000 1'b1;
+	ctrl_block_in[14] = #40000 1'b0;
+	ctrl_block_in[14] = #20000 1'b1;
+	ctrl_block_in[14] = #10000 1'b0;
+	ctrl_block_in[14] = #30000 1'b1;
+	ctrl_block_in[14] = #40000 1'b0;
+end 
+// ctrl_block_in[ 13 ]
+initial
+begin
+	ctrl_block_in[13] = 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+	ctrl_block_in[13] = #10000 1'b1;
+	ctrl_block_in[13] = #20000 1'b0;
+	ctrl_block_in[13] = #20000 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+	ctrl_block_in[13] = #30000 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+	ctrl_block_in[13] = #10000 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+	ctrl_block_in[13] = #10000 1'b1;
+	ctrl_block_in[13] = #50000 1'b0;
+	ctrl_block_in[13] = #10000 1'b1;
+	ctrl_block_in[13] = #60000 1'b0;
+	ctrl_block_in[13] = #20000 1'b1;
+	ctrl_block_in[13] = #30000 1'b0;
+	ctrl_block_in[13] = #10000 1'b1;
+	ctrl_block_in[13] = #30000 1'b0;
+	ctrl_block_in[13] = #20000 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+	ctrl_block_in[13] = #30000 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+	ctrl_block_in[13] = #60000 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+	ctrl_block_in[13] = #30000 1'b1;
+	ctrl_block_in[13] = #60000 1'b0;
+	ctrl_block_in[13] = #10000 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+	ctrl_block_in[13] = #10000 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+	ctrl_block_in[13] = #20000 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+	ctrl_block_in[13] = #10000 1'b1;
+	ctrl_block_in[13] = #50000 1'b0;
+	ctrl_block_in[13] = #10000 1'b1;
+	ctrl_block_in[13] = #20000 1'b0;
+	ctrl_block_in[13] = #30000 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+	ctrl_block_in[13] = #20000 1'b1;
+	ctrl_block_in[13] = #20000 1'b0;
+	ctrl_block_in[13] = #10000 1'b1;
+	ctrl_block_in[13] = #20000 1'b0;
+	ctrl_block_in[13] = #30000 1'b1;
+	ctrl_block_in[13] = #20000 1'b0;
+	ctrl_block_in[13] = #10000 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+	ctrl_block_in[13] = #20000 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+	ctrl_block_in[13] = #10000 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+	ctrl_block_in[13] = #10000 1'b1;
+	ctrl_block_in[13] = #10000 1'b0;
+end 
+// ctrl_block_in[ 12 ]
+initial
+begin
+	ctrl_block_in[12] = 1'b0;
+	ctrl_block_in[12] = #20000 1'b1;
+	ctrl_block_in[12] = #20000 1'b0;
+	ctrl_block_in[12] = #30000 1'b1;
+	ctrl_block_in[12] = #10000 1'b0;
+	ctrl_block_in[12] = #40000 1'b1;
+	ctrl_block_in[12] = #10000 1'b0;
+	ctrl_block_in[12] = #10000 1'b1;
+	ctrl_block_in[12] = #20000 1'b0;
+	ctrl_block_in[12] = #10000 1'b1;
+	ctrl_block_in[12] = #10000 1'b0;
+	ctrl_block_in[12] = #10000 1'b1;
+	ctrl_block_in[12] = #40000 1'b0;
+	ctrl_block_in[12] = #10000 1'b1;
+	ctrl_block_in[12] = #10000 1'b0;
+	ctrl_block_in[12] = #50000 1'b1;
+	ctrl_block_in[12] = #10000 1'b0;
+	ctrl_block_in[12] = #20000 1'b1;
+	ctrl_block_in[12] = #50000 1'b0;
+	ctrl_block_in[12] = #20000 1'b1;
+	ctrl_block_in[12] = #10000 1'b0;
+	ctrl_block_in[12] = #50000 1'b1;
+	ctrl_block_in[12] = #60000 1'b0;
+	ctrl_block_in[12] = #20000 1'b1;
+	ctrl_block_in[12] = #20000 1'b0;
+	ctrl_block_in[12] = #10000 1'b1;
+	ctrl_block_in[12] = #20000 1'b0;
+	ctrl_block_in[12] = #10000 1'b1;
+	ctrl_block_in[12] = #10000 1'b0;
+	ctrl_block_in[12] = #30000 1'b1;
+	ctrl_block_in[12] = #10000 1'b0;
+	ctrl_block_in[12] = #10000 1'b1;
+	ctrl_block_in[12] = #30000 1'b0;
+	ctrl_block_in[12] = #30000 1'b1;
+	ctrl_block_in[12] = #10000 1'b0;
+	ctrl_block_in[12] = #20000 1'b1;
+	ctrl_block_in[12] = #20000 1'b0;
+	ctrl_block_in[12] = #10000 1'b1;
+	ctrl_block_in[12] = #10000 1'b0;
+	ctrl_block_in[12] = #10000 1'b1;
+	ctrl_block_in[12] = #10000 1'b0;
+	ctrl_block_in[12] = #10000 1'b1;
+	ctrl_block_in[12] = #10000 1'b0;
+	ctrl_block_in[12] = #10000 1'b1;
+	ctrl_block_in[12] = #10000 1'b0;
+	ctrl_block_in[12] = #20000 1'b1;
+	ctrl_block_in[12] = #30000 1'b0;
+	ctrl_block_in[12] = #30000 1'b1;
+	ctrl_block_in[12] = #30000 1'b0;
+	ctrl_block_in[12] = #20000 1'b1;
+	ctrl_block_in[12] = #10000 1'b0;
+end 
+// ctrl_block_in[ 11 ]
+initial
+begin
+	ctrl_block_in[11] = 1'b1;
+	ctrl_block_in[11] = #20000 1'b0;
+	ctrl_block_in[11] = #10000 1'b1;
+	ctrl_block_in[11] = #30000 1'b0;
+	ctrl_block_in[11] = #10000 1'b1;
+	ctrl_block_in[11] = #10000 1'b0;
+	ctrl_block_in[11] = #50000 1'b1;
+	ctrl_block_in[11] = #10000 1'b0;
+	ctrl_block_in[11] = #10000 1'b1;
+	ctrl_block_in[11] = #10000 1'b0;
+	ctrl_block_in[11] = #10000 1'b1;
+	ctrl_block_in[11] = #10000 1'b0;
+	ctrl_block_in[11] = #10000 1'b1;
+	ctrl_block_in[11] = #20000 1'b0;
+	ctrl_block_in[11] = #20000 1'b1;
+	ctrl_block_in[11] = #30000 1'b0;
+	ctrl_block_in[11] = #20000 1'b1;
+	ctrl_block_in[11] = #30000 1'b0;
+	ctrl_block_in[11] = #10000 1'b1;
+	ctrl_block_in[11] = #10000 1'b0;
+	ctrl_block_in[11] = #20000 1'b1;
+	ctrl_block_in[11] = #10000 1'b0;
+	ctrl_block_in[11] = #10000 1'b1;
+	ctrl_block_in[11] = #30000 1'b0;
+	ctrl_block_in[11] = #10000 1'b1;
+	ctrl_block_in[11] = #10000 1'b0;
+	ctrl_block_in[11] = #20000 1'b1;
+	ctrl_block_in[11] = #10000 1'b0;
+	ctrl_block_in[11] = #20000 1'b1;
+	ctrl_block_in[11] = #30000 1'b0;
+	ctrl_block_in[11] = #20000 1'b1;
+	ctrl_block_in[11] = #50000 1'b0;
+	ctrl_block_in[11] = #10000 1'b1;
+	ctrl_block_in[11] = #30000 1'b0;
+	ctrl_block_in[11] = #40000 1'b1;
+	ctrl_block_in[11] = #10000 1'b0;
+	ctrl_block_in[11] = #10000 1'b1;
+	ctrl_block_in[11] = #10000 1'b0;
+	ctrl_block_in[11] = #10000 1'b1;
+	ctrl_block_in[11] = #10000 1'b0;
+	ctrl_block_in[11] = #40000 1'b1;
+	ctrl_block_in[11] = #10000 1'b0;
+	ctrl_block_in[11] = #20000 1'b1;
+	ctrl_block_in[11] = #40000 1'b0;
+	ctrl_block_in[11] = #10000 1'b1;
+	ctrl_block_in[11] = #30000 1'b0;
+	ctrl_block_in[11] = #10000 1'b1;
+	ctrl_block_in[11] = #30000 1'b0;
+	ctrl_block_in[11] = #10000 1'b1;
+	ctrl_block_in[11] = #40000 1'b0;
+	ctrl_block_in[11] = #20000 1'b1;
+	ctrl_block_in[11] = #10000 1'b0;
+	ctrl_block_in[11] = #20000 1'b1;
+end 
+// ctrl_block_in[ 10 ]
+initial
+begin
+	ctrl_block_in[10] = 1'b0;
+	ctrl_block_in[10] = #20000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #50000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #10000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #10000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #10000 1'b1;
+	ctrl_block_in[10] = #20000 1'b0;
+	ctrl_block_in[10] = #20000 1'b1;
+	ctrl_block_in[10] = #20000 1'b0;
+	ctrl_block_in[10] = #10000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #20000 1'b1;
+	ctrl_block_in[10] = #40000 1'b0;
+	ctrl_block_in[10] = #10000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #20000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #20000 1'b1;
+	ctrl_block_in[10] = #20000 1'b0;
+	ctrl_block_in[10] = #10000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #20000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #10000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #10000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #10000 1'b1;
+	ctrl_block_in[10] = #60000 1'b0;
+	ctrl_block_in[10] = #20000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #30000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #10000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #10000 1'b1;
+	ctrl_block_in[10] = #20000 1'b0;
+	ctrl_block_in[10] = #10000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #60000 1'b1;
+	ctrl_block_in[10] = #30000 1'b0;
+	ctrl_block_in[10] = #30000 1'b1;
+	ctrl_block_in[10] = #20000 1'b0;
+	ctrl_block_in[10] = #20000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #10000 1'b1;
+	ctrl_block_in[10] = #20000 1'b0;
+	ctrl_block_in[10] = #20000 1'b1;
+	ctrl_block_in[10] = #30000 1'b0;
+	ctrl_block_in[10] = #30000 1'b1;
+	ctrl_block_in[10] = #10000 1'b0;
+	ctrl_block_in[10] = #20000 1'b1;
+end 
+// ctrl_block_in[ 9 ]
+initial
+begin
+	ctrl_block_in[9] = 1'b1;
+	ctrl_block_in[9] = #20000 1'b0;
+	ctrl_block_in[9] = #10000 1'b1;
+	ctrl_block_in[9] = #20000 1'b0;
+	ctrl_block_in[9] = #10000 1'b1;
+	ctrl_block_in[9] = #10000 1'b0;
+	ctrl_block_in[9] = #10000 1'b1;
+	ctrl_block_in[9] = #20000 1'b0;
+	ctrl_block_in[9] = #30000 1'b1;
+	ctrl_block_in[9] = #50000 1'b0;
+	ctrl_block_in[9] = #40000 1'b1;
+	ctrl_block_in[9] = #10000 1'b0;
+	ctrl_block_in[9] = #20000 1'b1;
+	ctrl_block_in[9] = #40000 1'b0;
+	ctrl_block_in[9] = #20000 1'b1;
+	ctrl_block_in[9] = #70000 1'b0;
+	ctrl_block_in[9] = #10000 1'b1;
+	ctrl_block_in[9] = #30000 1'b0;
+	ctrl_block_in[9] = #40000 1'b1;
+	ctrl_block_in[9] = #10000 1'b0;
+	ctrl_block_in[9] = #10000 1'b1;
+	ctrl_block_in[9] = #20000 1'b0;
+	ctrl_block_in[9] = #20000 1'b1;
+	ctrl_block_in[9] = #10000 1'b0;
+	ctrl_block_in[9] = #20000 1'b1;
+	ctrl_block_in[9] = #20000 1'b0;
+	ctrl_block_in[9] = #20000 1'b1;
+	ctrl_block_in[9] = #20000 1'b0;
+	ctrl_block_in[9] = #20000 1'b1;
+	ctrl_block_in[9] = #10000 1'b0;
+	ctrl_block_in[9] = #30000 1'b1;
+	ctrl_block_in[9] = #30000 1'b0;
+	ctrl_block_in[9] = #30000 1'b1;
+	ctrl_block_in[9] = #10000 1'b0;
+	ctrl_block_in[9] = #10000 1'b1;
+	ctrl_block_in[9] = #10000 1'b0;
+	ctrl_block_in[9] = #30000 1'b1;
+	ctrl_block_in[9] = #70000 1'b0;
+	ctrl_block_in[9] = #10000 1'b1;
+	ctrl_block_in[9] = #20000 1'b0;
+	ctrl_block_in[9] = #10000 1'b1;
+	ctrl_block_in[9] = #10000 1'b0;
+	ctrl_block_in[9] = #10000 1'b1;
+	ctrl_block_in[9] = #20000 1'b0;
+	ctrl_block_in[9] = #20000 1'b1;
+	ctrl_block_in[9] = #10000 1'b0;
+	ctrl_block_in[9] = #10000 1'b1;
+	ctrl_block_in[9] = #10000 1'b0;
+end 
+// ctrl_block_in[ 8 ]
+initial
+begin
+	ctrl_block_in[8] = 1'b0;
+	ctrl_block_in[8] = #50000 1'b1;
+	ctrl_block_in[8] = #20000 1'b0;
+	ctrl_block_in[8] = #10000 1'b1;
+	ctrl_block_in[8] = #20000 1'b0;
+	ctrl_block_in[8] = #10000 1'b1;
+	ctrl_block_in[8] = #40000 1'b0;
+	ctrl_block_in[8] = #10000 1'b1;
+	ctrl_block_in[8] = #20000 1'b0;
+	ctrl_block_in[8] = #10000 1'b1;
+	ctrl_block_in[8] = #30000 1'b0;
+	ctrl_block_in[8] = #20000 1'b1;
+	ctrl_block_in[8] = #60000 1'b0;
+	ctrl_block_in[8] = #50000 1'b1;
+	ctrl_block_in[8] = #30000 1'b0;
+	ctrl_block_in[8] = #40000 1'b1;
+	ctrl_block_in[8] = #10000 1'b0;
+	ctrl_block_in[8] = #20000 1'b1;
+	ctrl_block_in[8] = #10000 1'b0;
+	ctrl_block_in[8] = #10000 1'b1;
+	ctrl_block_in[8] = #10000 1'b0;
+	ctrl_block_in[8] = #80000 1'b1;
+	ctrl_block_in[8] = #40000 1'b0;
+	ctrl_block_in[8] = #10000 1'b1;
+	ctrl_block_in[8] = #10000 1'b0;
+	ctrl_block_in[8] = #10000 1'b1;
+	ctrl_block_in[8] = #10000 1'b0;
+	ctrl_block_in[8] = #10000 1'b1;
+	ctrl_block_in[8] = #10000 1'b0;
+	ctrl_block_in[8] = #20000 1'b1;
+	ctrl_block_in[8] = #10000 1'b0;
+	ctrl_block_in[8] = #10000 1'b1;
+	ctrl_block_in[8] = #40000 1'b0;
+	ctrl_block_in[8] = #10000 1'b1;
+	ctrl_block_in[8] = #50000 1'b0;
+	ctrl_block_in[8] = #20000 1'b1;
+	ctrl_block_in[8] = #10000 1'b0;
+	ctrl_block_in[8] = #20000 1'b1;
+	ctrl_block_in[8] = #20000 1'b0;
+	ctrl_block_in[8] = #10000 1'b1;
+	ctrl_block_in[8] = #10000 1'b0;
+	ctrl_block_in[8] = #20000 1'b1;
+	ctrl_block_in[8] = #20000 1'b0;
+	ctrl_block_in[8] = #10000 1'b1;
+	ctrl_block_in[8] = #50000 1'b0;
+end 
+// ctrl_block_in[ 7 ]
+initial
+begin
+	ctrl_block_in[7] = 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #10000 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #10000 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #10000 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #10000 1'b0;
+	ctrl_block_in[7] = #30000 1'b1;
+	ctrl_block_in[7] = #10000 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #20000 1'b0;
+	ctrl_block_in[7] = #20000 1'b1;
+	ctrl_block_in[7] = #40000 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #20000 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #20000 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #50000 1'b0;
+	ctrl_block_in[7] = #20000 1'b1;
+	ctrl_block_in[7] = #20000 1'b0;
+	ctrl_block_in[7] = #20000 1'b1;
+	ctrl_block_in[7] = #20000 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #10000 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #20000 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #10000 1'b0;
+	ctrl_block_in[7] = #20000 1'b1;
+	ctrl_block_in[7] = #10000 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #20000 1'b0;
+	ctrl_block_in[7] = #40000 1'b1;
+	ctrl_block_in[7] = #30000 1'b0;
+	ctrl_block_in[7] = #30000 1'b1;
+	ctrl_block_in[7] = #10000 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #20000 1'b0;
+	ctrl_block_in[7] = #40000 1'b1;
+	ctrl_block_in[7] = #10000 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #50000 1'b0;
+	ctrl_block_in[7] = #10000 1'b1;
+	ctrl_block_in[7] = #70000 1'b0;
+	ctrl_block_in[7] = #70000 1'b1;
+	ctrl_block_in[7] = #50000 1'b0;
+end 
+// ctrl_block_in[ 6 ]
+initial
+begin
+	ctrl_block_in[6] = 1'b1;
+	ctrl_block_in[6] = #30000 1'b0;
+	ctrl_block_in[6] = #10000 1'b1;
+	ctrl_block_in[6] = #10000 1'b0;
+	ctrl_block_in[6] = #10000 1'b1;
+	ctrl_block_in[6] = #40000 1'b0;
+	ctrl_block_in[6] = #40000 1'b1;
+	ctrl_block_in[6] = #30000 1'b0;
+	ctrl_block_in[6] = #20000 1'b1;
+	ctrl_block_in[6] = #10000 1'b0;
+	ctrl_block_in[6] = #20000 1'b1;
+	ctrl_block_in[6] = #10000 1'b0;
+	ctrl_block_in[6] = #40000 1'b1;
+	ctrl_block_in[6] = #30000 1'b0;
+	ctrl_block_in[6] = #10000 1'b1;
+	ctrl_block_in[6] = #10000 1'b0;
+	ctrl_block_in[6] = #10000 1'b1;
+	ctrl_block_in[6] = #20000 1'b0;
+	ctrl_block_in[6] = #20000 1'b1;
+	ctrl_block_in[6] = #30000 1'b0;
+	ctrl_block_in[6] = #10000 1'b1;
+	ctrl_block_in[6] = #20000 1'b0;
+	ctrl_block_in[6] = #10000 1'b1;
+	ctrl_block_in[6] = #20000 1'b0;
+	ctrl_block_in[6] = #20000 1'b1;
+	ctrl_block_in[6] = #20000 1'b0;
+	ctrl_block_in[6] = #20000 1'b1;
+	ctrl_block_in[6] = #10000 1'b0;
+	ctrl_block_in[6] = #20000 1'b1;
+	ctrl_block_in[6] = #20000 1'b0;
+	ctrl_block_in[6] = #50000 1'b1;
+	ctrl_block_in[6] = #40000 1'b0;
+	ctrl_block_in[6] = #20000 1'b1;
+	ctrl_block_in[6] = #30000 1'b0;
+	ctrl_block_in[6] = #20000 1'b1;
+	ctrl_block_in[6] = #40000 1'b0;
+	ctrl_block_in[6] = #20000 1'b1;
+	ctrl_block_in[6] = #30000 1'b0;
+	ctrl_block_in[6] = #40000 1'b1;
+	ctrl_block_in[6] = #20000 1'b0;
+	ctrl_block_in[6] = #20000 1'b1;
+	ctrl_block_in[6] = #20000 1'b0;
+	ctrl_block_in[6] = #20000 1'b1;
+	ctrl_block_in[6] = #20000 1'b0;
+	ctrl_block_in[6] = #10000 1'b1;
+end 
+// ctrl_block_in[ 5 ]
+initial
+begin
+	ctrl_block_in[5] = 1'b0;
+	ctrl_block_in[5] = #10000 1'b1;
+	ctrl_block_in[5] = #50000 1'b0;
+	ctrl_block_in[5] = #10000 1'b1;
+	ctrl_block_in[5] = #30000 1'b0;
+	ctrl_block_in[5] = #20000 1'b1;
+	ctrl_block_in[5] = #10000 1'b0;
+	ctrl_block_in[5] = #20000 1'b1;
+	ctrl_block_in[5] = #30000 1'b0;
+	ctrl_block_in[5] = #10000 1'b1;
+	ctrl_block_in[5] = #10000 1'b0;
+	ctrl_block_in[5] = #20000 1'b1;
+	ctrl_block_in[5] = #40000 1'b0;
+	ctrl_block_in[5] = #30000 1'b1;
+	ctrl_block_in[5] = #10000 1'b0;
+	ctrl_block_in[5] = #10000 1'b1;
+	ctrl_block_in[5] = #30000 1'b0;
+	ctrl_block_in[5] = #30000 1'b1;
+	ctrl_block_in[5] = #10000 1'b0;
+	ctrl_block_in[5] = #10000 1'b1;
+	ctrl_block_in[5] = #20000 1'b0;
+	ctrl_block_in[5] = #30000 1'b1;
+	ctrl_block_in[5] = #20000 1'b0;
+	ctrl_block_in[5] = #10000 1'b1;
+	ctrl_block_in[5] = #20000 1'b0;
+	ctrl_block_in[5] = #10000 1'b1;
+	ctrl_block_in[5] = #10000 1'b0;
+	ctrl_block_in[5] = #30000 1'b1;
+	ctrl_block_in[5] = #40000 1'b0;
+	ctrl_block_in[5] = #10000 1'b1;
+	ctrl_block_in[5] = #10000 1'b0;
+	ctrl_block_in[5] = #20000 1'b1;
+	ctrl_block_in[5] = #30000 1'b0;
+	ctrl_block_in[5] = #10000 1'b1;
+	ctrl_block_in[5] = #10000 1'b0;
+	ctrl_block_in[5] = #20000 1'b1;
+	ctrl_block_in[5] = #10000 1'b0;
+	ctrl_block_in[5] = #30000 1'b1;
+	ctrl_block_in[5] = #10000 1'b0;
+	ctrl_block_in[5] = #50000 1'b1;
+	ctrl_block_in[5] = #40000 1'b0;
+	ctrl_block_in[5] = #30000 1'b1;
+	ctrl_block_in[5] = #10000 1'b0;
+	ctrl_block_in[5] = #10000 1'b1;
+	ctrl_block_in[5] = #30000 1'b0;
+	ctrl_block_in[5] = #10000 1'b1;
+	ctrl_block_in[5] = #10000 1'b0;
+	ctrl_block_in[5] = #30000 1'b1;
+	ctrl_block_in[5] = #10000 1'b0;
+	ctrl_block_in[5] = #10000 1'b1;
+	ctrl_block_in[5] = #10000 1'b0;
+end 
+// ctrl_block_in[ 4 ]
+initial
+begin
+	ctrl_block_in[4] = 1'b0;
+	ctrl_block_in[4] = #10000 1'b1;
+	ctrl_block_in[4] = #130000 1'b0;
+	ctrl_block_in[4] = #10000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #10000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #20000 1'b1;
+	ctrl_block_in[4] = #20000 1'b0;
+	ctrl_block_in[4] = #20000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #20000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #20000 1'b1;
+	ctrl_block_in[4] = #20000 1'b0;
+	ctrl_block_in[4] = #20000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #30000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #10000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #10000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #60000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #20000 1'b1;
+	ctrl_block_in[4] = #20000 1'b0;
+	ctrl_block_in[4] = #30000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #10000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #20000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #40000 1'b1;
+	ctrl_block_in[4] = #20000 1'b0;
+	ctrl_block_in[4] = #40000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #10000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #20000 1'b1;
+	ctrl_block_in[4] = #30000 1'b0;
+	ctrl_block_in[4] = #10000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #20000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #10000 1'b1;
+	ctrl_block_in[4] = #30000 1'b0;
+	ctrl_block_in[4] = #20000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+	ctrl_block_in[4] = #10000 1'b1;
+	ctrl_block_in[4] = #10000 1'b0;
+end 
+// ctrl_block_in[ 3 ]
+initial
+begin
+	ctrl_block_in[3] = 1'b1;
+	ctrl_block_in[3] = #40000 1'b0;
+	ctrl_block_in[3] = #20000 1'b1;
+	ctrl_block_in[3] = #20000 1'b0;
+	ctrl_block_in[3] = #10000 1'b1;
+	ctrl_block_in[3] = #10000 1'b0;
+	ctrl_block_in[3] = #10000 1'b1;
+	ctrl_block_in[3] = #20000 1'b0;
+	ctrl_block_in[3] = #30000 1'b1;
+	ctrl_block_in[3] = #30000 1'b0;
+	ctrl_block_in[3] = #10000 1'b1;
+	ctrl_block_in[3] = #20000 1'b0;
+	ctrl_block_in[3] = #10000 1'b1;
+	ctrl_block_in[3] = #20000 1'b0;
+	ctrl_block_in[3] = #10000 1'b1;
+	ctrl_block_in[3] = #10000 1'b0;
+	ctrl_block_in[3] = #20000 1'b1;
+	ctrl_block_in[3] = #60000 1'b0;
+	ctrl_block_in[3] = #30000 1'b1;
+	ctrl_block_in[3] = #60000 1'b0;
+	ctrl_block_in[3] = #20000 1'b1;
+	ctrl_block_in[3] = #20000 1'b0;
+	ctrl_block_in[3] = #10000 1'b1;
+	ctrl_block_in[3] = #10000 1'b0;
+	ctrl_block_in[3] = #20000 1'b1;
+	ctrl_block_in[3] = #20000 1'b0;
+	ctrl_block_in[3] = #40000 1'b1;
+	ctrl_block_in[3] = #10000 1'b0;
+	ctrl_block_in[3] = #30000 1'b1;
+	ctrl_block_in[3] = #20000 1'b0;
+	ctrl_block_in[3] = #20000 1'b1;
+	ctrl_block_in[3] = #40000 1'b0;
+	ctrl_block_in[3] = #20000 1'b1;
+	ctrl_block_in[3] = #10000 1'b0;
+	ctrl_block_in[3] = #30000 1'b1;
+	ctrl_block_in[3] = #20000 1'b0;
+	ctrl_block_in[3] = #30000 1'b1;
+	ctrl_block_in[3] = #10000 1'b0;
+	ctrl_block_in[3] = #20000 1'b1;
+	ctrl_block_in[3] = #10000 1'b0;
+	ctrl_block_in[3] = #10000 1'b1;
+	ctrl_block_in[3] = #20000 1'b0;
+	ctrl_block_in[3] = #30000 1'b1;
+	ctrl_block_in[3] = #10000 1'b0;
+	ctrl_block_in[3] = #40000 1'b1;
+	ctrl_block_in[3] = #10000 1'b0;
+end 
+// ctrl_block_in[ 2 ]
+initial
+begin
+	ctrl_block_in[2] = 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #20000 1'b1;
+	ctrl_block_in[2] = #20000 1'b0;
+	ctrl_block_in[2] = #20000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #20000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #50000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #20000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #20000 1'b1;
+	ctrl_block_in[2] = #20000 1'b0;
+	ctrl_block_in[2] = #10000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #10000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #20000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #10000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #20000 1'b1;
+	ctrl_block_in[2] = #30000 1'b0;
+	ctrl_block_in[2] = #10000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #20000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #20000 1'b1;
+	ctrl_block_in[2] = #110000 1'b0;
+	ctrl_block_in[2] = #20000 1'b1;
+	ctrl_block_in[2] = #30000 1'b0;
+	ctrl_block_in[2] = #10000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #20000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #50000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #10000 1'b1;
+	ctrl_block_in[2] = #20000 1'b0;
+	ctrl_block_in[2] = #30000 1'b1;
+	ctrl_block_in[2] = #40000 1'b0;
+	ctrl_block_in[2] = #10000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #10000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #10000 1'b1;
+	ctrl_block_in[2] = #20000 1'b0;
+	ctrl_block_in[2] = #10000 1'b1;
+	ctrl_block_in[2] = #60000 1'b0;
+	ctrl_block_in[2] = #10000 1'b1;
+	ctrl_block_in[2] = #10000 1'b0;
+	ctrl_block_in[2] = #10000 1'b1;
+end 
+// ctrl_block_in[ 1 ]
+initial
+begin
+	ctrl_block_in[1] = 1'b1;
+	ctrl_block_in[1] = #20000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #10000 1'b0;
+	ctrl_block_in[1] = #20000 1'b1;
+	ctrl_block_in[1] = #10000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #10000 1'b0;
+	ctrl_block_in[1] = #20000 1'b1;
+	ctrl_block_in[1] = #20000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #30000 1'b0;
+	ctrl_block_in[1] = #20000 1'b1;
+	ctrl_block_in[1] = #10000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #20000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #10000 1'b0;
+	ctrl_block_in[1] = #60000 1'b1;
+	ctrl_block_in[1] = #20000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #10000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #30000 1'b0;
+	ctrl_block_in[1] = #20000 1'b1;
+	ctrl_block_in[1] = #40000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #10000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #10000 1'b0;
+	ctrl_block_in[1] = #20000 1'b1;
+	ctrl_block_in[1] = #10000 1'b0;
+	ctrl_block_in[1] = #30000 1'b1;
+	ctrl_block_in[1] = #30000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #20000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #20000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #20000 1'b0;
+	ctrl_block_in[1] = #40000 1'b1;
+	ctrl_block_in[1] = #10000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #10000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #30000 1'b0;
+	ctrl_block_in[1] = #30000 1'b1;
+	ctrl_block_in[1] = #20000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #20000 1'b0;
+	ctrl_block_in[1] = #10000 1'b1;
+	ctrl_block_in[1] = #10000 1'b0;
+	ctrl_block_in[1] = #20000 1'b1;
+	ctrl_block_in[1] = #30000 1'b0;
+	ctrl_block_in[1] = #60000 1'b1;
+end 
+// ctrl_block_in[ 0 ]
+initial
+begin
+	ctrl_block_in[0] = 1'b0;
+	ctrl_block_in[0] = #10000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #10000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #20000 1'b1;
+	ctrl_block_in[0] = #30000 1'b0;
+	ctrl_block_in[0] = #30000 1'b1;
+	ctrl_block_in[0] = #20000 1'b0;
+	ctrl_block_in[0] = #20000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #10000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #10000 1'b1;
+	ctrl_block_in[0] = #50000 1'b0;
+	ctrl_block_in[0] = #10000 1'b1;
+	ctrl_block_in[0] = #20000 1'b0;
+	ctrl_block_in[0] = #10000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #20000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #10000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #30000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #20000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #20000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #10000 1'b1;
+	ctrl_block_in[0] = #40000 1'b0;
+	ctrl_block_in[0] = #10000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #20000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #10000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #20000 1'b1;
+	ctrl_block_in[0] = #20000 1'b0;
+	ctrl_block_in[0] = #30000 1'b1;
+	ctrl_block_in[0] = #20000 1'b0;
+	ctrl_block_in[0] = #60000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #60000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #10000 1'b1;
+	ctrl_block_in[0] = #20000 1'b0;
+	ctrl_block_in[0] = #40000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #20000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+	ctrl_block_in[0] = #30000 1'b1;
+	ctrl_block_in[0] = #30000 1'b0;
+	ctrl_block_in[0] = #10000 1'b1;
+	ctrl_block_in[0] = #10000 1'b0;
+end 
+// data_in[ 7 ]
+initial
+begin
+	data_in[7] = 1'b0;
+	data_in[7] = #10000 1'b1;
+	data_in[7] = #50000 1'b0;
+	data_in[7] = #20000 1'b1;
+	data_in[7] = #30000 1'b0;
+	data_in[7] = #10000 1'b1;
+	data_in[7] = #20000 1'b0;
+	data_in[7] = #20000 1'b1;
+	data_in[7] = #50000 1'b0;
+	data_in[7] = #10000 1'b1;
+	data_in[7] = #10000 1'b0;
+	data_in[7] = #10000 1'b1;
+	data_in[7] = #10000 1'b0;
+	data_in[7] = #20000 1'b1;
+	data_in[7] = #10000 1'b0;
+	data_in[7] = #10000 1'b1;
+	data_in[7] = #10000 1'b0;
+	data_in[7] = #20000 1'b1;
+	data_in[7] = #10000 1'b0;
+	data_in[7] = #40000 1'b1;
+	data_in[7] = #10000 1'b0;
+	data_in[7] = #20000 1'b1;
+	data_in[7] = #20000 1'b0;
+	data_in[7] = #10000 1'b1;
+	data_in[7] = #20000 1'b0;
+	data_in[7] = #20000 1'b1;
+	data_in[7] = #20000 1'b0;
+	data_in[7] = #20000 1'b1;
+	data_in[7] = #20000 1'b0;
+	data_in[7] = #10000 1'b1;
+	data_in[7] = #60000 1'b0;
+	data_in[7] = #20000 1'b1;
+	data_in[7] = #10000 1'b0;
+	data_in[7] = #20000 1'b1;
+	data_in[7] = #10000 1'b0;
+	data_in[7] = #10000 1'b1;
+	data_in[7] = #10000 1'b0;
+	data_in[7] = #30000 1'b1;
+	data_in[7] = #20000 1'b0;
+	data_in[7] = #20000 1'b1;
+	data_in[7] = #20000 1'b0;
+	data_in[7] = #60000 1'b1;
+	data_in[7] = #40000 1'b0;
+	data_in[7] = #20000 1'b1;
+	data_in[7] = #10000 1'b0;
+	data_in[7] = #10000 1'b1;
+	data_in[7] = #20000 1'b0;
+	data_in[7] = #10000 1'b1;
+	data_in[7] = #10000 1'b0;
+	data_in[7] = #20000 1'b1;
+	data_in[7] = #20000 1'b0;
+end 
+// data_in[ 6 ]
+initial
+begin
+	data_in[6] = 1'b0;
+	data_in[6] = #10000 1'b1;
+	data_in[6] = #30000 1'b0;
+	data_in[6] = #10000 1'b1;
+	data_in[6] = #30000 1'b0;
+	data_in[6] = #30000 1'b1;
+	data_in[6] = #20000 1'b0;
+	data_in[6] = #20000 1'b1;
+	data_in[6] = #10000 1'b0;
+	data_in[6] = #10000 1'b1;
+	data_in[6] = #30000 1'b0;
+	data_in[6] = #20000 1'b1;
+	data_in[6] = #20000 1'b0;
+	data_in[6] = #60000 1'b1;
+	data_in[6] = #10000 1'b0;
+	data_in[6] = #10000 1'b1;
+	data_in[6] = #30000 1'b0;
+	data_in[6] = #10000 1'b1;
+	data_in[6] = #10000 1'b0;
+	data_in[6] = #30000 1'b1;
+	data_in[6] = #10000 1'b0;
+	data_in[6] = #20000 1'b1;
+	data_in[6] = #10000 1'b0;
+	data_in[6] = #20000 1'b1;
+	data_in[6] = #10000 1'b0;
+	data_in[6] = #10000 1'b1;
+	data_in[6] = #10000 1'b0;
+	data_in[6] = #10000 1'b1;
+	data_in[6] = #20000 1'b0;
+	data_in[6] = #10000 1'b1;
+	data_in[6] = #10000 1'b0;
+	data_in[6] = #20000 1'b1;
+	data_in[6] = #20000 1'b0;
+	data_in[6] = #20000 1'b1;
+	data_in[6] = #20000 1'b0;
+	data_in[6] = #10000 1'b1;
+	data_in[6] = #30000 1'b0;
+	data_in[6] = #10000 1'b1;
+	data_in[6] = #10000 1'b0;
+	data_in[6] = #20000 1'b1;
+	data_in[6] = #10000 1'b0;
+	data_in[6] = #10000 1'b1;
+	data_in[6] = #20000 1'b0;
+	data_in[6] = #30000 1'b1;
+	data_in[6] = #40000 1'b0;
+	data_in[6] = #10000 1'b1;
+	data_in[6] = #20000 1'b0;
+	data_in[6] = #20000 1'b1;
+	data_in[6] = #10000 1'b0;
+	data_in[6] = #20000 1'b1;
+	data_in[6] = #30000 1'b0;
+	data_in[6] = #10000 1'b1;
+	data_in[6] = #50000 1'b0;
+	data_in[6] = #10000 1'b1;
+end 
+// data_in[ 5 ]
+initial
+begin
+	data_in[5] = 1'b0;
+	data_in[5] = #30000 1'b1;
+	data_in[5] = #10000 1'b0;
+	data_in[5] = #30000 1'b1;
+	data_in[5] = #20000 1'b0;
+	data_in[5] = #10000 1'b1;
+	data_in[5] = #10000 1'b0;
+	data_in[5] = #10000 1'b1;
+	data_in[5] = #40000 1'b0;
+	data_in[5] = #30000 1'b1;
+	data_in[5] = #40000 1'b0;
+	data_in[5] = #10000 1'b1;
+	data_in[5] = #10000 1'b0;
+	data_in[5] = #20000 1'b1;
+	data_in[5] = #10000 1'b0;
+	data_in[5] = #10000 1'b1;
+	data_in[5] = #10000 1'b0;
+	data_in[5] = #20000 1'b1;
+	data_in[5] = #10000 1'b0;
+	data_in[5] = #10000 1'b1;
+	data_in[5] = #10000 1'b0;
+	data_in[5] = #10000 1'b1;
+	data_in[5] = #30000 1'b0;
+	data_in[5] = #10000 1'b1;
+	data_in[5] = #60000 1'b0;
+	data_in[5] = #10000 1'b1;
+	data_in[5] = #10000 1'b0;
+	data_in[5] = #20000 1'b1;
+	data_in[5] = #10000 1'b0;
+	data_in[5] = #20000 1'b1;
+	data_in[5] = #10000 1'b0;
+	data_in[5] = #20000 1'b1;
+	data_in[5] = #30000 1'b0;
+	data_in[5] = #10000 1'b1;
+	data_in[5] = #10000 1'b0;
+	data_in[5] = #40000 1'b1;
+	data_in[5] = #50000 1'b0;
+	data_in[5] = #10000 1'b1;
+	data_in[5] = #40000 1'b0;
+	data_in[5] = #10000 1'b1;
+	data_in[5] = #10000 1'b0;
+	data_in[5] = #10000 1'b1;
+	data_in[5] = #20000 1'b0;
+	data_in[5] = #30000 1'b1;
+	data_in[5] = #10000 1'b0;
+	data_in[5] = #80000 1'b1;
+	data_in[5] = #30000 1'b0;
+	data_in[5] = #10000 1'b1;
+	data_in[5] = #20000 1'b0;
+end 
+// data_in[ 4 ]
+initial
+begin
+	data_in[4] = 1'b1;
+	data_in[4] = #40000 1'b0;
+	data_in[4] = #10000 1'b1;
+	data_in[4] = #20000 1'b0;
+	data_in[4] = #20000 1'b1;
+	data_in[4] = #10000 1'b0;
+	data_in[4] = #10000 1'b1;
+	data_in[4] = #30000 1'b0;
+	data_in[4] = #30000 1'b1;
+	data_in[4] = #10000 1'b0;
+	data_in[4] = #20000 1'b1;
+	data_in[4] = #10000 1'b0;
+	data_in[4] = #10000 1'b1;
+	data_in[4] = #30000 1'b0;
+	data_in[4] = #10000 1'b1;
+	data_in[4] = #10000 1'b0;
+	data_in[4] = #10000 1'b1;
+	data_in[4] = #70000 1'b0;
+	data_in[4] = #30000 1'b1;
+	data_in[4] = #10000 1'b0;
+	data_in[4] = #20000 1'b1;
+	data_in[4] = #10000 1'b0;
+	data_in[4] = #10000 1'b1;
+	data_in[4] = #40000 1'b0;
+	data_in[4] = #10000 1'b1;
+	data_in[4] = #20000 1'b0;
+	data_in[4] = #50000 1'b1;
+	data_in[4] = #10000 1'b0;
+	data_in[4] = #20000 1'b1;
+	data_in[4] = #10000 1'b0;
+	data_in[4] = #10000 1'b1;
+	data_in[4] = #10000 1'b0;
+	data_in[4] = #20000 1'b1;
+	data_in[4] = #30000 1'b0;
+	data_in[4] = #10000 1'b1;
+	data_in[4] = #20000 1'b0;
+	data_in[4] = #10000 1'b1;
+	data_in[4] = #20000 1'b0;
+	data_in[4] = #10000 1'b1;
+	data_in[4] = #50000 1'b0;
+	data_in[4] = #20000 1'b1;
+	data_in[4] = #10000 1'b0;
+	data_in[4] = #50000 1'b1;
+	data_in[4] = #10000 1'b0;
+	data_in[4] = #30000 1'b1;
+	data_in[4] = #20000 1'b0;
+	data_in[4] = #10000 1'b1;
+	data_in[4] = #10000 1'b0;
+	data_in[4] = #10000 1'b1;
+	data_in[4] = #20000 1'b0;
+end 
+// data_in[ 3 ]
+initial
+begin
+	data_in[3] = 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #20000 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #40000 1'b0;
+	data_in[3] = #40000 1'b1;
+	data_in[3] = #10000 1'b0;
+	data_in[3] = #20000 1'b1;
+	data_in[3] = #10000 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #10000 1'b0;
+	data_in[3] = #40000 1'b1;
+	data_in[3] = #30000 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #70000 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #10000 1'b0;
+	data_in[3] = #20000 1'b1;
+	data_in[3] = #10000 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #10000 1'b0;
+	data_in[3] = #20000 1'b1;
+	data_in[3] = #10000 1'b0;
+	data_in[3] = #20000 1'b1;
+	data_in[3] = #10000 1'b0;
+	data_in[3] = #20000 1'b1;
+	data_in[3] = #40000 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #10000 1'b0;
+	data_in[3] = #30000 1'b1;
+	data_in[3] = #30000 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #40000 1'b0;
+	data_in[3] = #60000 1'b1;
+	data_in[3] = #20000 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #10000 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #20000 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #10000 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #40000 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #20000 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #30000 1'b0;
+	data_in[3] = #10000 1'b1;
+	data_in[3] = #10000 1'b0;
+	data_in[3] = #20000 1'b1;
+	data_in[3] = #20000 1'b0;
+	data_in[3] = #10000 1'b1;
+end 
+// data_in[ 2 ]
+initial
+begin
+	data_in[2] = 1'b1;
+	data_in[2] = #30000 1'b0;
+	data_in[2] = #10000 1'b1;
+	data_in[2] = #30000 1'b0;
+	data_in[2] = #10000 1'b1;
+	data_in[2] = #10000 1'b0;
+	data_in[2] = #30000 1'b1;
+	data_in[2] = #10000 1'b0;
+	data_in[2] = #30000 1'b1;
+	data_in[2] = #20000 1'b0;
+	data_in[2] = #10000 1'b1;
+	data_in[2] = #10000 1'b0;
+	data_in[2] = #10000 1'b1;
+	data_in[2] = #10000 1'b0;
+	data_in[2] = #30000 1'b1;
+	data_in[2] = #20000 1'b0;
+	data_in[2] = #60000 1'b1;
+	data_in[2] = #10000 1'b0;
+	data_in[2] = #10000 1'b1;
+	data_in[2] = #10000 1'b0;
+	data_in[2] = #10000 1'b1;
+	data_in[2] = #10000 1'b0;
+	data_in[2] = #10000 1'b1;
+	data_in[2] = #40000 1'b0;
+	data_in[2] = #10000 1'b1;
+	data_in[2] = #10000 1'b0;
+	data_in[2] = #30000 1'b1;
+	data_in[2] = #20000 1'b0;
+	data_in[2] = #20000 1'b1;
+	data_in[2] = #10000 1'b0;
+	data_in[2] = #20000 1'b1;
+	data_in[2] = #30000 1'b0;
+	data_in[2] = #10000 1'b1;
+	data_in[2] = #20000 1'b0;
+	data_in[2] = #10000 1'b1;
+	data_in[2] = #30000 1'b0;
+	data_in[2] = #10000 1'b1;
+	data_in[2] = #10000 1'b0;
+	data_in[2] = #10000 1'b1;
+	data_in[2] = #20000 1'b0;
+	data_in[2] = #30000 1'b1;
+	data_in[2] = #30000 1'b0;
+	data_in[2] = #20000 1'b1;
+	data_in[2] = #10000 1'b0;
+	data_in[2] = #20000 1'b1;
+	data_in[2] = #20000 1'b0;
+	data_in[2] = #90000 1'b1;
+	data_in[2] = #20000 1'b0;
+	data_in[2] = #20000 1'b1;
+	data_in[2] = #10000 1'b0;
+	data_in[2] = #10000 1'b1;
+end 
+// data_in[ 1 ]
+initial
+begin
+	data_in[1] = 1'b0;
+	data_in[1] = #30000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #30000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #30000 1'b0;
+	data_in[1] = #30000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #20000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #20000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #30000 1'b0;
+	data_in[1] = #50000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #30000 1'b1;
+	data_in[1] = #30000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #50000 1'b1;
+	data_in[1] = #20000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #50000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #20000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #70000 1'b0;
+	data_in[1] = #50000 1'b1;
+	data_in[1] = #30000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #20000 1'b0;
+	data_in[1] = #20000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #20000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #10000 1'b1;
+	data_in[1] = #10000 1'b0;
+	data_in[1] = #20000 1'b1;
+end 
+// data_in[ 0 ]
+initial
+begin
+	data_in[0] = 1'b0;
+	data_in[0] = #20000 1'b1;
+	data_in[0] = #30000 1'b0;
+	data_in[0] = #20000 1'b1;
+	data_in[0] = #40000 1'b0;
+	data_in[0] = #40000 1'b1;
+	data_in[0] = #20000 1'b0;
+	data_in[0] = #60000 1'b1;
+	data_in[0] = #10000 1'b0;
+	data_in[0] = #30000 1'b1;
+	data_in[0] = #20000 1'b0;
+	data_in[0] = #20000 1'b1;
+	data_in[0] = #10000 1'b0;
+	data_in[0] = #10000 1'b1;
+	data_in[0] = #10000 1'b0;
+	data_in[0] = #60000 1'b1;
+	data_in[0] = #30000 1'b0;
+	data_in[0] = #10000 1'b1;
+	data_in[0] = #20000 1'b0;
+	data_in[0] = #10000 1'b1;
+	data_in[0] = #20000 1'b0;
+	data_in[0] = #20000 1'b1;
+	data_in[0] = #20000 1'b0;
+	data_in[0] = #10000 1'b1;
+	data_in[0] = #50000 1'b0;
+	data_in[0] = #40000 1'b1;
+	data_in[0] = #10000 1'b0;
+	data_in[0] = #10000 1'b1;
+	data_in[0] = #10000 1'b0;
+	data_in[0] = #20000 1'b1;
+	data_in[0] = #10000 1'b0;
+	data_in[0] = #20000 1'b1;
+	data_in[0] = #20000 1'b0;
+	data_in[0] = #20000 1'b1;
+	data_in[0] = #30000 1'b0;
+	data_in[0] = #10000 1'b1;
+	data_in[0] = #50000 1'b0;
+	data_in[0] = #10000 1'b1;
+	data_in[0] = #10000 1'b0;
+	data_in[0] = #10000 1'b1;
+	data_in[0] = #10000 1'b0;
+	data_in[0] = #10000 1'b1;
+	data_in[0] = #10000 1'b0;
+	data_in[0] = #50000 1'b1;
+	data_in[0] = #20000 1'b0;
+	data_in[0] = #10000 1'b1;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b1;
+	reset = #20000 1'b0;
+end 
+endmodule
+

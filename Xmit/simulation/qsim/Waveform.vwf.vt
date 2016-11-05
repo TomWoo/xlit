@@ -19,46 +19,36 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "10/17/2016 23:57:15"
+// Generated on "11/04/2016 21:20:12"
                                                                                 
-// Verilog Test Bench (with test vectors) for design :                          xmitTop
+// Verilog Test Bench (with test vectors) for design :                          out_FSM
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module xmitTop_vlg_vec_tst();
+module out_FSM_vlg_vec_tst();
 // constants                                           
 // general purpose registers
 reg clk_phy;
-reg clk_sys;
-reg [24:0] f_ctrl_in;
-reg [7:0] f_data_in;
-reg f_hi_priority;
-reg f_rec_data_valid;
+reg [23:0] ctrl_block_in;
+reg [7:0] data_in;
 reg reset;
 // wires                                               
-wire m_discard_en;
-wire [7:0] m_discard_frame;
-wire [7:0] m_frame;
-wire m_tx_done;
-wire [3:0] phy_data_out;
+wire [3:0] data_out;
+wire [11:0] frame_seq_out;
+wire xmit_done_out;
 
 // assign statements (if any)                          
-xmitTop i1 (
+out_FSM i1 (
 // port map - connection between master ports and signals/registers   
 	.clk_phy(clk_phy),
-	.clk_sys(clk_sys),
-	.f_ctrl_in(f_ctrl_in),
-	.f_data_in(f_data_in),
-	.f_hi_priority(f_hi_priority),
-	.f_rec_data_valid(f_rec_data_valid),
-	.m_discard_en(m_discard_en),
-	.m_discard_frame(m_discard_frame),
-	.m_frame(m_frame),
-	.m_tx_done(m_tx_done),
-	.phy_data_out(phy_data_out),
-	.reset(reset)
+	.ctrl_block_in(ctrl_block_in),
+	.data_in(data_in),
+	.data_out(data_out),
+	.frame_seq_out(frame_seq_out),
+	.reset(reset),
+	.xmit_done_out(xmit_done_out)
 );
 initial 
 begin 
@@ -71,218 +61,6 @@ begin
 	clk_phy = 1'b0;
 	clk_phy = #20000 1'b1;
 	#20000;
-end 
-
-// clk_sys
-always
-begin
-	clk_sys = 1'b0;
-	clk_sys = #10000 1'b1;
-	#10000;
-end 
-// f_ctrl_in[ 24 ]
-initial
-begin
-	f_ctrl_in[24] = 1'b0;
-end 
-// f_ctrl_in[ 23 ]
-initial
-begin
-	f_ctrl_in[23] = 1'b0;
-end 
-// f_ctrl_in[ 22 ]
-initial
-begin
-	f_ctrl_in[22] = 1'b0;
-end 
-// f_ctrl_in[ 21 ]
-initial
-begin
-	f_ctrl_in[21] = 1'b0;
-end 
-// f_ctrl_in[ 20 ]
-initial
-begin
-	f_ctrl_in[20] = 1'b0;
-end 
-// f_ctrl_in[ 19 ]
-initial
-begin
-	f_ctrl_in[19] = 1'b0;
-end 
-// f_ctrl_in[ 18 ]
-initial
-begin
-	f_ctrl_in[18] = 1'b0;
-end 
-// f_ctrl_in[ 17 ]
-initial
-begin
-	f_ctrl_in[17] = 1'b0;
-end 
-// f_ctrl_in[ 16 ]
-initial
-begin
-	f_ctrl_in[16] = 1'b0;
-end 
-// f_ctrl_in[ 15 ]
-initial
-begin
-	f_ctrl_in[15] = 1'b0;
-end 
-// f_ctrl_in[ 14 ]
-initial
-begin
-	f_ctrl_in[14] = 1'b0;
-end 
-// f_ctrl_in[ 13 ]
-initial
-begin
-	f_ctrl_in[13] = 1'b0;
-end 
-// f_ctrl_in[ 12 ]
-initial
-begin
-	f_ctrl_in[12] = 1'b0;
-end 
-// f_ctrl_in[ 11 ]
-initial
-begin
-	f_ctrl_in[11] = 1'b0;
-end 
-// f_ctrl_in[ 10 ]
-initial
-begin
-	f_ctrl_in[10] = 1'b0;
-end 
-// f_ctrl_in[ 9 ]
-initial
-begin
-	f_ctrl_in[9] = 1'b0;
-end 
-// f_ctrl_in[ 8 ]
-initial
-begin
-	f_ctrl_in[8] = 1'b0;
-end 
-// f_ctrl_in[ 7 ]
-initial
-begin
-	f_ctrl_in[7] = 1'b0;
-end 
-// f_ctrl_in[ 6 ]
-initial
-begin
-	f_ctrl_in[6] = 1'b0;
-end 
-// f_ctrl_in[ 5 ]
-initial
-begin
-	f_ctrl_in[5] = 1'b0;
-end 
-// f_ctrl_in[ 4 ]
-initial
-begin
-	f_ctrl_in[4] = 1'b0;
-end 
-// f_ctrl_in[ 3 ]
-initial
-begin
-	f_ctrl_in[3] = 1'b0;
-end 
-// f_ctrl_in[ 2 ]
-initial
-begin
-	f_ctrl_in[2] = 1'b0;
-end 
-// f_ctrl_in[ 1 ]
-initial
-begin
-	f_ctrl_in[1] = 1'b0;
-end 
-// f_ctrl_in[ 0 ]
-initial
-begin
-	f_ctrl_in[0] = 1'b0;
-end 
-// f_data_in[ 7 ]
-initial
-begin
-	f_data_in[7] = 1'b0;
-end 
-// f_data_in[ 6 ]
-initial
-begin
-	f_data_in[6] = 1'b0;
-end 
-// f_data_in[ 5 ]
-initial
-begin
-	f_data_in[5] = 1'b0;
-end 
-// f_data_in[ 4 ]
-initial
-begin
-	f_data_in[4] = 1'b0;
-end 
-// f_data_in[ 3 ]
-initial
-begin
-	f_data_in[3] = 1'b0;
-end 
-// f_data_in[ 2 ]
-initial
-begin
-	f_data_in[2] = 1'b0;
-end 
-// f_data_in[ 1 ]
-initial
-begin
-	f_data_in[1] = 1'b0;
-end 
-// f_data_in[ 0 ]
-initial
-begin
-	f_data_in[0] = 1'b0;
-end 
-
-// f_hi_priority
-initial
-begin
-	f_hi_priority = 1'b1;
-	f_hi_priority = #40000 1'b0;
-	f_hi_priority = #80000 1'b1;
-	f_hi_priority = #80000 1'b0;
-	f_hi_priority = #80000 1'b1;
-	f_hi_priority = #80000 1'b0;
-	f_hi_priority = #80000 1'b1;
-	f_hi_priority = #160000 1'b0;
-	f_hi_priority = #80000 1'b1;
-	f_hi_priority = #80000 1'b0;
-	f_hi_priority = #40000 1'b1;
-	f_hi_priority = #40000 1'b0;
-	f_hi_priority = #40000 1'b1;
-	f_hi_priority = #80000 1'b0;
-end 
-
-// f_rec_data_valid
-initial
-begin
-	f_rec_data_valid = 1'b1;
-	f_rec_data_valid = #80000 1'b0;
-	f_rec_data_valid = #40000 1'b1;
-	f_rec_data_valid = #160000 1'b0;
-	f_rec_data_valid = #40000 1'b1;
-	f_rec_data_valid = #40000 1'b0;
-	f_rec_data_valid = #40000 1'b1;
-	f_rec_data_valid = #40000 1'b0;
-	f_rec_data_valid = #40000 1'b1;
-	f_rec_data_valid = #80000 1'b0;
-	f_rec_data_valid = #40000 1'b1;
-	f_rec_data_valid = #120000 1'b0;
-	f_rec_data_valid = #40000 1'b1;
-	f_rec_data_valid = #80000 1'b0;
-	f_rec_data_valid = #120000 1'b1;
 end 
 
 // reset

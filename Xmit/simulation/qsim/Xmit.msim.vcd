@@ -3,7 +3,7 @@ $comment
 		vcd file Xmit.msim.vcd -direction
 $end
 $date
-	Tue Oct 18 09:53:59 2016
+	Fri Nov 04 21:20:45 2016
 $end
 $version
 	ModelSim Version 10.1d
@@ -11,95 +11,118 @@ $end
 $timescale
 	1ps
 $end
-$scope module in_FSM_vlg_vec_tst $end
-$var reg 1 ! clk_sys $end
-$var reg 1 " in_f_rdv $end
-$var reg 8 # in_frame [7:0] $end
-$var reg 1 $ in_hi_overflow $end
-$var reg 1 % in_low_overflow $end
-$var reg 1 & in_priority $end
-$var reg 1 ' reset $end
-$var wire 1 ( out_frame [7] $end
-$var wire 1 ) out_frame [6] $end
-$var wire 1 * out_frame [5] $end
-$var wire 1 + out_frame [4] $end
-$var wire 1 , out_frame [3] $end
-$var wire 1 - out_frame [2] $end
-$var wire 1 . out_frame [1] $end
-$var wire 1 / out_frame [0] $end
-$var wire 1 0 out_m_discard_en $end
-$var wire 1 1 out_priority $end
-$var wire 1 2 out_wren $end
+$scope module out_FSM_vlg_vec_tst $end
+$var reg 1 ! clk_phy $end
+$var reg 24 " ctrl_block_in [23:0] $end
+$var reg 8 # data_in [7:0] $end
+$var reg 1 $ reset $end
+$var wire 1 % data_out [3] $end
+$var wire 1 & data_out [2] $end
+$var wire 1 ' data_out [1] $end
+$var wire 1 ( data_out [0] $end
+$var wire 1 ) frame_seq_out [11] $end
+$var wire 1 * frame_seq_out [10] $end
+$var wire 1 + frame_seq_out [9] $end
+$var wire 1 , frame_seq_out [8] $end
+$var wire 1 - frame_seq_out [7] $end
+$var wire 1 . frame_seq_out [6] $end
+$var wire 1 / frame_seq_out [5] $end
+$var wire 1 0 frame_seq_out [4] $end
+$var wire 1 1 frame_seq_out [3] $end
+$var wire 1 2 frame_seq_out [2] $end
+$var wire 1 3 frame_seq_out [1] $end
+$var wire 1 4 frame_seq_out [0] $end
+$var wire 1 5 xmit_done_out $end
 $scope module i1 $end
-$var wire 1 3 gnd $end
-$var wire 1 4 vcc $end
-$var wire 1 5 unknown $end
-$var tri1 1 6 devclrn $end
-$var tri1 1 7 devpor $end
-$var tri1 1 8 devoe $end
-$var wire 1 9 out_m_discard_en~output_o $end
-$var wire 1 : out_frame[0]~output_o $end
-$var wire 1 ; out_frame[1]~output_o $end
-$var wire 1 < out_frame[2]~output_o $end
-$var wire 1 = out_frame[3]~output_o $end
-$var wire 1 > out_frame[4]~output_o $end
-$var wire 1 ? out_frame[5]~output_o $end
-$var wire 1 @ out_frame[6]~output_o $end
-$var wire 1 A out_frame[7]~output_o $end
-$var wire 1 B out_wren~output_o $end
-$var wire 1 C out_priority~output_o $end
-$var wire 1 D clk_sys~input_o $end
-$var wire 1 E clk_sys~inputclkctrl_outclk $end
-$var wire 1 F in_hi_overflow~input_o $end
-$var wire 1 G in_priority~input_o $end
-$var wire 1 H in_low_overflow~input_o $end
-$var wire 1 I process_0~0_combout $end
-$var wire 1 J reset~input_o $end
-$var wire 1 K reset~inputclkctrl_outclk $end
-$var wire 1 L out_m_discard_en~reg0_q $end
-$var wire 1 M in_frame[0]~input_o $end
-$var wire 1 N in_frame[1]~input_o $end
-$var wire 1 O in_frame[2]~input_o $end
-$var wire 1 P in_frame[3]~input_o $end
-$var wire 1 Q in_frame[4]~input_o $end
-$var wire 1 R in_frame[5]~input_o $end
-$var wire 1 S in_frame[6]~input_o $end
-$var wire 1 T in_frame[7]~input_o $end
-$var wire 1 U in_f_rdv~input_o $end
-$var wire 1 V out_wren~reg0feeder_combout $end
-$var wire 1 W out_wren~reg0_q $end
+$var wire 1 6 gnd $end
+$var wire 1 7 vcc $end
+$var wire 1 8 unknown $end
+$var tri1 1 9 devclrn $end
+$var tri1 1 : devpor $end
+$var tri1 1 ; devoe $end
+$var wire 1 < ctrl_block_in[0]~input_o $end
+$var wire 1 = ctrl_block_in[1]~input_o $end
+$var wire 1 > ctrl_block_in[2]~input_o $end
+$var wire 1 ? ctrl_block_in[3]~input_o $end
+$var wire 1 @ ctrl_block_in[4]~input_o $end
+$var wire 1 A ctrl_block_in[5]~input_o $end
+$var wire 1 B ctrl_block_in[6]~input_o $end
+$var wire 1 C ctrl_block_in[7]~input_o $end
+$var wire 1 D ctrl_block_in[8]~input_o $end
+$var wire 1 E ctrl_block_in[9]~input_o $end
+$var wire 1 F ctrl_block_in[10]~input_o $end
+$var wire 1 G ctrl_block_in[11]~input_o $end
+$var wire 1 H ctrl_block_in[12]~input_o $end
+$var wire 1 I ctrl_block_in[13]~input_o $end
+$var wire 1 J ctrl_block_in[14]~input_o $end
+$var wire 1 K ctrl_block_in[15]~input_o $end
+$var wire 1 L ctrl_block_in[16]~input_o $end
+$var wire 1 M ctrl_block_in[17]~input_o $end
+$var wire 1 N ctrl_block_in[18]~input_o $end
+$var wire 1 O ctrl_block_in[19]~input_o $end
+$var wire 1 P ctrl_block_in[20]~input_o $end
+$var wire 1 Q ctrl_block_in[21]~input_o $end
+$var wire 1 R ctrl_block_in[22]~input_o $end
+$var wire 1 S ctrl_block_in[23]~input_o $end
+$var wire 1 T clk_phy~input_o $end
+$var wire 1 U reset~input_o $end
+$var wire 1 V data_in[0]~input_o $end
+$var wire 1 W data_in[4]~input_o $end
+$var wire 1 X data_in[1]~input_o $end
+$var wire 1 Y data_in[5]~input_o $end
+$var wire 1 Z data_in[2]~input_o $end
+$var wire 1 [ data_in[6]~input_o $end
+$var wire 1 \ data_in[3]~input_o $end
+$var wire 1 ] data_in[7]~input_o $end
+$var wire 1 ^ frame_seq_out[0]~output_o $end
+$var wire 1 _ frame_seq_out[1]~output_o $end
+$var wire 1 ` frame_seq_out[2]~output_o $end
+$var wire 1 a frame_seq_out[3]~output_o $end
+$var wire 1 b frame_seq_out[4]~output_o $end
+$var wire 1 c frame_seq_out[5]~output_o $end
+$var wire 1 d frame_seq_out[6]~output_o $end
+$var wire 1 e frame_seq_out[7]~output_o $end
+$var wire 1 f frame_seq_out[8]~output_o $end
+$var wire 1 g frame_seq_out[9]~output_o $end
+$var wire 1 h frame_seq_out[10]~output_o $end
+$var wire 1 i frame_seq_out[11]~output_o $end
+$var wire 1 j xmit_done_out~output_o $end
+$var wire 1 k data_out[0]~output_o $end
+$var wire 1 l data_out[1]~output_o $end
+$var wire 1 m data_out[2]~output_o $end
+$var wire 1 n data_out[3]~output_o $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
 0!
-0"
-b1101111 #
+bx "
+bx #
 1$
-0%
+0(
+0'
 0&
-1'
-x/
-x.
-x-
-x,
-x+
-x*
-x)
-x(
-x0
-x1
-x2
+0%
+04
 03
-14
-x5
-16
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+05
+06
 17
-18
-x9
-x:
-x;
+x8
+19
+1:
+1;
 x<
 x=
 x>
@@ -108,1501 +131,197 @@ x@
 xA
 xB
 xC
-0D
+xD
 xE
-1F
-0G
-0H
+xF
+xG
+xH
 xI
-1J
+xJ
 xK
-0L
-1M
-1N
-1O
-1P
-0Q
-1R
-1S
+xL
+xM
+xN
+xO
+xP
+xQ
+xR
+xS
 0T
-0U
+1U
 xV
-0W
+xW
+xX
+xY
+xZ
+x[
+x\
+x]
+0^
+0_
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+0g
+0h
+0i
+0j
+0k
+0l
+0m
+0n
 $end
-#158
-0E
-#180
-1K
-#1529
-0V
-#3387
-0B
-02
-#3611
-0I
-#5099
-1@
-1)
-#5139
-09
-00
-#5247
-1:
-1/
-#5387
-1=
-1,
-#5412
-1;
-1.
-#5450
-1<
-1-
-#5553
-0>
-0+
-#5582
-0C
-01
-#5728
-1?
-1*
-#5765
-0A
-0(
-#10000
-1!
-#10596
-1D
-#10776
-1E
 #20000
-0!
-#20761
-0D
-#20919
-0E
-#30000
 1!
-#30596
-1D
-#30776
-1E
+1T
 #40000
-1"
-b101111 #
-b111111 #
-b111101 #
-b111100 #
-0$
-1%
-0'
 0!
-#40594
-1Q
-#40596
-1H
-1U
-#40759
-0N
-#40761
-0D
-0J
-0F
-0S
-0M
-#40919
-0E
-0K
-#41600
-1I
-#42182
-1V
-#45959
-1>
-1+
-#46073
-0@
-0)
-#46222
-0:
-0/
-#46369
-0;
-0.
-#50000
-1!
-#50596
-1D
-#50776
-1E
-#52252
-1L
-#52276
-1W
-#55651
-1B
-12
-#57224
-19
-10
+0T
 #60000
-0!
-#60761
-0D
-#60919
-0E
-#70000
+0$
 1!
-#70596
-1D
-#70776
-1E
+0U
+1T
 #80000
-b111000 #
-1&
-0"
-b1111000 #
-b1111010 #
-b1111011 #
-1$
-0%
 0!
-#80594
-1N
-#80596
-1F
-1G
-1S
-1M
-#80759
-0O
-#80761
-0D
-0H
-0U
-#80919
-0E
-#81759
-0I
-#82290
-0V
-#84024
-1I
-#85695
-1@
-1)
-#85843
-1:
-1/
-#85964
-1C
-11
-#86006
-1;
-1.
-#86418
-0<
-0-
-#90000
-1!
-#90596
-1D
-#90776
-1E
-#92276
-0W
-#95663
-0B
-02
+0T
 #100000
-0!
-#100761
-0D
-#100919
-0E
-#110000
 1!
-#110596
-1D
-#110776
-1E
+1T
 #120000
-b1101011 #
-0&
-b101011 #
-b101001 #
 0!
-#120759
-0Q
-0N
-#120761
-0D
-0G
-0S
-#120919
-0E
-#124372
-0I
-#126073
-0@
-0)
-#126312
-0>
-0+
-#126343
-0C
-01
-#126369
-0;
-0.
-#130000
-1!
-#130596
-1D
-#130776
-1E
-#132252
-0L
-#137391
-09
-00
+0T
 #140000
-0!
-#140761
-0D
-#140919
-0E
-#150000
 1!
-#150596
-1D
-#150776
-1E
+1T
 #160000
-1&
-b1101001 #
-b1101011 #
 0!
-#160594
-1N
-#160596
-1S
-1G
-#160761
-0D
-#160919
-0E
-#163918
-1I
-#165695
-1@
-1)
-#165964
-1C
-11
-#166006
-1;
-1.
-#170000
-1!
-#170596
-1D
-#170776
-1E
-#172252
-1L
-#177224
-19
-10
+0T
 #180000
-0!
-#180761
-0D
-#180919
-0E
-#190000
 1!
-#190596
-1D
-#190776
-1E
+1T
 #200000
-b11101011 #
-b11101111 #
-0$
-1%
-0&
-b10101111 #
-b10101101 #
 0!
-#200594
-1T
-1O
-#200596
-1H
-#200759
-0N
-#200761
-0D
-0G
-0F
-0S
-#200919
-0E
-#206044
-1<
-1-
-#206073
-0@
-0)
-#206121
-1A
-1(
-#206343
-0C
-01
-#206369
-0;
-0.
-#210000
-1!
-#210596
-1D
-#210776
-1E
+0T
 #220000
-0!
-#220761
-0D
-#220919
-0E
-#230000
 1!
-#230596
-1D
-#230776
-1E
+1T
 #240000
-b10111101 #
-b10111001 #
-1$
-b10111011 #
 0!
-#240594
-1Q
-1N
-#240596
-1F
-#240759
-0O
-#240761
-0D
-#240919
-0E
-#245959
-1>
-1+
-#246006
-1;
-1.
-#246418
-0<
-0-
-#250000
-1!
-#250596
-1D
-#250776
-1E
+0T
 #260000
-0!
-#260761
-0D
-#260919
-0E
-#270000
 1!
-#270596
-1D
-#270776
-1E
+1T
 #280000
-b10011011 #
-b10010011 #
-b10010010 #
-b10010 #
-0%
-b10 #
-b110 #
-b100 #
 0!
-#280594
-1O
-#280759
 0T
-0R
-0Q
-0P
-0N
-#280761
-0D
-0H
-0M
-#280919
-0E
-#281759
-0I
-#286044
-1<
-1-
-#286222
-0:
-0/
-#286312
-0>
-0+
-#286332
-0=
-0,
-#286369
-0;
-0.
-#286524
-0A
-0(
-#286673
-0?
-0*
-#290000
-1!
-#290596
-1D
-#290776
-1E
-#292252
-0L
-#297391
-09
-00
 #300000
-0!
-#300761
-0D
-#300919
-0E
-#310000
 1!
-#310596
-1D
-#310776
-1E
+1T
 #320000
-1"
-0$
-b101 #
-1%
-b1 #
-b11 #
 0!
-#320594
-1N
-#320596
-1H
-1M
-1U
-#320759
-0O
-#320761
-0D
-0F
-#320919
-0E
-#321600
-1I
-#322182
-1V
-#325843
-1:
-1/
-#326006
-1;
-1.
-#326418
-0<
-0-
-#330000
-1!
-#330596
-1D
-#330776
-1E
-#332252
-1L
-#332276
-1W
-#335651
-1B
-12
-#337224
-19
-10
+0T
 #340000
-0!
-#340761
-0D
-#340919
-0E
-#350000
 1!
-#350596
-1D
-#350776
-1E
+1T
 #360000
-b1011 #
-b11011 #
-0"
-1$
-0%
-b11001 #
 0!
-#360594
-1Q
-1P
-#360596
-1F
-#360759
-0N
-#360761
-0D
-0H
-0U
-#360919
-0E
-#361759
-0I
-#362290
-0V
-#365959
-1>
-1+
-#365981
-1=
-1,
-#366369
-0;
-0.
-#370000
-1!
-#370596
-1D
-#370776
-1E
-#372252
-0L
-#372276
-0W
-#375663
-0B
-02
-#377391
-09
-00
+0T
 #380000
-0!
-#380761
-0D
-#380919
-0E
-#390000
 1!
-#390596
-1D
-#390776
-1E
+1T
 #400000
-b1011001 #
-b1011000 #
-b1011100 #
-b1010100 #
-b1000100 #
-1"
-0$
-1%
 0!
-#400594
-1O
-#400596
-1H
-1U
-1S
-#400759
-0Q
-0P
-#400761
-0D
-0F
-0M
-#400919
-0E
-#401600
-1I
-#402182
-1V
-#405695
-1@
-1)
-#406044
-1<
-1-
-#406222
-0:
-0/
-#406312
-0>
-0+
-#406332
-0=
-0,
-#410000
-1!
-#410596
-1D
-#410776
-1E
-#412252
-1L
-#412276
-1W
-#415651
-1B
-12
-#417224
-19
-10
+0T
 #420000
-0!
-#420761
-0D
-#420919
-0E
-#430000
 1!
-#430596
-1D
-#430776
-1E
+1T
 #440000
-b1000000 #
-b1001000 #
-b1011000 #
-0"
-0%
 0!
-#440594
-1Q
-1P
-#440759
-0O
-#440761
-0D
-0H
-0U
-#440919
-0E
-#441759
-0I
-#442290
-0V
-#445959
-1>
-1+
-#445981
-1=
-1,
-#446418
-0<
-0-
-#450000
-1!
-#450596
-1D
-#450776
-1E
-#452252
-0L
-#452276
-0W
-#455663
-0B
-02
-#457391
-09
-00
+0T
 #460000
-0!
-#460761
-0D
-#460919
-0E
-#470000
 1!
-#470596
-1D
-#470776
-1E
+1T
 #480000
-1&
-b11011000 #
-b11011010 #
-1$
-b11011110 #
-b11010110 #
-1"
 0!
-#480594
-1T
-1O
-1N
-#480596
-1U
-1F
-1G
-#480759
-0P
-#480761
-0D
-#480919
-0E
-#482182
-1V
-#484024
-1I
-#485964
-1C
-11
-#486006
-1;
-1.
-#486044
-1<
-1-
-#486121
-1A
-1(
-#486332
-0=
-0,
-#490000
-1!
-#490596
-1D
-#490776
-1E
-#492252
-1L
-#492276
-1W
-#495651
-1B
-12
-#497224
-19
-10
+0T
 #500000
-0!
-#500761
-0D
-#500919
-0E
-#510000
 1!
-#510596
-1D
-#510776
-1E
+1T
 #520000
-b11110110 #
-1%
-0&
-b1110110 #
-b1110100 #
-0$
-b1110000 #
 0!
-#520594
-1R
-#520596
-1H
-#520759
 0T
-0O
-0N
-#520761
-0D
-0F
-0G
-#520919
-0E
-#526322
-1?
-1*
-#526343
-0C
-01
-#526369
-0;
-0.
-#526418
-0<
-0-
-#526524
-0A
-0(
-#530000
-1!
-#530596
-1D
-#530776
-1E
 #540000
-0!
-#540761
-0D
-#540919
-0E
-#550000
 1!
-#550596
-1D
-#550776
-1E
+1T
 #560000
-b110000 #
-b110001 #
-0"
-b110101 #
 0!
-#560594
-1O
-#560596
-1M
-#560761
-0D
-0U
-0S
-#560919
-0E
-#562290
-0V
-#565843
-1:
-1/
-#566044
-1<
-1-
-#566073
-0@
-0)
-#570000
-1!
-#570596
-1D
-#570776
-1E
-#572276
-0W
-#575663
-0B
-02
-#580000
-0!
-#580761
-0D
-#580919
-0E
-#590000
-1!
-#590596
-1D
-#590776
-1E
-#600000
-b100101 #
-b101101 #
-b101111 #
-1$
-1"
-b101011 #
-0!
-#600594
-1P
-1N
-#600596
-1U
-1F
-#600759
-0Q
-0O
-#600761
-0D
-#600919
-0E
-#602182
-1V
-#605981
-1=
-1,
-#606006
-1;
-1.
-#606312
-0>
-0+
-#606418
-0<
-0-
-#610000
-1!
-#610596
-1D
-#610776
-1E
-#612276
-1W
-#615651
-1B
-12
-#620000
-0!
-#620761
-0D
-#620919
-0E
-#630000
-1!
-#630596
-1D
-#630776
-1E
-#640000
-b1101011 #
-0$
-0"
-0!
-#640596
-1S
-#640761
-0D
-0U
-0F
-#640919
-0E
-#642290
-0V
-#645695
-1@
-1)
-#650000
-1!
-#650596
-1D
-#650776
-1E
-#652276
-0W
-#655663
-0B
-02
-#660000
-0!
-#660761
-0D
-#660919
-0E
-#670000
-1!
-#670596
-1D
-#670776
-1E
-#680000
-b1001011 #
-0%
-1&
-b11001011 #
-b11000011 #
-b11000001 #
-b11000101 #
-b10000101 #
-1$
-1"
-0!
-#680594
-1T
-1O
-#680596
-1U
-1F
-1G
-#680759
-0R
-0P
-0N
-#680761
-0D
-0H
-0S
-#680919
-0E
-#681759
-0I
-#682182
-1V
-#684024
-1I
-#685964
-1C
-11
-#686044
-1<
-1-
-#686073
-0@
-0)
-#686121
-1A
-1(
-#686332
-0=
-0,
-#686369
-0;
-0.
-#686673
-0?
-0*
-#690000
-1!
-#690596
-1D
-#690776
-1E
-#692276
-1W
-#695651
-1B
-12
-#700000
-0!
-#700761
-0D
-#700919
-0E
-#710000
-1!
-#710596
-1D
-#710776
-1E
-#720000
-1%
-0&
-b10001101 #
-b10001001 #
-0!
-#720594
-1P
-#720596
-1H
-#720759
-0O
-#720761
-0D
-0G
-#720919
-0E
-#725981
-1=
-1,
-#726343
-0C
-01
-#726418
-0<
-0-
-#730000
-1!
-#730596
-1D
-#730776
-1E
-#740000
-0!
-#740761
-0D
-#740919
-0E
-#750000
-1!
-#750596
-1D
-#750776
-1E
-#760000
-b10001000 #
-b10001010 #
-b11001010 #
-0"
-0%
-1&
-b11000010 #
-0!
-#760594
-1N
-#760596
-1G
-1S
-#760759
-0P
-#760761
-0D
-0H
-0U
-0M
-#760919
-0E
-#761759
-0I
-#762290
-0V
-#763918
-1I
-#765695
-1@
-1)
-#765964
-1C
-11
-#766006
-1;
-1.
-#766222
-0:
-0/
-#766332
-0=
-0,
-#770000
-1!
-#770596
-1D
-#770776
-1E
-#772276
-0W
-#775663
-0B
-02
-#780000
-0!
-#780761
-0D
-#780919
-0E
-#790000
-1!
-#790596
-1D
-#790776
-1E
-#800000
-b11100010 #
-b11100011 #
-b10100011 #
-1"
-1%
-b10101011 #
-0!
-#800594
-1R
-1P
-#800596
-1H
-1U
-1M
-#800761
-0D
-0S
-#800919
-0E
-#802182
-1V
-#805843
-1:
-1/
-#805981
-1=
-1,
-#806073
-0@
-0)
-#806322
-1?
-1*
-#810000
-1!
-#810596
-1D
-#810776
-1E
-#812276
-1W
-#815651
-1B
-12
-#820000
-0!
-#820761
-0D
-#820919
-0E
-#830000
-1!
-#830596
-1D
-#830776
-1E
-#840000
-b10111011 #
-b10111111 #
-b10111101 #
-b11111101 #
-0"
-0%
-0!
-#840594
-1Q
-1O
-#840596
-1S
-#840759
-0N
-#840761
-0D
-0H
-0U
-#840919
-0E
-#842290
-0V
-#845695
-1@
-1)
-#845959
-1>
-1+
-#846044
-1<
-1-
-#846369
-0;
-0.
-#850000
-1!
-#850596
-1D
-#850776
-1E
-#852276
-0W
-#855663
-0B
-02
-#860000
-0!
-#860761
-0D
-#860919
-0E
-#870000
-1!
-#870596
-1D
-#870776
-1E
-#880000
-b1111101 #
-b1101101 #
-b1101111 #
-b101111 #
-1"
-1%
-0!
-#880594
-1N
-#880596
-1H
-1U
-#880759
 0T
-0Q
-#880761
-0D
-0S
-#880919
-0E
-#882182
-1V
-#886006
-1;
-1.
-#886073
-0@
-0)
-#886312
-0>
-0+
-#886524
-0A
-0(
-#890000
+#580000
 1!
-#890596
-1D
-#890776
-1E
-#892276
-1W
-#895651
-1B
-12
-#900000
-0!
-#900761
-0D
-#900919
-0E
-#910000
-1!
-#910596
-1D
-#910776
-1E
-#920000
-b101110 #
-b100110 #
-b110110 #
-0"
-0!
-#920594
-1Q
-#920759
-0P
-#920761
-0D
-0U
-0M
-#920919
-0E
-#922290
-0V
-#925959
-1>
-1+
-#926222
-0:
-0/
-#926332
-0=
-0,
-#930000
-1!
-#930596
-1D
-#930776
-1E
-#932276
-0W
-#935663
-0B
-02
-#940000
-0!
-#940761
-0D
-#940919
-0E
-#950000
-1!
-#950596
-1D
-#950776
-1E
-#960000
-0$
-b10110110 #
-b11110110 #
-b11111110 #
-b11101110 #
-1"
-0!
-#960594
 1T
-1P
-#960596
-1U
-1S
-#960759
-0Q
-#960761
-0D
-0F
-#960919
-0E
-#962182
-1V
-#964469
-0I
-#965695
-1@
-1)
-#965981
-1=
-1,
-#966121
-1A
-1(
-#966312
-0>
-0+
-#970000
-1!
-#970596
-1D
-#970776
-1E
-#972252
-0L
-#972276
-1W
-#975651
-1B
-12
-#977391
-09
-00
-#980000
+#600000
 0!
-#980761
-0D
-#980919
-0E
-#990000
+0T
+#620000
 1!
-#990596
-1D
-#990776
-1E
+1T
+#640000
+0!
+0T
+#660000
+1!
+1T
+#680000
+0!
+0T
+#700000
+1!
+1T
+#720000
+0!
+0T
+#740000
+1!
+1T
+#760000
+0!
+0T
+#780000
+1!
+1T
+#800000
+0!
+0T
+#820000
+1!
+1T
+#840000
+0!
+0T
+#860000
+1!
+1T
+#880000
+0!
+0T
+#900000
+1!
+1T
+#920000
+0!
+0T
+#940000
+1!
+1T
+#960000
+0!
+0T
+#980000
+1!
+1T
 #1000000
