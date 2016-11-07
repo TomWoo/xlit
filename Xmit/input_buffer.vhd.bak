@@ -1,0 +1,109 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity p1 is			
+	port(
+			clk, reset: 		in std_logic;
+			w:						in std_logic;
+			z:						out std_logic);
+end p1;
+
+architecture mult_seg_arch of p1 is
+	type state_type is
+		(A, B, C, D, E, F, G, H, I, J, K, L);
+	signal state_reg, state_next: state_type;
+	
+begin
+	process(clk, reset)			-- state reg update
+	begin
+		if (reset='1') then state_reg<=A;
+		elsif (clk'event and clk='1') then
+			state_reg<=state_next;
+		end if;
+	end process;
+	
+	process(state_reg, w)		-- next state logic
+	begin
+		case state_reg is
+			when A=>
+				if(w='0') then
+					state_next<=A;
+				else
+					state_next<=B;
+				end if;
+			when B=>
+				if(w='0') then
+					state_next<=C;
+				else
+					state_next<=D;
+				end if;
+			when C=>
+				if(w='0') then
+					state_next<=A;
+				else
+					state_next<=E;
+				end if;
+			when D=>
+				if(w='0') then
+					state_next<=F;
+				else
+					state_next<=G;
+				end if;
+			when E=>
+				if(w='0') then
+					state_next<=H;
+				else
+					state_next<=I;
+				end if;
+			when F=>
+				if(w='0') then
+					state_next<=A;
+				else
+					state_next<=J;
+				end if;
+			when G=>
+				if(w='0') then
+					state_next<=K;
+				else
+					state_next<=L;
+				end if;
+			when H=>
+				if(w='0') then
+					state_next<=A;
+				else
+					state_next<=E;
+				end if;
+			when I=>
+				if(w='0') then
+					state_next<=F;
+				else
+					state_next<=G;
+				end if;
+			when J=>
+				if(w='0') then
+					state_next<=H;
+				else
+					state_next<=I;
+				end if;
+			when K=>
+				if(w='0') then
+					state_next<=A;
+				else
+					state_next<=J;
+				end if;
+			when L=>
+				if(w='0') then
+					state_next<=K;
+				else
+					state_next<=L;
+				end if;
+		end case;
+	end process;
+	
+	process (state_reg)			--output z assignment
+	begin
+		if (state_reg=I or state_reg=J) then z<='1';
+		else z<='0';
+		end if;
+	end process;
+	
+end mult_seg_arch;
