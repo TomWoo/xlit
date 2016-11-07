@@ -24,14 +24,13 @@ architecture rtl of out_FSM is
 	
 	signal data_in_fifo	: std_logic_vector(63 downto 0);
 	signal rden				: std_logic;
-	signal wren				: std_logic;
+	signal wren				: std_logic := '1';
 	signal is_empty		: std_logic;
 	signal is_full			: std_logic;
 	signal data_out_fifo	: std_logic_vector(63 downto 0);
 	signal length_fifo	: std_logic_vector(9 downto 0);
 	
-	-- Prescaler
-	signal clk_count		: std_logic;
+	-- Half-rate clock
 	signal clk_phy_2		: std_logic;
 	
 	-- Asynchronous signals
@@ -53,31 +52,23 @@ architecture rtl of out_FSM is
 begin
 
 -- Asynchronous signals
-process(clk_count, data_in, ctrl_block_in) begin
-	is_even <= not clk_count; -- TODO: = 0
+process(count, data_in, ctrl_block_in) begin
+	if((count mod 2) = 0) then
+		is_even <= '1';
+	else
+		is_even <= '0';
+	end if;
 	data_in_fifo(7 downto 0) <= data_in;
 	data_in_fifo(31 downto 8) <= ctrl_block_in;
 	data_in_fifo(63 downto 32) <= X"0000_0000";
 end process;
 
--- Prescaler
+-- Prescaler (half-rate)
 process(clk_phy, reset) begin
 	if(reset = '1') then
-		clk_count <= '0';
+		clk_phy_2 <= '0';
 	elsif(rising_edge(clk_phy)) then
-		clk_count <= not clk_count; -- TODO: + 1
-	end if;
-end process;
-
-process(clk_phy, reset) begin
-	if(reset = '1') then
-		clk_phy_2 <= clk_phy;
-	elsif(rising_edge(clk_phy)) then
-		if(is_even = '1') then
-			clk_phy_2 <= not clk_phy_2;
-		else
-			clk_phy_2 <= clk_phy_2;
-		end if;
+		clk_phy_2 <= not clk_phy_2;
 	else
 		clk_phy_2 <= clk_phy_2;
 	end if;
@@ -92,7 +83,7 @@ output_buffer_inst : output_buffer PORT MAP (
 	wrreq	 => wren,
 	empty	 => is_empty,
 	full	 => is_full,
-	q	 	 => data_out_fifo,
+	q	 => data_out_fifo,
 	usedw	 => length_fifo
 );
 
@@ -106,41 +97,57 @@ process(clk_phy, reset) begin
 			if(count >= 96/4) then
 				my_state <= s_preamble;
 				count <= 0;
+			else
+				count <= count + 1;
 			end if;
 		when s_preamble =>
 			if(count >= 56/4) then
 				my_state <= s_SFD;
 				count <= 0;
+			else
+				count <= count + 1;
 			end if;
 		when s_SFD =>
 			if(count >= 8/4) then
 				my_state <= s_DA;
 				count <= 0;
+			else
+				count <= count + 1;
 			end if;
 		when s_DA =>
 			if(count >= 48/4) then
 				my_state <= s_SA;
 				count <= 0;
+			else
+				count <= count + 1;
 			end if;
 		when s_SA =>
 			if(count >= 48/4) then
 				my_state <= s_length;
 				count <= 0;
+			else
+				count <= count + 1;
 			end if;
 		when s_length =>
 			if(count >= 16/4) then
 				my_state <= s_data;
 				count <= 0;
+			else
+				count <= count + 1;
 			end if;
 		when s_data =>
 			if(count >= 12000/4) then -- TODO
 				my_state <= s_FCS;
 				count <= 0;
+			else
+				count <= count + 1;
 			end if;
 		when s_FCS =>
 			if(count >= 32/4) then
 				my_state <= s_gap;
 				count <= 0;
+			else
+				count <= count + 1;
 			end if;
 		when others =>
 			my_state <= my_state;
@@ -193,14 +200,17 @@ end process;
 process(clk_phy, reset) begin
 	if (reset = '1') then
 		xmit_done_out <= '0';
+		frame_seq_out <= "000000000000";
 	elsif(rising_edge(clk_phy)) then
 		if(my_state = s_FCS and count >= 7) then -- TODO: debug
 			xmit_done_out <= '1';
 		else
 			xmit_done_out <= '0';
 		end if;
+		frame_seq_out <= "000000000000";
 	else
 		xmit_done_out <= '0';--xmit_done_out;
+		frame_seq_out <= "000000000000";
 	end if;
 end process;
 

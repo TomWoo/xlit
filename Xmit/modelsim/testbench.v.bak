@@ -53,7 +53,7 @@ initial begin
 	#(2*`CLK_PER);
 	
 	// Finish
-	#(100*`CLK_PER);
+	#(200*`CLK_PER);
 	//$stop;
 end
 

@@ -9,7 +9,7 @@ reg clk, rst;
 initial begin
 	clk = 1'b1;
 	rst = 1'b1;
-	#(2*`CLK_PER);
+	#(6*`CLK_PER);
 	rst = 1'b0;
 end
 

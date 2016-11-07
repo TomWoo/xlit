@@ -30,8 +30,7 @@ architecture rtl of out_FSM is
 	signal data_out_fifo	: std_logic_vector(63 downto 0);
 	signal length_fifo	: std_logic_vector(9 downto 0);
 	
-	-- Prescaler
-	signal clk_count		: std_logic;
+	-- Half-rate clock
 	signal clk_phy_2		: std_logic;
 	
 	-- Asynchronous signals
@@ -53,31 +52,23 @@ architecture rtl of out_FSM is
 begin
 
 -- Asynchronous signals
-process(clk_count, data_in, ctrl_block_in) begin
-	is_even <= not clk_count; -- TODO: = 0
+process(count, data_in, ctrl_block_in) begin
+	if((count mod 2) = 0) then
+		is_even <= '1';
+	else
+		is_even <= '0';
+	end if;
 	data_in_fifo(7 downto 0) <= data_in;
 	data_in_fifo(31 downto 8) <= ctrl_block_in;
 	data_in_fifo(63 downto 32) <= X"0000_0000";
 end process;
 
--- Prescaler
+-- Prescaler (half-rate)
 process(clk_phy, reset) begin
 	if(reset = '1') then
-		clk_count <= '0';
+		clk_phy_2 <= '1';
 	elsif(rising_edge(clk_phy)) then
-		clk_count <= not clk_count; -- TODO: + 1
-	end if;
-end process;
-
-process(clk_phy, reset) begin
-	if(reset = '1') then
-		clk_phy_2 <= clk_phy;
-	elsif(rising_edge(clk_phy)) then
-		if(is_even = '1') then
-			clk_phy_2 <= not clk_phy_2;
-		else
-			clk_phy_2 <= clk_phy_2;
-		end if;
+		clk_phy_2 <= not clk_phy_2;
 	else
 		clk_phy_2 <= clk_phy_2;
 	end if;
@@ -92,7 +83,7 @@ output_buffer_inst : output_buffer PORT MAP (
 	wrreq	 => wren,
 	empty	 => is_empty,
 	full	 => is_full,
-	q	 	 => data_out_fifo,
+	q	 => data_out_fifo,
 	usedw	 => length_fifo
 );
 
