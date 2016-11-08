@@ -1,5 +1,5 @@
 Flow report for Xmit
-Mon Nov 07 22:04:29 2016
+Tue Nov 08 10:33:06 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,22 +41,22 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Nov 07 22:04:29 2016       ;
+; Flow Status                        ; Successful - Tue Nov 08 10:33:06 2016       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; Xmit                                        ;
 ; Top-level Entity Name              ; out_FSM_tester                              ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 97 / 114,480 ( < 1 % )                      ;
-;     Total combinational functions  ; 97 / 114,480 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 54 / 114,480 ( < 1 % )                      ;
+; Total logic elements               ; 97                                          ;
+;     Total combinational functions  ; 95                                          ;
+;     Dedicated logic registers      ; 54                                          ;
 ; Total registers                    ; 54                                          ;
-; Total pins                         ; 16 / 529 ( 3 % )                            ;
+; Total pins                         ; 16                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 8,192 / 3,981,312 ( < 1 % )                 ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
+; Total memory bits                  ; 8,192                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/07/2016 22:02:59 ;
+; Start date & time ; 11/08/2016 10:32:11 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Xmit                ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+----------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name    ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+----------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 85987529690756.147857417904736        ; --            ; --             ; --             ;
+; COMPILER_SIGNATURE_ID               ; 85987529690756.147861913116160        ; --            ; --             ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --             ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --             ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                  ; --            ; --             ; eda_simulation ;
@@ -98,41 +98,29 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+----------------+----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                             ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:31     ; 1.0                     ; 869 MB              ; 00:00:55                           ;
-; Fitter                    ; 00:00:34     ; 1.0                     ; 1437 MB             ; 00:00:40                           ;
-; Assembler                 ; 00:00:06     ; 1.0                     ; 747 MB              ; 00:00:06                           ;
-; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 895 MB              ; 00:00:04                           ;
-; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 717 MB              ; 00:00:02                           ;
-; Total                     ; 00:01:21     ; --                      ; --                  ; 00:01:47                           ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:56     ; 1.0                     ; 885 MB              ; 00:01:41                           ;
+; Total                ; 00:00:56     ; --                      ; --                  ; 00:01:41                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
-; EDA Netlist Writer        ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
-+---------------------------+------------------+-----------+------------+----------------+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Xmit -c Xmit
-quartus_fit --read_settings_files=off --write_settings_files=off Xmit -c Xmit
-quartus_asm --read_settings_files=off --write_settings_files=off Xmit -c Xmit
-quartus_sta Xmit -c Xmit
-quartus_eda --read_settings_files=off --write_settings_files=off Xmit -c Xmit
 
 
 

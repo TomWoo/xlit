@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Xmit
-Mon Nov 07 22:03:29 2016
+Tue Nov 08 10:33:06 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -53,7 +53,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Nov 07 22:03:29 2016       ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 08 10:33:06 2016       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; Xmit                                        ;
 ; Top-level Entity Name              ; out_FSM_tester                              ;
@@ -431,7 +431,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -441,7 +441,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Mon Nov 07 22:02:58 2016
+    Info: Processing started: Tue Nov 08 10:32:09 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Xmit -c Xmit
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -452,7 +452,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file xmittop
     Info (12022): Found design unit 1: xmitTop-rtl File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd Line: 20
     Info (12023): Found entity 1: xmitTop File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file in_fsm.vhd
-    Info (12022): Found design unit 1: in_FSM-arch File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd Line: 21
+    Info (12022): Found design unit 1: in_FSM-arch File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd Line: 19
     Info (12023): Found entity 1: in_FSM File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd Line: 4
 Warning (12019): Can't analyze file -- file main_FSM.v is missing
 Info (12021): Found 2 design units, including 1 entities, in source file fifo_8.vhd
@@ -585,9 +585,9 @@ Info (21057): Implemented 121 device resources after synthesis - the final resou
     Info (21061): Implemented 97 logic cells
     Info (21064): Implemented 8 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 76 warnings
-    Info: Peak virtual memory: 869 megabytes
-    Info: Processing ended: Mon Nov 07 22:03:29 2016
-    Info: Elapsed time: 00:00:31
-    Info: Total CPU time (on all processors): 00:00:55
+    Info: Peak virtual memory: 885 megabytes
+    Info: Processing ended: Tue Nov 08 10:33:06 2016
+    Info: Elapsed time: 00:00:57
+    Info: Total CPU time (on all processors): 00:01:41
 
 
