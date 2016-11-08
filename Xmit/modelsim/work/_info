@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Homework/2/sim
 Eout_fsm
-Z0 w1478562472
+Z0 w1478569155
 Z1 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z3 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
@@ -20,13 +20,13 @@ Z7 8C:\Users\User\OneDrive\Duke\7_Fall_2016\ECE_559\Ethernet_switch\xlit\Xmit\ou
 Z8 FC:\Users\User\OneDrive\Duke\7_Fall_2016\ECE_559\Ethernet_switch\xlit\Xmit\out_FSM.vhd
 l0
 L7
-V]dNZfiihZ:H@M_e<n2M^S2
-!s100 >[]RSUdajCNQAYbaYNA@j2
+VWVEHYh_3W]eOaXCMH9amW1
+!s100 l^D[a_0<<lRRmbRET1kh^3
 Z9 OV;C;10.4d;61
 32
-Z10 !s110 1478562473
+Z10 !s110 1478569291
 !i10b 1
-Z11 !s108 1478562473.000000
+Z11 !s108 1478569291.000000
 Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\User\OneDrive\Duke\7_Fall_2016\ECE_559\Ethernet_switch\xlit\Xmit\out_FSM.vhd|
 Z13 !s107 C:\Users\User\OneDrive\Duke\7_Fall_2016\ECE_559\Ethernet_switch\xlit\Xmit\out_FSM.vhd|
 !i113 1
@@ -38,11 +38,11 @@ R2
 R3
 R4
 R5
-DEx4 work 7 out_fsm 0 22 ]dNZfiihZ:H@M_e<n2M^S2
-l52
+DEx4 work 7 out_fsm 0 22 WVEHYh_3W]eOaXCMH9amW1
+l54
 L20
-VAieWA]O3X1Q4NJ2BS6@952
-!s100 C@7>:aSez<]]l2T9UQ:T?3
+V6N?[RnAgYY9PLmK9f0WWT2
+!s100 1EiO6i3VQaPU<fNkj>JMD0
 R9
 32
 R10
@@ -77,11 +77,11 @@ R15
 Asyn
 R4
 R5
-Z23 DEx4 work 13 output_buffer 0 22 b[iGE>1CV^h?MGz0MXR[g0
+DEx4 work 13 output_buffer 0 22 b[iGE>1CV^h?MGz0MXR[g0
 l94
 L59
-Z24 V>UafkOo9lY5=Nbii<?X723
-Z25 !s100 4QXNhDh9`@nkl>BFTc:cn1
+V>UafkOo9lY5=Nbii<?X723
+!s100 4QXNhDh9`@nkl>BFTc:cn1
 R9
 32
 R19

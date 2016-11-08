@@ -1,0 +1,15 @@
+module out_FSM_tester(
+input clk,
+input rst,
+input [7:0] data_in,
+output [3:0] data_out
+);
+
+out_FSM out_FSM(
+.clk_phy(clk),
+.reset(rst),
+.data_in(data_in),
+.data_out(data_out)
+);
+
+endmodule

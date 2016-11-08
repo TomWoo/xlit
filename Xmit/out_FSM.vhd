@@ -12,7 +12,7 @@ port(
 	ctrl_block_in:			in std_logic_vector(23 downto 0);
 	-- wren_ctrl_out:			out std_logic;
 	frame_seq_out:			out std_logic_vector(11 downto 0);
-	xmit_done_out:			out std_logic;
+	-- xmit_done_out:			out std_logic;
 	data_out:				out std_logic_vector(3 downto 0)
 );
 end entity;
@@ -29,6 +29,8 @@ architecture rtl of out_FSM is
 	signal is_full			: std_logic;
 	signal data_out_fifo	: std_logic_vector(63 downto 0);
 	signal length_fifo	: std_logic_vector(9 downto 0);
+	
+	signal xmit_done_out : std_logic;
 	
 	-- Half-rate clock
 	signal clk_phy_2		: std_logic;
@@ -60,7 +62,7 @@ process(count, data_in, ctrl_block_in) begin
 	end if;
 	data_in_fifo(7 downto 0) <= data_in;
 	data_in_fifo(31 downto 8) <= ctrl_block_in;
-	data_in_fifo(63 downto 32) <= X"0000_0000";
+	data_in_fifo(63 downto 32) <= X"00000000";
 end process;
 
 -- Prescaler (half-rate)
@@ -209,7 +211,7 @@ process(clk_phy, reset) begin
 		end if;
 		frame_seq_out <= "000000000000";
 	else
-		xmit_done_out <= '0';--xmit_done_out;
+		xmit_done_out <= '0'; --xmit_done_out;
 		frame_seq_out <= "000000000000";
 	end if;
 end process;

@@ -1,6 +1,25 @@
-|out_FSM
+|out_FSM_tester
+clk => clk.IN1
+rst_n => _.IN1
+rst_n => rst_out.DATAIN
+data_in[0] => data_in[0].IN1
+data_in[1] => data_in[1].IN1
+data_in[2] => data_in[2].IN1
+data_in[3] => data_in[3].IN1
+data_in[4] => data_in[4].IN1
+data_in[5] => data_in[5].IN1
+data_in[6] => data_in[6].IN1
+data_in[7] => data_in[7].IN1
+data_out[0] << out_FSM:out_FSM.data_out
+data_out[1] << out_FSM:out_FSM.data_out
+data_out[2] << out_FSM:out_FSM.data_out
+data_out[3] << out_FSM:out_FSM.data_out
+clk_out << clk.DB_MAX_OUTPUT_PORT_TYPE
+rst_out << rst_n.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|out_FSM_tester|out_FSM:out_FSM
 clk_phy => output_buffer:output_buffer_inst.clock
-clk_phy => xmit_done_out~reg0.CLK
 clk_phy => count[0].CLK
 clk_phy => count[1].CLK
 clk_phy => count[2].CLK
@@ -14,14 +33,10 @@ clk_phy => count[9].CLK
 clk_phy => count[10].CLK
 clk_phy => count[11].CLK
 clk_phy => clk_phy_2.CLK
-clk_phy => clk_phy_2.ADATA
-clk_phy => clk_count.CLK
 clk_phy => my_state~9.DATAIN
 reset => output_buffer:output_buffer_inst.aclr
-reset => xmit_done_out~reg0.ACLR
 reset => rden.ACLR
-reset => clk_phy_2.ALOAD
-reset => clk_count.ACLR
+reset => clk_phy_2.PRESET
 reset => my_state~11.DATAIN
 reset => count[11].ENA
 reset => count[10].ENA
@@ -67,26 +82,25 @@ ctrl_block_in[20] => output_buffer:output_buffer_inst.data[28]
 ctrl_block_in[21] => output_buffer:output_buffer_inst.data[29]
 ctrl_block_in[22] => output_buffer:output_buffer_inst.data[30]
 ctrl_block_in[23] => output_buffer:output_buffer_inst.data[31]
-frame_seq_out[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-frame_seq_out[1] <= frame_seq_out[1].DB_MAX_OUTPUT_PORT_TYPE
-frame_seq_out[2] <= frame_seq_out[2].DB_MAX_OUTPUT_PORT_TYPE
-frame_seq_out[3] <= frame_seq_out[3].DB_MAX_OUTPUT_PORT_TYPE
-frame_seq_out[4] <= frame_seq_out[4].DB_MAX_OUTPUT_PORT_TYPE
-frame_seq_out[5] <= frame_seq_out[5].DB_MAX_OUTPUT_PORT_TYPE
-frame_seq_out[6] <= frame_seq_out[6].DB_MAX_OUTPUT_PORT_TYPE
-frame_seq_out[7] <= frame_seq_out[7].DB_MAX_OUTPUT_PORT_TYPE
-frame_seq_out[8] <= frame_seq_out[8].DB_MAX_OUTPUT_PORT_TYPE
-frame_seq_out[9] <= frame_seq_out[9].DB_MAX_OUTPUT_PORT_TYPE
-frame_seq_out[10] <= frame_seq_out[10].DB_MAX_OUTPUT_PORT_TYPE
-frame_seq_out[11] <= frame_seq_out[11].DB_MAX_OUTPUT_PORT_TYPE
-xmit_done_out <= xmit_done_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+frame_seq_out[0] <= <GND>
+frame_seq_out[1] <= <GND>
+frame_seq_out[2] <= <GND>
+frame_seq_out[3] <= <GND>
+frame_seq_out[4] <= <GND>
+frame_seq_out[5] <= <GND>
+frame_seq_out[6] <= <GND>
+frame_seq_out[7] <= <GND>
+frame_seq_out[8] <= <GND>
+frame_seq_out[9] <= <GND>
+frame_seq_out[10] <= <GND>
+frame_seq_out[11] <= <GND>
 data_out[0] <= Selector23.DB_MAX_OUTPUT_PORT_TYPE
 data_out[1] <= Selector22.DB_MAX_OUTPUT_PORT_TYPE
 data_out[2] <= Selector21.DB_MAX_OUTPUT_PORT_TYPE
 data_out[3] <= Selector20.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|out_FSM|output_buffer:output_buffer_inst
+|out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst
 aclr => scfifo:scfifo_component.aclr
 clock => scfifo:scfifo_component.clock
 data[0] => scfifo:scfifo_component.data[0]
@@ -233,7 +247,7 @@ usedw[8] <= scfifo:scfifo_component.usedw[8]
 usedw[9] <= scfifo:scfifo_component.usedw[9]
 
 
-|out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component
+|out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component
 data[0] => scfifo_k841:auto_generated.data[0]
 data[1] => scfifo_k841:auto_generated.data[1]
 data[2] => scfifo_k841:auto_generated.data[2]
@@ -385,7 +399,7 @@ usedw[8] <= scfifo_k841:auto_generated.usedw[8]
 usedw[9] <= scfifo_k841:auto_generated.usedw[9]
 
 
-|out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_k841:auto_generated
+|out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_k841:auto_generated
 aclr => a_dpfifo_re41:dpfifo.aclr
 clock => a_dpfifo_re41:dpfifo.clock
 data[0] => a_dpfifo_re41:dpfifo.data[0]
@@ -532,7 +546,7 @@ usedw[9] <= a_dpfifo_re41:dpfifo.usedw[9]
 wrreq => a_dpfifo_re41:dpfifo.wreq
 
 
-|out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_k841:auto_generated|a_dpfifo_re41:dpfifo
+|out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_k841:auto_generated|a_dpfifo_re41:dpfifo
 aclr => a_fefifo_jaf:fifo_state.aclr
 aclr => cntr_cpb:rd_ptr_count.aclr
 aclr => cntr_cpb:wr_ptr.aclr
@@ -692,7 +706,7 @@ wreq => a_fefifo_jaf:fifo_state.wreq
 wreq => valid_wreq.IN0
 
 
-|out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_k841:auto_generated|a_dpfifo_re41:dpfifo|a_fefifo_jaf:fifo_state
+|out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_k841:auto_generated|a_dpfifo_re41:dpfifo|a_fefifo_jaf:fifo_state
 aclr => b_full.IN0
 aclr => b_non_empty.IN0
 aclr => cntr_op7:count_usedw.aclr
@@ -727,7 +741,7 @@ wreq => _.IN0
 wreq => valid_wreq.IN0
 
 
-|out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_k841:auto_generated|a_dpfifo_re41:dpfifo|a_fefifo_jaf:fifo_state|cntr_op7:count_usedw
+|out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_k841:auto_generated|a_dpfifo_re41:dpfifo|a_fefifo_jaf:fifo_state|cntr_op7:count_usedw
 aclr => counter_reg_bit[9].IN0
 clock => counter_reg_bit[9].CLK
 clock => counter_reg_bit[8].CLK
@@ -765,7 +779,7 @@ updown => counter_comb_bita8.DATAB
 updown => counter_comb_bita9.DATAB
 
 
-|out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_k841:auto_generated|a_dpfifo_re41:dpfifo|altsyncram_6tm1:FIFOram
+|out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_k841:auto_generated|a_dpfifo_re41:dpfifo|altsyncram_6tm1:FIFOram
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -2496,7 +2510,7 @@ wren_a => ram_block1a63.PORTAWE
 wren_a => ram_block1a63.ENA0
 
 
-|out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_k841:auto_generated|a_dpfifo_re41:dpfifo|cntr_cpb:rd_ptr_count
+|out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_k841:auto_generated|a_dpfifo_re41:dpfifo|cntr_cpb:rd_ptr_count
 aclr => counter_reg_bit[9].IN0
 clock => counter_reg_bit[9].CLK
 clock => counter_reg_bit[8].CLK
@@ -2524,7 +2538,7 @@ sclr => _.IN0
 sclr => _.IN0
 
 
-|out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_k841:auto_generated|a_dpfifo_re41:dpfifo|cntr_cpb:wr_ptr
+|out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_k841:auto_generated|a_dpfifo_re41:dpfifo|cntr_cpb:wr_ptr
 aclr => counter_reg_bit[9].IN0
 clock => counter_reg_bit[9].CLK
 clock => counter_reg_bit[8].CLK
