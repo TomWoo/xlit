@@ -20,6 +20,22 @@
 					"strict" : false
 				},
 				{
+					"name" : "data_out_LEDs[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_LEDs[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_LEDs[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_LEDs[3]",
+					"strict" : false
+				},
+				{
 					"name" : "clk_out",
 					"strict" : false
 				},
@@ -65,6 +81,14 @@
 				},
 				{
 					"name" : "data_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_phy",
+					"strict" : false
+				},
+				{
+					"name" : "clock_select",
 					"strict" : false
 				}
 			]
