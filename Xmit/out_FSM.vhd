@@ -6,21 +6,22 @@ use ieee.std_logic_arith.all;
 
 entity out_FSM is
 port(
-	clk_phy:					in std_logic;
-	reset:					in std_logic;
-	data_in:					in std_logic_vector(7 downto 0);
-	ctrl_block_in:			in std_logic_vector(23 downto 0);
-	-- wren_ctrl_out:			out std_logic;
-	frame_seq_out:			out std_logic_vector(11 downto 0);
-	xmit_done_out:			out std_logic;
-	data_out:				out std_logic_vector(3 downto 0)
+	clk_phy				: in std_logic;
+	reset					: in std_logic;
+	data_in				: in std_logic_vector(7 downto 0);
+	ctrl_block_in		: in std_logic_vector(23 downto 0);
+	tx_en					: out std_logic;
+	frame_seq_out		: out std_logic_vector(11 downto 0);
+	xmit_done_out		: out std_logic;
+	data_out				: out std_logic_vector(3 downto 0)
 );
 end entity;
 
 architecture rtl of out_FSM is
 	type state is (s_gap, s_preamble, s_SFD, s_DA, s_SA, s_length, s_data, s_FCS);
 	signal my_state		: state;
-	signal count			: integer range 0 to 4095 := 0; -- 2**12-1
+	signal count			: integer range 0 to 4095; -- 12 bits
+	signal frame_count	: integer range 0 to 4095;
 	
 	signal data_in_fifo	: std_logic_vector(63 downto 0);
 	signal rden				: std_logic;
@@ -34,7 +35,7 @@ architecture rtl of out_FSM is
 	signal clk_phy_2		: std_logic;
 	
 	-- Asynchronous signals
-	signal is_even	: std_logic;
+	signal count_mod		: integer range 0 to 4095;
 	
 	component output_buffer
 	port(
@@ -52,15 +53,13 @@ architecture rtl of out_FSM is
 begin
 
 -- Asynchronous signals
-process(count, data_in, ctrl_block_in) begin
-	if((count mod 2) = 0) then
-		is_even <= '1';
-	else
-		is_even <= '0';
-	end if;
+process(count, data_in, ctrl_block_in, frame_count) begin
 	data_in_fifo(7 downto 0) <= data_in;
 	data_in_fifo(31 downto 8) <= ctrl_block_in;
 	data_in_fifo(63 downto 32) <= X"00000000";
+	
+	count_mod <= count mod 32;
+	frame_seq_out <= std_logic_vector(to_unsigned(frame_count, 12));
 end process;
 
 -- Prescaler (half-rate)
@@ -87,10 +86,11 @@ output_buffer_inst : output_buffer PORT MAP (
 	usedw	 => length_fifo
 );
 
--- FSM transitions
+-- Moore FSM
 process(clk_phy, reset) begin
 	if(reset = '1') then
 		my_state <= s_gap;
+		count <= 0;
 	elsif(rising_edge(clk_phy)) then
 		case my_state is
 		when s_gap =>
@@ -136,7 +136,7 @@ process(clk_phy, reset) begin
 				count <= count + 1;
 			end if;
 		when s_data =>
-			if(count >= 12000/4) then -- TODO
+			if(count >= 12000/4) then -- TODO: constants
 				my_state <= s_FCS;
 				count <= 0;
 			else
@@ -155,6 +155,7 @@ process(clk_phy, reset) begin
 		end case;
 	else
 		my_state <= my_state;
+		count <= count;
 	end if;
 end process;
 
@@ -174,43 +175,62 @@ process(my_state) begin
 	case my_state is
 	when s_gap =>
 		data_out <= "0000";
+		tx_en <= '0';
 	when s_preamble =>
 		data_out <= "1010";
+		tx_en <= '1';
 	when s_SFD =>
 		if(count = 0) then
 			data_out <= "1010";
 		else -- count = 1
 			data_out <= "1011";
 		end if;
+		tx_en <= '1';
 	when s_DA | s_SA | s_length =>
-		if(is_even = '1') then
+		case count_mod is -- TODO: generate
+		when 0 =>
 			data_out <= data_out_fifo(3 downto 0);
-		else
+		when 1 =>
 			data_out <= data_out_fifo(7 downto 4);
-		end if;
+		when 2 =>
+			data_out <= data_out_fifo(11 downto 8);
+		when 3 =>
+			data_out <= data_out_fifo(15 downto 12);
+		when 4 =>
+			data_out <= data_out_fifo(19 downto 16);
+		when 5 =>
+			data_out <= data_out_fifo(23 downto 20);
+		when 6 =>
+			data_out <= data_out_fifo(27 downto 24);
+		when others => -- when 7
+			data_out <= data_out_fifo(31 downto 28);
+		end case;
+		tx_en <= '1';
 	when others => -- s_FCS
-		if(is_even = '1') then
+		if(count mod 2 = 0) then
 			data_out <= data_out_fifo(3 downto 0);
 		else
 			data_out <= data_out_fifo(7 downto 4);
 		end if;
+		tx_en <= '1';
 	end case;
 end process;
 
 process(clk_phy, reset) begin
 	if (reset = '1') then
 		xmit_done_out <= '0';
-		frame_seq_out <= "000000000000";
+		frame_count <= 0;
 	elsif(rising_edge(clk_phy)) then
-		if(my_state = s_FCS and count >= 7) then -- TODO: debug
+		if(my_state = s_FCS and count = 7) then
 			xmit_done_out <= '1';
+			frame_count <= frame_count + 1;
 		else
 			xmit_done_out <= '0';
+			frame_count <= frame_count;
 		end if;
-		frame_seq_out <= "000000000000";
 	else
 		xmit_done_out <= xmit_done_out;
-		frame_seq_out <= "000000000000";
+		frame_count <= frame_count;
 	end if;
 end process;
 

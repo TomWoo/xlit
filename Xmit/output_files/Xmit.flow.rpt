@@ -1,5 +1,5 @@
 Flow report for Xmit
-Thu Nov 17 01:57:18 2016
+Thu Nov 17 11:14:35 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Nov 17 01:57:18 2016       ;
+; Flow Status                     ; Successful - Thu Nov 17 11:14:35 2016       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; Xmit                                        ;
 ; Top-level Entity Name           ; out_FSM_tester                              ;
@@ -52,7 +52,7 @@ agreement for further details.
 ; Total registers                 ; 54                                          ;
 ; Total pins                      ; 22                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 8,192                                       ;
+; Total block memory bits         ; 32,768                                      ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/17/2016 01:56:49 ;
+; Start date & time ; 11/17/2016 11:14:04 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Xmit                ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+----------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name    ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+----------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 85987529690756.147936580809984        ; --            ; --             ; --             ;
+; COMPILER_SIGNATURE_ID               ; 85987529690756.147939924411460        ; --            ; --             ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --             ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --             ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                  ; --            ; --             ; eda_simulation ;
@@ -106,8 +106,8 @@ agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:27     ; 1.0                     ; 918 MB              ; 00:00:55                           ;
-; Total                ; 00:00:27     ; --                      ; --                  ; 00:00:55                           ;
+; Analysis & Synthesis ; 00:00:31     ; 1.0                     ; 920 MB              ; 00:01:04                           ;
+; Total                ; 00:00:31     ; --                      ; --                  ; 00:01:04                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
