@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Xmit
-Wed Nov 09 19:57:37 2016
+Thu Nov 17 01:57:18 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -53,7 +53,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Nov 09 19:57:37 2016       ;
+; Analysis & Synthesis Status     ; Successful - Thu Nov 17 01:57:17 2016       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; Xmit                                        ;
 ; Top-level Entity Name           ; out_FSM_tester                              ;
@@ -162,39 +162,45 @@ agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 8      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                        ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                    ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
-; out_FSM.vhd                      ; yes             ; User VHDL File               ; C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd            ;         ;
-; output_buffer.vhd                ; yes             ; User Wizard-Generated File   ; C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/output_buffer.vhd      ;         ;
-; out_FSM_tester.v                 ; yes             ; User Verilog HDL File        ; C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v       ;         ;
-; scfifo.tdf                       ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/scfifo.tdf                  ;         ;
-; a_regfifo.inc                    ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_regfifo.inc               ;         ;
-; a_dpfifo.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_dpfifo.inc                ;         ;
-; a_i2fifo.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_i2fifo.inc                ;         ;
-; a_fffifo.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_fffifo.inc                ;         ;
-; a_f2fifo.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_f2fifo.inc                ;         ;
-; aglobal160.inc                   ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc              ;         ;
-; db/scfifo_4fa1.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/scfifo_4fa1.tdf     ;         ;
-; db/a_dpfifo_bla1.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/a_dpfifo_bla1.tdf   ;         ;
-; db/a_fefifo_jaf.tdf              ; yes             ; Auto-Generated Megafunction  ; C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/a_fefifo_jaf.tdf    ;         ;
-; db/cntr_op7.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/cntr_op7.tdf        ;         ;
-; db/altsyncram_m3t1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf ;         ;
-; db/cntr_uhb.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/cntr_uhb.tdf        ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                     ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; out_FSM.vhd                      ; yes             ; User VHDL File               ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd            ;         ;
+; output_buffer.vhd                ; yes             ; User Wizard-Generated File   ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd      ;         ;
+; out_FSM_tester.v                 ; yes             ; User Verilog HDL File        ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM_tester.v       ;         ;
+; scfifo.tdf                       ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/scfifo.tdf                                   ;         ;
+; a_regfifo.inc                    ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_regfifo.inc                                ;         ;
+; a_dpfifo.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_dpfifo.inc                                 ;         ;
+; a_i2fifo.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_i2fifo.inc                                 ;         ;
+; a_fffifo.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_fffifo.inc                                 ;         ;
+; a_f2fifo.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_f2fifo.inc                                 ;         ;
+; aglobal160.inc                   ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc                               ;         ;
+; db/scfifo_4fa1.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/scfifo_4fa1.tdf     ;         ;
+; db/a_dpfifo_bla1.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_dpfifo_bla1.tdf   ;         ;
+; db/a_fefifo_jaf.tdf              ; yes             ; Auto-Generated Megafunction  ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_fefifo_jaf.tdf    ;         ;
+; db/cntr_op7.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/cntr_op7.tdf        ;         ;
+; db/altsyncram_m3t1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf ;         ;
+; db/cntr_uhb.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/cntr_uhb.tdf        ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -384,14 +390,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------+
-; Port Connectivity Checks: "out_FSM:out_FSM"                ;
-+---------------+--------+----------+------------------------+
-; Port          ; Type   ; Severity ; Details                ;
-+---------------+--------+----------+------------------------+
-; ctrl_block_in ; Input  ; Info     ; Stuck at GND           ;
-; frame_seq_out ; Output ; Info     ; Explicitly unconnected ;
-+---------------+--------+----------+------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "out_FSM:out_FSM"                                                                                                  ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                  ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; ctrl_block_in ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; frame_seq_out ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; xmit_done_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -427,7 +434,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -437,53 +444,53 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Wed Nov 09 19:57:25 2016
+    Info: Processing started: Thu Nov 17 01:56:48 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Xmit -c Xmit
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file shift_register_4.vhd
-    Info (12022): Found design unit 1: shift_register_4-SYN File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/shift_register_4.vhd Line: 56
-    Info (12023): Found entity 1: shift_register_4 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/shift_register_4.vhd Line: 43
+    Info (12022): Found design unit 1: shift_register_4-SYN File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/shift_register_4.vhd Line: 56
+    Info (12023): Found entity 1: shift_register_4 File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/shift_register_4.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file xmittop.vhd
-    Info (12022): Found design unit 1: xmitTop-rtl File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/xmitTop.vhd Line: 20
-    Info (12023): Found entity 1: xmitTop File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/xmitTop.vhd Line: 4
+    Info (12022): Found design unit 1: xmitTop-rtl File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd Line: 20
+    Info (12023): Found entity 1: xmitTop File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file in_fsm.vhd
-    Info (12022): Found design unit 1: in_FSM-arch File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/in_FSM.vhd Line: 19
-    Info (12023): Found entity 1: in_FSM File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/in_FSM.vhd Line: 4
+    Info (12022): Found design unit 1: in_FSM-arch File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd Line: 19
+    Info (12023): Found entity 1: in_FSM File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd Line: 4
 Warning (12019): Can't analyze file -- file main_FSM.v is missing
 Info (12021): Found 2 design units, including 1 entities, in source file fifo_8.vhd
-    Info (12022): Found design unit 1: fifo_8-SYN File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/fifo_8.vhd Line: 59
-    Info (12023): Found entity 1: fifo_8 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/fifo_8.vhd Line: 43
+    Info (12022): Found design unit 1: fifo_8-SYN File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/fifo_8.vhd Line: 59
+    Info (12023): Found entity 1: fifo_8 File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/fifo_8.vhd Line: 43
 Warning (12019): Can't analyze file -- file input_fsm.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file out_fsm.vhd
-    Info (12022): Found design unit 1: out_FSM-rtl File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 20
-    Info (12023): Found entity 1: out_FSM File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 7
+    Info (12022): Found design unit 1: out_FSM-rtl File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 20
+    Info (12023): Found entity 1: out_FSM File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file output_buffer.vhd
-    Info (12022): Found design unit 1: output_buffer-SYN File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/output_buffer.vhd Line: 59
-    Info (12023): Found entity 1: output_buffer File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/output_buffer.vhd Line: 43
+    Info (12022): Found design unit 1: output_buffer-SYN File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd Line: 59
+    Info (12023): Found entity 1: output_buffer File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file out_fsm_tester.v
-    Info (12023): Found entity 1: out_FSM_tester File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at out_FSM_tester.v(13): created implicit net for "clock" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 13
+    Info (12023): Found entity 1: out_FSM_tester File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM_tester.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at out_FSM_tester.v(13): created implicit net for "clock" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM_tester.v Line: 13
 Info (12127): Elaborating entity "out_FSM_tester" for the top level hierarchy
-Info (12128): Elaborating entity "out_FSM" for hierarchy "out_FSM:out_FSM" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 22
-Warning (10540): VHDL Signal Declaration warning at out_FSM.vhd(27): used explicit default value for signal "wren" because signal was never assigned a value File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 27
-Warning (10036): Verilog HDL or VHDL warning at out_FSM.vhd(28): object "is_empty" assigned a value but never read File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 28
-Warning (10036): Verilog HDL or VHDL warning at out_FSM.vhd(29): object "is_full" assigned a value but never read File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 29
-Warning (10036): Verilog HDL or VHDL warning at out_FSM.vhd(31): object "length_fifo" assigned a value but never read File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 31
-Warning (10036): Verilog HDL or VHDL warning at out_FSM.vhd(33): object "xmit_done_out" assigned a value but never read File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 33
-Warning (10492): VHDL Process Statement warning at out_FSM.vhd(75): signal "clk_phy_2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 75
-Warning (10492): VHDL Process Statement warning at out_FSM.vhd(159): signal "my_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 159
-Warning (10492): VHDL Process Statement warning at out_FSM.vhd(170): signal "rden" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 170
-Warning (10492): VHDL Process Statement warning at out_FSM.vhd(182): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 182
-Warning (10492): VHDL Process Statement warning at out_FSM.vhd(188): signal "is_even" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 188
-Warning (10492): VHDL Process Statement warning at out_FSM.vhd(189): signal "data_out_fifo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 189
-Warning (10492): VHDL Process Statement warning at out_FSM.vhd(191): signal "data_out_fifo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 191
-Warning (10492): VHDL Process Statement warning at out_FSM.vhd(194): signal "is_even" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 194
-Warning (10492): VHDL Process Statement warning at out_FSM.vhd(195): signal "data_out_fifo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 195
-Warning (10492): VHDL Process Statement warning at out_FSM.vhd(197): signal "data_out_fifo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 197
-Info (12128): Elaborating entity "output_buffer" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 80
-Info (12128): Elaborating entity "scfifo" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/output_buffer.vhd Line: 100
-Info (12130): Elaborated megafunction instantiation "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/output_buffer.vhd Line: 100
-Info (12133): Instantiated megafunction "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component" with the following parameter: File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/output_buffer.vhd Line: 100
+Info (12128): Elaborating entity "out_FSM" for hierarchy "out_FSM:out_FSM" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM_tester.v Line: 22
+Warning (10540): VHDL Signal Declaration warning at out_FSM.vhd(27): used explicit default value for signal "wren" because signal was never assigned a value File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 27
+Warning (10036): Verilog HDL or VHDL warning at out_FSM.vhd(28): object "is_empty" assigned a value but never read File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 28
+Warning (10036): Verilog HDL or VHDL warning at out_FSM.vhd(29): object "is_full" assigned a value but never read File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 29
+Warning (10036): Verilog HDL or VHDL warning at out_FSM.vhd(31): object "length_fifo" assigned a value but never read File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 31
+Warning (10492): VHDL Process Statement warning at out_FSM.vhd(75): signal "clk_phy_2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at out_FSM.vhd(159): signal "my_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 159
+Warning (10492): VHDL Process Statement warning at out_FSM.vhd(170): signal "rden" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at out_FSM.vhd(182): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 182
+Warning (10492): VHDL Process Statement warning at out_FSM.vhd(188): signal "is_even" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 188
+Warning (10492): VHDL Process Statement warning at out_FSM.vhd(189): signal "data_out_fifo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 189
+Warning (10492): VHDL Process Statement warning at out_FSM.vhd(191): signal "data_out_fifo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 191
+Warning (10492): VHDL Process Statement warning at out_FSM.vhd(194): signal "is_even" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 194
+Warning (10492): VHDL Process Statement warning at out_FSM.vhd(195): signal "data_out_fifo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 195
+Warning (10492): VHDL Process Statement warning at out_FSM.vhd(197): signal "data_out_fifo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 197
+Info (12128): Elaborating entity "output_buffer" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 80
+Info (12128): Elaborating entity "scfifo" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd Line: 100
+Info (12130): Elaborated megafunction instantiation "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd Line: 100
+Info (12133): Instantiated megafunction "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component" with the following parameter: File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd Line: 100
     Info (12134): Parameter "add_ram_output_register" = "OFF"
     Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
     Info (12134): Parameter "lpm_numwords" = "1024"
@@ -495,83 +502,84 @@ Info (12133): Instantiated megafunction "out_FSM:out_FSM|output_buffer:output_bu
     Info (12134): Parameter "underflow_checking" = "ON"
     Info (12134): Parameter "use_eab" = "ON"
 Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_4fa1.tdf
-    Info (12023): Found entity 1: scfifo_4fa1 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/scfifo_4fa1.tdf Line: 25
+    Info (12023): Found entity 1: scfifo_4fa1 File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/scfifo_4fa1.tdf Line: 25
 Info (12128): Elaborating entity "scfifo_4fa1" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated" File: c:/altera_lite/16.0/quartus/libraries/megafunctions/scfifo.tdf Line: 300
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_bla1.tdf
-    Info (12023): Found entity 1: a_dpfifo_bla1 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/a_dpfifo_bla1.tdf Line: 29
-Info (12128): Elaborating entity "a_dpfifo_bla1" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/scfifo_4fa1.tdf Line: 38
+    Info (12023): Found entity 1: a_dpfifo_bla1 File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_dpfifo_bla1.tdf Line: 29
+Info (12128): Elaborating entity "a_dpfifo_bla1" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/scfifo_4fa1.tdf Line: 38
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_fefifo_jaf.tdf
-    Info (12023): Found entity 1: a_fefifo_jaf File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/a_fefifo_jaf.tdf Line: 25
-Info (12128): Elaborating entity "a_fefifo_jaf" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/a_dpfifo_bla1.tdf Line: 43
+    Info (12023): Found entity 1: a_fefifo_jaf File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_fefifo_jaf.tdf Line: 25
+Info (12128): Elaborating entity "a_fefifo_jaf" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_dpfifo_bla1.tdf Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_op7.tdf
-    Info (12023): Found entity 1: cntr_op7 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/cntr_op7.tdf Line: 26
-Info (12128): Elaborating entity "cntr_op7" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state|cntr_op7:count_usedw" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/a_fefifo_jaf.tdf Line: 39
+    Info (12023): Found entity 1: cntr_op7 File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/cntr_op7.tdf Line: 26
+Info (12128): Elaborating entity "cntr_op7" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state|cntr_op7:count_usedw" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_fefifo_jaf.tdf Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m3t1.tdf
-    Info (12023): Found entity 1: altsyncram_m3t1 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_m3t1" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/a_dpfifo_bla1.tdf Line: 44
+    Info (12023): Found entity 1: altsyncram_m3t1 File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_m3t1" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_dpfifo_bla1.tdf Line: 44
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_uhb.tdf
-    Info (12023): Found entity 1: cntr_uhb File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/cntr_uhb.tdf Line: 26
-Info (12128): Elaborating entity "cntr_uhb" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|cntr_uhb:rd_ptr_count" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/a_dpfifo_bla1.tdf Line: 45
+    Info (12023): Found entity 1: cntr_uhb File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/cntr_uhb.tdf Line: 26
+Info (12128): Elaborating entity "cntr_uhb" for hierarchy "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|cntr_uhb:rd_ptr_count" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_dpfifo_bla1.tdf Line: 45
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[8]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 280
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[9]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 310
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[10]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 340
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[11]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 370
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[12]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 400
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[13]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 430
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[14]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 460
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[15]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 490
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[16]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 520
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[17]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 550
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[18]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 580
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[19]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 610
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[20]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 640
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[21]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 670
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[22]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 700
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[23]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 730
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[24]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 760
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[25]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 790
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[26]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 820
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[27]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 850
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[28]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 880
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[29]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 910
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[30]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 940
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[31]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 970
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[32]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1000
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[33]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1030
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[34]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1060
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[35]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1090
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[36]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1120
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[37]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1150
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[38]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1180
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[39]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1210
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[40]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1240
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[41]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1270
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[42]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1300
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[43]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1330
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[44]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1360
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[45]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1390
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[46]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1420
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[47]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1450
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[48]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1480
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[49]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1510
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[50]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1540
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[51]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1570
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[52]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1600
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[53]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1630
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[54]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1660
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[55]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1690
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[56]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1720
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[57]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1750
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[58]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1780
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[59]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1810
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[60]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1840
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[61]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1870
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[62]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1900
-        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[63]" File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1930
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[8]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 280
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[9]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 310
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[10]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 340
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[11]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 370
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[12]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 400
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[13]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 430
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[14]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 460
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[15]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 490
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[16]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 520
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[17]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 550
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[18]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 580
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[19]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 610
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[20]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 640
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[21]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 670
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[22]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 700
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[23]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 730
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[24]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 760
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[25]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 790
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[26]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 820
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[27]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 850
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[28]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 880
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[29]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 910
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[30]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 940
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[31]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 970
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[32]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1000
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[33]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1030
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[34]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1060
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[35]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1090
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[36]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1120
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[37]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1150
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[38]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1180
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[39]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1210
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[40]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1240
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[41]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1270
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[42]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1300
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[43]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1330
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[44]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1360
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[45]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1390
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[46]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1420
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[47]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1450
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[48]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1480
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[49]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1510
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[50]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1540
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[51]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1570
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[52]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1600
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[53]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1630
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[54]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1660
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[55]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1690
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[56]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1720
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[57]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1750
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[58]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1780
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[59]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1810
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[60]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1840
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[61]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1870
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[62]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1900
+        Warning (14320): Synthesized away node "out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[63]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1930
 Warning (19016): Clock multiplexers are found and protected
-    Warning (19017): Found clock multiplexer clock File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 13
+    Warning (19017): Found clock multiplexer clock File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM_tester.v Line: 13
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -581,9 +589,9 @@ Info (21057): Implemented 120 device resources after synthesis - the final resou
     Info (21061): Implemented 90 logic cells
     Info (21064): Implemented 8 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 79 warnings
-    Info: Peak virtual memory: 963 megabytes
-    Info: Processing ended: Wed Nov 09 19:57:37 2016
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Peak virtual memory: 918 megabytes
+    Info: Processing ended: Thu Nov 17 01:57:18 2016
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:00:56
 
 

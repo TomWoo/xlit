@@ -13,20 +13,21 @@ data_in[4] => data_in[4].IN1
 data_in[5] => data_in[5].IN1
 data_in[6] => data_in[6].IN1
 data_in[7] => data_in[7].IN1
-data_out[0] <= out_FSM:out_FSM.data_out
-data_out[1] <= out_FSM:out_FSM.data_out
-data_out[2] <= out_FSM:out_FSM.data_out
-data_out[3] <= out_FSM:out_FSM.data_out
-data_out_LEDs[0] <= out_FSM:out_FSM.data_out
-data_out_LEDs[1] <= out_FSM:out_FSM.data_out
-data_out_LEDs[2] <= out_FSM:out_FSM.data_out
-data_out_LEDs[3] <= out_FSM:out_FSM.data_out
-clk_out <= clk.DB_MAX_OUTPUT_PORT_TYPE
-rst_out <= rst_n.DB_MAX_OUTPUT_PORT_TYPE
+data_out[0] << out_FSM:out_FSM.data_out
+data_out[1] << out_FSM:out_FSM.data_out
+data_out[2] << out_FSM:out_FSM.data_out
+data_out[3] << out_FSM:out_FSM.data_out
+data_out_LEDs[0] << out_FSM:out_FSM.data_out
+data_out_LEDs[1] << out_FSM:out_FSM.data_out
+data_out_LEDs[2] << out_FSM:out_FSM.data_out
+data_out_LEDs[3] << out_FSM:out_FSM.data_out
+clk_out << clk.DB_MAX_OUTPUT_PORT_TYPE
+rst_out << rst_n.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |out_FSM_tester|out_FSM:out_FSM
 clk_phy => output_buffer:output_buffer_inst.clock
+clk_phy => xmit_done_out~reg0.CLK
 clk_phy => count[0].CLK
 clk_phy => count[1].CLK
 clk_phy => count[2].CLK
@@ -42,6 +43,7 @@ clk_phy => count[11].CLK
 clk_phy => clk_phy_2.CLK
 clk_phy => my_state~9.DATAIN
 reset => output_buffer:output_buffer_inst.aclr
+reset => xmit_done_out~reg0.ACLR
 reset => rden.ACLR
 reset => clk_phy_2.PRESET
 reset => my_state~11.DATAIN
@@ -101,6 +103,7 @@ frame_seq_out[8] <= <GND>
 frame_seq_out[9] <= <GND>
 frame_seq_out[10] <= <GND>
 frame_seq_out[11] <= <GND>
+xmit_done_out <= xmit_done_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 data_out[0] <= Selector23.DB_MAX_OUTPUT_PORT_TYPE
 data_out[1] <= Selector22.DB_MAX_OUTPUT_PORT_TYPE
 data_out[2] <= Selector21.DB_MAX_OUTPUT_PORT_TYPE
