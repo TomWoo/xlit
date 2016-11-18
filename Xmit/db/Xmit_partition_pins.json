@@ -4,43 +4,159 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "data_out[0]",
+					"name" : "discard_looknow",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[1]",
+					"name" : "ctrl_block_out[0]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[2]",
+					"name" : "ctrl_block_out[1]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[3]",
+					"name" : "ctrl_block_out[2]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out_LEDs[0]",
+					"name" : "ctrl_block_out[3]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out_LEDs[1]",
+					"name" : "ctrl_block_out[4]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out_LEDs[2]",
+					"name" : "ctrl_block_out[5]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out_LEDs[3]",
+					"name" : "ctrl_block_out[6]",
 					"strict" : false
 				},
 				{
-					"name" : "clk_out",
+					"name" : "ctrl_block_out[7]",
 					"strict" : false
 				},
 				{
-					"name" : "rst_out",
+					"name" : "ctrl_block_out[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[16]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[17]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[18]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[19]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[20]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[21]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[22]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[23]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame_out[8]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame_out[9]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame_out[10]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame_out[11]",
+					"strict" : false
+				},
+				{
+					"name" : "xmit_looknow",
+					"strict" : false
+				},
+				{
+					"name" : "discard_enable",
 					"strict" : false
 				},
 				{
@@ -48,47 +164,151 @@
 					"strict" : false
 				},
 				{
-					"name" : "rst_n",
+					"name" : "frame_seq[0]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[4]",
+					"name" : "frame_seq[1]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[0]",
+					"name" : "frame_seq[2]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[5]",
+					"name" : "frame_seq[3]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[1]",
+					"name" : "frame_seq[4]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[6]",
+					"name" : "frame_seq[5]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[2]",
+					"name" : "frame_seq[6]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[7]",
+					"name" : "frame_seq[7]",
 					"strict" : false
 				},
 				{
-					"name" : "data_in[3]",
+					"name" : "frame_seq[8]",
 					"strict" : false
 				},
 				{
-					"name" : "clk_phy",
+					"name" : "frame_seq[9]",
 					"strict" : false
 				},
 				{
-					"name" : "clock_select",
+					"name" : "frame_seq[10]",
+					"strict" : false
+				},
+				{
+					"name" : "frame_seq[11]",
+					"strict" : false
+				},
+				{
+					"name" : "frame_seq[12]",
+					"strict" : false
+				},
+				{
+					"name" : "frame_seq[13]",
+					"strict" : false
+				},
+				{
+					"name" : "frame_seq[14]",
+					"strict" : false
+				},
+				{
+					"name" : "frame_seq[15]",
+					"strict" : false
+				},
+				{
+					"name" : "frame_seq[16]",
+					"strict" : false
+				},
+				{
+					"name" : "frame_seq[17]",
+					"strict" : false
+				},
+				{
+					"name" : "frame_seq[18]",
+					"strict" : false
+				},
+				{
+					"name" : "frame_seq[19]",
+					"strict" : false
+				},
+				{
+					"name" : "frame_seq[20]",
+					"strict" : false
+				},
+				{
+					"name" : "frame_seq[21]",
+					"strict" : false
+				},
+				{
+					"name" : "frame_seq[22]",
+					"strict" : false
+				},
+				{
+					"name" : "frame_seq[23]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame[0]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame[1]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame[2]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame[3]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame[4]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame[5]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame[6]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame[7]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame[8]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame[9]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame[10]",
+					"strict" : false
+				},
+				{
+					"name" : "discard_frame[11]",
+					"strict" : false
+				},
+				{
+					"name" : "xmit_done",
 					"strict" : false
 				}
 			]

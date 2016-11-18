@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Wed Nov 09 19:57:37 2016
+Analysis & Synthesis Status : Successful - Thu Nov 17 17:06:46 2016
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : Xmit
-Top-level Entity Name : out_FSM_tester
+Top-level Entity Name : monitoring_logic
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 54
-Total pins : 22
+Total registers : 38
+Total pins : 78
 Total virtual pins : 0
-Total block memory bits : 8,192
+Total block memory bits : 0
 Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
