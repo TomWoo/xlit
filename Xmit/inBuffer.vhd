@@ -83,7 +83,7 @@ begin
 			if (outcountdone = '1') then
 				cnt := to_integer(unsigned(ctrlm(11 downto 0)));
 			else
-				if (cnt>0) then
+				if (cnt>0 AND not emptyd = '1') then
 					cnt := cnt + direction;
 				end if;
 			end if;
@@ -97,14 +97,14 @@ begin
 	
 	process --ctrlout
 	begin
-		if (phyclk'event AND phyclk = '1' AND outcountdone = '1') then
+		if (phyclk'event AND phyclk = '1' AND outcountdone = '1' and not emptyd = '1') then
 			controlo <= ctrlm;
 		end if;
 	end process;
 	
 	process --dataout always outputs data from the buffer
 	begin
-		if (phyclk'event AND phyclk = '1') then
+		if (phyclk'event AND phyclk = '1' and not emptyd = '1') then
 			datao <= datam;
 		end if;
 	end process;
