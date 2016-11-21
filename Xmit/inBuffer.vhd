@@ -24,6 +24,7 @@ architecture arch of inBuffer is
 	signal outcountdone: std_logic;
 	signal datam: std_logic_vector (7 downto 0);
 	signal ctrlm: std_logic_vector (23 downto 0);
+	signal pacs: integer;
 	
 
 	component inbuff 
@@ -96,10 +97,16 @@ begin
 	
 	process --ctrlout
 	begin
+		if (phyclk'event AND phyclk = '1' AND outcountdone = '1') then
+			controlo <= ctrlm;
+		end if;
 	end process;
 	
-	process --dataout
+	process --dataout always outputs data from the buffer
 	begin
+		if (phyclk'event AND phyclk = '1') then
+			datao <= datam;
+		end if;
 	end process;
 	
 	inbuff_comp : inbuff
@@ -127,4 +134,5 @@ begin
 			rdempty => emptyc,
 			wrfull => fullc
 		);
+		
 end arch;
