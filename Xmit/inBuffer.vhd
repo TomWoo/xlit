@@ -1,5 +1,6 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
+use IEEE.NUMERIC_STD.ALL;
 
 entity inBuffer is 
 	port(
@@ -19,6 +20,9 @@ architecture arch of inBuffer is
 	signal hi: std_logic := '1';
 	signal empty: std_logic;
 	signal full: std_logic;
+	signal incountdone: std_logic;
+	signal outcountdone: std_logic;
+	
 
 	component inbuff 
 		port (aclr		: IN STD_LOGIC;
@@ -31,10 +35,32 @@ architecture arch of inBuffer is
 		rdempty		: OUT STD_LOGIC ;
 		wrfull		: OUT STD_LOGIC 
 		);
-	end component;
+	end component;                                                                                                                                                        
 	
 begin 
 
+	PROCESS (sysclk, controli, wrenc, outcountdone) --incounter
+			VARIABLE   cnt         : INTEGER RANGE 0 TO 4096;
+			VARIABLE   direction    : INTEGER:=-1;
+	BEGIN
+			
+		IF (sysclk'EVENT AND sysclk = '1') THEN
+			if (wrenc = '1') then
+				cnt := to_integer(unsigned(controli));
+			else
+				if (cnt>0) then
+					cnt := cnt + direction;
+				end if;
+			end if;
+		END IF;
+		if (cnt <= 1) then
+			incountdone <= '1';
+		else 
+			incountdone <= '0';
+		end if;
+			
+		
+	END PROCESS;
 
 	inbuff_comp : inbuff
 		port map (
@@ -44,7 +70,7 @@ begin
 			q => datao,
 			data => datai,
 			wrreq => wrend,
-			rdreq => hi,
+			rdreq => outcountdone,
 			rdempty => empty,
 			wrfull => full
 			);
