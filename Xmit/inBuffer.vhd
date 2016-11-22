@@ -20,11 +20,12 @@ architecture arch of inBuffer is
 	signal hi: std_logic := '1';
 	signal emptyd, emptyc: std_logic;
 	signal fulld, fullc: std_logic;
-	signal incountdone: std_logic;
-	signal outcountdone: std_logic;
+	signal incountdone: std_logic:='0';
+	signal outcountdone: std_logic:='0';
 	signal datam: std_logic_vector (7 downto 0);
 	signal ctrlm: std_logic_vector (23 downto 0);
-	signal pacs: integer;
+	signal readen: std_logic;
+	signal outtrans: std_logic:='0';
 	
 	component inbuff 
 		port (aclr		: IN STD_LOGIC;
@@ -54,7 +55,7 @@ architecture arch of inBuffer is
 	
 begin 
 	PROCESS (sysclk, controli, wrenc) --incounter
-			VARIABLE   cnt         : INTEGER RANGE 0 TO 4096;
+			VARIABLE   cnt         : INTEGER:=4095;
 			VARIABLE   direction    : INTEGER:=-1;
 	BEGIN		
 		IF (sysclk'EVENT AND sysclk = '1') THEN
@@ -66,7 +67,7 @@ begin
 				end if;
 			end if;
 		END IF;
-		if (cnt <= 1) then
+		if (cnt <= 0) then
 			incountdone <= '1';
 		else 
 			incountdone <= '0';
@@ -74,28 +75,30 @@ begin
 	END PROCESS;
 
 	PROCESS (phyclk, ctrlm, outcountdone) --outcounter
-			VARIABLE   cnt         : INTEGER RANGE 0 TO 4096;
+			VARIABLE   cnt         : INTEGER:=4095;
 			VARIABLE   direction    : INTEGER:=-1;
 	BEGIN	
 		IF (phyclk'EVENT AND phyclk = '1') THEN
-			if (outcountdone = '1') then
+			if (outcountdone = '1' or (incountdone = '1' and outtrans = '0')) then
 				cnt := to_integer(unsigned(ctrlm(11 downto 0)));
 			else
-				if (cnt>0 AND not emptyd = '1') then
+				if (cnt>0) then
 					cnt := cnt + direction;
 				end if;
 			end if;
 		END IF;
-		if (cnt <= 1 or emptyd = '1') then
+		if (cnt <= 0) then
 			outcountdone <= '1';
+			outtrans <= '0';
 		else 
 			outcountdone <= '0';
+			outtrans <= '1';
 		end if;
 	END PROCESS;
 	
 	process(phyclk, emptyd, outcountdone) --ctrlout
 	begin
-		if (phyclk'event AND phyclk = '1' AND outcountdone = '1') then
+		if (phyclk'event AND phyclk = '1') then
 			controlo <= ctrlm;
 		end if;
 	end process;
@@ -115,7 +118,7 @@ begin
 			q => datam,
 			data => datai,
 			wrreq => wrend,
-			rdreq => outcountdone,
+			rdreq => outtrans,
 			rdempty => emptyd,
 			wrfull => fulld
 			);
@@ -128,7 +131,7 @@ begin
 			q => ctrlm,
 			data => controli,
 			wrreq => wrenc,
-			rdreq => outcountdone,
+			rdreq => outtrans,
 			rdempty => emptyc,
 			wrfull => fullc
 		);
