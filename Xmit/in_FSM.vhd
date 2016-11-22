@@ -8,12 +8,11 @@ port(
 	in_lo_overflow:		in std_logic;
 	in_hi_overflow:		in std_logic;
 	in_ctrl_ctrl:			in std_logic;
-
 	out_m_discard_en:		out std_logic;
 	out_wren:				out std_logic;
 	out_priority: 			out std_logic;
-	clk_sys:					in std_logic;
 	clk_phy:					in std_logic;
+	clk_sys:					in std_logic;
 	reset:					in std_logic;
 	controli: in std_logic_vector(23 downto 0);
 	wrend: in std_logic; --data write enable;
@@ -26,12 +25,16 @@ end in_FSM;
 
 architecture arch of in_FSM is
 --	type numstate is (start_state, frame_state, end_state);
-	signal ctrl_ctrl_prev:	std_logic;
+	signal discard_en_next: std_logic;
+	signal wren_next:			std_logic;
+	signal priority_next:	std_logic;
 	
 	signal aclr:				std_logic;
 	signal sysclk: 			std_logic;
 	signal phyclk:				std_logic;
-		
+	
+	signal ctrl_ctrl_prev:	std_logic;
+	
 	signal hi: std_logic := '1';
 	signal emptyd, emptyc, empty_priority, empty_stop: std_logic;
 	signal fulld, fullc, full_priority, full_stop: std_logic;
@@ -118,7 +121,6 @@ begin
 		else
 			out_m_discard_en <= out_m_discard_en;
 			out_wren <= out_wren;
-
 		end if;
 		
 		--out_priority<=in_priority;
@@ -182,6 +184,7 @@ begin
 			outtrans <= '0';
 		else 
 			outcountdone <= '0';
+			outtrans <= '1';
 		end if;
 	END PROCESS;
 	
@@ -241,7 +244,7 @@ begin
 			q => opri,
 			data => in_priority,
 			wrreq => wrenc,
-			rdreq => outtrans,
+			rdreq => hi and outtrans,
 			rdempty => empty_priority,
 			wrfull => full_priority
 		);
