@@ -4,56 +4,355 @@ use ieee.std_logic_1164.all;
 entity xmitTop is port(
 	f_hi_priority:		in std_logic;
 	f_rec_data_valid:	in std_logic;
+	f_rec_frame_valid:in std_logic;
 	f_data_in:			in std_logic_vector(7 downto 0);
-	f_ctrl_in: 			in std_logic_vector(24 downto 0);
+	f_ctrl_in: 			in std_logic_vector(23 downto 0);
+	
 	clk_sys:				in std_logic;
 	clk_phy:				in std_logic;
+	
 	phy_data_out: 		out std_logic_vector(3 downto 0);
+	phy_tx_en:			out std_logic;
+	
 	m_discard_en: 		out std_logic;
-	m_discard_frame:	out std_logic_vector(7 downto 0);
-	m_frame:				out std_logic_vector(7 downto 0);
+	m_discard_frame:	out std_logic_vector(12 downto 0);
+	m_tx_frame:			out std_logic_vector(23 downto 0);
 	m_tx_done:			out std_logic;
+	
 	reset:				in std_logic
 );
 end entity;
 
 architecture rtl of xmitTop is
-	signal overflow_low:		std_logic; -- TODO
-	signal overflow_high:	std_logic;
-	signal out_wren:			std_logic;
-	signal out_priority:		std_logic;
 	
 	component in_FSM
-	port(
-		in_frame:				in std_logic_vector(7 downto 0);
+	PORT(
 		in_priority:			in std_logic;
-		in_low_overflow:		in std_logic;
+		in_lo_overflow:		in std_logic;
 		in_hi_overflow:		in std_logic;
-		in_f_rdv:				in std_logic;
+		in_ctrl_ctrl:			in std_logic;
+
 		out_m_discard_en:		out std_logic;
-		--out_m_discard_frame:	out std_logic_vector(7 downto 0);
-		out_frame:				out std_logic_vector(7 downto 0);
 		out_wren:				out std_logic;
 		out_priority: 			out std_logic;
 		clk_sys:					in std_logic;
-		reset:					in std_logic
+		clk_phy:					in std_logic;
+		reset:					in std_logic;
+		controli: in std_logic_vector(23 downto 0);
+		wrend: in std_logic; --data write enable;
+		wrenc: in std_logic; --ctrl write enable;
+		datai: in std_logic_vector(7 downto 0);
+		datao: out std_logic_vector(7 downto 0);
+		controlo: out std_logic_vector(23 downto 0)
 	);
 	end component;
-begin
-
-	in_FSM_inst : in_FSM PORT MAP (
-		in_frame				=> f_data_in,
-		in_priority 		=> f_hi_priority,
-		in_low_overflow	=> overflow_low,
-		in_hi_overflow 	=> overflow_high,
-		in_f_rdv 			=> f_rec_data_valid,
-		out_m_discard_en	=> m_discard_en,
-		--out_m_discard_frame:	out std_logic_vector(7 downto 0);
-		out_frame			=> m_frame,
-		out_wren				=> out_wren,
-		out_priority 		=> out_priority,
-		clk_sys				=> clk_sys,
-		reset    			=> reset
+	
+	component monitoring_logic
+	PORT(
+		clk, reset: 			in std_logic;
+		discard_enable:		in std_logic;
+		xmit_done:				in std_logic;
+		discard_frame:			in std_logic_vector (11 downto 0);	
+		frame_seq:				in std_logic_vector (23 downto 0);
+		
+		discard_looknow:		out std_logic;
+		ctrl_block_out:		out std_logic_vector(23 downto 0);
+		discard_frame_out:	out std_logic_vector(11 downto 0);
+		xmit_looknow:			out std_logic
+	
 	);
+	end component;
+
+	component priority_FSM
+	PORT(
+		clk_phy				: in std_logic;
+		reset					: in std_logic;
+		
+		data_lo_in			: in std_logic_vector(7 downto 0);
+		ctrl_block_lo_in	: in std_logic_vector(23 downto 0);
+		lo_empty_in 		: in std_logic;
+		pop_lo				: out std_logic;
+		data_hi_in			: in std_logic_vector(7 downto 0);
+		ctrl_block_hi_in	: in std_logic_vector(23 downto 0);
+		hi_empty_in 		: in std_logic;
+		pop_hi				: out std_logic;
+		
+		data_out				: out std_logic_vector(7 downto 0);
+		ctrl_block_out		: out std_logic_vector(23 downto 0)
+	);
+	end component;
+	
+	component out_FSM 
+	port(
+		clk_phy				: in std_logic;
+		reset					: in std_logic;
+		
+		data_in				: in std_logic_vector(7 downto 0);
+		ctrl_block_in		: in std_logic_vector(23 downto 0);
+		tx_en					: out std_logic;
+		frame_seq_out		: out std_logic_vector(11 downto 0);
+		xmit_done_out		: out std_logic;
+		data_out				: out std_logic_vector(3 downto 0)
+	);
+	end component;
+	
+	component ctrlFIFO
+	PORT(
+		aclr						: IN STD_LOGIC  := '0';
+		data						: IN STD_LOGIC_VECTOR (23 DOWNTO 0);
+		rdclk						: IN STD_LOGIC ;
+		rdreq						: IN STD_LOGIC ;
+		wrclk						: IN STD_LOGIC ;
+		wrreq						: IN STD_LOGIC ;
+		q							: OUT STD_LOGIC_VECTOR (23 DOWNTO 0);
+		rdempty					: OUT STD_LOGIC ;
+		rdfull					: OUT STD_LOGIC ;
+		wrempty					: OUT STD_LOGIC ;
+		wrfull					: OUT STD_LOGIC ;
+		wrusedw					: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+	);
+	end component;
+	
+	component dataFIFO
+	PORT(
+		aclr						: IN STD_LOGIC  := '0';
+		data						: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+		rdclk						: IN STD_LOGIC ;
+		rdreq						: IN STD_LOGIC ;
+		wrclk						: IN STD_LOGIC ;
+		wrreq						: IN STD_LOGIC ;
+		q							: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+		rdempty					: OUT STD_LOGIC ;
+		rdfull					: OUT STD_LOGIC ;
+		wrempty					: OUT STD_LOGIC ;
+		wrfull					: OUT STD_LOGIC ;
+		wrusedw					: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+	);
+	end component;
+	
+	component FIFO_1
+	PORT(
+		aclr						: IN STD_LOGIC  := '0';
+		data						: IN STD_LOGIC_VECTOR (0 DOWNTO 0);
+		rdclk						: IN STD_LOGIC ;
+		rdreq						: IN STD_LOGIC ;
+		wrclk						: IN STD_LOGIC ;
+		wrreq						: IN STD_LOGIC ;
+		q							: OUT STD_LOGIC_VECTOR (0 DOWNTO 0);
+		rdempty					: OUT STD_LOGIC ;
+		wrfull					: OUT STD_LOGIC 
+	);
+	end component;
+	
+	SIGNAL inBuffer_data_out: STD_LOGIC_VECTOR (7 DOWNTO 0);
+	SIGNAL inBuffer_ctrl_out: STD_LOGIC_VECTOR (23 DOWNTO 0);
+	SIGNAL inFSM_hi_priority_out: STD_LOGIC;
+	SIGNAL inFSM_wren_out:		STD_LOGIC;
+	SIGNAL inFSM_discard_out:	STD_LOGIC;
+	
+	SIGNAL HI_FIFO_overflow:	STD_LOGIC;
+	SIGNAL LO_FIFO_overflow:	STD_LOGIC;
+	
+	SIGNAL lo_empty:				STD_LOGIC;
+	SIGNAL hi_empty:				STD_LOGIC;
+	
+	SIGNAL xmit_done_wire:		STD_LOGIC;
+	SIGNAL xmit_sequence_wire:	STD_LOGIC_VECTOR (23 DOWNTO 0);
+	
+	SIGNAL out_wren_wire:		STD_LOGIC;
+	SIGNAL out_priority_wire:	STD_LOGIC;
+	
+	SIGNAL low_fifo_enable:		STD_LOGIC;
+	SIGNAL hi_fifo_enable:		STD_LOGIC;
+	
+	SIGNAL between_out_data:	STD_LOGIC_VECTOR (7 DOWNTO 0);
+	SIGNAL between_out_ctrl:	STD_LOGIC_VECTOR (23 DOWNTO 0);
+	
+	SIGNAL hi_overflow:			STD_LOGIC;
+	SIGNAL lo_overflow:			STD_LOGIC;
+	
+	SIGNAL hiho_data:				STD_LOGIC_VECTOR (7 DOWNTO 0);
+	SIGNAL hiho_ctrl:				STD_LOGIC_VECTOR (23 DOWNTO 0);
+	SIGNAL hiho_stop:				STD_LOGIC_VECTOR (0 DOWNTO 0);
+	SIGNAL lilo_data:				STD_LOGIC_VECTOR (7 DOWNTO 0);
+	SIGNAL lilo_ctrl:				STD_LOGIC_VECTOR (23 DOWNTO 0);
+	SIGNAL lilo_stop:				STD_LOGIC_VECTOR (0 DOWNTO 0);
+	
+	SIGNAL input_hi_stop:		STD_LOGIC_VECTOR (0 DOWNTO 0);
+	SIGNAL input_lo_stop:		STD_LOGIC_VECTOR (0 DOWNTO 0);
+	
+	SIGNAL hi_rereq:				STD_LOGIC;
+	SIGNAL lo_rereq:				STD_LOGIC;
+	
+	
+	
+	begin
+	process(out_wren_wire, out_priority_wire, clk_sys)
+	begin
+		if(clk_sys'event and clk_sys='1') then
+			low_fifo_enable <= out_wren_wire and not out_priority_wire;
+			hi_fifo_enable <= out_wren_wire and out_priority_wire;
+		end if;
+
+
+	
+	end process;
+	
+	
+	in_FSM_inst: in_FSM PORT MAP (
+		in_priority					=> f_hi_priority,
+		in_lo_overflow				=> lo_overflow,
+		in_hi_overflow				=> hi_overflow,
+		in_ctrl_ctrl				=> f_rec_frame_valid,
+
+		out_m_discard_en			=> inFSM_discard_out,
+		out_wren						=> out_wren_wire,
+		out_priority				=> out_priority_wire,
+		clk_sys						=> clk_sys,
+		clk_phy						=> clk_phy,
+		reset							=> reset,
+		controli						=> f_ctrl_in,
+		wrend							=> f_rec_data_valid,
+		wrenc							=> f_rec_frame_valid,
+		datai							=> f_data_in,
+		datao							=> inBuffer_data_out,
+		controlo						=> inBuffer_ctrl_out
+		
+	);
+	
+	monitoring_logic_inst: monitoring_logic PORT MAP (
+		clk						=> clk_phy, 
+		reset						=> reset,
+		discard_enable			=> inFSM_discard_out,
+		xmit_done				=> xmit_done_wire,
+		discard_frame			=> inBuffer_ctrl_out (23 DOWNTO 12),
+		frame_seq				=> xmit_sequence_wire,
+		
+		discard_looknow		=> m_discard_en,
+		ctrl_block_out			=> m_tx_frame,
+		discard_frame_out		=> m_discard_frame,
+		xmit_looknow			=> m_tx_done
+	
+	);
+	
+	priority_FSM_inst: priority_FSM PORT MAP(
+		clk_phy					=> clk_phy,
+		reset						=> reset,
+		
+		data_lo_in				=> lilo_data,
+		ctrl_block_lo_in		=> lilo_ctrl,
+		lo_empty_in 			=> lo_empty,
+		pop_lo					=> lo_rereq,
+		data_hi_in				=> hiho_data,
+		ctrl_block_hi_in		=> hiho_ctrl,
+		hi_empty_in 			=> hi_empty,
+		pop_hi					=> hi_rereq,
+		
+		data_out					=> between_out_data,
+		ctrl_block_out			=> between_out_ctrl
+
+	);
+	
+	output_FSM_inst: out_FSM PORT MAP(
+		clk_phy					=> clk_phy,
+		reset						=> reset,
+		
+		data_in					=> between_out_data,	
+		ctrl_block_in			=> between_out_ctrl,
+		tx_en						=> phy_tx_en,
+		frame_seq_out			=> xmit_sequence_wire,
+		xmit_done_out			=> xmit_done_wire,
+		data_out					=> phy_data_out
+	);
+
+	data_hi_fifo: dataFIFO PORT MAP(
+		aclr						=> reset,
+		data						=> inBuffer_data_out,
+		rdclk						=> clk_phy,
+		rdreq						=> hi_rereq,
+		wrclk						=> clk_sys,
+		wrreq						=> hi_fifo_enable,
+		q							=> hiho_data,
+		rdempty					=> hi_empty,
+--		rdfull					=> ,
+--		wrempty					=> ,
+		wrfull					=> hi_overflow
+--		wrusedw					=> 
+	);
+	
+	ctrl_hi_fifo: ctrlFIFO PORT MAP(
+		aclr						=> reset,
+		data						=> inBuffer_ctrl_out,
+		rdclk						=> clk_phy,
+		rdreq						=> hi_rereq,
+		wrclk						=> clk_sys,
+		wrreq						=> hi_fifo_enable,
+		q							=> hiho_ctrl
+--		rdempty					=> ,
+--		rdfull					=> ,
+--		wrempty					=> ,
+--		wrfull					=> ,
+--		wrusedw					=> 
+		);
+	
+	stop_hi_fifo: FIFO_1 PORT MAP(
+		aclr						=> reset,
+		data						=> input_hi_stop,
+		rdclk						=> clk_phy,
+		rdreq						=> hi_rereq,
+		wrclk						=> clk_sys,
+		wrreq						=> hi_fifo_enable,
+		q							=> hiho_stop
+--		rdempty					=> ,
+--		rdfull					=> ,
+--		wrempty					=> ,
+--		wrfull					=> ,
+--		wrusedw					=> 
+		);
+	
+	data_lo_fifo: dataFIFO PORT MAP(
+		aclr						=> reset,
+		data						=> inBuffer_data_out,
+		rdclk						=> clk_phy,
+		rdreq						=> lo_rereq,
+		wrclk						=> clk_sys,
+		wrreq						=> low_fifo_enable,
+		q							=> lilo_data,
+		rdempty					=> lo_empty,
+--		rdfull					=> ,
+--		wrempty					=> ,
+		wrfull					=> lo_overflow
+--		wrusedw					=> 
+		);
+	
+	ctrl_lo_fifo: ctrlFIFO PORT MAP(
+		aclr						=> reset,
+		data						=> inBuffer_ctrl_out,
+		rdclk						=> clk_phy,
+		rdreq						=> lo_rereq,
+		wrclk						=> clk_sys,
+		wrreq						=> low_fifo_enable,
+		q							=> lilo_ctrl
+--		rdempty					=> ,
+--		rdfull					=> ,
+--		wrempty					=> ,
+--		wrfull					=> ,
+--		wrusedw					=> 
+		);
+	
+	stop_lo_fifo: FIFO_1 PORT MAP(
+		aclr						=> reset,
+		data						=> input_lo_stop,
+		rdclk						=> clk_phy,
+		rdreq						=> lo_rereq,
+		wrclk						=> clk_sys,
+		wrreq						=> low_fifo_enable,
+		q							=> lilo_stop
+--		rdempty					=> ,
+--		wrempty					=> ,
+--		wrfull					=> ,
+		);
+	
+	
 	
 end architecture;
