@@ -26,6 +26,7 @@ architecture arch of inBuffer is
 	signal ctrlm: std_logic_vector (23 downto 0);
 	signal readen: std_logic;
 	signal outtrans: std_logic:='0';
+	signal canout: std_logic;
 	
 	component inbuff 
 		port (aclr		: IN STD_LOGIC;
@@ -67,7 +68,7 @@ begin
 				end if;
 			end if;
 		END IF;
-		if (cnt <= 0) then
+		if (cnt <= 1) then
 			incountdone <= '1';
 		else 
 			incountdone <= '0';
@@ -87,7 +88,7 @@ begin
 				end if;
 			end if;
 		END IF;
-		if (cnt <= 0) then
+		if (cnt <= 1) then
 			outcountdone <= '1';
 			outtrans <= '0';
 		else 
@@ -114,11 +115,11 @@ begin
 		port map (
 			aclr => aclr,
 			wrclk => sysclk,
-			rdclk => phyclk,
+			rdclk => phyclk and outtrans,
 			q => datam,
 			data => datai,
 			wrreq => wrend,
-			rdreq => outtrans,
+			rdreq => hi,
 			rdempty => emptyd,
 			wrfull => fulld
 			);
@@ -127,11 +128,11 @@ begin
 		port map(
 			aclr => aclr,
 			wrclk => sysclk,
-			rdclk => phyclk,
+			rdclk => phyclk and outtrans,
 			q => ctrlm,
 			data => controli,
 			wrreq => wrenc,
-			rdreq => outtrans,
+			rdreq => hi,
 			rdempty => emptyc,
 			wrfull => fullc
 		);
