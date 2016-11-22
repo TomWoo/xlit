@@ -12,7 +12,7 @@ entity inBuffer is
 	wrenc: in std_logic; --ctrl write enable;
 	datai: in std_logic_vector(7 downto 0);
 	datao: out std_logic_vector(7 downto 0);
-	controlo: out std_logic_vector(7 downto 0)
+	controlo: out std_logic_vector(23 downto 0)
 	);
 end inBuffer;
 	
@@ -26,7 +26,6 @@ architecture arch of inBuffer is
 	signal ctrlm: std_logic_vector (23 downto 0);
 	signal pacs: integer;
 	
-
 	component inbuff 
 		port (aclr		: IN STD_LOGIC;
 		data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
@@ -54,7 +53,6 @@ architecture arch of inBuffer is
 	END component;
 	
 begin 
-
 	PROCESS (sysclk, controli, wrenc) --incounter
 			VARIABLE   cnt         : INTEGER RANGE 0 TO 4096;
 			VARIABLE   direction    : INTEGER:=-1;
@@ -75,7 +73,7 @@ begin
 		end if;
 	END PROCESS;
 
-	PROCESS (phyclk, controli, outcountdone) --outcounter
+	PROCESS (phyclk, ctrlm, outcountdone) --outcounter
 			VARIABLE   cnt         : INTEGER RANGE 0 TO 4096;
 			VARIABLE   direction    : INTEGER:=-1;
 	BEGIN	
@@ -88,23 +86,23 @@ begin
 				end if;
 			end if;
 		END IF;
-		if (cnt <= 1) then
+		if (cnt <= 1 or emptyd = '1') then
 			outcountdone <= '1';
 		else 
 			outcountdone <= '0';
 		end if;
 	END PROCESS;
 	
-	process --ctrlout
+	process(phyclk, emptyd, outcountdone) --ctrlout
 	begin
-		if (phyclk'event AND phyclk = '1' AND outcountdone = '1' and not emptyd = '1') then
+		if (phyclk'event AND phyclk = '1' AND outcountdone = '1') then
 			controlo <= ctrlm;
 		end if;
 	end process;
 	
-	process --dataout always outputs data from the buffer
+	process(phyclk, emptyd) --dataout always outputs data from the buffer
 	begin
-		if (phyclk'event AND phyclk = '1' and not emptyd = '1') then
+		if (phyclk'event AND phyclk = '1') then
 			datao <= datam;
 		end if;
 	end process;
@@ -114,8 +112,8 @@ begin
 			aclr => aclr,
 			wrclk => sysclk,
 			rdclk => phyclk,
-			q => datao,
-			data => datam,
+			q => datam,
+			data => datai,
 			wrreq => wrend,
 			rdreq => outcountdone,
 			rdempty => emptyd,
@@ -127,8 +125,8 @@ begin
 			aclr => aclr,
 			wrclk => sysclk,
 			rdclk => phyclk,
-			q => controlo,
-			data => ctrlm,
+			q => ctrlm,
+			data => controli,
 			wrreq => wrenc,
 			rdreq => outcountdone,
 			rdempty => emptyc,
