@@ -4,167 +4,175 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "out_m_discard_en",
+					"name" : "phy_data_out[0]",
 					"strict" : false
 				},
 				{
-					"name" : "out_wren",
+					"name" : "phy_data_out[1]",
 					"strict" : false
 				},
 				{
-					"name" : "out_priority",
+					"name" : "phy_data_out[2]",
 					"strict" : false
 				},
 				{
-					"name" : "datao[0]",
+					"name" : "phy_data_out[3]",
 					"strict" : false
 				},
 				{
-					"name" : "datao[1]",
+					"name" : "phy_tx_en",
 					"strict" : false
 				},
 				{
-					"name" : "datao[2]",
+					"name" : "m_discard_en",
 					"strict" : false
 				},
 				{
-					"name" : "datao[3]",
+					"name" : "m_discard_frame[0]",
 					"strict" : false
 				},
 				{
-					"name" : "datao[4]",
+					"name" : "m_discard_frame[1]",
 					"strict" : false
 				},
 				{
-					"name" : "datao[5]",
+					"name" : "m_discard_frame[2]",
 					"strict" : false
 				},
 				{
-					"name" : "datao[6]",
+					"name" : "m_discard_frame[3]",
 					"strict" : false
 				},
 				{
-					"name" : "datao[7]",
+					"name" : "m_discard_frame[4]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[0]",
+					"name" : "m_discard_frame[5]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[1]",
+					"name" : "m_discard_frame[6]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[2]",
+					"name" : "m_discard_frame[7]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[3]",
+					"name" : "m_discard_frame[8]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[4]",
+					"name" : "m_discard_frame[9]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[5]",
+					"name" : "m_discard_frame[10]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[6]",
+					"name" : "m_discard_frame[11]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[7]",
+					"name" : "m_tx_frame[0]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[8]",
+					"name" : "m_tx_frame[1]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[9]",
+					"name" : "m_tx_frame[2]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[10]",
+					"name" : "m_tx_frame[3]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[11]",
+					"name" : "m_tx_frame[4]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[12]",
+					"name" : "m_tx_frame[5]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[13]",
+					"name" : "m_tx_frame[6]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[14]",
+					"name" : "m_tx_frame[7]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[15]",
+					"name" : "m_tx_frame[8]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[16]",
+					"name" : "m_tx_frame[9]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[17]",
+					"name" : "m_tx_frame[10]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[18]",
+					"name" : "m_tx_frame[11]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[19]",
+					"name" : "m_tx_frame[12]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[20]",
+					"name" : "m_tx_frame[13]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[21]",
+					"name" : "m_tx_frame[14]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[22]",
+					"name" : "m_tx_frame[15]",
 					"strict" : false
 				},
 				{
-					"name" : "controlo[23]",
+					"name" : "m_tx_frame[16]",
 					"strict" : false
 				},
 				{
-					"name" : "in_ctrl_ctrl",
+					"name" : "m_tx_frame[17]",
 					"strict" : false
 				},
 				{
-					"name" : "in_priority",
+					"name" : "m_tx_frame[18]",
 					"strict" : false
 				},
 				{
-					"name" : "in_hi_overflow",
+					"name" : "m_tx_frame[19]",
 					"strict" : false
 				},
 				{
-					"name" : "in_lo_overflow",
+					"name" : "m_tx_frame[20]",
 					"strict" : false
 				},
 				{
-					"name" : "clk_sys",
+					"name" : "m_tx_frame[21]",
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "m_tx_frame[22]",
+					"strict" : false
+				},
+				{
+					"name" : "m_tx_frame[23]",
+					"strict" : false
+				},
+				{
+					"name" : "m_tx_done",
 					"strict" : false
 				},
 				{
@@ -172,139 +180,151 @@
 					"strict" : false
 				},
 				{
-					"name" : "wrenc",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "wrend",
+					"name" : "clk_sys",
 					"strict" : false
 				},
 				{
-					"name" : "datai[0]",
+					"name" : "f_rec_frame_valid",
 					"strict" : false
 				},
 				{
-					"name" : "datai[1]",
+					"name" : "f_hi_priority",
 					"strict" : false
 				},
 				{
-					"name" : "datai[2]",
+					"name" : "f_ctrl_in[12]",
 					"strict" : false
 				},
 				{
-					"name" : "datai[3]",
+					"name" : "f_ctrl_in[13]",
 					"strict" : false
 				},
 				{
-					"name" : "datai[4]",
+					"name" : "f_ctrl_in[14]",
 					"strict" : false
 				},
 				{
-					"name" : "datai[5]",
+					"name" : "f_ctrl_in[15]",
 					"strict" : false
 				},
 				{
-					"name" : "datai[6]",
+					"name" : "f_ctrl_in[16]",
 					"strict" : false
 				},
 				{
-					"name" : "datai[7]",
+					"name" : "f_ctrl_in[17]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[0]",
+					"name" : "f_ctrl_in[18]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[1]",
+					"name" : "f_ctrl_in[19]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[2]",
+					"name" : "f_ctrl_in[20]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[3]",
+					"name" : "f_ctrl_in[21]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[4]",
+					"name" : "f_ctrl_in[22]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[5]",
+					"name" : "f_ctrl_in[23]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[6]",
+					"name" : "f_rec_data_valid",
 					"strict" : false
 				},
 				{
-					"name" : "controli[7]",
+					"name" : "f_data_in[4]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[8]",
+					"name" : "f_data_in[0]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[9]",
+					"name" : "f_ctrl_in[4]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[10]",
+					"name" : "f_ctrl_in[8]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[11]",
+					"name" : "f_ctrl_in[0]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[12]",
+					"name" : "f_ctrl_in[1]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[13]",
+					"name" : "f_ctrl_in[9]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[14]",
+					"name" : "f_ctrl_in[5]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[15]",
+					"name" : "f_data_in[5]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[16]",
+					"name" : "f_data_in[1]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[17]",
+					"name" : "f_data_in[6]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[18]",
+					"name" : "f_data_in[2]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[19]",
+					"name" : "f_ctrl_in[2]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[20]",
+					"name" : "f_ctrl_in[6]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[21]",
+					"name" : "f_ctrl_in[10]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[22]",
+					"name" : "f_ctrl_in[3]",
 					"strict" : false
 				},
 				{
-					"name" : "controli[23]",
+					"name" : "f_ctrl_in[11]",
+					"strict" : false
+				},
+				{
+					"name" : "f_ctrl_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "f_data_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "f_data_in[3]",
 					"strict" : false
 				}
 			]

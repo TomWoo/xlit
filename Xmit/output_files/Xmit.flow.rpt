@@ -1,5 +1,5 @@
 Flow report for Xmit
-Tue Nov 22 03:06:40 2016
+Tue Nov 22 04:09:49 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -38,24 +38,29 @@ agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Flow Summary                                                              ;
-+-----------------------------+---------------------------------------------+
-; Flow Status                 ; Flow Failed - Tue Nov 22 03:06:40 2016      ;
-; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
-; Revision Name               ; Xmit                                        ;
-; Top-level Entity Name       ; in_FSM                                      ;
-; Family                      ; Cyclone V                                   ;
-; Device                      ; 5CEBA4F23C7                                 ;
-; Timing Models               ; Final                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Tue Nov 22 04:09:49 2016       ;
+; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name                   ; Xmit                                        ;
+; Top-level Entity Name           ; xmitTop                                     ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CEBA4F23C7                                 ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 362 / 18,480 ( 2 % )                        ;
+; Total registers                 ; 949                                         ;
+; Total pins                      ; 81 / 224 ( 36 % )                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 72,192 / 3,153,920 ( 2 % )                  ;
+; Total DSP Blocks                ; 0 / 66 ( 0 % )                              ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0 / 4 ( 0 % )                               ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -63,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/22/2016 03:06:07 ;
+; Start date & time ; 11/22/2016 03:34:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Xmit                ;
 +-------------------+---------------------+
@@ -74,7 +79,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 176047623401795.147980196615480       ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 85987529690756.147980366913224        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                  ; --            ; --          ; eda_simulation ;
@@ -87,13 +92,13 @@ agreement for further details.
 ; MISC_FILE                           ; inbuff.cmp                            ; --            ; --          ; --             ;
 ; MISC_FILE                           ; inbuffcon.cmp                         ; --            ; --          ; --             ;
 ; MISC_FILE                           ; FIFO_1.cmp                            ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; in_FSM      ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; in_FSM      ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; in_FSM      ; Top            ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; xmitTop     ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; xmitTop     ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; xmitTop     ; Top            ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; in_FSM                                ; Xmit          ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; xmitTop                               ; Xmit          ; --          ; --             ;
 ; VHDL_INPUT_VERSION                  ; VHDL_2008                             ; VHDL_1993     ; --          ; --             ;
 ; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                   ; --            ; --          ; --             ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
@@ -104,8 +109,17 @@ agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:35     ; 1.0                     ; 950 MB              ; 00:01:06                           ;
-; Total                ; 00:00:35     ; --                      ; --                  ; 00:01:06                           ;
+; Analysis & Synthesis ; 00:00:35     ; 1.0                     ; 964 MB              ; 00:01:04                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 769 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 780 MB              ; 00:00:01                           ;
+; Fitter               ; 00:06:13     ; 1.0                     ; 2030 MB             ; 00:09:50                           ;
+; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 775 MB              ; 00:00:05                           ;
+; EDA Netlist Writer   ; 00:00:08     ; 1.0                     ; 802 MB              ; 00:00:07                           ;
+; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 775 MB              ; 00:00:05                           ;
+; EDA Netlist Writer   ; 00:00:07     ; 1.0                     ; 801 MB              ; 00:00:07                           ;
+; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 775 MB              ; 00:00:05                           ;
+; EDA Netlist Writer   ; 00:00:07     ; 1.0                     ; 798 MB              ; 00:00:07                           ;
+; Total                ; 00:07:27     ; --                      ; --                  ; 00:11:32                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -114,7 +128,16 @@ agreement for further details.
 +----------------------+------------------+-----------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +----------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis ; Envy             ; Windows 8 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter               ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
 +----------------------+------------------+-----------+------------+----------------+
 
 
@@ -122,6 +145,15 @@ agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Xmit -c Xmit
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Xmit -c Xmit --vector_source=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/top_level.vwf --testbench_file=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/top_level.vwf.vt
+quartus_eda --write_settings_files=off --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/ Xmit -c Xmit
+quartus_fit --read_settings_files=on --write_settings_files=off Xmit -c Xmit
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Xmit -c Xmit --vector_source=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/top_level.vwf --testbench_file=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/top_level.vwf.vt
+quartus_eda --write_settings_files=off --functional=off --flatten_buses=off --timescale=1ps --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/ Xmit -c Xmit
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Xmit -c Xmit --vector_source=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/top_level.vwf --testbench_file=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/top_level.vwf.vt
+quartus_eda --write_settings_files=off --functional=off --flatten_buses=off --timescale=1ps --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/ Xmit -c Xmit
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Xmit -c Xmit --vector_source=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/top_level.vwf --testbench_file=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/top_level.vwf.vt
+quartus_eda --write_settings_files=off --functional=off --flatten_buses=off --timescale=1ps --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/ Xmit -c Xmit
 
 
 

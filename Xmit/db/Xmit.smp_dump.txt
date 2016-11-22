@@ -1,5 +1,5 @@
 
-State Machine - |monitoring_logic|my_state
+State Machine - |xmitTop|out_FSM:output_FSM_inst|my_state
 Name my_state.s_FCS my_state.s_data my_state.s_length my_state.s_SA my_state.s_DA my_state.s_SFD my_state.s_preamble my_state.s_gap 
 my_state.s_gap 0 0 0 0 0 0 0 0 
 my_state.s_preamble 0 0 0 0 0 0 1 1 

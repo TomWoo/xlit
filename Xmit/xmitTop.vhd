@@ -15,7 +15,7 @@ entity xmitTop is port(
 	phy_tx_en:			out std_logic;
 	
 	m_discard_en: 		out std_logic;
-	m_discard_frame:	out std_logic_vector(12 downto 0);
+	m_discard_frame:	out std_logic_vector(11 downto 0);
 	m_tx_frame:			out std_logic_vector(23 downto 0);
 	m_tx_done:			out std_logic;
 	
@@ -90,7 +90,7 @@ architecture rtl of xmitTop is
 		data_in				: in std_logic_vector(7 downto 0);
 		ctrl_block_in		: in std_logic_vector(23 downto 0);
 		tx_en					: out std_logic;
-		frame_seq_out		: out std_logic_vector(11 downto 0);
+		frame_seq_out		: out std_logic_vector(23 downto 0);
 		xmit_done_out		: out std_logic;
 		data_out				: out std_logic_vector(3 downto 0)
 	);
