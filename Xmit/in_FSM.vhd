@@ -14,7 +14,6 @@ port(
 	clk_phy:					in std_logic;
 	clk_sys:					in std_logic;
 	reset:					in std_logic;
-	
 	controli: in std_logic_vector(23 downto 0);
 	wrend: in std_logic; --data write enable;
 	wrenc: in std_logic; --ctrl write enable;
@@ -51,6 +50,8 @@ architecture arch of in_FSM is
 	signal last: std_logic;
 	signal lasto: std_logic;
 	signal opri: std_logic;
+	signal outstart: std_logic;
+	signal outstartas: std_logic;
 	
 	component inbuff 
 		port (
@@ -148,13 +149,16 @@ begin
 				end if;
 			end if;
 		END IF;
-		if (cnti <= 0) then
+		if (cnti <= 1) then
 			incountdone <= '1';
+			outstartas <= '1';
 			last <= '1';
-			
 		else 
 			incountdone <= '0';
 			last <= '0';
+			if (emptyd = '0') then
+				outstartas <='0';
+			end if;
 		end if;
 	END PROCESS;
 
@@ -165,20 +169,21 @@ begin
 			outcountdone <= '0';
 			outtrans <= '0';
 		elsif (phyclk'EVENT AND phyclk = '1') THEN
-			if (outcountdone = '1' or (incountdone = '1' and outtrans = '0')) then
+			if ((outstart = '1' and outcountdone = '1') or (incountdone = '1' and outtrans = '0')) then
 				cnto <= to_integer(unsigned(ctrlm(11 downto 0)));
+				outstart <= '0';
 			else
 				if (cnto>0) then
 					cnto <= cnto -1;
+					outstart <= outstartas;
 				end if;
 			end if;
 		END IF;
-		if (cnto <= 0) then
+		if (cnto <= 0 and outtrans = '1') then
 			outcountdone <= '1';
 			outtrans <= '0';
 		else 
 			outcountdone <= '0';
-			outtrans <= '1';
 		end if;
 	END PROCESS;
 	
