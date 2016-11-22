@@ -6,11 +6,11 @@ port(
 	in_priority:			in std_logic;
 	in_lo_overflow:		in std_logic;
 	in_hi_overflow:		in std_logic;
-	in_ctrl_write:			in std_logic;
+	in_ctrl_ctrl:			in std_logic;
+	
 	out_m_discard_en:		out std_logic;
 	out_wren:				out std_logic;
 	out_priority: 			out std_logic;
-	clk_phy:					in std_logic;
 	clk_sys:					in std_logic;
 	reset:					in std_logic			
 );
@@ -18,37 +18,39 @@ end in_FSM;
 
 architecture arch of in_FSM is
 --	type numstate is (start_state, frame_state, end_state);
-	signal discard_en_next: std_logic;
-	signal wren_next:			std_logic;
-	signal priority_next:	std_logic;
+	signal ctrl_ctrl_prev:	std_logic;
 	
 begin
 
+	process(clk_sys, reset) begin
+		if(reset = '1') then
+			ctrl_ctrl_prev <= '0';
+		elsif(rising_edge(clk_sys)) then
+			ctrl_ctrl_prev <= in_ctrl_ctrl;
+		else
+			ctrl_ctrl_prev <= ctrl_ctrl_prev;
+		end if;
+	end process;
+	
 	process(clk_sys, reset)
 	begin
 		if(reset = '1') then
 			out_m_discard_en <= '0';		
 			out_wren <= '0';
-			out_priority <= '0';
-		elsif (clk_sys'event and clk_sys='1' and in_ctrl_write='1') then
-			priority_next<=in_priority;
+		elsif(clk_sys'event and clk_sys='1') then
 			if ((in_lo_overflow = '1' and in_priority='0') or (in_hi_overflow='1' and in_priority='1')) then
-				discard_en_next <= '1';
-				wren_next <= '0';
+				out_wren <= '0';
+				out_m_discard_en <= in_ctrl_ctrl;
 			else
-				discard_en_next <= '0';
-				wren_next <= '1';
+				out_wren <= in_ctrl_ctrl;
+				out_m_discard_en <= '0';
 			end if;
+		else
+			out_m_discard_en <= out_m_discard_en;
+			out_wren <= out_wren;
 		end if;
-	end process;
-	
-	process(clk_phy, discard_en_next, wren_next, priority_next)
-	begin
-		if(clk_phy'event and clk_phy='1') then
-			out_priority<=priority_next;
-			out_m_discard_en<=discard_en_next;
-			out_wren<=wren_next;
-		end if;
+		
+		out_priority<=in_priority;
 	end process;
 	
 --	process(clk_sys, reset)
