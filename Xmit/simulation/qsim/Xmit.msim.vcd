@@ -3,7 +3,7 @@ $comment
 		vcd file Xmit.msim.vcd -direction
 $end
 $date
-	Thu Nov 17 21:12:54 2016
+	Tue Nov 22 01:13:59 2016
 $end
 $version
 	ModelSim Version 10.4d
@@ -12,175 +12,452 @@ $timescale
 	1ps
 $end
 
-$scope module monitoring_logic_vlg_vec_tst $end
-$var reg 1 ! clk $end
-$var reg 1 " discard_enable $end
-$var reg 12 # discard_frame [11:0] $end
-$var reg 24 $ frame_seq [23:0] $end
-$var reg 1 % reset $end
-$var reg 1 & xmit_done $end
-$var wire 1 ' ctrl_block_out [23] $end
-$var wire 1 ( ctrl_block_out [22] $end
-$var wire 1 ) ctrl_block_out [21] $end
-$var wire 1 * ctrl_block_out [20] $end
-$var wire 1 + ctrl_block_out [19] $end
-$var wire 1 , ctrl_block_out [18] $end
-$var wire 1 - ctrl_block_out [17] $end
-$var wire 1 . ctrl_block_out [16] $end
-$var wire 1 / ctrl_block_out [15] $end
-$var wire 1 0 ctrl_block_out [14] $end
-$var wire 1 1 ctrl_block_out [13] $end
-$var wire 1 2 ctrl_block_out [12] $end
-$var wire 1 3 ctrl_block_out [11] $end
-$var wire 1 4 ctrl_block_out [10] $end
-$var wire 1 5 ctrl_block_out [9] $end
-$var wire 1 6 ctrl_block_out [8] $end
-$var wire 1 7 ctrl_block_out [7] $end
-$var wire 1 8 ctrl_block_out [6] $end
-$var wire 1 9 ctrl_block_out [5] $end
-$var wire 1 : ctrl_block_out [4] $end
-$var wire 1 ; ctrl_block_out [3] $end
-$var wire 1 < ctrl_block_out [2] $end
-$var wire 1 = ctrl_block_out [1] $end
-$var wire 1 > ctrl_block_out [0] $end
-$var wire 1 ? discard_frame_out [11] $end
-$var wire 1 @ discard_frame_out [10] $end
-$var wire 1 A discard_frame_out [9] $end
-$var wire 1 B discard_frame_out [8] $end
-$var wire 1 C discard_frame_out [7] $end
-$var wire 1 D discard_frame_out [6] $end
-$var wire 1 E discard_frame_out [5] $end
-$var wire 1 F discard_frame_out [4] $end
-$var wire 1 G discard_frame_out [3] $end
-$var wire 1 H discard_frame_out [2] $end
-$var wire 1 I discard_frame_out [1] $end
-$var wire 1 J discard_frame_out [0] $end
-$var wire 1 K discard_looknow $end
-$var wire 1 L xmit_looknow $end
+$scope module in_FSM_vlg_vec_tst $end
+$var reg 1 ! clk_phy $end
+$var reg 1 " clk_sys $end
+$var reg 24 # controli [23:0] $end
+$var reg 8 $ datai [7:0] $end
+$var reg 1 % in_ctrl_ctrl $end
+$var reg 1 & in_hi_overflow $end
+$var reg 1 ' in_lo_overflow $end
+$var reg 1 ( in_priority $end
+$var reg 1 ) reset $end
+$var reg 1 * wrenc $end
+$var reg 1 + wrend $end
+$var wire 1 , controlo [23] $end
+$var wire 1 - controlo [22] $end
+$var wire 1 . controlo [21] $end
+$var wire 1 / controlo [20] $end
+$var wire 1 0 controlo [19] $end
+$var wire 1 1 controlo [18] $end
+$var wire 1 2 controlo [17] $end
+$var wire 1 3 controlo [16] $end
+$var wire 1 4 controlo [15] $end
+$var wire 1 5 controlo [14] $end
+$var wire 1 6 controlo [13] $end
+$var wire 1 7 controlo [12] $end
+$var wire 1 8 controlo [11] $end
+$var wire 1 9 controlo [10] $end
+$var wire 1 : controlo [9] $end
+$var wire 1 ; controlo [8] $end
+$var wire 1 < controlo [7] $end
+$var wire 1 = controlo [6] $end
+$var wire 1 > controlo [5] $end
+$var wire 1 ? controlo [4] $end
+$var wire 1 @ controlo [3] $end
+$var wire 1 A controlo [2] $end
+$var wire 1 B controlo [1] $end
+$var wire 1 C controlo [0] $end
+$var wire 1 D datao [7] $end
+$var wire 1 E datao [6] $end
+$var wire 1 F datao [5] $end
+$var wire 1 G datao [4] $end
+$var wire 1 H datao [3] $end
+$var wire 1 I datao [2] $end
+$var wire 1 J datao [1] $end
+$var wire 1 K datao [0] $end
+$var wire 1 L out_m_discard_en $end
+$var wire 1 M out_priority $end
+$var wire 1 N out_wren $end
 
 $scope module i1 $end
-$var wire 1 M gnd $end
-$var wire 1 N vcc $end
-$var wire 1 O unknown $end
-$var tri1 1 P devclrn $end
-$var tri1 1 Q devpor $end
-$var tri1 1 R devoe $end
-$var wire 1 S reset~input_o $end
-$var wire 1 T discard_looknow~output_o $end
-$var wire 1 U ctrl_block_out[0]~output_o $end
-$var wire 1 V ctrl_block_out[1]~output_o $end
-$var wire 1 W ctrl_block_out[2]~output_o $end
-$var wire 1 X ctrl_block_out[3]~output_o $end
-$var wire 1 Y ctrl_block_out[4]~output_o $end
-$var wire 1 Z ctrl_block_out[5]~output_o $end
-$var wire 1 [ ctrl_block_out[6]~output_o $end
-$var wire 1 \ ctrl_block_out[7]~output_o $end
-$var wire 1 ] ctrl_block_out[8]~output_o $end
-$var wire 1 ^ ctrl_block_out[9]~output_o $end
-$var wire 1 _ ctrl_block_out[10]~output_o $end
-$var wire 1 ` ctrl_block_out[11]~output_o $end
-$var wire 1 a ctrl_block_out[12]~output_o $end
-$var wire 1 b ctrl_block_out[13]~output_o $end
-$var wire 1 c ctrl_block_out[14]~output_o $end
-$var wire 1 d ctrl_block_out[15]~output_o $end
-$var wire 1 e ctrl_block_out[16]~output_o $end
-$var wire 1 f ctrl_block_out[17]~output_o $end
-$var wire 1 g ctrl_block_out[18]~output_o $end
-$var wire 1 h ctrl_block_out[19]~output_o $end
-$var wire 1 i ctrl_block_out[20]~output_o $end
-$var wire 1 j ctrl_block_out[21]~output_o $end
-$var wire 1 k ctrl_block_out[22]~output_o $end
-$var wire 1 l ctrl_block_out[23]~output_o $end
-$var wire 1 m discard_frame_out[0]~output_o $end
-$var wire 1 n discard_frame_out[1]~output_o $end
-$var wire 1 o discard_frame_out[2]~output_o $end
-$var wire 1 p discard_frame_out[3]~output_o $end
-$var wire 1 q discard_frame_out[4]~output_o $end
-$var wire 1 r discard_frame_out[5]~output_o $end
-$var wire 1 s discard_frame_out[6]~output_o $end
-$var wire 1 t discard_frame_out[7]~output_o $end
-$var wire 1 u discard_frame_out[8]~output_o $end
-$var wire 1 v discard_frame_out[9]~output_o $end
-$var wire 1 w discard_frame_out[10]~output_o $end
-$var wire 1 x discard_frame_out[11]~output_o $end
-$var wire 1 y xmit_looknow~output_o $end
-$var wire 1 z clk~input_o $end
-$var wire 1 { discard_enable~input_o $end
-$var wire 1 | discard_looknow~reg0_q $end
-$var wire 1 } frame_seq[0]~input_o $end
-$var wire 1 ~ ctrl_block_out[0]~reg0_q $end
-$var wire 1 !! frame_seq[1]~input_o $end
-$var wire 1 "! ctrl_block_out[1]~reg0_q $end
-$var wire 1 #! frame_seq[2]~input_o $end
-$var wire 1 $! ctrl_block_out[2]~reg0_q $end
-$var wire 1 %! frame_seq[3]~input_o $end
-$var wire 1 &! ctrl_block_out[3]~reg0_q $end
-$var wire 1 '! frame_seq[4]~input_o $end
-$var wire 1 (! ctrl_block_out[4]~reg0_q $end
-$var wire 1 )! frame_seq[5]~input_o $end
-$var wire 1 *! ctrl_block_out[5]~reg0_q $end
-$var wire 1 +! frame_seq[6]~input_o $end
-$var wire 1 ,! ctrl_block_out[6]~reg0_q $end
-$var wire 1 -! frame_seq[7]~input_o $end
-$var wire 1 .! ctrl_block_out[7]~reg0_q $end
-$var wire 1 /! frame_seq[8]~input_o $end
-$var wire 1 0! ctrl_block_out[8]~reg0_q $end
-$var wire 1 1! frame_seq[9]~input_o $end
-$var wire 1 2! ctrl_block_out[9]~reg0_q $end
-$var wire 1 3! frame_seq[10]~input_o $end
-$var wire 1 4! ctrl_block_out[10]~reg0_q $end
-$var wire 1 5! frame_seq[11]~input_o $end
-$var wire 1 6! ctrl_block_out[11]~reg0_q $end
-$var wire 1 7! frame_seq[12]~input_o $end
-$var wire 1 8! ctrl_block_out[12]~reg0_q $end
-$var wire 1 9! frame_seq[13]~input_o $end
-$var wire 1 :! ctrl_block_out[13]~reg0_q $end
-$var wire 1 ;! frame_seq[14]~input_o $end
-$var wire 1 <! ctrl_block_out[14]~reg0_q $end
-$var wire 1 =! frame_seq[15]~input_o $end
-$var wire 1 >! ctrl_block_out[15]~reg0_q $end
-$var wire 1 ?! frame_seq[16]~input_o $end
-$var wire 1 @! ctrl_block_out[16]~reg0_q $end
-$var wire 1 A! frame_seq[17]~input_o $end
-$var wire 1 B! ctrl_block_out[17]~reg0_q $end
-$var wire 1 C! frame_seq[18]~input_o $end
-$var wire 1 D! ctrl_block_out[18]~reg0_q $end
-$var wire 1 E! frame_seq[19]~input_o $end
-$var wire 1 F! ctrl_block_out[19]~reg0_q $end
-$var wire 1 G! frame_seq[20]~input_o $end
-$var wire 1 H! ctrl_block_out[20]~reg0_q $end
-$var wire 1 I! frame_seq[21]~input_o $end
-$var wire 1 J! ctrl_block_out[21]~reg0_q $end
-$var wire 1 K! frame_seq[22]~input_o $end
-$var wire 1 L! ctrl_block_out[22]~reg0_q $end
-$var wire 1 M! frame_seq[23]~input_o $end
-$var wire 1 N! ctrl_block_out[23]~reg0_q $end
-$var wire 1 O! discard_frame[0]~input_o $end
-$var wire 1 P! discard_frame_out[0]~reg0_q $end
-$var wire 1 Q! discard_frame[1]~input_o $end
-$var wire 1 R! discard_frame_out[1]~reg0_q $end
-$var wire 1 S! discard_frame[2]~input_o $end
-$var wire 1 T! discard_frame_out[2]~reg0_q $end
-$var wire 1 U! discard_frame[3]~input_o $end
-$var wire 1 V! discard_frame_out[3]~reg0_q $end
-$var wire 1 W! discard_frame[4]~input_o $end
-$var wire 1 X! discard_frame_out[4]~reg0_q $end
-$var wire 1 Y! discard_frame[5]~input_o $end
-$var wire 1 Z! discard_frame_out[5]~reg0_q $end
-$var wire 1 [! discard_frame[6]~input_o $end
-$var wire 1 \! discard_frame_out[6]~reg0_q $end
-$var wire 1 ]! discard_frame[7]~input_o $end
-$var wire 1 ^! discard_frame_out[7]~reg0_q $end
-$var wire 1 _! discard_frame[8]~input_o $end
-$var wire 1 `! discard_frame_out[8]~reg0_q $end
-$var wire 1 a! discard_frame[9]~input_o $end
-$var wire 1 b! discard_frame_out[9]~reg0_q $end
-$var wire 1 c! discard_frame[10]~input_o $end
-$var wire 1 d! discard_frame_out[10]~reg0_q $end
-$var wire 1 e! discard_frame[11]~input_o $end
-$var wire 1 f! discard_frame_out[11]~reg0_q $end
-$var wire 1 g! xmit_done~input_o $end
-$var wire 1 h! xmit_looknow~reg0_q $end
+$var wire 1 O gnd $end
+$var wire 1 P vcc $end
+$var wire 1 Q unknown $end
+$var tri1 1 R devclrn $end
+$var tri1 1 S devpor $end
+$var tri1 1 T devoe $end
+$var wire 1 U clk_sys~input_o $end
+$var wire 1 V in_ctrl_ctrl~input_o $end
+$var wire 1 W in_priority~input_o $end
+$var wire 1 X in_hi_overflow~input_o $end
+$var wire 1 Y in_lo_overflow~input_o $end
+$var wire 1 Z out_m_discard_en~0_combout $end
+$var wire 1 [ reset~input_o $end
+$var wire 1 \ out_m_discard_en~reg0_q $end
+$var wire 1 ] out_wren~0_combout $end
+$var wire 1 ^ out_wren~reg0_q $end
+$var wire 1 _ clk_phy~input_o $end
+$var wire 1 ` wrenc~input_o $end
+$var wire 1 a inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a[8]~4_combout $end
+$var wire 1 b inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|_~2_combout $end
+$var wire 1 c inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a5~0_combout $end
+$var wire 1 d inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a5~q $end
+$var wire 1 e inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a7~0_combout $end
+$var wire 1 f inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a7~q $end
+$var wire 1 g inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|_~1_combout $end
+$var wire 1 h inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a9~0_combout $end
+$var wire 1 i inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a9~q $end
+$var wire 1 j inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a[9]~5_combout $end
+$var wire 1 k inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a[6]~6_combout $end
+$var wire 1 l inbuff_priority|dcfifo_component|auto_generated|wrfull_eq_comp|aneb_result_wire[0]~1_combout $end
+$var wire 1 m inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a[7]~7_combout $end
+$var wire 1 n inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a[4]~8_combout $end
+$var wire 1 o inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a[5]~9_combout $end
+$var wire 1 p inbuff_priority|dcfifo_component|auto_generated|wrfull_eq_comp|aneb_result_wire[0]~2_combout $end
+$var wire 1 q inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|_~0_combout $end
+$var wire 1 r inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a3~0_combout $end
+$var wire 1 s inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a3~q $end
+$var wire 1 t inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a4~0_combout $end
+$var wire 1 u inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a4~q $end
+$var wire 1 v inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a6~0_combout $end
+$var wire 1 w inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a6~q $end
+$var wire 1 x inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a8~0_combout $end
+$var wire 1 y inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a8~q $end
+$var wire 1 z inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|_~4_combout $end
+$var wire 1 { inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|_~5_combout $end
+$var wire 1 | inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|_~3_combout $end
+$var wire 1 } inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|parity9~q $end
+$var wire 1 ~ inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a0~0_combout $end
+$var wire 1 !! inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a0~q $end
+$var wire 1 "! inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a2~0_combout $end
+$var wire 1 #! inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a2~q $end
+$var wire 1 $! inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a[2]~1_combout $end
+$var wire 1 %! inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a[3]~2_combout $end
+$var wire 1 &! inbuff_priority|dcfifo_component|auto_generated|wrptr_g[0]~0_combout $end
+$var wire 1 '! inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a[0]~3_combout $end
+$var wire 1 (! inbuff_priority|dcfifo_component|auto_generated|wrfull_eq_comp|aneb_result_wire[0]~0_combout $end
+$var wire 1 )! inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a1~0_combout $end
+$var wire 1 *! inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|counter8a1~q $end
+$var wire 1 +! inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a[1]~0_combout $end
+$var wire 1 ,! inbuff_priority|dcfifo_component|auto_generated|wrfull_eq_comp|data_wire[2]~0_combout $end
+$var wire 1 -! inbuff_priority|dcfifo_component|auto_generated|valid_wrreq~0_combout $end
+$var wire 1 .! ~GND~combout $end
+$var wire 1 /! out_priority~reg0_q $end
+$var wire 1 0! wrend~input_o $end
+$var wire 1 1! inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[8]~4_combout $end
+$var wire 1 2! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|_~2_combout $end
+$var wire 1 3! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a5~0_combout $end
+$var wire 1 4! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a5~q $end
+$var wire 1 5! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a7~0_combout $end
+$var wire 1 6! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a7~q $end
+$var wire 1 7! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|_~1_combout $end
+$var wire 1 8! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a9~0_combout $end
+$var wire 1 9! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a9~q $end
+$var wire 1 :! inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[9]~5_combout $end
+$var wire 1 ;! inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[6]~6_combout $end
+$var wire 1 <! inbuff_comp|dcfifo_component|auto_generated|wrfull_eq_comp|aneb_result_wire[0]~1_combout $end
+$var wire 1 =! inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[7]~7_combout $end
+$var wire 1 >! inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[4]~8_combout $end
+$var wire 1 ?! inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[5]~9_combout $end
+$var wire 1 @! inbuff_comp|dcfifo_component|auto_generated|wrfull_eq_comp|aneb_result_wire[0]~2_combout $end
+$var wire 1 A! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|_~0_combout $end
+$var wire 1 B! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a3~0_combout $end
+$var wire 1 C! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a3~q $end
+$var wire 1 D! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a4~0_combout $end
+$var wire 1 E! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a4~q $end
+$var wire 1 F! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a6~0_combout $end
+$var wire 1 G! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a6~q $end
+$var wire 1 H! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a8~0_combout $end
+$var wire 1 I! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a8~q $end
+$var wire 1 J! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|_~4_combout $end
+$var wire 1 K! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|_~5_combout $end
+$var wire 1 L! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|_~3_combout $end
+$var wire 1 M! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|parity9~q $end
+$var wire 1 N! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a0~0_combout $end
+$var wire 1 O! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a0~q $end
+$var wire 1 P! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a2~0_combout $end
+$var wire 1 Q! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a2~q $end
+$var wire 1 R! inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[2]~1_combout $end
+$var wire 1 S! inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[3]~2_combout $end
+$var wire 1 T! inbuff_comp|dcfifo_component|auto_generated|wrptr_g[0]~0_combout $end
+$var wire 1 U! inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[0]~3_combout $end
+$var wire 1 V! inbuff_comp|dcfifo_component|auto_generated|wrfull_eq_comp|aneb_result_wire[0]~0_combout $end
+$var wire 1 W! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a1~0_combout $end
+$var wire 1 X! inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a1~q $end
+$var wire 1 Y! inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[1]~0_combout $end
+$var wire 1 Z! inbuff_comp|dcfifo_component|auto_generated|wrfull_eq_comp|data_wire[2]~0_combout $end
+$var wire 1 [! inbuff_comp|dcfifo_component|auto_generated|valid_wrreq~0_combout $end
+$var wire 1 \! datai[0]~input_o $end
+$var wire 1 ]! datao[0]~reg0_q $end
+$var wire 1 ^! datai[1]~input_o $end
+$var wire 1 _! datao[1]~reg0_q $end
+$var wire 1 `! datai[2]~input_o $end
+$var wire 1 a! datao[2]~reg0_q $end
+$var wire 1 b! datai[3]~input_o $end
+$var wire 1 c! datao[3]~reg0_q $end
+$var wire 1 d! datai[4]~input_o $end
+$var wire 1 e! datao[4]~reg0_q $end
+$var wire 1 f! datai[5]~input_o $end
+$var wire 1 g! datao[5]~reg0_q $end
+$var wire 1 h! datai[6]~input_o $end
+$var wire 1 i! datao[6]~reg0_q $end
+$var wire 1 j! datai[7]~input_o $end
+$var wire 1 k! datao[7]~reg0_q $end
+$var wire 1 l! inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[4]~6_combout $end
+$var wire 1 m! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|_~1_combout $end
+$var wire 1 n! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a7~0_combout $end
+$var wire 1 o! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a7~q $end
+$var wire 1 p! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|_~3_combout $end
+$var wire 1 q! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|_~4_combout $end
+$var wire 1 r! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|_~2_combout $end
+$var wire 1 s! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|parity9~q $end
+$var wire 1 t! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|_~0_combout $end
+$var wire 1 u! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a5~0_combout $end
+$var wire 1 v! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a5~q $end
+$var wire 1 w! inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[5]~7_combout $end
+$var wire 1 x! inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[2]~8_combout $end
+$var wire 1 y! inbuffcon_comp|dcfifo_component|auto_generated|wrfull_eq_comp|aneb_result_wire[0]~2_combout $end
+$var wire 1 z! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a0~0_combout $end
+$var wire 1 {! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a0~q $end
+$var wire 1 |! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a1~0_combout $end
+$var wire 1 }! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a1~q $end
+$var wire 1 ~! inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a4~0_combout $end
+$var wire 1 !" inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a4~q $end
+$var wire 1 "" inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a6~0_combout $end
+$var wire 1 #" inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a6~q $end
+$var wire 1 $" inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a8~0_combout $end
+$var wire 1 %" inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a8~q $end
+$var wire 1 &" inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[8]~3_combout $end
+$var wire 1 '" inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[6]~4_combout $end
+$var wire 1 (" inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[7]~5_combout $end
+$var wire 1 )" inbuffcon_comp|dcfifo_component|auto_generated|wrfull_eq_comp|aneb_result_wire[0]~1_combout $end
+$var wire 1 *" inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a2~0_combout $end
+$var wire 1 +" inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a2~q $end
+$var wire 1 ," inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a3~0_combout $end
+$var wire 1 -" inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|counter8a3~q $end
+$var wire 1 ." inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[3]~0_combout $end
+$var wire 1 /" inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g[0]~0_combout $end
+$var wire 1 0" inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[0]~1_combout $end
+$var wire 1 1" inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a[1]~2_combout $end
+$var wire 1 2" inbuffcon_comp|dcfifo_component|auto_generated|wrfull_eq_comp|aneb_result_wire[0]~0_combout $end
+$var wire 1 3" inbuffcon_comp|dcfifo_component|auto_generated|valid_wrreq~0_combout $end
+$var wire 1 4" controli[0]~input_o $end
+$var wire 1 5" controlo[0]~reg0_q $end
+$var wire 1 6" controli[1]~input_o $end
+$var wire 1 7" controlo[1]~reg0_q $end
+$var wire 1 8" controli[2]~input_o $end
+$var wire 1 9" controlo[2]~reg0_q $end
+$var wire 1 :" controli[3]~input_o $end
+$var wire 1 ;" controlo[3]~reg0_q $end
+$var wire 1 <" controli[4]~input_o $end
+$var wire 1 =" controlo[4]~reg0_q $end
+$var wire 1 >" controli[5]~input_o $end
+$var wire 1 ?" controlo[5]~reg0_q $end
+$var wire 1 @" controli[6]~input_o $end
+$var wire 1 A" controlo[6]~reg0_q $end
+$var wire 1 B" controli[7]~input_o $end
+$var wire 1 C" controlo[7]~reg0_q $end
+$var wire 1 D" controli[8]~input_o $end
+$var wire 1 E" controlo[8]~reg0_q $end
+$var wire 1 F" controli[9]~input_o $end
+$var wire 1 G" controlo[9]~reg0_q $end
+$var wire 1 H" controli[10]~input_o $end
+$var wire 1 I" controlo[10]~reg0_q $end
+$var wire 1 J" controli[11]~input_o $end
+$var wire 1 K" controlo[11]~reg0_q $end
+$var wire 1 L" controli[12]~input_o $end
+$var wire 1 M" controlo[12]~reg0_q $end
+$var wire 1 N" controli[13]~input_o $end
+$var wire 1 O" controlo[13]~reg0_q $end
+$var wire 1 P" controli[14]~input_o $end
+$var wire 1 Q" controlo[14]~reg0_q $end
+$var wire 1 R" controli[15]~input_o $end
+$var wire 1 S" controlo[15]~reg0_q $end
+$var wire 1 T" controli[16]~input_o $end
+$var wire 1 U" controlo[16]~reg0_q $end
+$var wire 1 V" controli[17]~input_o $end
+$var wire 1 W" controlo[17]~reg0_q $end
+$var wire 1 X" controli[18]~input_o $end
+$var wire 1 Y" controlo[18]~reg0_q $end
+$var wire 1 Z" controli[19]~input_o $end
+$var wire 1 [" controlo[19]~reg0_q $end
+$var wire 1 \" controli[20]~input_o $end
+$var wire 1 ]" controlo[20]~reg0_q $end
+$var wire 1 ^" controli[21]~input_o $end
+$var wire 1 _" controlo[21]~reg0_q $end
+$var wire 1 `" controli[22]~input_o $end
+$var wire 1 a" controlo[22]~reg0_q $end
+$var wire 1 b" controli[23]~input_o $end
+$var wire 1 c" controlo[23]~reg0_q $end
+$var wire 1 d" inbuff_comp|dcfifo_component|auto_generated|wrptr_g [9] $end
+$var wire 1 e" inbuff_comp|dcfifo_component|auto_generated|wrptr_g [8] $end
+$var wire 1 f" inbuff_comp|dcfifo_component|auto_generated|wrptr_g [7] $end
+$var wire 1 g" inbuff_comp|dcfifo_component|auto_generated|wrptr_g [6] $end
+$var wire 1 h" inbuff_comp|dcfifo_component|auto_generated|wrptr_g [5] $end
+$var wire 1 i" inbuff_comp|dcfifo_component|auto_generated|wrptr_g [4] $end
+$var wire 1 j" inbuff_comp|dcfifo_component|auto_generated|wrptr_g [3] $end
+$var wire 1 k" inbuff_comp|dcfifo_component|auto_generated|wrptr_g [2] $end
+$var wire 1 l" inbuff_comp|dcfifo_component|auto_generated|wrptr_g [1] $end
+$var wire 1 m" inbuff_comp|dcfifo_component|auto_generated|wrptr_g [0] $end
+$var wire 1 n" inbuff_priority|dcfifo_component|auto_generated|wrptr_g [9] $end
+$var wire 1 o" inbuff_priority|dcfifo_component|auto_generated|wrptr_g [8] $end
+$var wire 1 p" inbuff_priority|dcfifo_component|auto_generated|wrptr_g [7] $end
+$var wire 1 q" inbuff_priority|dcfifo_component|auto_generated|wrptr_g [6] $end
+$var wire 1 r" inbuff_priority|dcfifo_component|auto_generated|wrptr_g [5] $end
+$var wire 1 s" inbuff_priority|dcfifo_component|auto_generated|wrptr_g [4] $end
+$var wire 1 t" inbuff_priority|dcfifo_component|auto_generated|wrptr_g [3] $end
+$var wire 1 u" inbuff_priority|dcfifo_component|auto_generated|wrptr_g [2] $end
+$var wire 1 v" inbuff_priority|dcfifo_component|auto_generated|wrptr_g [1] $end
+$var wire 1 w" inbuff_priority|dcfifo_component|auto_generated|wrptr_g [0] $end
+$var wire 1 x" inbuff_priority|dcfifo_component|auto_generated|fifo_ram|q_b [0] $end
+$var wire 1 y" inbuff_comp|dcfifo_component|auto_generated|fifo_ram|q_b [7] $end
+$var wire 1 z" inbuff_comp|dcfifo_component|auto_generated|fifo_ram|q_b [6] $end
+$var wire 1 {" inbuff_comp|dcfifo_component|auto_generated|fifo_ram|q_b [5] $end
+$var wire 1 |" inbuff_comp|dcfifo_component|auto_generated|fifo_ram|q_b [4] $end
+$var wire 1 }" inbuff_comp|dcfifo_component|auto_generated|fifo_ram|q_b [3] $end
+$var wire 1 ~" inbuff_comp|dcfifo_component|auto_generated|fifo_ram|q_b [2] $end
+$var wire 1 !# inbuff_comp|dcfifo_component|auto_generated|fifo_ram|q_b [1] $end
+$var wire 1 "# inbuff_comp|dcfifo_component|auto_generated|fifo_ram|q_b [0] $end
+$var wire 1 ## inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [23] $end
+$var wire 1 $# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [22] $end
+$var wire 1 %# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [21] $end
+$var wire 1 &# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [20] $end
+$var wire 1 '# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [19] $end
+$var wire 1 (# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [18] $end
+$var wire 1 )# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [17] $end
+$var wire 1 *# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [16] $end
+$var wire 1 +# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [15] $end
+$var wire 1 ,# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [14] $end
+$var wire 1 -# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [13] $end
+$var wire 1 .# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [12] $end
+$var wire 1 /# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [11] $end
+$var wire 1 0# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [10] $end
+$var wire 1 1# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [9] $end
+$var wire 1 2# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [8] $end
+$var wire 1 3# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [7] $end
+$var wire 1 4# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [6] $end
+$var wire 1 5# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [5] $end
+$var wire 1 6# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [4] $end
+$var wire 1 7# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [3] $end
+$var wire 1 8# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [2] $end
+$var wire 1 9# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [1] $end
+$var wire 1 :# inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|q_b [0] $end
+$var wire 1 ;# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe11a [9] $end
+$var wire 1 <# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe11a [8] $end
+$var wire 1 =# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe11a [7] $end
+$var wire 1 ># inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe11a [6] $end
+$var wire 1 ?# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe11a [5] $end
+$var wire 1 @# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe11a [4] $end
+$var wire 1 A# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe11a [3] $end
+$var wire 1 B# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe11a [2] $end
+$var wire 1 C# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe11a [1] $end
+$var wire 1 D# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe11a [0] $end
+$var wire 1 E# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [9] $end
+$var wire 1 F# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [8] $end
+$var wire 1 G# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [7] $end
+$var wire 1 H# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [6] $end
+$var wire 1 I# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [5] $end
+$var wire 1 J# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [4] $end
+$var wire 1 K# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [3] $end
+$var wire 1 L# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [2] $end
+$var wire 1 M# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [1] $end
+$var wire 1 N# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [0] $end
+$var wire 1 O# inbuff_comp|dcfifo_component|auto_generated|ram_address_a [8] $end
+$var wire 1 P# inbuff_comp|dcfifo_component|auto_generated|ram_address_a [7] $end
+$var wire 1 Q# inbuff_comp|dcfifo_component|auto_generated|ram_address_a [6] $end
+$var wire 1 R# inbuff_comp|dcfifo_component|auto_generated|ram_address_a [5] $end
+$var wire 1 S# inbuff_comp|dcfifo_component|auto_generated|ram_address_a [4] $end
+$var wire 1 T# inbuff_comp|dcfifo_component|auto_generated|ram_address_a [3] $end
+$var wire 1 U# inbuff_comp|dcfifo_component|auto_generated|ram_address_a [2] $end
+$var wire 1 V# inbuff_comp|dcfifo_component|auto_generated|ram_address_a [1] $end
+$var wire 1 W# inbuff_comp|dcfifo_component|auto_generated|ram_address_a [0] $end
+$var wire 1 X# inbuff_priority|dcfifo_component|auto_generated|ram_address_a [8] $end
+$var wire 1 Y# inbuff_priority|dcfifo_component|auto_generated|ram_address_a [7] $end
+$var wire 1 Z# inbuff_priority|dcfifo_component|auto_generated|ram_address_a [6] $end
+$var wire 1 [# inbuff_priority|dcfifo_component|auto_generated|ram_address_a [5] $end
+$var wire 1 \# inbuff_priority|dcfifo_component|auto_generated|ram_address_a [4] $end
+$var wire 1 ]# inbuff_priority|dcfifo_component|auto_generated|ram_address_a [3] $end
+$var wire 1 ^# inbuff_priority|dcfifo_component|auto_generated|ram_address_a [2] $end
+$var wire 1 _# inbuff_priority|dcfifo_component|auto_generated|ram_address_a [1] $end
+$var wire 1 `# inbuff_priority|dcfifo_component|auto_generated|ram_address_a [0] $end
+$var wire 1 a# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [9] $end
+$var wire 1 b# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [8] $end
+$var wire 1 c# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [7] $end
+$var wire 1 d# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [6] $end
+$var wire 1 e# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [5] $end
+$var wire 1 f# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [4] $end
+$var wire 1 g# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [3] $end
+$var wire 1 h# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [2] $end
+$var wire 1 i# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [1] $end
+$var wire 1 j# inbuff_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [0] $end
+$var wire 1 k# inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g [8] $end
+$var wire 1 l# inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g [7] $end
+$var wire 1 m# inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g [6] $end
+$var wire 1 n# inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g [5] $end
+$var wire 1 o# inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g [4] $end
+$var wire 1 p# inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g [3] $end
+$var wire 1 q# inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g [2] $end
+$var wire 1 r# inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g [1] $end
+$var wire 1 s# inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g [0] $end
+$var wire 1 t# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a [9] $end
+$var wire 1 u# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a [8] $end
+$var wire 1 v# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a [7] $end
+$var wire 1 w# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a [6] $end
+$var wire 1 x# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a [5] $end
+$var wire 1 y# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a [4] $end
+$var wire 1 z# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a [3] $end
+$var wire 1 {# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a [2] $end
+$var wire 1 |# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a [1] $end
+$var wire 1 }# inbuff_priority|dcfifo_component|auto_generated|ws_dgrp|dffpipe9|dffe10a [0] $end
+$var wire 1 ~# inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [8] $end
+$var wire 1 !$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [7] $end
+$var wire 1 "$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [6] $end
+$var wire 1 #$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [5] $end
+$var wire 1 $$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [4] $end
+$var wire 1 %$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [3] $end
+$var wire 1 &$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [2] $end
+$var wire 1 '$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [1] $end
+$var wire 1 ($ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a [0] $end
+$var wire 1 )$ inbuffcon_comp|dcfifo_component|auto_generated|ram_address_a [7] $end
+$var wire 1 *$ inbuffcon_comp|dcfifo_component|auto_generated|ram_address_a [6] $end
+$var wire 1 +$ inbuffcon_comp|dcfifo_component|auto_generated|ram_address_a [5] $end
+$var wire 1 ,$ inbuffcon_comp|dcfifo_component|auto_generated|ram_address_a [4] $end
+$var wire 1 -$ inbuffcon_comp|dcfifo_component|auto_generated|ram_address_a [3] $end
+$var wire 1 .$ inbuffcon_comp|dcfifo_component|auto_generated|ram_address_a [2] $end
+$var wire 1 /$ inbuffcon_comp|dcfifo_component|auto_generated|ram_address_a [1] $end
+$var wire 1 0$ inbuffcon_comp|dcfifo_component|auto_generated|ram_address_a [0] $end
+$var wire 1 1$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [8] $end
+$var wire 1 2$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [7] $end
+$var wire 1 3$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [6] $end
+$var wire 1 4$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [5] $end
+$var wire 1 5$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [4] $end
+$var wire 1 6$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [3] $end
+$var wire 1 7$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [2] $end
+$var wire 1 8$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [1] $end
+$var wire 1 9$ inbuffcon_comp|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a [0] $end
+$var wire 1 :$ inbuff_priority|dcfifo_component|auto_generated|wrfull_eq_comp|aneb_result_wire [0] $end
+$var wire 1 ;$ inbuff_comp|dcfifo_component|auto_generated|wrfull_eq_comp|aneb_result_wire [0] $end
+$var wire 1 <$ inbuffcon_comp|dcfifo_component|auto_generated|wrfull_eq_comp|aneb_result_wire [0] $end
+$var wire 1 =$ inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|sub_parity10a [1] $end
+$var wire 1 >$ inbuff_priority|dcfifo_component|auto_generated|wrptr_g1p|sub_parity10a [0] $end
+$var wire 1 ?$ inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|sub_parity10a [1] $end
+$var wire 1 @$ inbuff_comp|dcfifo_component|auto_generated|wrptr_g1p|sub_parity10a [0] $end
+$var wire 1 A$ inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|sub_parity10a [1] $end
+$var wire 1 B$ inbuffcon_comp|dcfifo_component|auto_generated|wrptr_g1p|sub_parity10a [0] $end
+$var wire 1 C$ inbuff_priority|dcfifo_component|auto_generated|fifo_ram|ram_block5a0_PORTBDATAOUT_bus [0] $end
+$var wire 1 D$ inbuff_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a0_PORTBDATAOUT_bus [0] $end
+$var wire 1 E$ inbuff_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a1_PORTBDATAOUT_bus [0] $end
+$var wire 1 F$ inbuff_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a2_PORTBDATAOUT_bus [0] $end
+$var wire 1 G$ inbuff_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a3_PORTBDATAOUT_bus [0] $end
+$var wire 1 H$ inbuff_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a4_PORTBDATAOUT_bus [0] $end
+$var wire 1 I$ inbuff_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a5_PORTBDATAOUT_bus [0] $end
+$var wire 1 J$ inbuff_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a6_PORTBDATAOUT_bus [0] $end
+$var wire 1 K$ inbuff_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a7_PORTBDATAOUT_bus [0] $end
+$var wire 1 L$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a0_PORTBDATAOUT_bus [0] $end
+$var wire 1 M$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a1_PORTBDATAOUT_bus [0] $end
+$var wire 1 N$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a2_PORTBDATAOUT_bus [0] $end
+$var wire 1 O$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a3_PORTBDATAOUT_bus [0] $end
+$var wire 1 P$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a4_PORTBDATAOUT_bus [0] $end
+$var wire 1 Q$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a5_PORTBDATAOUT_bus [0] $end
+$var wire 1 R$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a6_PORTBDATAOUT_bus [0] $end
+$var wire 1 S$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a7_PORTBDATAOUT_bus [0] $end
+$var wire 1 T$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a8_PORTBDATAOUT_bus [0] $end
+$var wire 1 U$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a9_PORTBDATAOUT_bus [0] $end
+$var wire 1 V$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a10_PORTBDATAOUT_bus [0] $end
+$var wire 1 W$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a11_PORTBDATAOUT_bus [0] $end
+$var wire 1 X$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a12_PORTBDATAOUT_bus [0] $end
+$var wire 1 Y$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a13_PORTBDATAOUT_bus [0] $end
+$var wire 1 Z$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a14_PORTBDATAOUT_bus [0] $end
+$var wire 1 [$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a15_PORTBDATAOUT_bus [0] $end
+$var wire 1 \$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a16_PORTBDATAOUT_bus [0] $end
+$var wire 1 ]$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a17_PORTBDATAOUT_bus [0] $end
+$var wire 1 ^$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a18_PORTBDATAOUT_bus [0] $end
+$var wire 1 _$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a19_PORTBDATAOUT_bus [0] $end
+$var wire 1 `$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a20_PORTBDATAOUT_bus [0] $end
+$var wire 1 a$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a21_PORTBDATAOUT_bus [0] $end
+$var wire 1 b$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a22_PORTBDATAOUT_bus [0] $end
+$var wire 1 c$ inbuffcon_comp|dcfifo_component|auto_generated|fifo_ram|ram_block11a23_PORTBDATAOUT_bus [0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -192,6 +469,16 @@ b0 #
 b0 $
 0%
 0&
+0'
+0(
+1)
+0*
+1+
+0C
+0B
+0A
+0@
+0?
 0>
 0=
 0<
@@ -211,11 +498,7 @@ b0 $
 0.
 0-
 0,
-0+
-0*
-0)
-0(
-0'
+0K
 0J
 0I
 0H
@@ -223,28 +506,22 @@ b0 $
 0F
 0E
 0D
-0C
-0B
-0A
-0@
-0?
-0K
 0L
 0M
-1N
-xO
+0N
+0O
 1P
-1Q
+xQ
 1R
-0S
-0T
+1S
+1T
 0U
 0V
 0W
 0X
 0Y
 0Z
-0[
+1[
 0\
 0]
 0^
@@ -265,7 +542,7 @@ xO
 0m
 0n
 0o
-0p
+1p
 0q
 0r
 0s
@@ -276,8 +553,8 @@ xO
 0x
 0y
 0z
-0{
-0|
+1{
+1|
 0}
 0~
 0!!
@@ -285,9 +562,9 @@ xO
 0#!
 0$!
 0%!
-0&!
+1&!
 0'!
-0(!
+1(!
 0)!
 0*!
 0+!
@@ -295,7 +572,7 @@ xO
 0-!
 0.!
 0/!
-00!
+10!
 01!
 02!
 03!
@@ -311,8 +588,8 @@ xO
 0=!
 0>!
 0?!
-0@!
-0A!
+1@!
+1A!
 0B!
 0C!
 0D!
@@ -322,8 +599,8 @@ xO
 0H!
 0I!
 0J!
-0K!
-0L!
+1K!
+1L!
 0M!
 0N!
 0O!
@@ -331,14 +608,14 @@ xO
 0Q!
 0R!
 0S!
-0T!
+1T!
 0U!
-0V!
-0W!
+1V!
+1W!
 0X!
 0Y!
 0Z!
-0[!
+1[!
 0\!
 0]!
 0^!
@@ -352,193 +629,1059 @@ xO
 0f!
 0g!
 0h!
+0i!
+0j!
+0k!
+0l!
+0m!
+0n!
+0o!
+0p!
+1q!
+1r!
+0s!
+0t!
+0u!
+0v!
+0w!
+0x!
+1y!
+0z!
+0{!
+0|!
+0}!
+0~!
+0!"
+0""
+0#"
+0$"
+0%"
+0&"
+0'"
+0("
+0)"
+0*"
+0+"
+0,"
+0-"
+0."
+1/"
+00"
+01"
+12"
+03"
+04"
+05"
+06"
+07"
+08"
+09"
+0:"
+0;"
+0<"
+0="
+0>"
+0?"
+0@"
+0A"
+0B"
+0C"
+0D"
+0E"
+0F"
+0G"
+0H"
+0I"
+0J"
+0K"
+0L"
+0M"
+0N"
+0O"
+0P"
+0Q"
+0R"
+0S"
+0T"
+0U"
+0V"
+0W"
+0X"
+0Y"
+0Z"
+0["
+0\"
+0]"
+0^"
+0_"
+0`"
+0a"
+0b"
+0c"
+0m"
+0l"
+0k"
+0j"
+0i"
+0h"
+0g"
+0f"
+0e"
+0d"
+0w"
+0v"
+0u"
+0t"
+0s"
+0r"
+0q"
+0p"
+0o"
+0n"
+0x"
+0"#
+0!#
+0~"
+0}"
+0|"
+0{"
+0z"
+0y"
+0:#
+09#
+08#
+07#
+06#
+05#
+04#
+03#
+02#
+01#
+00#
+0/#
+0.#
+0-#
+0,#
+0+#
+0*#
+0)#
+0(#
+0'#
+0&#
+0%#
+0$#
+0##
+0D#
+0C#
+0B#
+0A#
+0@#
+0?#
+0>#
+0=#
+0<#
+0;#
+0N#
+0M#
+0L#
+0K#
+0J#
+0I#
+0H#
+0G#
+0F#
+0E#
+zW#
+zV#
+zU#
+zT#
+zS#
+zR#
+zQ#
+zP#
+0O#
+z`#
+z_#
+z^#
+z]#
+z\#
+z[#
+zZ#
+zY#
+0X#
+0j#
+0i#
+0h#
+0g#
+0f#
+0e#
+0d#
+0c#
+0b#
+0a#
+0s#
+0r#
+0q#
+0p#
+0o#
+0n#
+0m#
+0l#
+0k#
+0}#
+0|#
+0{#
+0z#
+0y#
+0x#
+0w#
+0v#
+0u#
+0t#
+0($
+0'$
+0&$
+0%$
+0$$
+0#$
+0"$
+0!$
+0~#
+z0$
+z/$
+z.$
+z-$
+z,$
+z+$
+z*$
+0)$
+09$
+08$
+07$
+06$
+05$
+04$
+03$
+02$
+01$
+0:$
+0;$
+0<$
+0>$
+0=$
+0@$
+0?$
+0B$
+0A$
+0C$
+0D$
+0E$
+0F$
+0G$
+0H$
+0I$
+0J$
+0K$
+0L$
+0M$
+0N$
+0O$
+0P$
+0Q$
+0R$
+0S$
+0T$
+0U$
+0V$
+0W$
+0X$
+0Y$
+0Z$
+0[$
+0\$
+0]$
+0^$
+0_$
+0`$
+0a$
+0b$
+0c$
 $end
 #10000
-1"
-1{
+1!
+1_
 #20000
-1&
-1g!
-#25000
-1!
-1z
-1h!
-1|
-1T
-1y
-1L
-1K
-#30000
-0"
-0{
-#50000
-0!
 1"
-0z
-1{
-#60000
-0&
-0g!
-#75000
-1!
-1z
-0h!
-0y
-0L
-#80000
-0"
-0{
-#100000
 0!
-0z
-#110000
-b100000000000 #
-b100010000000 #
-b100010001000 #
-b100010001001 #
-1O!
-1U!
-1]!
-1e!
-#125000
+1U
+0_
+#30000
 1!
-1z
-1f!
-1^!
-1V!
-1P!
+1_
+#40000
+b1000 #
+b1100 #
+b1110 #
+b1111 #
+b1 $
+0)
+1*
+0"
+0!
+1\!
+14"
+16"
+18"
+1:"
+0[
+1`
+0U
+0_
+13"
+1-!
+1q
+1|!
+1)!
+#50000
+1!
+1_
+#60000
+1"
+0!
+1U
+0_
+1s#
+1s!
+1B$
+1m"
+1M!
+1@$
+1w"
+1}
+1>$
+1}!
+1X!
+1*!
+0q
+0(!
+0A!
+0V!
+02"
 0|
-0T
-1m
-1p
-1t
-1x
-1?
-1C
-1G
-1J
-0K
-#130000
-b10001001 #
-b1001 #
+1~
+0L!
+1N!
+0r!
+1z!
+0{
+0K!
+0q!
+#70000
+1!
+1_
+#80000
+b11 $
+b111 #
+b11 #
 b1 #
 b0 #
-0O!
-0U!
-0]!
-0e!
+b10 $
+0*
+0"
+0!
+04"
+06"
+08"
+0:"
+0\!
+1^!
+0`
+0U
+0_
+03"
+0-!
+0z!
+0~
+#90000
+1!
+1_
+#100000
+1"
+0!
+1U
+0_
+1l"
+1O!
+0M!
+0@$
+1A!
+1Z!
+1L!
+1P!
+0T!
+1K!
+#110000
+1!
+1_
+#120000
+b11 $
+0"
+0!
+1\!
+0U
+0_
+#130000
+1!
+1_
+#140000
+1"
+0!
+1U
+0_
+0m"
+1M!
+1@$
+1Q!
+0A!
+1V!
+0L!
+0N!
+0K!
 #150000
-0!
-0z
-#175000
 1!
-1z
-0f!
+1_
+#160000
+b111 $
+b101 $
+b100 $
+0"
+0!
+0\!
 0^!
+1`!
+0U
+0_
+#170000
+1!
+1_
+#180000
+1"
+0!
+1U
+0_
+1k"
+0O!
+0M!
+0@$
+1A!
 0V!
-0P!
-0m
-0p
-0t
-0x
-0?
-0C
-0G
-0J
+1L!
+0W!
+1T!
+1K!
+#190000
+1!
+1_
 #200000
+b101 $
+0"
 0!
-0z
-#225000
+1\!
+0U
+0_
+#210000
 1!
-1z
+1_
+#220000
+1"
+0!
+1U
+0_
+1m"
+1M!
+1@$
+0X!
+0A!
+0L!
+1N!
+0K!
+#230000
+1!
+1_
+#240000
+b111 $
+b110 $
+0"
+0!
+0\!
+1^!
+0U
+0_
 #250000
-0!
-0z
-#275000
 1!
-1z
+1_
+#260000
+1"
+0!
+1U
+0_
+0l"
+1O!
+0M!
+0@$
+1A!
+0Z!
+1L!
+0T!
+1K!
+1B!
+#270000
+1!
+1_
+#280000
+b111 $
+0"
+0!
+1\!
+0U
+0_
+#290000
+1!
+1_
 #300000
+1"
 0!
-0z
-#325000
+1U
+0_
+0m"
+1M!
+1@$
+1C!
+0A!
+0L!
+0N!
+0K!
+0B!
+1B!
+#310000
 1!
-1z
+1_
+#320000
+b1111 $
+b1011 $
+b1001 $
+b1000 $
+0"
+0!
+0\!
+0^!
+0`!
+1b!
+0U
+0_
+#330000
+1!
+1_
+#340000
+1"
+0!
+1U
+0_
+1j"
+0O!
+0M!
+0@$
+1A!
+1L!
+1W!
+1T!
+1K!
 #350000
-0!
-0z
-#375000
 1!
-1z
+1_
+#360000
+b1001 $
+0"
+0!
+1\!
+0U
+0_
+#370000
+1!
+1_
+#380000
+1"
+0!
+1U
+0_
+1m"
+1M!
+1@$
+1X!
+0A!
+0L!
+1N!
+0K!
+#390000
+1!
+1_
 #400000
+b1011 $
+b1010 $
+0"
 0!
-0z
-#425000
+0\!
+1^!
+0U
+0_
+#410000
 1!
-1z
+1_
+#420000
+1"
+0!
+1U
+0_
+1l"
+1O!
+0M!
+0@$
+1A!
+1Z!
+1L!
+0P!
+0T!
+1K!
+#430000
+1!
+1_
+#440000
+b1011 $
+0"
+0!
+1\!
+0U
+0_
 #450000
-0!
-0z
-#475000
 1!
-1z
+1_
+#460000
+1"
+0!
+1U
+0_
+0m"
+1M!
+1@$
+0Q!
+0A!
+0L!
+0N!
+0K!
+#470000
+1!
+1_
+#480000
+b1111 $
+b1101 $
+b1100 $
+0"
+0!
+0\!
+0^!
+1`!
+0U
+0_
+#490000
+1!
+1_
 #500000
+1"
 0!
-0z
-#525000
+1U
+0_
+0k"
+0O!
+0M!
+0@$
+1A!
+1L!
+0W!
+1T!
+1K!
+#510000
 1!
-1z
+1_
+#520000
+b1101 $
+0"
+0!
+1\!
+0U
+0_
+#530000
+1!
+1_
+#540000
+1"
+0!
+1U
+0_
+1m"
+1M!
+1@$
+0X!
+0A!
+0L!
+1N!
+0K!
 #550000
-0!
-0z
-#575000
 1!
-1z
+1_
+#560000
+b1111 $
+b1110 $
+0"
+0!
+0\!
+1^!
+0U
+0_
+#570000
+1!
+1_
+#580000
+1"
+0!
+1U
+0_
+0l"
+1O!
+0M!
+0@$
+1A!
+12!
+0Z!
+1L!
+0T!
+1K!
+1D!
+#590000
+1!
+1_
 #600000
+b100000000000 #
+b100000001000 #
+b100000001100 #
+b100000001110 #
+b100000001111 #
+b1111 $
+0"
 0!
-0z
-#625000
+1\!
+14"
+16"
+18"
+1:"
+1J"
+0U
+0_
+#610000
 1!
-1z
+1_
+#620000
+1"
+0!
+1U
+0_
+0m"
+1M!
+1@$
+1E!
+0A!
+02!
+0L!
+0N!
+0K!
+0D!
+1D!
+#630000
+1!
+1_
+#640000
+b11111 $
+b10111 $
+b10011 $
+b10001 $
+b1111 #
+b111 #
+b11 #
+b1 #
+b0 #
+b10000 $
+0"
+0!
+04"
+06"
+08"
+0:"
+0J"
+0\!
+0^!
+0`!
+0b!
+1d!
+0U
+0_
 #650000
-0!
-0z
-#675000
 1!
-1z
+1_
+#660000
+1"
+0!
+1U
+0_
+0O!
+0M!
+0@$
+1i"
+0@!
+1A!
+1L!
+1W!
+1T!
+1K!
+#670000
+1!
+1_
+#680000
+b10001 $
+0"
+0!
+1\!
+0U
+0_
+#690000
+1!
+1_
 #700000
+1"
 0!
-0z
-#725000
+1U
+0_
+1m"
+1M!
+1@$
+1X!
+0A!
+0L!
+1N!
+0K!
+#710000
 1!
-1z
+1_
+#720000
+b10011 $
+b10010 $
+0"
+0!
+0\!
+1^!
+0U
+0_
+#730000
+1!
+1_
+#740000
+1"
+0!
+1U
+0_
+1l"
+1O!
+0M!
+0@$
+1A!
+1Z!
+1L!
+1P!
+0T!
+1K!
 #750000
-0!
-0z
-#775000
 1!
-1z
+1_
+#760000
+b10011 $
+0"
+0!
+1\!
+0U
+0_
+#770000
+1!
+1_
+#780000
+1"
+0!
+1U
+0_
+0m"
+1M!
+1@$
+1Q!
+0A!
+0L!
+0N!
+0K!
+#790000
+1!
+1_
 #800000
+b10111 $
+b10101 $
+b10100 $
+0"
 0!
-0z
-#825000
+0\!
+0^!
+1`!
+0U
+0_
+#810000
 1!
-1z
+1_
+#820000
+1"
+0!
+1U
+0_
+1k"
+0O!
+0M!
+0@$
+1A!
+1L!
+0W!
+1T!
+1K!
+#830000
+1!
+1_
+#840000
+b10101 $
+0"
+0!
+1\!
+0U
+0_
 #850000
-0!
-0z
-#875000
 1!
-1z
+1_
+#860000
+1"
+0!
+1U
+0_
+1m"
+1M!
+1@$
+0X!
+0A!
+0L!
+1N!
+0K!
+#870000
+1!
+1_
+#880000
+b10111 $
+b10110 $
+0"
+0!
+0\!
+1^!
+0U
+0_
+#890000
+1!
+1_
 #900000
+1"
 0!
-0z
-#925000
+1U
+0_
+0l"
+1O!
+0M!
+0@$
+1A!
+0Z!
+1L!
+0T!
+1K!
+0B!
+#910000
 1!
-1z
+1_
+#920000
+b10111 $
+0"
+0!
+1\!
+0U
+0_
+#930000
+1!
+1_
+#940000
+1"
+0!
+1U
+0_
+0m"
+1M!
+1@$
+0C!
+0A!
+0L!
+0N!
+0K!
+1B!
+0B!
 #950000
-0!
-0z
-#975000
 1!
-1z
+1_
+#960000
+b11111 $
+b11011 $
+b11001 $
+b11000 $
+0"
+0!
+0\!
+0^!
+0`!
+1b!
+0U
+0_
+#970000
+1!
+1_
+#980000
+1"
+0!
+1U
+0_
+0j"
+0O!
+0M!
+0@$
+1A!
+1L!
+1W!
+1T!
+1K!
+#990000
+1!
+1_
 #1000000

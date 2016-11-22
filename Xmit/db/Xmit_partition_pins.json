@@ -4,311 +4,307 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "discard_looknow",
+					"name" : "out_m_discard_en",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[0]",
+					"name" : "out_wren",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[1]",
+					"name" : "out_priority",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[2]",
+					"name" : "datao[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[3]",
+					"name" : "datao[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[4]",
+					"name" : "datao[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[5]",
+					"name" : "datao[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[6]",
+					"name" : "datao[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[7]",
+					"name" : "datao[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[8]",
+					"name" : "datao[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[9]",
+					"name" : "datao[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[10]",
+					"name" : "controlo[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[11]",
+					"name" : "controlo[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[12]",
+					"name" : "controlo[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[13]",
+					"name" : "controlo[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[14]",
+					"name" : "controlo[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[15]",
+					"name" : "controlo[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[16]",
+					"name" : "controlo[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[17]",
+					"name" : "controlo[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[18]",
+					"name" : "controlo[8]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[19]",
+					"name" : "controlo[9]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[20]",
+					"name" : "controlo[10]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[21]",
+					"name" : "controlo[11]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[22]",
+					"name" : "controlo[12]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_block_out[23]",
+					"name" : "controlo[13]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame_out[0]",
+					"name" : "controlo[14]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame_out[1]",
+					"name" : "controlo[15]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame_out[2]",
+					"name" : "controlo[16]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame_out[3]",
+					"name" : "controlo[17]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame_out[4]",
+					"name" : "controlo[18]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame_out[5]",
+					"name" : "controlo[19]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame_out[6]",
+					"name" : "controlo[20]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame_out[7]",
+					"name" : "controlo[21]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame_out[8]",
+					"name" : "controlo[22]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame_out[9]",
+					"name" : "controlo[23]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame_out[10]",
+					"name" : "in_ctrl_ctrl",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame_out[11]",
+					"name" : "in_priority",
 					"strict" : false
 				},
 				{
-					"name" : "xmit_looknow",
+					"name" : "in_hi_overflow",
 					"strict" : false
 				},
 				{
-					"name" : "discard_enable",
+					"name" : "in_lo_overflow",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "clk_sys",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[0]",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[1]",
+					"name" : "clk_phy",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[2]",
+					"name" : "wrenc",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[3]",
+					"name" : "wrend",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[4]",
+					"name" : "datai[0]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[5]",
+					"name" : "datai[1]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[6]",
+					"name" : "datai[2]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[7]",
+					"name" : "datai[3]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[8]",
+					"name" : "datai[4]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[9]",
+					"name" : "datai[5]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[10]",
+					"name" : "datai[6]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[11]",
+					"name" : "datai[7]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[12]",
+					"name" : "controli[0]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[13]",
+					"name" : "controli[1]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[14]",
+					"name" : "controli[2]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[15]",
+					"name" : "controli[3]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[16]",
+					"name" : "controli[4]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[17]",
+					"name" : "controli[5]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[18]",
+					"name" : "controli[6]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[19]",
+					"name" : "controli[7]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[20]",
+					"name" : "controli[8]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[21]",
+					"name" : "controli[9]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[22]",
+					"name" : "controli[10]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq[23]",
+					"name" : "controli[11]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame[0]",
+					"name" : "controli[12]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame[1]",
+					"name" : "controli[13]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame[2]",
+					"name" : "controli[14]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame[3]",
+					"name" : "controli[15]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame[4]",
+					"name" : "controli[16]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame[5]",
+					"name" : "controli[17]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame[6]",
+					"name" : "controli[18]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame[7]",
+					"name" : "controli[19]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame[8]",
+					"name" : "controli[20]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame[9]",
+					"name" : "controli[21]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame[10]",
+					"name" : "controli[22]",
 					"strict" : false
 				},
 				{
-					"name" : "discard_frame[11]",
-					"strict" : false
-				},
-				{
-					"name" : "xmit_done",
+					"name" : "controli[23]",
 					"strict" : false
 				}
 			]

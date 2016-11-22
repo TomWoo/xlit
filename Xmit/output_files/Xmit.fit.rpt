@@ -1,5 +1,5 @@
 Fitter report for Xmit
-Wed Nov 09 19:52:32 2016
+Mon Nov 21 15:15:43 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -10,19 +10,20 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   2. Fitter Summary
   3. Fitter Settings
   4. Parallel Compilation
-  5. Fitter Resource Usage Summary
-  6. Input Pins
-  7. Output Pins
-  8. I/O Bank Usage
-  9. All Package Pins
- 10. Fitter Resource Utilization by Entity
- 11. Delay Chain Summary
- 12. Pad To Core Delay Chain Fanout
- 13. Control Signals
- 14. Fitter RAM Summary
- 15. Fitter Device Options
- 16. Operating Settings and Conditions
- 17. Fitter Messages
+  5. Ignored Assignments
+  6. Fitter Resource Usage Summary
+  7. Input Pins
+  8. Output Pins
+  9. I/O Bank Usage
+ 10. All Package Pins
+ 11. Fitter Resource Utilization by Entity
+ 12. Delay Chain Summary
+ 13. Pad To Core Delay Chain Fanout
+ 14. Control Signals
+ 15. Fitter RAM Summary
+ 16. Fitter Device Options
+ 17. Operating Settings and Conditions
+ 18. Fitter Messages
 
 
 
@@ -49,16 +50,16 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Failed - Wed Nov 09 19:52:32 2016           ;
+; Fitter Status                   ; Failed - Mon Nov 21 15:15:43 2016           ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; Xmit                                        ;
-; Top-level Entity Name           ; out_FSM_tester                              ;
+; Top-level Entity Name           ; monitoring_logic                            ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; 45 / 18,480 ( < 1 % )                       ;
 ; Total registers                 ; 54                                          ;
-; Total pins                      ; 16 / 224 ( 7 % )                            ;
+; Total pins                      ; 50 / 224 ( 22 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 8,192 / 3,153,920 ( < 1 % )                 ;
 ; Total RAM Blocks                ; 0 / 308 ( 0 % )                             ;
@@ -142,6 +143,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++----------------------------------------------------------------------------------------+
+; Ignored Assignments                                                                    ;
++----------+----------------+--------------+------------+---------------+----------------+
+; Name     ; Ignored Entity ; Ignored From ; Ignored To ; Ignored Value ; Ignored Source ;
++----------+----------------+--------------+------------+---------------+----------------+
+; Location ;                ;              ; clk        ; PIN_Y2        ; QSF Assignment ;
+; Location ;                ;              ; clk_out    ; PIN_AB22      ; QSF Assignment ;
+; Location ;                ;              ; rst_n      ; PIN_M23       ; QSF Assignment ;
+; Location ;                ;              ; rst_out    ; PIN_H15       ; QSF Assignment ;
++----------+----------------+--------------+------------+---------------+----------------+
+
+
 +------------------------------------------------------------------------------------------+
 ; Fitter Resource Usage Summary                                                            ;
 +-------------------------------------------------------------+--------------------+-------+
@@ -163,8 +176,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                                             ;                    ;       ;
 ; Difficulty packing design                                   ; No fit             ;       ;
 ;                                                             ;                    ;       ;
-; Total LABs:  partially or completely used                   ; 6 / 1,848          ; < 1 % ;
-;     -- Logic LABs                                           ; 6                  ;       ;
+; Total LABs:  partially or completely used                   ; 9 / 1,848          ; < 1 % ;
+;     -- Logic LABs                                           ; 9                  ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
 ;                                                             ;                    ;       ;
 ; Combinational ALUT usage for logic                          ; 87                 ;       ;
@@ -183,7 +196,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;         -- Routing optimization registers                   ; 0                  ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
-; I/O pins                                                    ; 16 / 224           ; 7 %   ;
+; I/O pins                                                    ; 50 / 224           ; 22 %  ;
 ;     -- Clock pins                                           ; 0 / 9              ; 0 %   ;
 ;     -- Dedicated input pins                                 ; 0 / 11             ; 0 %   ;
 ;                                                             ;                    ;       ;
@@ -206,43 +219,77 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Remote update blocks                                        ; 0 / 1              ; 0 %   ;
 ; Oscillator blocks                                           ; 0 / 1              ; 0 %   ;
 ; Impedance control blocks                                    ; 0 / 3              ; 0 %   ;
-; Maximum fan-out                                             ; 70                 ;       ;
-; Highest non-global fan-out                                  ; 70                 ;       ;
-; Total fan-out                                               ; 714                ;       ;
-; Average fan-out                                             ; 3.94               ;       ;
+; Maximum fan-out                                             ; 69                 ;       ;
+; Highest non-global fan-out                                  ; 69                 ;       ;
+; Total fan-out                                               ; 746                ;       ;
+; Average fan-out                                             ; 3.00               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Input Pins                                                                                                                                                                                                                                        ;
-+------------+------------+----------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; Name       ; Pin #      ; I/O Bank ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
-+------------+------------+----------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; clk        ; Unassigned ; --       ; 70                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
-; data_in[0] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
-; data_in[1] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
-; data_in[2] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
-; data_in[3] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
-; data_in[4] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
-; data_in[5] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
-; data_in[6] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
-; data_in[7] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
-; rst_n      ; Unassigned ; --       ; 55                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
-+------------+------------+----------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                                                               ;
++-------------------+------------+----------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
+; Name              ; Pin #      ; I/O Bank ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
++-------------------+------------+----------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
+; clk_phy           ; Unassigned ; --       ; 69                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[0]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[10] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[11] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[12] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[13] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[14] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[15] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[16] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[17] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[18] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[19] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[1]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[20] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[21] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[22] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[23] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[2]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[3]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[4]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[5]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[6]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[7]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[8]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; ctrl_block_in[9]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
+; data_in[0]        ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
+; data_in[1]        ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
+; data_in[2]        ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
+; data_in[3]        ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
+; data_in[4]        ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
+; data_in[5]        ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
+; data_in[6]        ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
+; data_in[7]        ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; User                 ; no        ;
+; reset             ; Unassigned ; --       ; 54                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; None         ; Off         ; --                        ; Fitter               ; no        ;
++-------------------+------------+----------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Output Pins                                                                                                                                                                                                                                                                                                                                                                                                                        ;
-+-------------+------------+----------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
-; Name        ; Pin #      ; I/O Bank ; Output Register ; Output Enable Register ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Output Buffer Delay ; Output Buffer Delay Control ; Location assigned by ; Output Enable Source ; Output Enable Group ;
-+-------------+------------+----------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
-; clk_out     ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; data_out[0] ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; data_out[1] ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; data_out[2] ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; data_out[3] ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; rst_out     ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-+-------------+------------+----------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                                                                                                                                              ;
++-------------------+------------+----------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
+; Name              ; Pin #      ; I/O Bank ; Output Register ; Output Enable Register ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Output Buffer Delay ; Output Buffer Delay Control ; Location assigned by ; Output Enable Source ; Output Enable Group ;
++-------------------+------------+----------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
+; data_out[0]       ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; data_out[1]       ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; data_out[2]       ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; data_out[3]       ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; frame_seq_out[0]  ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; frame_seq_out[10] ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; frame_seq_out[11] ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; frame_seq_out[1]  ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; frame_seq_out[2]  ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; frame_seq_out[3]  ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; frame_seq_out[4]  ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; frame_seq_out[5]  ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; frame_seq_out[6]  ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; frame_seq_out[7]  ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; frame_seq_out[8]  ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; frame_seq_out[9]  ; Unassigned ; --       ; no              ; no                     ; no        ; no              ; no         ; no            ; no       ; Off          ; None         ; Default          ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
++-------------------+------------+----------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -258,7 +305,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 5B       ; 0 / 16 ( 0 % ) ; --            ; --           ; 0V            ;
 ; 7A       ; 0 / 48 ( 0 % ) ; --            ; --           ; 0V            ;
 ; 8A       ; 0 / 32 ( 0 % ) ; --            ; --           ; 0V            ;
-; Unknown  ; 16             ; --            ;              ;               ;
+; Unknown  ; 50             ; --            ;              ;               ;
 +----------+----------------+---------------+--------------+---------------+
 
 
@@ -755,48 +802,81 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
-+---------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                  ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                   ; Entity Name     ; Library Name ;
-+---------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |out_FSM_tester                             ; 44.5 (0.0)           ; 44.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 87 (0)              ; 54 (0)                    ; 0 (0)         ; 8192              ; 0          ; 16   ; 0            ; |out_FSM_tester                                                                                                                                                                       ; out_FSM_tester  ; work         ;
-;    |out_FSM:out_FSM|                        ; 44.5 (26.2)          ; 44.5 (26.2)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 87 (52)             ; 54 (22)                   ; 0 (0)         ; 8192              ; 0          ; 0    ; 0            ; |out_FSM_tester|out_FSM:out_FSM                                                                                                                                                       ; out_FSM         ; work         ;
-;       |output_buffer:output_buffer_inst|    ; 18.3 (0.0)           ; 18.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 35 (0)              ; 32 (0)                    ; 0 (0)         ; 8192              ; 0          ; 0    ; 0            ; |out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst                                                                                                                      ; output_buffer   ; work         ;
-;          |scfifo:scfifo_component|          ; 18.3 (0.0)           ; 18.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 35 (0)              ; 32 (0)                    ; 0 (0)         ; 8192              ; 0          ; 0    ; 0            ; |out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component                                                                                              ; scfifo          ; work         ;
-;             |scfifo_4fa1:auto_generated|    ; 18.3 (0.0)           ; 18.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 35 (0)              ; 32 (0)                    ; 0 (0)         ; 8192              ; 0          ; 0    ; 0            ; |out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated                                                                   ; scfifo_4fa1     ; work         ;
-;                |a_dpfifo_bla1:dpfifo|       ; 18.3 (0.5)           ; 18.3 (0.5)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 35 (1)              ; 32 (0)                    ; 0 (0)         ; 8192              ; 0          ; 0    ; 0            ; |out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo                                              ; a_dpfifo_bla1   ; work         ;
-;                   |a_fefifo_jaf:fifo_state| ; 7.8 (2.8)            ; 7.8 (2.8)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 14 (4)              ; 12 (2)                    ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state                      ; a_fefifo_jaf    ; work         ;
-;                      |cntr_op7:count_usedw| ; 5.0 (5.0)            ; 5.0 (5.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 10 (10)                   ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state|cntr_op7:count_usedw ; cntr_op7        ; work         ;
-;                   |altsyncram_m3t1:FIFOram| ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 8192              ; 0          ; 0    ; 0            ; |out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram                      ; altsyncram_m3t1 ; work         ;
-;                   |cntr_uhb:rd_ptr_count|   ; 5.0 (5.0)            ; 5.0 (5.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 10 (10)                   ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|cntr_uhb:rd_ptr_count                        ; cntr_uhb        ; work         ;
-;                   |cntr_uhb:wr_ptr|         ; 5.0 (5.0)            ; 5.0 (5.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 10 (10)                   ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |out_FSM_tester|out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|cntr_uhb:wr_ptr                              ; cntr_uhb        ; work         ;
-+---------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
++------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node               ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                     ; Entity Name      ; Library Name ;
++------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; |monitoring_logic                        ; 44.5 (26.2)          ; 44.5 (26.2)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 87 (52)             ; 54 (22)                   ; 0 (0)         ; 8192              ; 0          ; 50   ; 0            ; |monitoring_logic                                                                                                                                                       ; monitoring_logic ; work         ;
+;    |output_buffer:output_buffer_inst|    ; 18.3 (0.0)           ; 18.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 35 (0)              ; 32 (0)                    ; 0 (0)         ; 8192              ; 0          ; 0    ; 0            ; |monitoring_logic|output_buffer:output_buffer_inst                                                                                                                      ; output_buffer    ; work         ;
+;       |scfifo:scfifo_component|          ; 18.3 (0.0)           ; 18.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 35 (0)              ; 32 (0)                    ; 0 (0)         ; 8192              ; 0          ; 0    ; 0            ; |monitoring_logic|output_buffer:output_buffer_inst|scfifo:scfifo_component                                                                                              ; scfifo           ; work         ;
+;          |scfifo_4fa1:auto_generated|    ; 18.3 (0.0)           ; 18.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 35 (0)              ; 32 (0)                    ; 0 (0)         ; 8192              ; 0          ; 0    ; 0            ; |monitoring_logic|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated                                                                   ; scfifo_4fa1      ; work         ;
+;             |a_dpfifo_bla1:dpfifo|       ; 18.3 (0.5)           ; 18.3 (0.5)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 35 (1)              ; 32 (0)                    ; 0 (0)         ; 8192              ; 0          ; 0    ; 0            ; |monitoring_logic|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo                                              ; a_dpfifo_bla1    ; work         ;
+;                |a_fefifo_jaf:fifo_state| ; 7.8 (2.8)            ; 7.8 (2.8)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 14 (4)              ; 12 (2)                    ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |monitoring_logic|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state                      ; a_fefifo_jaf     ; work         ;
+;                   |cntr_op7:count_usedw| ; 5.0 (5.0)            ; 5.0 (5.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 10 (10)                   ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |monitoring_logic|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state|cntr_op7:count_usedw ; cntr_op7         ; work         ;
+;                |altsyncram_m3t1:FIFOram| ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 8192              ; 0          ; 0    ; 0            ; |monitoring_logic|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram                      ; altsyncram_m3t1  ; work         ;
+;                |cntr_uhb:rd_ptr_count|   ; 5.0 (5.0)            ; 5.0 (5.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 10 (10)                   ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |monitoring_logic|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|cntr_uhb:rd_ptr_count                        ; cntr_uhb         ; work         ;
+;                |cntr_uhb:wr_ptr|         ; 5.0 (5.0)            ; 5.0 (5.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 10 (10)                   ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |monitoring_logic|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|cntr_uhb:wr_ptr                              ; cntr_uhb         ; work         ;
++------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Delay Chain Summary                                                                                                      ;
-+-------------+----------+----+------+------+----+----+-------+--------+------------------------+--------------------------+
-; Name        ; Pin Type ; D1 ; D3_0 ; D3_1 ; D4 ; D5 ; D5 OE ; D5 OCT ; T11 (Postamble Gating) ; T11 (Postamble Ungating) ;
-+-------------+----------+----+------+------+----+----+-------+--------+------------------------+--------------------------+
-; data_out[0] ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
-; data_out[1] ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
-; data_out[2] ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
-; data_out[3] ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
-; clk_out     ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
-; rst_out     ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
-; clk         ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
-; rst_n       ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
-; data_in[4]  ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
-; data_in[0]  ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
-; data_in[5]  ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
-; data_in[1]  ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
-; data_in[6]  ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
-; data_in[2]  ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
-; data_in[7]  ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
-; data_in[3]  ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
-+-------------+----------+----+------+------+----+----+-------+--------+------------------------+--------------------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Delay Chain Summary                                                                                                            ;
++-------------------+----------+----+------+------+----+----+-------+--------+------------------------+--------------------------+
+; Name              ; Pin Type ; D1 ; D3_0 ; D3_1 ; D4 ; D5 ; D5 OE ; D5 OCT ; T11 (Postamble Gating) ; T11 (Postamble Ungating) ;
++-------------------+----------+----+------+------+----+----+-------+--------+------------------------+--------------------------+
+; ctrl_block_in[0]  ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[1]  ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[2]  ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[3]  ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[4]  ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[5]  ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[6]  ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[7]  ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[8]  ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[9]  ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[10] ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[11] ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[12] ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[13] ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[14] ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[15] ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[16] ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[17] ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[18] ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[19] ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[20] ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[21] ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[22] ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; ctrl_block_in[23] ; Input    ; -- ; --   ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; frame_seq_out[0]  ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; frame_seq_out[1]  ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; frame_seq_out[2]  ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; frame_seq_out[3]  ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; frame_seq_out[4]  ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; frame_seq_out[5]  ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; frame_seq_out[6]  ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; frame_seq_out[7]  ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; frame_seq_out[8]  ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; frame_seq_out[9]  ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; frame_seq_out[10] ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; frame_seq_out[11] ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; data_out[0]       ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; data_out[1]       ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; data_out[2]       ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; data_out[3]       ; Output   ; -- ; --   ; --   ; -- ; 0  ; 0     ; --     ; --                     ; --                       ;
+; clk_phy           ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; reset             ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; data_in[4]        ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; data_in[0]        ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; data_in[5]        ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; data_in[1]        ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; data_in[6]        ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; data_in[2]        ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; data_in[7]        ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
+; data_in[3]        ; Input    ; -- ; 0    ; --   ; -- ; -- ; --    ; --     ; --                     ; --                       ;
++-------------------+----------+----+------+------+----+----+-------+--------+------------------------+--------------------------+
 
 
 +---------------------------------------------------+
@@ -804,8 +884,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 ; Source Pin / Fanout ; Pad To Core Index ; Setting ;
 +---------------------+-------------------+---------+
-; clk                 ;                   ;         ;
-; rst_n               ;                   ;         ;
+; ctrl_block_in[0]    ;                   ;         ;
+; ctrl_block_in[1]    ;                   ;         ;
+; ctrl_block_in[2]    ;                   ;         ;
+; ctrl_block_in[3]    ;                   ;         ;
+; ctrl_block_in[4]    ;                   ;         ;
+; ctrl_block_in[5]    ;                   ;         ;
+; ctrl_block_in[6]    ;                   ;         ;
+; ctrl_block_in[7]    ;                   ;         ;
+; ctrl_block_in[8]    ;                   ;         ;
+; ctrl_block_in[9]    ;                   ;         ;
+; ctrl_block_in[10]   ;                   ;         ;
+; ctrl_block_in[11]   ;                   ;         ;
+; ctrl_block_in[12]   ;                   ;         ;
+; ctrl_block_in[13]   ;                   ;         ;
+; ctrl_block_in[14]   ;                   ;         ;
+; ctrl_block_in[15]   ;                   ;         ;
+; ctrl_block_in[16]   ;                   ;         ;
+; ctrl_block_in[17]   ;                   ;         ;
+; ctrl_block_in[18]   ;                   ;         ;
+; ctrl_block_in[19]   ;                   ;         ;
+; ctrl_block_in[20]   ;                   ;         ;
+; ctrl_block_in[21]   ;                   ;         ;
+; ctrl_block_in[22]   ;                   ;         ;
+; ctrl_block_in[23]   ;                   ;         ;
+; clk_phy             ;                   ;         ;
+; reset               ;                   ;         ;
 ; data_in[4]          ;                   ;         ;
 ; data_in[0]          ;                   ;         ;
 ; data_in[5]          ;                   ;         ;
@@ -817,29 +921,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                                                                                                                            ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; Name                                                                                                                                                    ; Location   ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; clk                                                                                                                                                     ; Unassigned ; 62      ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; out_FSM:out_FSM|Selector1~1                                                                                                                             ; Unassigned ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; out_FSM:out_FSM|clk_phy_2                                                                                                                               ; Unassigned ; 2       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; out_FSM:out_FSM|count[11]~3                                                                                                                             ; Unassigned ; 12      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state|_~0    ; Unassigned ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state|b_full ; Unassigned ; 29      ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|valid_rreq                     ; Unassigned ; 18      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; rst_n                                                                                                                                                   ; Unassigned ; 55      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                                                                                            ;
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
+; Name                                                                                                                                    ; Location   ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
+; Selector1~1                                                                                                                             ; Unassigned ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; clk_phy                                                                                                                                 ; Unassigned ; 61      ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; clk_phy_2                                                                                                                               ; Unassigned ; 2       ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; count[11]~3                                                                                                                             ; Unassigned ; 12      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state|_~0    ; Unassigned ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state|b_full ; Unassigned ; 29      ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|valid_rreq                     ; Unassigned ; 18      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; reset                                                                                                                                   ; Unassigned ; 54      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-------------+------------+------+------------+----------------------+-----------------+-----------------+----------+------------------------+---------------+
-; Name                                                                                                                                                        ; Type ; Mode             ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size  ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M10K blocks ; MLAB cells ; MIF  ; Location   ; Mixed Width RDW Mode ; Port A RDW Mode ; Port B RDW Mode ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-------------+------------+------+------------+----------------------+-----------------+-----------------+----------+------------------------+---------------+
-; out_FSM:out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Single Clock ; 1024         ; 64           ; 1024         ; 64           ; yes                    ; no                      ; yes                    ; no                      ; 65536 ; 1024                        ; 8                           ; 1024                        ; 8                           ; 8192                ; 1           ; 0          ; None ; Unassigned ; Don't care           ; New data        ; New data        ; Off      ; No                     ; Yes           ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-------------+------------+------+------------+----------------------+-----------------+-----------------+----------+------------------------+---------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++---------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-------------+------------+------+------------+----------------------+-----------------+-----------------+----------+------------------------+---------------+
+; Name                                                                                                                                        ; Type ; Mode             ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size  ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M10K blocks ; MLAB cells ; MIF  ; Location   ; Mixed Width RDW Mode ; Port A RDW Mode ; Port B RDW Mode ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs ;
++---------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-------------+------------+------+------------+----------------------+-----------------+-----------------+----------+------------------------+---------------+
+; output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Single Clock ; 1024         ; 64           ; 1024         ; 64           ; yes                    ; no                      ; yes                    ; no                      ; 65536 ; 1024                        ; 8                           ; 1024                        ; 8                           ; 8192                ; 1           ; 0          ; None ; Unassigned ; Don't care           ; New data        ; New data        ; Off      ; No                     ; Yes           ;
++---------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-------------+------------+------+------------+----------------------+-----------------+-----------------+----------+------------------------+---------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
 
@@ -895,24 +999,23 @@ Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
 Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
-Error (171016): Can't place node "data_out[1]" -- illegal location assignment PIN_AC21 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 5
-Error (171016): Can't place node "data_out[2]" -- illegal location assignment PIN_AD21 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 5
-Error (171016): Can't place node "data_out[3]" -- illegal location assignment PIN_AD15 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 5
-Error (171016): Can't place node "clk" -- illegal location assignment PIN_Y2 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 2
-Error (171016): Can't place node "rst_n" -- illegal location assignment PIN_M23 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 3
-Error (171016): Can't place node "data_in[4]" -- illegal location assignment PIN_AD26 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 4
-Error (171016): Can't place node "data_in[0]" -- illegal location assignment PIN_AB28 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 4
-Error (171016): Can't place node "data_in[5]" -- illegal location assignment PIN_AE26 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 4
-Error (171016): Can't place node "data_in[1]" -- illegal location assignment PIN_AC28 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 4
-Error (171016): Can't place node "data_in[6]" -- illegal location assignment PIN_AE25 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 4
-Error (171016): Can't place node "data_in[2]" -- illegal location assignment PIN_AC27 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 4
-Error (171016): Can't place node "data_in[7]" -- illegal location assignment PIN_AF25 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 4
-Error (171016): Can't place node "data_in[3]" -- illegal location assignment PIN_AD27 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM_tester.v Line: 4
+Error (171016): Can't place node "data_out[1]" -- illegal location assignment PIN_AC21 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 16
+Error (171016): Can't place node "data_out[2]" -- illegal location assignment PIN_AD21 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 16
+Error (171016): Can't place node "data_out[3]" -- illegal location assignment PIN_AD15 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 16
+Error (171016): Can't place node "data_in[4]" -- illegal location assignment PIN_AD26 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 11
+Error (171016): Can't place node "data_in[0]" -- illegal location assignment PIN_AB28 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 11
+Error (171016): Can't place node "data_in[5]" -- illegal location assignment PIN_AE26 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 11
+Error (171016): Can't place node "data_in[1]" -- illegal location assignment PIN_AC28 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 11
+Error (171016): Can't place node "data_in[6]" -- illegal location assignment PIN_AE25 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 11
+Error (171016): Can't place node "data_in[2]" -- illegal location assignment PIN_AC27 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 11
+Error (171016): Can't place node "data_in[7]" -- illegal location assignment PIN_AF25 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 11
+Error (171016): Can't place node "data_in[3]" -- illegal location assignment PIN_AD27 File: C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/out_FSM.vhd Line: 11
 Info (11798): Fitter preparation operations ending: elapsed time is 00:00:00
+Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Error (11802): Can't fit design in device. Modify your design to reduce resources, or choose a larger device. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number.
-Error: Quartus Prime Fitter was unsuccessful. 14 errors, 2 warnings
+Error: Quartus Prime Fitter was unsuccessful. 12 errors, 3 warnings
     Error: Peak virtual memory: 1114 megabytes
-    Error: Processing ended: Wed Nov 09 19:52:32 2016
+    Error: Processing ended: Mon Nov 21 15:15:43 2016
     Error: Elapsed time: 00:00:01
     Error: Total CPU time (on all processors): 00:00:01
 

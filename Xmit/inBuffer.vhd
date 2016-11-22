@@ -27,6 +27,8 @@ architecture arch of inBuffer is
 	signal readen: std_logic;
 	signal outtrans: std_logic:='0';
 	signal canout: std_logic;
+	signal cnto: INTEGER:=4095;
+	signal  cnti         : INTEGER:=4095;
 	
 	component inbuff 
 		port (aclr		: IN STD_LOGIC;
@@ -55,40 +57,43 @@ architecture arch of inBuffer is
 	END component;
 	
 begin 
-	PROCESS (sysclk, controli, wrenc) --incounter
-			VARIABLE   cnt         : INTEGER:=4095;
-			VARIABLE   direction    : INTEGER:=-1;
+	PROCESS (sysclk, controli, wrenc, aclr, cnti) --incounter	
 	BEGIN		
-		IF (sysclk'EVENT AND sysclk = '1') THEN
+		if(aclr = '1') then
+			cnti <= 4095;
+			incountdone <= '0';
+		elsif (sysclk'EVENT AND sysclk = '1') THEN
 			if (wrenc = '1') then
-				cnt := to_integer(unsigned(controli(11 downto 0)));
+				cnti <= to_integer(unsigned(controli(11 downto 0)));
 			else
-				if (cnt>0) then
-					cnt := cnt + direction;
+				if (cnti>0) then
+					cnti <= cnti - 1;
 				end if;
 			end if;
 		END IF;
-		if (cnt <= 1) then
+		if (cnti <= 0) then
 			incountdone <= '1';
 		else 
 			incountdone <= '0';
 		end if;
 	END PROCESS;
 
-	PROCESS (phyclk, ctrlm, outcountdone) --outcounter
-			VARIABLE   cnt         : INTEGER:=4095;
-			VARIABLE   direction    : INTEGER:=-1;
+	PROCESS (phyclk, ctrlm, aclr, cnto) --outcounter
 	BEGIN	
-		IF (phyclk'EVENT AND phyclk = '1') THEN
+		if (aclr = '1') then
+			cnto <= 4095;
+			outcountdone <= '0';
+			outtrans <= '0';
+		elsif (phyclk'EVENT AND phyclk = '1') THEN
 			if (outcountdone = '1' or (incountdone = '1' and outtrans = '0')) then
-				cnt := to_integer(unsigned(ctrlm(11 downto 0)));
+				cnto <= to_integer(unsigned(ctrlm(11 downto 0)));
 			else
-				if (cnt>0) then
-					cnt := cnt + direction;
+				if (cnto>0) then
+					cnto <= cnto -1;
 				end if;
 			end if;
 		END IF;
-		if (cnt <= 1) then
+		if (cnto <= 0) then
 			outcountdone <= '1';
 			outtrans <= '0';
 		else 
@@ -97,16 +102,21 @@ begin
 		end if;
 	END PROCESS;
 	
-	process(phyclk, emptyd, outcountdone) --ctrlout
+	
+	process(phyclk, emptyd, aclr) --ctrlout
 	begin
-		if (phyclk'event AND phyclk = '1') then
+		if(aclr = '1') then
+			controlo <= "000000000000000000000000";
+		elsif (phyclk'event AND phyclk = '1') then
 			controlo <= ctrlm;
 		end if;
 	end process;
 	
-	process(phyclk, emptyd) --dataout always outputs data from the buffer
+	process(phyclk, emptyd, aclr) --dataout always outputs data from the buffer
 	begin
-		if (phyclk'event AND phyclk = '1') then
+		if (aclr = '1') then
+			datao <= "00000000";
+		elsif (phyclk'event AND phyclk = '1') then
 			datao <= datam;
 		end if;
 	end process;
