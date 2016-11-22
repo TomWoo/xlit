@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Homework/2/sim
 Eout_fsm
-Z0 w1479401811
+Z0 w1479406637
 Z1 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z3 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
@@ -24,9 +24,9 @@ V6nY732kDCGaJcNJlZ8k090
 !s100 E12;Q>;g1l@3WC78a89:G3
 Z9 OV;C;10.4d;61
 33
-Z10 !s110 1479401815
+Z10 !s110 1479406753
 !i10b 1
-Z11 !s108 1479401815.000000
+Z11 !s108 1479406752.000000
 Z12 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd|
 Z13 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd|
 !i113 1
@@ -38,11 +38,11 @@ R2
 R3
 R4
 R5
-DEx4 work 7 out_fsm 0 22 6nY732kDCGaJcNJlZ8k090
+Z16 DEx4 work 7 out_fsm 0 22 6nY732kDCGaJcNJlZ8k090
 l53
 L20
-V=UUK7;0P4WBE:]mFQ;kDY3
-!s100 mb5CVPolH^IUCcWoR8i9:2
+VdkQPiTXYzQjl;j[UQI>Z]3
+!s100 Fbd?DDioRl:l9Z^CTj[4C1
 R9
 33
 R10
@@ -54,25 +54,25 @@ R13
 R14
 R15
 Eoutput_buffer
-Z16 w1478562953
+Z17 w1478562953
 R4
 R5
 R6
-Z17 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd
-Z18 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd
+Z18 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd
+Z19 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd
 l0
 L43
 Vb[iGE>1CV^h?MGz0MXR[g0
 !s100 YCCFFZBMcA9h?F44b_8?E2
 R9
 32
-Z19 !s110 1478563049
+Z20 !s110 1478563049
 !i10b 1
-Z20 !s108 1478563049.000000
-Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd|
-Z22 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd|
+Z21 !s108 1478563049.000000
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd|
+Z23 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd|
 !i113 1
-Z23 o-work work -2002 -explicit
+Z24 o-work work -2002 -explicit
 R15
 Asyn
 R4
@@ -84,13 +84,13 @@ V>UafkOo9lY5=Nbii<?X723
 !s100 4QXNhDh9`@nkl>BFTc:cn1
 R9
 32
-R19
-!i10b 1
 R20
+!i10b 1
 R21
 R22
-!i113 1
 R23
+!i113 1
+R24
 R15
 vtestbench_out_FSM
 !s110 1479394967

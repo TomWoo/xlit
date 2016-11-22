@@ -8,6 +8,7 @@ entity out_FSM is
 port(
 	clk_phy				: in std_logic;
 	reset					: in std_logic;
+	
 	data_in				: in std_logic_vector(7 downto 0);
 	ctrl_block_in		: in std_logic_vector(23 downto 0);
 	tx_en					: out std_logic;
@@ -59,7 +60,8 @@ process(count, data_in, ctrl_block_in, frame_count) begin
 	data_in_fifo(63 downto 32) <= X"00000000";
 	
 	count_mod <= count mod 32;
-	frame_seq_out <= std_logic_vector(to_unsigned(frame_count, 12));
+	-- TODO: check
+	frame_seq_out <= data_out_fifo(31 downto 20); -- std_logic_vector(to_unsigned(frame_count, 12));
 end process;
 
 -- Prescaler (half-rate)
@@ -82,7 +84,7 @@ output_buffer_inst : output_buffer PORT MAP (
 	wrreq	 => wren,
 	empty	 => is_empty,
 	full	 => is_full,
-	q	 => data_out_fifo,
+	q		 => data_out_fifo,
 	usedw	 => length_fifo
 );
 
@@ -186,6 +188,7 @@ process(my_state) begin
 			data_out <= "1011";
 		end if;
 		tx_en <= '1';
+	/*
 	when s_DA | s_SA | s_length =>
 		case count_mod is -- TODO: generate
 		when 0 =>
@@ -206,7 +209,19 @@ process(my_state) begin
 			data_out <= data_out_fifo(31 downto 28);
 		end case;
 		tx_en <= '1';
-	when others => -- s_FCS
+	*/
+	when s_length =>
+		if(count = 0) then
+			data_out <= data_out_fifo(11 downto 8);
+		elsif(count = 1) then
+			data_out <= data_out_fifo(15 downto 12);
+		elsif(count = 2) then
+			data_out <= data_out_fifo(19 downto 16);
+		else -- count = 4
+			data_out <= "0000"; -- TODO: check
+		end if;
+		tx_en <= '1';
+	when others => -- s_DA | s_SA | s_FCS
 		if(count mod 2 = 0) then
 			data_out <= data_out_fifo(3 downto 0);
 		else

@@ -2,16 +2,16 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module out_FSM
+# -- Compiling module priority_FSM
 # 
 # Top level modules:
-# 	out_FSM
+# 	priority_FSM
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module out_FSM_vlg_vec_tst
+# -- Compiling module priority_FSM_vlg_vec_tst
 # 
 # Top level modules:
-# 	out_FSM_vlg_vec_tst
-# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver -c -voptargs=\"+acc\" -t 1ps -novopt work.out_FSM_vlg_vec_tst 
+# 	priority_FSM_vlg_vec_tst
+# vsim -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver -c -voptargs=\"+acc\" -t 1ps -novopt work.priority_FSM_vlg_vec_tst 
 # //  ModelSim ALTERA 10.1d Nov  2 2012 
 # //
 # //  Copyright 1991-2012 Mentor Graphics Corporation
@@ -21,9 +21,9 @@
 # //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
-# Loading work.out_FSM_vlg_vec_tst
-# Loading work.out_FSM
-# Loading cycloneive_ver.cycloneive_io_obuf
-# Loading cycloneive_ver.cycloneive_io_ibuf
-# ** Note: $finish    : Waveform.vwf.vt(55)
-#    Time: 1 us  Iteration: 0  Instance: /out_FSM_vlg_vec_tst
+# Loading work.priority_FSM_vlg_vec_tst
+# Loading work.priority_FSM
+# Loading altera_ver.dffeas
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** Note: $finish    : Waveform2.vwf.vt(65)
+#    Time: 1 us  Iteration: 0  Instance: /priority_FSM_vlg_vec_tst
