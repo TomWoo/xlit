@@ -184,6 +184,7 @@ begin
 			outtrans <= '0';
 		else 
 			outcountdone <= '0';
+			outtrans <= '1';
 		end if;
 	END PROCESS;
 	
@@ -243,7 +244,7 @@ begin
 			q => opri,
 			data => in_priority,
 			wrreq => wrenc,
-			rdreq => outtrans,
+			rdreq => hi and outtrans,
 			rdempty => empty_priority,
 			wrfull => full_priority
 		);
