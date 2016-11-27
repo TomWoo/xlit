@@ -10,16 +10,15 @@ entity xmitTop is port(
 	
 	clk_sys:				in std_logic;
 	clk_phy:				in std_logic;
+	reset:				in std_logic;
 	
 	phy_data_out: 		out std_logic_vector(3 downto 0);
 	phy_tx_en:			out std_logic;
-	
 	m_discard_en: 		out std_logic;
 	m_discard_frame:	out std_logic_vector(11 downto 0);
 	m_tx_frame:			out std_logic_vector(23 downto 0);
-	m_tx_done:			out std_logic;
-	
-	reset:				in std_logic
+	m_tx_done:			out std_logic
+
 );
 end entity;
 
@@ -32,24 +31,27 @@ architecture rtl of xmitTop is
 		in_hi_overflow:		in std_logic;
 		in_ctrl_ctrl:			in std_logic;
 
-		out_m_discard_en:		out std_logic;
-		out_wren:				out std_logic;
-		out_priority: 			out std_logic;
 		clk_sys:					in std_logic;
 		clk_phy:					in std_logic;
 		reset:					in std_logic;
-		controli: in std_logic_vector(23 downto 0);
-		wrend: in std_logic; --data write enable;
-		wrenc: in std_logic; --ctrl write enable;
-		datai: in std_logic_vector(7 downto 0);
-		datao: out std_logic_vector(7 downto 0);
-		controlo: out std_logic_vector(23 downto 0)
+		
+		controli: 				in std_logic_vector(23 downto 0);
+		wrend: 					in std_logic; --data write enable;
+		wrenc: 					in std_logic; --ctrl write enable;
+		datai: 					in std_logic_vector(7 downto 0);
+		
+		datao: 					out std_logic_vector(7 downto 0);
+		controlo: 				out std_logic_vector(23 downto 0);
+		out_m_discard_en:		out std_logic;
+		out_wren:				out std_logic;
+		out_priority: 			out std_logic
 	);
 	end component;
 	
 	component monitoring_logic
 	PORT(
 		clk, reset: 			in std_logic;
+		
 		discard_enable:		in std_logic;
 		xmit_done:				in std_logic;
 		discard_frame:			in std_logic_vector (11 downto 0);	
@@ -71,10 +73,11 @@ architecture rtl of xmitTop is
 		data_lo_in			: in std_logic_vector(7 downto 0);
 		ctrl_block_lo_in	: in std_logic_vector(23 downto 0);
 		lo_empty_in 		: in std_logic;
-		pop_lo				: out std_logic;
 		data_hi_in			: in std_logic_vector(7 downto 0);
 		ctrl_block_hi_in	: in std_logic_vector(23 downto 0);
 		hi_empty_in 		: in std_logic;
+		
+		pop_lo				: out std_logic;
 		pop_hi				: out std_logic;
 		
 		data_out				: out std_logic_vector(7 downto 0);
@@ -89,6 +92,7 @@ architecture rtl of xmitTop is
 		
 		data_in				: in std_logic_vector(7 downto 0);
 		ctrl_block_in		: in std_logic_vector(23 downto 0);
+		
 		tx_en					: out std_logic;
 		frame_seq_out		: out std_logic_vector(23 downto 0);
 		xmit_done_out		: out std_logic;
@@ -98,49 +102,52 @@ architecture rtl of xmitTop is
 	
 	component ctrlFIFO
 	PORT(
-		aclr						: IN STD_LOGIC  := '0';
-		data						: IN STD_LOGIC_VECTOR (23 DOWNTO 0);
-		rdclk						: IN STD_LOGIC ;
-		rdreq						: IN STD_LOGIC ;
-		wrclk						: IN STD_LOGIC ;
-		wrreq						: IN STD_LOGIC ;
-		q							: OUT STD_LOGIC_VECTOR (23 DOWNTO 0);
-		rdempty					: OUT STD_LOGIC ;
-		rdfull					: OUT STD_LOGIC ;
-		wrempty					: OUT STD_LOGIC ;
-		wrfull					: OUT STD_LOGIC ;
-		wrusedw					: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+		aclr					: IN STD_LOGIC  := '0';
+		data					: IN STD_LOGIC_VECTOR (23 DOWNTO 0);
+		rdclk					: IN STD_LOGIC ;
+		rdreq					: IN STD_LOGIC ;
+		wrclk					: IN STD_LOGIC ;
+		wrreq					: IN STD_LOGIC ;
+		
+		q						: OUT STD_LOGIC_VECTOR (23 DOWNTO 0);
+		rdempty				: OUT STD_LOGIC ;
+		rdfull				: OUT STD_LOGIC ;
+		wrempty				: OUT STD_LOGIC ;
+		wrfull				: OUT STD_LOGIC ;
+		wrusedw				: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
 	);
 	end component;
 	
 	component dataFIFO
 	PORT(
-		aclr						: IN STD_LOGIC  := '0';
-		data						: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-		rdclk						: IN STD_LOGIC ;
-		rdreq						: IN STD_LOGIC ;
-		wrclk						: IN STD_LOGIC ;
-		wrreq						: IN STD_LOGIC ;
-		q							: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-		rdempty					: OUT STD_LOGIC ;
-		rdfull					: OUT STD_LOGIC ;
-		wrempty					: OUT STD_LOGIC ;
-		wrfull					: OUT STD_LOGIC ;
-		wrusedw					: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+		aclr					: IN STD_LOGIC  := '0';
+		data					: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+		rdclk					: IN STD_LOGIC ;
+		rdreq					: IN STD_LOGIC ;
+		wrclk					: IN STD_LOGIC ;
+		wrreq					: IN STD_LOGIC ;
+		
+		q						: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+		rdempty				: OUT STD_LOGIC ;
+		rdfull				: OUT STD_LOGIC ;
+		wrempty				: OUT STD_LOGIC ;
+		wrfull				: OUT STD_LOGIC ;
+		wrusedw				: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
 	);
 	end component;
 	
 	component FIFO_1
 	PORT(
-		aclr						: IN STD_LOGIC  := '0';
-		data						: IN STD_LOGIC_VECTOR (0 DOWNTO 0);
-		rdclk						: IN STD_LOGIC ;
-		rdreq						: IN STD_LOGIC ;
-		wrclk						: IN STD_LOGIC ;
-		wrreq						: IN STD_LOGIC ;
-		q							: OUT STD_LOGIC_VECTOR (0 DOWNTO 0);
-		rdempty					: OUT STD_LOGIC ;
-		wrfull					: OUT STD_LOGIC 
+		aclr					: IN STD_LOGIC  := '0';
+		data					: IN STD_LOGIC_VECTOR (0 DOWNTO 0);
+		rdclk					: IN STD_LOGIC ;
+		rdreq					: IN STD_LOGIC ;
+		wrclk					: IN STD_LOGIC ;
+		wrreq					: IN STD_LOGIC ;
+		
+		q						: OUT STD_LOGIC_VECTOR (0 DOWNTO 0);
+		rdempty				: OUT STD_LOGIC ;
+		wrfull				: OUT STD_LOGIC 
 	);
 	end component;
 	
