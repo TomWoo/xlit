@@ -26,16 +26,16 @@ architecture rtl of out_FSM is
 	signal data_in_fifo	: std_logic_vector(63 downto 0);
 	signal rden				: std_logic;
 	signal wren				: std_logic := '1';
-	signal is_empty		: std_logic;
-	signal is_full			: std_logic;
+--	signal is_empty		: std_logic;
+--	signal is_full			: std_logic;
 	signal data_out_fifo	: std_logic_vector(63 downto 0);
-	signal length_fifo	: std_logic_vector(9 downto 0);
+--	signal length_fifo	: std_logic_vector(9 downto 0);
 	
 	-- Half-rate clock
 	signal clk_phy_2		: std_logic;
 	
 	-- Asynchronous signals
-	signal count_mod		: integer range 0 to 4095;
+--	signal count_mod		: integer range 0 to 4095;
 	
 	component output_buffer
 	port(
@@ -53,12 +53,12 @@ architecture rtl of out_FSM is
 begin
 
 -- Asynchronous signals
-process(count, data_in, ctrl_block_in, frame_count) begin
+process(count, data_in, ctrl_block_in, frame_count, data_out_fifo) begin
 	data_in_fifo(7 downto 0) <= data_in;
 	data_in_fifo(31 downto 8) <= ctrl_block_in;
 	data_in_fifo(63 downto 32) <= X"00000000";
 	
-	count_mod <= count mod 32;
+--	count_mod <= count mod 32;
 	-- TODO: check
 	frame_seq_out <= data_out_fifo(43 downto 20); -- std_logic_vector(to_unsigned(frame_count, 12));
 end process;
@@ -69,8 +69,6 @@ process(clk_phy, reset) begin
 		clk_phy_2 <= '1';
 	elsif(rising_edge(clk_phy)) then
 		clk_phy_2 <= not clk_phy_2;
-	else
-		clk_phy_2 <= clk_phy_2;
 	end if;
 end process;
 
@@ -81,10 +79,10 @@ output_buffer_inst : output_buffer PORT MAP (
 	data	 => data_in_fifo,
 	rdreq	 => rden,
 	wrreq	 => wren,
-	empty	 => is_empty,
-	full	 => is_full,
-	q		 => data_out_fifo,
-	usedw	 => length_fifo
+--	empty	 => is_empty,
+--	full	 => is_full,
+	q		 => data_out_fifo
+--	usedw	 => length_fifo
 );
 
 -- Moore FSM
@@ -154,9 +152,6 @@ process(clk_phy, reset) begin
 			my_state <= my_state;
 			count <= count + 1;
 		end case;
-	else
-		my_state <= my_state;
-		count <= count;
 	end if;
 end process;
 
@@ -166,13 +161,11 @@ process(clk_phy_2, reset) begin
 		rden <= '0';
 	elsif(rising_edge(clk_phy_2)) then
 		rden <= '1';
-	else
-		rden <= rden;
 	end if;
 end process;
 
 -- Output signals
-process(my_state) begin
+process(my_state, count, data_out_fifo) begin
 	case my_state is
 	when s_gap =>
 		data_out <= "0000";
@@ -242,9 +235,6 @@ process(clk_phy, reset) begin
 			xmit_done_out <= '0';
 			frame_count <= frame_count;
 		end if;
-	else
-		xmit_done_out <= xmit_done_out;
-		frame_count <= frame_count;
 	end if;
 end process;
 

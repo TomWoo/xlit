@@ -24,7 +24,7 @@ reg [23:0] ctrl_block_in;
 
 // Output signals
 //wire 	    wren_ctrl_out;
-wire [11:0] frame_seq_out;
+wire [23:0] frame_seq_out;
 wire 	    xmit_done_out;
 wire [ 3:0] data_out;
 

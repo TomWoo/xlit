@@ -1,0 +1,70 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/altera_lite/16.0
+Exmittop
+Z0 w1479803404
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/testing
+Z4 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd
+Z5 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd
+l0
+L4
+V7gX_c65`L`kVljoONR1RO1
+!s100 X3i5R0ze_A0an<@KBXD1U2
+Z6 OV;C;10.4d;61
+32
+Z7 !s110 1479835054
+!i10b 1
+Z8 !s108 1479835054.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd|
+Z10 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1
+Artl
+R1
+R2
+DEx4 work 7 xmittop 0 22 7gX_c65`L`kVljoONR1RO1
+l189
+L26
+Vb;@[7=C5idkSlb`FLBQWG3
+!s100 biMzQMkfhJCaTL@4MWLSg1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+vxmitTop_vlg_vec_tst
+!s110 1479835018
+!i10b 1
+!s100 1d;kO[VDIhCIfR8>QmG:J1
+Ib_eAA<YiINe?z3]KB[S3C3
+VDg1SIo80bB@j0V0VzS_@n1
+R3
+w1479805781
+8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/top_level.vwf.vt
+FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/top_level.vwf.vt
+L0 30
+OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1479835018.000000
+!s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/top_level.vwf.vt|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/top_level.vwf.vt|
+!i113 1
+o-work work
+nxmit@top_vlg_vec_tst
