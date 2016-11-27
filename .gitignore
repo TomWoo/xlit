@@ -23,44 +23,44 @@
 # design.
 
 # ignore hdl source files in top level directory
-*.vhd
-*.v
+#*.vhd
+#*.v
 
 # ignore Quartus II generated files
-*sopc_*
-*.jdi
-*.ptf.*
-*.sof
-*.pof
-*.qws
-*.smsg
-*_inst.vhd
-*_generation_script*
-*.done
-*.txt
-*.qarlog
-*.rpt
-*.summary
-*.qws
-*.cmp
-*.eqn
-*.html
-*.jpg
-*.bak
-*.qar
-*.sopc_builder
-*example*
-*~
-*.sdc
-*.tcl
-*.pin
-*.mif
-*.hex
+Xmit/*sopc_*
+Xmit/*.jdi
+Xmit/*.ptf.*
+Xmit/*.sof
+Xmit/*.pof
+Xmit/*.qws
+Xmit/*.smsg
+Xmit/*_inst.vhd
+Xmit/*_generation_script*
+Xmit/*.done
+Xmit/*.txt
+Xmit/*.qarlog
+Xmit/*.rpt
+Xmit/*.summary
+Xmit/*.qws
+Xmit/*.cmp
+Xmit/*.eqn
+Xmit/*.html
+Xmit/*.jpg
+Xmit/*.bak
+Xmit/*.qar
+Xmit/*.sopc_builder
+Xmit/*example*
+Xmit/*~
+Xmit/*.sdc
+Xmit/*.tcl
+Xmit/*.pin
+Xmit/*.mif
+Xmit/*.hex
 
 # ignore Quartus II generated folders
-db/
-incremental_db/
-simulation/
-timing/
-testbench/
-*_sim/
+Xmit/db/
+Xmit/incremental_db/
+Xmit/simulation/
+Xmit/timing/
+Xmit/testbench/
+Xmit/*_sim/
