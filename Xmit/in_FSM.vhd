@@ -24,7 +24,11 @@ port(
 	db_ctrlm:				out std_logic_vector(23 downto 0);
 	db_incountdone:		out std_logic;
 	db_outcountdone:		out std_logic;
-	db_last:					out std_logic
+	db_last:					out std_logic;
+	db_lastm:				out std_logic;
+	db_txen:					out std_logic;
+	db_txone:				out std_logic;
+	db_pakavail: 			out std_logic
 	
 );
 end in_FSM;
@@ -61,6 +65,28 @@ architecture arch of in_FSM is
 	signal outstartas: std_logic;
 	signal dir: unsigned(11 downto 0) := "000000000001";
 	signal transen: std_logic := '1';
+	signal txen, txone, pakavails: std_logic;
+	
+	component pakstak
+		port(
+			incountdone: 	in std_logic;
+			outcountdone: 	in std_logic;
+			pakavail:		out std_logic;
+			aclr: 			in std_logic;
+			phyclk: 			in std_logic
+		);
+	end component;
+	
+	component tren
+		port(
+			pakavail: 	in std_logic;
+			aclr: 		in std_logic;
+			phyclk:		in std_logic;
+			txen:			out std_logic;
+			txone:		out std_logic;
+			stop:			in std_logic
+		);
+	end component;
 	
 	component inbuff 
 		port (
@@ -137,7 +163,7 @@ begin
 	
 	---------------- buffer logic ----------------
 	
-	process(reset, clk_sys, clk_phy, ctrlm, incountdone, outcountdone, last) begin
+	process(reset, clk_sys, clk_phy, ctrlm, incountdone, outcountdone, last, lastm, txen, txone, pakavails) begin
 		aclr <= reset;
 		sysclk <= clk_sys;
 		phyclk <= clk_phy;
@@ -145,6 +171,10 @@ begin
 		db_incountdone <= incountdone;
 		db_outcountdone <= outcountdone;
 		db_last <= last;
+		db_lastm <= lastm;
+		db_txen <= txen;
+		db_txone <= txone;
+		db_pakavail <= pakavails;
 	end process;
 	
 	PROCESS (sysclk, controli, wrenc, aclr, cnti, cntit) --incounter	
@@ -184,7 +214,7 @@ begin
 			cnto <= "111111111111";
 			outcountdone <= '0';
 		elsif (phyclk'EVENT AND phyclk = '1') THEN
-			if (incountdone = '1' and outcountdone = '1') then -- if transmit enable
+			if (txen) then -- if transmit enable
 				cnto <= not (unsigned(ctrlm(11 downto 0)));	-- SOMETHING HERE IS ALSO BREAKING
 			else
 				if (to_integer(cnto)>2) then
@@ -232,7 +262,7 @@ begin
 			q => datam,
 			data => datai,
 			wrreq => wrend,
-			rdreq => hi and incountdone and not lastm, -- transmit enable
+			rdreq => hi and txen, -- transmit enable
 			rdempty => emptyd,
 			wrfull => fulld
 			);
@@ -245,7 +275,7 @@ begin
 			q => ctrlm,
 			data => controli,
 			wrreq => wrenc,
-			rdreq => hi and incountdone and not outcountdone, -- transmit enable clock 1
+			rdreq => hi and txone, -- transmit enable clock 1
 			rdempty => emptyc,
 			wrfull => fullc
 		);
@@ -258,7 +288,7 @@ begin
 			q => opri,
 			data => in_priority,
 			wrreq => wrenc,
-			rdreq => hi and incountdone and not outcountdone, -- transmit enable clock 1
+			rdreq => hi and txone, -- transmit enable clock 1
 			rdempty => empty_priority,
 			wrfull => full_priority
 		);
@@ -271,8 +301,46 @@ begin
 			q => lastm,
 			data => incountdone,
 			wrreq => wrend,
-			rdreq => hi and incountdone and not lastm, -- transmit enable
+			rdreq => hi and txen, -- transmit enable
 			rdempty => empty_stop,
 			wrfull => full_stop
 		);
+		
+	packetstack: pakstak
+		port map(
+			aclr => aclr,
+			incountdone => incountdone,
+			outcountdone => outcountdone,
+			phyclk => phyclk,
+			pakavail => pakavails
+		);
+		
+	transmitenable: tren
+		port map(
+			pakavail => pakavails,
+			aclr => aclr,
+			phyclk => phyclk,
+			txen => txen,
+			txone => txone,
+			stop => lastm
+		);
+		
+--	component pakstak
+--		port(
+--			incountdone: 	in std_logic;
+--			outcountdone: 	in std_logic;
+--			pakavail:		out std_logic;
+--			aclr: 			in std_logic;
+--			phyclk: 			in std_logic
+--		);
+--	component tren
+--		port(
+--			pakavail: 	in std_logic;
+--			aclr: 		in std_logic;
+--			phyclk:		in std_logic;
+--			txen:			out std_logic;
+--			txone:		out std_logic;
+--			stop:			in std_logic
+--		);
+--	end component;
 end arch;

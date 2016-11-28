@@ -14,7 +14,8 @@ end tren;
 architecture arch of tren is
 	type statety is (a, b, c); -- a is no transmit b is transmitting first cycle c is transmitting not first cycle
 	signal curr, ncurr: statety;
-
+	
+	
 begin
 	-- determine next state
 	process (curr, pakavail, stop)

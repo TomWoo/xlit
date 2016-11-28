@@ -27,7 +27,7 @@ begin
 	end process;
 	
 	-- incountdone  next state and assert bit
-	process (incountdone, currst, inon)
+	process (incountdone, currst, inonl)
 	begin
 		if (incountdone = '1' and inonl = '0') then
 			inon <= '1';
@@ -95,7 +95,7 @@ begin
 	end process;
 	
 	-- outcountdone next state and assert bit
-	process (outcountdone, currst, outon)
+	process (outcountdone, currst, outonl)
 	begin
 		if (outcountdone = '1' and outonl = '0') then
 			outon <= '1';
