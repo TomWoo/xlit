@@ -19,7 +19,13 @@ port(
 	wrenc: in std_logic; --ctrl write enable;
 	datai: in std_logic_vector(7 downto 0);
 	datao: out std_logic_vector(7 downto 0);
-	controlo: out std_logic_vector(23 downto 0)
+	controlo: out std_logic_vector(23 downto 0);
+	stop:						out std_logic;
+	db_ctrlm:				out std_logic_vector(23 downto 0);
+	db_incountdone:		out std_logic;
+	db_outcountdone:		out std_logic;
+	db_last:					out std_logic
+	
 );
 end in_FSM;
 
@@ -43,15 +49,16 @@ architecture arch of in_FSM is
 	signal datam: std_logic_vector (7 downto 0);
 	signal ctrlm: std_logic_vector (23 downto 0);
 	signal readen: std_logic;
-	signal outtrans: std_logic:='0';
 	signal canout: std_logic;
-	signal cnto: INTEGER:=4095;
-	signal cnti: INTEGER:=4095;
+	signal cnto: unsigned(11 downto 0);
+	signal cnti: unsigned(11 downto 0);
 	signal last: std_logic;
-	signal lasto: std_logic;
+	signal lastm: std_logic;
 	signal opri: std_logic;
 	signal outstart: std_logic;
 	signal outstartas: std_logic;
+	signal dir: unsigned(11 downto 0) := "000000000001";
+	signal transen: std_logic := '1';
 	
 	component inbuff 
 		port (
@@ -68,7 +75,7 @@ architecture arch of in_FSM is
 	end component;   
 	
 	component inbuffcon
-		port(	aclr		: IN STD_LOGIC  := '0';
+		port(	aclr		: IN STD_LOGIC;
 			data		: IN STD_LOGIC_VECTOR (23 DOWNTO 0);
 			rdclk		: IN STD_LOGIC ;
 			rdreq		: IN STD_LOGIC ;
@@ -81,7 +88,7 @@ architecture arch of in_FSM is
 	END component;
 	
 	component FIFO_1
-		port(	aclr		: IN STD_LOGIC  := '0';
+		port(	aclr		: IN STD_LOGIC;
 			data		: IN STD_LOGIC;
 			rdclk		: IN STD_LOGIC ;
 			rdreq		: IN STD_LOGIC ;
@@ -132,59 +139,52 @@ begin
 		aclr <= reset;
 		sysclk <= clk_sys;
 		phyclk <= clk_phy;
+		db_ctrlm <= ctrlm;
+		db_incountdone <= incountdone;
+		db_outcountdone <= outcountdone;
+		db_last <= last;
 	end process;
 	
 	PROCESS (sysclk, controli, wrenc, aclr, cnti) --incounter	
 	BEGIN		
 		if(aclr = '1') then
-			cnti <= 4095;
+			cnti <= "111111111111";
 			incountdone <= '0';
 			last <='0';
 		elsif (sysclk'EVENT AND sysclk = '1') THEN
 			if (wrenc = '1') then
-				cnti <= to_integer(unsigned(controli(11 downto 0)));
+				cnti <= not (unsigned(controli(11 downto 0)))+dir; -- SOMETHING HERE IS BREAKING TRIES TO ASSIGN 00F TO FF0
 			else
-				if (cnti>0) then
-					cnti <= cnti - 1;
+				if (to_integer(cnti)>2) then
+					cnti <= cnti + dir;
 				end if;
 			end if;
 		END IF;
-		if (cnti <= 1) then
+		if (to_integer(cnti) <= 2) then
 			incountdone <= '1';
-			outstartas <= '1';
-			last <= '1';
 		else 
 			incountdone <= '0';
-			last <= '0';
-			if (emptyd = '0') then
-				outstartas <='0';
-			end if;
 		end if;
 	END PROCESS;
 
-	PROCESS (phyclk, ctrlm, aclr, cnto) --outcounter
+	PROCESS (phyclk, ctrlm, aclr, cnti) --outcounter
 	BEGIN	
 		if (aclr = '1') then
-			cnto <= 4095;
+			cnto <= "111111111111";
 			outcountdone <= '0';
-			outtrans <= '0';
 		elsif (phyclk'EVENT AND phyclk = '1') THEN
-			if ((outstart = '1' and outcountdone = '1') or (incountdone = '1' and outtrans = '0')) then
-				cnto <= to_integer(unsigned(ctrlm(11 downto 0)));
-				outstart <= '0';
+			if (incountdone = '1' and outcountdone = '1') then -- if transmit enable
+				cnto <= not (unsigned(ctrlm(11 downto 0)));	-- SOMETHING HERE IS ALSO BREAKING
 			else
-				if (cnto>0) then
-					cnto <= cnto -1;
-					outstart <= outstartas;
+				if (to_integer(cnto)>2) then
+					cnto <= cnto + dir;
 				end if;
 			end if;
 		END IF;
-		if (cnto <= 0 and outtrans = '1') then
+		if (to_integer(cnto) <= 2) then
 			outcountdone <= '1';
-			outtrans <= '0';
 		else 
 			outcountdone <= '0';
-			outtrans <= '1';
 		end if;
 	END PROCESS;
 	
@@ -192,6 +192,7 @@ begin
 	process(phyclk, emptyd, aclr) --ctrlout
 	begin
 		if(aclr = '1') then
+			out_priority <= '0';
 			controlo <= "000000000000000000000000";
 		elsif (phyclk'event AND phyclk = '1') then
 			controlo <= ctrlm;
@@ -203,8 +204,10 @@ begin
 	begin
 		if (aclr = '1') then
 			datao <= "00000000";
+			stop <= '0';
 		elsif (phyclk'event AND phyclk = '1') then
 			datao <= datam;
+			stop <= lastm;
 		end if;
 	end process;
 	
@@ -218,7 +221,7 @@ begin
 			q => datam,
 			data => datai,
 			wrreq => wrend,
-			rdreq => hi and outtrans,
+			rdreq => hi and incountdone and not stop, -- transmit enable
 			rdempty => emptyd,
 			wrfull => fulld
 			);
@@ -231,7 +234,7 @@ begin
 			q => ctrlm,
 			data => controli,
 			wrreq => wrenc,
-			rdreq => hi and outtrans,
+			rdreq => hi and incountdone and not outcountdone, -- transmit enable clock 1
 			rdempty => emptyc,
 			wrfull => fullc
 		);
@@ -244,7 +247,7 @@ begin
 			q => opri,
 			data => in_priority,
 			wrreq => wrenc,
-			rdreq => hi and outtrans,
+			rdreq => hi and incountdone and not outcountdone, -- transmit enable clock 1
 			rdempty => empty_priority,
 			wrfull => full_priority
 		);
@@ -254,10 +257,10 @@ begin
 			aclr => aclr,
 			wrclk => sysclk,
 			rdclk => phyclk,
-			q => last,
-			data => lasto,
+			q => lastm,
+			data => incountdone,
 			wrreq => wrend,
-			rdreq => hi and outtrans,
+			rdreq => hi and incountdone and not stop, -- transmit enable
 			rdempty => empty_stop,
 			wrfull => full_stop
 		);
