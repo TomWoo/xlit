@@ -52,6 +52,8 @@ architecture arch of in_FSM is
 	signal canout: std_logic;
 	signal cnto: unsigned(11 downto 0);
 	signal cnti: unsigned(11 downto 0);
+	signal cntot: unsigned(11 downto 0);
+	signal cntit: unsigned(11 downto 0);
 	signal last: std_logic;
 	signal lastm: std_logic;
 	signal opri: std_logic;
@@ -102,7 +104,7 @@ architecture arch of in_FSM is
 	
 begin
 
-	process(clk_sys, reset) begin
+	process(clk_sys, reset, ctrl_ctrl_prev, in_ctrl_ctrl) begin
 		if(reset = '1') then
 			ctrl_ctrl_prev <= '0';
 		elsif(rising_edge(clk_sys)) then
@@ -135,7 +137,7 @@ begin
 	
 	---------------- buffer logic ----------------
 	
-	process(reset, clk_sys, clk_phy) begin
+	process(reset, clk_sys, clk_phy, ctrlm, incountdone, outcountdone, last) begin
 		aclr <= reset;
 		sysclk <= clk_sys;
 		phyclk <= clk_phy;
@@ -145,7 +147,7 @@ begin
 		db_last <= last;
 	end process;
 	
-	PROCESS (sysclk, controli, wrenc, aclr, cnti) --incounter	
+	PROCESS (sysclk, controli, wrenc, aclr, cnti, cntit) --incounter	
 	BEGIN		
 		if(aclr = '1') then
 			cnti <= "111111111111";
@@ -154,9 +156,13 @@ begin
 		elsif (sysclk'EVENT AND sysclk = '1') THEN
 			if (wrenc = '1') then
 				cnti <= not (unsigned(controli(11 downto 0)))+dir; -- SOMETHING HERE IS BREAKING TRIES TO ASSIGN 00F TO FF0
+				cntit <= not (unsigned(controli(11 downto 0)))+dir+dir;
 			else
 				if (to_integer(cnti)>2) then
 					cnti <= cnti + dir;
+				end if;
+				if (to_integer(cntit)>2) then
+					cntit <= cntit +dir;
 				end if;
 			end if;
 		END IF;
@@ -165,9 +171,14 @@ begin
 		else 
 			incountdone <= '0';
 		end if;
+		if (to_integer(cntit) <= 2) then
+			last <= '1';
+		else
+			last <= '0';
+		end if;
 	END PROCESS;
 
-	PROCESS (phyclk, ctrlm, aclr, cnti) --outcounter
+	PROCESS (phyclk, ctrlm, aclr, cnto) --outcounter
 	BEGIN	
 		if (aclr = '1') then
 			cnto <= "111111111111";
@@ -221,7 +232,7 @@ begin
 			q => datam,
 			data => datai,
 			wrreq => wrend,
-			rdreq => hi and incountdone and not stop, -- transmit enable
+			rdreq => hi and incountdone and not lastm, -- transmit enable
 			rdempty => emptyd,
 			wrfull => fulld
 			);
@@ -260,7 +271,7 @@ begin
 			q => lastm,
 			data => incountdone,
 			wrreq => wrend,
-			rdreq => hi and incountdone and not stop, -- transmit enable
+			rdreq => hi and incountdone and not lastm, -- transmit enable
 			rdempty => empty_stop,
 			wrfull => full_stop
 		);
