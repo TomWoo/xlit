@@ -252,8 +252,6 @@ begin
 		end if;
 	end process;
 	
-	--last latch
-	
 	inbuff_comp : inbuff
 		port map (
 			aclr => aclr,
@@ -262,7 +260,7 @@ begin
 			q => datam,
 			data => datai,
 			wrreq => wrend,
-			rdreq => hi and txen, -- transmit enable
+			rdreq => hi,-- and txen, -- transmit enable
 			rdempty => emptyd,
 			wrfull => fulld
 			);
@@ -275,7 +273,7 @@ begin
 			q => ctrlm,
 			data => controli,
 			wrreq => wrenc,
-			rdreq => hi and txone, -- transmit enable clock 1
+			rdreq => hi,-- and txone, -- transmit enable clock 1
 			rdempty => emptyc,
 			wrfull => fullc
 		);
@@ -288,7 +286,7 @@ begin
 			q => opri,
 			data => in_priority,
 			wrreq => wrenc,
-			rdreq => hi and txone, -- transmit enable clock 1
+			rdreq => hi,-- and txone, -- transmit enable clock 1
 			rdempty => empty_priority,
 			wrfull => full_priority
 		);
@@ -301,7 +299,7 @@ begin
 			q => lastm,
 			data => incountdone,
 			wrreq => wrend,
-			rdreq => hi and txen, -- transmit enable
+			rdreq => hi,-- and txen, -- transmit enable
 			rdempty => empty_stop,
 			wrfull => full_stop
 		);
@@ -314,7 +312,7 @@ begin
 			phyclk => phyclk,
 			pakavail => pakavails
 		);
-		
+		 
 	transmitenable: tren
 		port map(
 			pakavail => pakavails,
@@ -333,6 +331,7 @@ begin
 --			aclr: 			in std_logic;
 --			phyclk: 			in std_logic
 --		);
+--
 --	component tren
 --		port(
 --			pakavail: 	in std_logic;
