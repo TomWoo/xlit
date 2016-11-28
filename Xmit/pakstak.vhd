@@ -16,7 +16,7 @@ end pakstak;
 architecture arch of pakstak is
 	signal curr, inc, ouc: std_logic_vector(5 downto 0);
 	signal parityi, parityo: std_logic;
-	type st_type is (a,b,c,d,e,f,g,h,i,j);
+	type st_type is (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z);
 	signal ncurrst, currst, nin, nout: st_type;
 	signal inon, outon, inonl, outonl: std_logic;
 	
@@ -51,7 +51,39 @@ begin
 				when i =>
 					nin <= j;
 				when j =>
-					nin <= j;
+					nin <= k;
+				when k =>
+					nin <= l;
+				when l =>
+					nin <= m;
+				when m =>
+					nin <= n;
+				when n =>
+					nin <= o;
+				when o =>
+					nin <= p;
+				when p =>
+					nin <= q;
+				when q =>
+					nin <= r;
+				when r =>
+					nin <= s;
+				when s =>
+					nin <= t;
+				when t =>
+					nin <= u;
+				when u =>
+					nin <= v;
+				when v =>
+					nin <= w;
+				when w =>
+					nin <= x;
+				when x =>
+					nin <= y;
+				when y =>
+					nin <= z;
+				when z =>
+					nin <= z;
 			end case;
 		elsif (incountdone = '1' and inonl = '1') then
 			nin <= currst;
@@ -88,6 +120,38 @@ begin
 					nout <= h;
 				when j =>
 					nout <= i;
+				when k =>
+					nout <= j;
+				when l =>
+					nout <= k;
+				when m =>
+					nout <= l;
+				when n =>
+					nout <= m;
+				when o =>
+					nout <= n;
+				when p =>
+					nout <= o;
+				when q =>
+					nout <= p;
+				when r =>
+					nout <= q;
+				when s =>
+					nout <= r;
+				when t =>
+					nout <= s;
+				when u =>
+					nout <= t;
+				when v =>
+					nout <= u;
+				when w =>
+					nout <= v;
+				when x =>
+					nout <= w;
+				when y =>
+					nout <= x;
+				when z =>
+					nout <= y;
 			end case;
 		elsif (outcountdone = '1' and outonl = '1') then
 			nout <= currst;

@@ -14,12 +14,12 @@ port(
 	clk_phy:					in std_logic;
 	clk_sys:					in std_logic;
 	reset:					in std_logic;
-	controli: in std_logic_vector(23 downto 0);
-	wrend: in std_logic; --data write enable;
-	wrenc: in std_logic; --ctrl write enable;
-	datai: in std_logic_vector(7 downto 0);
-	datao: out std_logic_vector(7 downto 0);
-	controlo: out std_logic_vector(23 downto 0);
+	controli: 				in std_logic_vector(23 downto 0);
+	wrend: 					in std_logic; --data write enable;
+	wrenc: 					in std_logic; --ctrl write enable;
+	datai: 					in std_logic_vector(7 downto 0);
+	datao: 					out std_logic_vector(7 downto 0);
+	controlo: 				out std_logic_vector(23 downto 0);
 	stop:						out std_logic;
 	db_ctrlm:				out std_logic_vector(23 downto 0);
 	db_incountdone:		out std_logic;
