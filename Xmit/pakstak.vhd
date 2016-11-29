@@ -166,16 +166,16 @@ begin
 	-- if incount done assert bit then inc nextstate
 	-- if outcountdone assert bit then ouc nextstate
 	-- if both, do nothing, if none do nothing
-	process(outon, inon, nout, nin, phyclk, aclr) 
+	process(outon, inon, nout, nin, phyclk, aclr, outonl, inonl) 
 	begin
 		if (aclr = '1') then
 			currst <= a;
 		elsif (phyclk'event and phyclk = '1') then
-			if (inon = '1' and outon = '1') then
+			if (inon = '1' and outon = '1' and inonl = '0' and outonl = '0') then
 				currst <= ncurrst; -- no state change
-			elsif (inon = '1') then
+			elsif (inon = '1' and inonl = '0') then
 				currst <= nin;
-			elsif (outon = '1') then
+			elsif (outon = '1' and outonl = '0') then
 				currst <= nout;
 			else
 				currst <= ncurrst;

@@ -22,8 +22,6 @@ port(
 	controlo: 				out std_logic_vector(23 downto 0);
 	stop:						out std_logic;
 	db_ctrlm:				out std_logic_vector(23 downto 0);
-	db_incountdone:		out std_logic;
-	db_outcountdone:		out std_logic;
 	db_last:					out std_logic;
 	db_lastm:				out std_logic;
 	db_txen:					out std_logic;
@@ -65,7 +63,7 @@ architecture arch of in_FSM is
 	signal outstartas: std_logic;
 	signal dir: unsigned(11 downto 0) := "000000000001";
 	signal transen: std_logic := '1';
-	signal txen, txone, pakavails: std_logic;
+	signal txen, txone, pakavails, firsttrans, txen2: std_logic;
 	
 	component pakstak
 		port(
@@ -143,19 +141,19 @@ begin
 	process(clk_sys, reset)
 	begin
 		if(reset = '1') then
-			out_m_discard_en <= '0';		
-			out_wren <= '0';
+			out_m_discard_en <= '0';	
+			--out_wren <= '0';	
 		elsif(clk_sys'event and clk_sys='1') then
 			if ((in_lo_overflow = '1' and in_priority='0') or (in_hi_overflow='1' and in_priority='1')) then
-				out_wren <= '0';
+				--out_wren <= '0';
 				out_m_discard_en <= in_ctrl_ctrl;
 			else
-				out_wren <= in_ctrl_ctrl;
+				--out_wren <= in_ctrl_ctrl;
 				out_m_discard_en <= '0';
 			end if;
 		else
 			out_m_discard_en <= out_m_discard_en;
-			out_wren <= out_wren;
+			--out_wren <= out_wren;
 		end if;
 		
 		--out_priority<=in_priority;
@@ -168,21 +166,20 @@ begin
 		sysclk <= clk_sys;
 		phyclk <= clk_phy;
 		db_ctrlm <= ctrlm;
-		db_incountdone <= incountdone;
-		db_outcountdone <= outcountdone;
 		db_last <= last;
 		db_lastm <= lastm;
 		db_txen <= txen;
 		db_txone <= txone;
 		db_pakavail <= pakavails;
+		dir <="000000000001";
 	end process;
 	
 	PROCESS (sysclk, controli, wrenc, aclr, cnti, cntit) --incounter	
 	BEGIN		
 		if(aclr = '1') then
 			cnti <= "111111111111";
+			cntit <="111111111111";
 			incountdone <= '0';
-			last <='0';
 		elsif (sysclk'EVENT AND sysclk = '1') THEN
 			if (wrenc = '1') then
 				cnti <= not (unsigned(controli(11 downto 0)))+dir; -- SOMETHING HERE IS BREAKING TRIES TO ASSIGN 00F TO FF0
@@ -206,23 +203,28 @@ begin
 		else
 			last <= '0';
 		end if;
+		if (aclr = '1') then
+			last <='0';
+		end if;
 	END PROCESS;
 
-	PROCESS (phyclk, ctrlm, aclr, cnto) --outcounter
+	PROCESS (phyclk, ctrlm, aclr, cnto, firsttrans) --outcounter
 	BEGIN	
 		if (aclr = '1') then
 			cnto <= "111111111111";
-			outcountdone <= '0';
+			outcountdone <= '0'; 
+			firsttrans <= '0';
 		elsif (phyclk'EVENT AND phyclk = '1') THEN
-			if (txen) then -- if transmit enable
+			if (txen = '0' and pakavails = '1') then -- if transmit enable
 				cnto <= not (unsigned(ctrlm(11 downto 0)));	-- SOMETHING HERE IS ALSO BREAKING
+				firsttrans <='1';
 			else
 				if (to_integer(cnto)>2) then
 					cnto <= cnto + dir;
 				end if;
 			end if;
 		END IF;
-		if (to_integer(cnto) <= 2) then
+		if (to_integer(cnto) <= 2 and firsttrans = '1') then
 			outcountdone <= '1';
 		else 
 			outcountdone <= '0';
@@ -246,9 +248,12 @@ begin
 		if (aclr = '1') then
 			datao <= "00000000";
 			stop <= '0';
+			out_wren <= '0';
 		elsif (phyclk'event AND phyclk = '1') then
 			datao <= datam;
 			stop <= lastm;
+			out_wren <= txen2;
+			txen2 <= txen;
 		end if;
 	end process;
 	
@@ -297,7 +302,7 @@ begin
 			wrclk => sysclk,
 			rdclk => phyclk,
 			q => lastm,
-			data => incountdone,
+			data => last,
 			wrreq => wrend,
 			rdreq => hi and txen, -- transmit enable
 			rdempty => empty_stop,
@@ -307,8 +312,8 @@ begin
 	packetstack: pakstak
 		port map(
 			aclr => aclr,
-			incountdone => incountdone,
-			outcountdone => outcountdone,
+			incountdone => last,
+			outcountdone => lastm,
 			phyclk => phyclk,
 			pakavail => pakavails
 		);

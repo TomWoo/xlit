@@ -14,13 +14,14 @@ end tren;
 architecture arch of tren is
 	type statety is (a, b, c); -- a is no transmit b is transmitting first cycle c is transmitting not first cycle
 	signal curr, ncurr: statety;
+	signal stopl: std_logic;
 	
 	
 begin
 	-- determine next state
-	process (curr, pakavail, stop)
+	process (curr, pakavail, stop, stopl)
 	begin
-		if (stop = '1') then
+		if (stop = '1' and stopl = '0') then
 			ncurr <= a;
 		else
 			if (curr = a) then
@@ -44,6 +45,7 @@ begin
 			curr <= a;
 		elsif (phyclk'event and phyclk = '1') then
 			curr <= ncurr;
+			stopl <= stop;
 		end if;
 	end process;
 	
