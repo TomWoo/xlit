@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Xmit
-Thu Nov 17 21:12:48 2016
+Tue Nov 29 12:47:07 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -37,9 +37,9 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Nov 17 21:12:48 2016 ;
+; EDA Netlist Writer Status ; Successful - Tue Nov 29 12:47:07 2016 ;
 ; Revision Name             ; Xmit                                  ;
-; Top-level Entity Name     ; monitoring_logic                      ;
+; Top-level Entity Name     ; in_FSM                                ;
 ; Family                    ; Cyclone V                             ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -66,13 +66,13 @@ agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+--------------------------------------------------------+
-; Simulation Generated Files                             ;
-+--------------------------------------------------------+
-; Generated Files                                        ;
-+--------------------------------------------------------+
-; C:/altera_lite/16.0/xlit/Xmit/simulation/qsim//Xmit.vo ;
-+--------------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Simulation Generated Files                                                        ;
++-----------------------------------------------------------------------------------+
+; Generated Files                                                                   ;
++-----------------------------------------------------------------------------------+
+; C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/simulation/qsim//Xmit.vo ;
++-----------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -95,15 +95,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Altera and sold by Altera or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Thu Nov 17 21:12:44 2016
-Info: Command: quartus_eda --write_settings_files=off --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/altera_lite/16.0/xlit/Xmit/simulation/qsim/ Xmit -c Xmit
+    Info: Processing started: Tue Nov 29 12:47:07 2016
+Info: Command: quartus_eda --write_settings_files=off --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/simulation/qsim/ Xmit -c Xmit
 Info (119006): Selected device 5CEBA4F23C7 for design "Xmit"
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file Xmit.vo in folder "C:/altera_lite/16.0/xlit/Xmit/simulation/qsim//" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 809 megabytes
-    Info: Processing ended: Thu Nov 17 21:12:48 2016
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+Info (204019): Generated file Xmit.vo in folder "C:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/simulation/qsim//" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 798 megabytes
+    Info: Processing ended: Tue Nov 29 12:47:07 2016
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
 
 

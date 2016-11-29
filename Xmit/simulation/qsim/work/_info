@@ -5,142 +5,264 @@ z0
 cModel Technology
 Z0 dC:\Users\User\OneDrive\Duke\7_Fall_2016\ECE_559\Ethernet_switch\Xmit\simulation\qsim
 vin_FSM
-!s100 NKglDl2i`O7F5LIWI=HXW2
-IGjAdASCCHCU_0;d88j@:W0
-VFE9>A[Jd<hCd@k9z40[jb0
-R0
-w1476798820
-Z1 8Xmit.vo
-Z2 FXmit.vo
-Z3 L0 32
-Z4 OV;L;10.1d;51
+Z1 !s110 1480441628
+!i10b 1
+!s100 dlI^g@L;<n`eYf<Cz2i]V2
+I]5DKB8`WW5ceiobOnB`EY0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/Kevin/Desktop/Fall2016/ECE559/Project/xlit/Xmit/simulation/qsim
+w1480441627
+Z4 8Xmit.vo
+Z5 FXmit.vo
+Z6 L0 32
+Z7 OV;L;10.4d;61
 r1
+!s85 0
 31
-Z5 !s90 -work|work|Xmit.vo|
-Z6 o-work work -O0
+Z8 !s108 1480441628.000000
+Z9 !s107 Xmit.vo|
+Z10 !s90 -work|work|Xmit.vo|
+!i113 1
+Z11 o-work work
 nin_@f@s@m
-!s108 1476798831.866000
-Z7 !s107 Xmit.vo|
-!i10b 1
-!s85 0
-!s101 -O0
 vin_FSM_vlg_vec_tst
-!s100 ;OJa0`nF8NoR7z]B7>10H1
-IM1SdKlflJji<B;C^ALczD2
-VOEJ5Xl<oR<J^m==0jgl571
-R0
-w1476798815
-8Waveform_in_FSM.vwf.vt
-FWaveform_in_FSM.vwf.vt
-Z8 L0 30
-R4
-r1
-31
-!s90 -work|work|Waveform_in_FSM.vwf.vt|
-R6
-nin_@f@s@m_vlg_vec_tst
-!s108 1476798832.141000
-!s107 Waveform_in_FSM.vwf.vt|
+R1
 !i10b 1
+!s100 g`WSL:Zn:RDFi60Eb8KaS1
+ILo<UP_eh:X?KQAX8EdQKE1
+R2
+R3
+w1480441626
+Z12 8Waveform2.vwf.vt
+Z13 FWaveform2.vwf.vt
+Z14 L0 30
+R7
+r1
 !s85 0
-!s101 -O0
+31
+R8
+!s107 Waveform2.vwf.vt|
+Z15 !s90 -work|work|Waveform2.vwf.vt|
+!i113 1
+R11
+nin_@f@s@m_vlg_vec_tst
 vmonitoring_logic
 !s110 1479435172
 !i10b 1
 !s100 1c:ePGVYI[Th9:c?QfS[Y0
 ID93E9O9RB;B41gobmkR4W1
-Z9 VDg1SIo80bB@j0V0VzS_@n1
-Z10 dC:/altera_lite/16.0/xlit/Xmit/simulation/qsim
-w1479435168
-R1
 R2
-R3
-Z11 OV;L;10.4d;61
+Z16 dC:/altera_lite/16.0/xlit/Xmit/simulation/qsim
+w1479435168
+R4
+R5
+R6
+R7
 r1
 !s85 0
 31
-Z12 !s108 1479435172.000000
-R7
-R5
+Z17 !s108 1479435172.000000
+R9
+R10
 !i113 1
-Z13 o-work work
+R11
 vmonitoring_logic_vlg_vec_tst
 !s110 1479435173
 !i10b 1
 !s100 I<g9YM7]=MK_^gl0oBDJ23
 I=]o6E<32OAFEzJ`gRL9B70
-R9
-R10
+R2
+R16
 w1479435163
-8Waveform2.vwf.vt
-FWaveform2.vwf.vt
-R8
-R11
+R12
+R13
+R14
+R7
 r1
 !s85 0
 31
-R12
+R17
 !s107 Waveform2.vwf.vt|
-!s90 -work|work|Waveform2.vwf.vt|
+R15
 !i113 1
-R13
+R11
 vout_FSM
 !s100 mjbXg1F7AaEkmQL3zAa?K0
 Iz9PWgZaiMdjWRNP9eZP1I0
 V_?S9l=oPz5kHfPWLJPDBO3
-Z14 dC:\Users\User\OneDrive\Duke\7_Fall_2016\ECE_559\Ethernet_switch\xlit\Xmit\simulation\qsim
+Z18 dC:\Users\User\OneDrive\Duke\7_Fall_2016\ECE_559\Ethernet_switch\xlit\Xmit\simulation\qsim
 w1478308821
-R1
-R2
-R3
 R4
-r1
-31
 R5
 R6
+Z19 OV;L;10.1d;51
+r1
+31
+R10
+Z20 o-work work -O0
 nout_@f@s@m
 !i10b 1
 !s85 0
 !s108 1478308836.224000
-R7
+R9
 !s101 -O0
 vout_FSM_vlg_vec_tst
 !i10b 1
 !s100 _3PW?WKm4^4S4i8Cz;K_K2
 IX;TJBOEA]Kf4=1`OgAoUO2
 V6R3]EYdF>RjnfWI`EZXM02
-R14
+R18
 w1478308816
-Z15 8Waveform.vwf.vt
-Z16 FWaveform.vwf.vt
-R8
-R4
+Z21 8Waveform.vwf.vt
+Z22 FWaveform.vwf.vt
+R14
+R19
 r1
 !s85 0
 31
 !s108 1478308836.514000
-Z17 !s107 Waveform.vwf.vt|
-Z18 !s90 -work|work|Waveform.vwf.vt|
+Z23 !s107 Waveform.vwf.vt|
+Z24 !s90 -work|work|Waveform.vwf.vt|
 !s101 -O0
-R6
+R20
 nout_@f@s@m_vlg_vec_tst
+vpakstak
+Z25 !s110 1480369242
+!i10b 1
+!s100 ?hmY@nRiQ@hfO?CPZZm;D3
+Ia4MA6=^SB7l3Vb7dD3c960
+R2
+R3
+w1480369242
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+Z26 !s108 1480369242.000000
+R9
+R10
+!i113 1
+R11
+vpakstak_vlg_vec_tst
+R25
+!i10b 1
+!s100 Y`GJU_IkJmR0aE0[jH93U1
+IdFLoWI=cR8aG=IalPQM^Q0
+R2
+R3
+w1480369241
+8Waveform3.vwf.vt
+FWaveform3.vwf.vt
+R14
+R7
+r1
+!s85 0
+31
+R26
+!s107 Waveform3.vwf.vt|
+!s90 -work|work|Waveform3.vwf.vt|
+!i113 1
+R11
+vpakstaktren
+Z27 !s110 1480438009
+!i10b 1
+!s100 hga5ZfERf_TB_UGdO@2253
+IYnmbMKP_@:cm]R3ZdXfOd3
+R2
+R3
+w1480438008
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+Z28 !s108 1480438009.000000
+R9
+R10
+!i113 1
+R11
+vpakstaktren_vlg_vec_tst
+R27
+!i10b 1
+!s100 U2?aB;BZ9ooUD9?WN5SDF3
+I<h4c;zSG^6cmK[:5f28OP0
+R2
+R3
+w1480438007
+8Waveform4pakstaktren.vwf.vt
+FWaveform4pakstaktren.vwf.vt
+R14
+R7
+r1
+!s85 0
+31
+R28
+!s107 Waveform4pakstaktren.vwf.vt|
+!s90 -work|work|Waveform4pakstaktren.vwf.vt|
+!i113 1
+R11
+vtren
+Z29 !s110 1480371680
+!i10b 1
+!s100 C]Zl?ae`LPLMVg2g?N4O_1
+IIIHREBzH6WD?FVVE8fEbO2
+R2
+R3
+w1480371679
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+Z30 !s108 1480371680.000000
+R9
+R10
+!i113 1
+R11
+vtren_vlg_vec_tst
+R29
+!i10b 1
+!s100 al2P:I3i`d>k;TBhnKej`3
+Il1SLY^bmc9RQPXWaao2j?3
+R2
+R3
+w1480371678
+R12
+R13
+R14
+R7
+r1
+!s85 0
+31
+R30
+!s107 Waveform2.vwf.vt|
+R15
+!i113 1
+R11
 vxmitTop
 IOU]o>9_UCPXf@i8cd8J[91
 VId>`YgiL5Pf2B_Q_CLoGF0
 R0
 w1476763038
-R1
-R2
-R3
 R4
+R5
+R6
+R19
 r1
 31
-R6
+R20
 nxmit@top
 !s100 ^X2PZ2A]IF`9P1@IQ?@OF0
 !s108 1476763044.236000
-R7
-R5
+R9
+R10
 !i10b 1
 !s85 0
 !s101 -O0
@@ -149,18 +271,18 @@ INDH?IS;zV]X_hF5Zj^<E62
 Vog2o]bKLcRRfJdJB_lZaR3
 R0
 w1476763036
-R15
-R16
-R8
-R4
+R21
+R22
+R14
+R19
 r1
 31
-R6
+R20
 nxmit@top_vlg_vec_tst
 !s100 g_T=M3DYHO3^5NZ[Az0B12
 !s108 1476763044.383000
-R17
-R18
+R23
+R24
 !i10b 1
 !s85 0
 !s101 -O0
