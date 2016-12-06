@@ -20,7 +20,7 @@ port(
 	datai: 					in std_logic_vector(7 downto 0);
 	datao: 					out std_logic_vector(7 downto 0);
 	controlo: 				out std_logic_vector(23 downto 0);
-	stop:						out std_logic-;
+	stop:						out std_logic--;
 	--db_ctrlm:				out std_logic_vector(23 downto 0);
 	--db_last:					out std_logic;
 	--db_lastm:				out std_logic;
@@ -228,7 +228,6 @@ begin
 			outcountdone <= '1';
 		else 
 			outcountdone <= '0';
-			outtrans <= '1';
 		end if;
 	END PROCESS;
 	
@@ -292,11 +291,7 @@ begin
 			q => opri,
 			data => in_priority,
 			wrreq => wrenc,
-<<<<<<< HEAD
-			rdreq => hi and outtrans,
-=======
 			rdreq => hi and txone, -- transmit enable clock 1
->>>>>>> inbuff
 			rdempty => empty_priority,
 			wrfull => full_priority
 		);
@@ -332,24 +327,4 @@ begin
 			txone => txone,
 			stop => lastm
 		);
-		
---	component pakstak
---		port(
---			incountdone: 	in std_logic;
---			outcountdone: 	in std_logic;
---			pakavail:		out std_logic;
---			aclr: 			in std_logic;
---			phyclk: 			in std_logic
---		);
---
---	component tren
---		port(
---			pakavail: 	in std_logic;
---			aclr: 		in std_logic;
---			phyclk:		in std_logic;
---			txen:			out std_logic;
---			txone:		out std_logic;
---			stop:			in std_logic
---		);
---	end component;
 end arch;
