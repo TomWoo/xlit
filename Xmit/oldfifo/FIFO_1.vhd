@@ -101,11 +101,11 @@ BEGIN
 	dcfifo_component : dcfifo
 	GENERIC MAP (
 		intended_device_family => "Cyclone V",
-		lpm_numwords => 2048,
+		lpm_numwords => 512,
 		lpm_showahead => "OFF",
 		lpm_type => "dcfifo",
 		lpm_width => 1,
-		lpm_widthu => 11,
+		lpm_widthu => 9,
 		overflow_checking => "ON",
 		rdsync_delaypipe => 4,
 		read_aclr_synch => "OFF",
@@ -139,7 +139,7 @@ END SYN;
 -- Retrieval info: PRIVATE: AlmostFullThr NUMERIC "-1"
 -- Retrieval info: PRIVATE: CLOCKS_ARE_SYNCHRONIZED NUMERIC "0"
 -- Retrieval info: PRIVATE: Clock NUMERIC "4"
--- Retrieval info: PRIVATE: Depth NUMERIC "2048"
+-- Retrieval info: PRIVATE: Depth NUMERIC "512"
 -- Retrieval info: PRIVATE: Empty NUMERIC "1"
 -- Retrieval info: PRIVATE: Full NUMERIC "1"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
@@ -167,11 +167,11 @@ END SYN;
 -- Retrieval info: PRIVATE: wsUsedW NUMERIC "0"
 -- Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
--- Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "2048"
+-- Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "512"
 -- Retrieval info: CONSTANT: LPM_SHOWAHEAD STRING "OFF"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "dcfifo"
 -- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "1"
--- Retrieval info: CONSTANT: LPM_WIDTHU NUMERIC "11"
+-- Retrieval info: CONSTANT: LPM_WIDTHU NUMERIC "9"
 -- Retrieval info: CONSTANT: OVERFLOW_CHECKING STRING "ON"
 -- Retrieval info: CONSTANT: RDSYNC_DELAYPIPE NUMERIC "4"
 -- Retrieval info: CONSTANT: READ_ACLR_SYNCH STRING "OFF"
@@ -198,8 +198,8 @@ END SYN;
 -- Retrieval info: CONNECT: rdempty 0 0 0 0 @rdempty 0 0 0 0
 -- Retrieval info: CONNECT: wrfull 0 0 0 0 @wrfull 0 0 0 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL FIFO_1.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL FIFO_1.inc TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL FIFO_1.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL FIFO_1.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL FIFO_1.bsf TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL FIFO_1_inst.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL FIFO_1.bsf FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL FIFO_1_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: altera_mf
