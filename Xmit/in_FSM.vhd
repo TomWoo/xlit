@@ -20,13 +20,16 @@ port(
 	datai: 					in std_logic_vector(7 downto 0);
 	datao: 					out std_logic_vector(7 downto 0);
 	controlo: 				out std_logic_vector(23 downto 0);
-	stop:						out std_logic--;
-	--db_ctrlm:				out std_logic_vector(23 downto 0);
-	--db_last:					out std_logic;
-	--db_lastm:				out std_logic;
-	--db_txen:					out std_logic;
-	--db_txone:				out std_logic;
-	--db_pakavail: 			out std_logic
+	stop:						out std_logic;
+	numusedhi:				in std_logic_vector(7 downto 0);
+	numusedlo: 				in std_logic_vector(7 downto 0)--;
+--	db_ctrlm:				out std_logic_vector(23 downto 0);
+--	db_last:					out std_logic;
+--	db_lastm:				out std_logic;
+--	db_txen:					out std_logic;
+--	db_txone:				out std_logic;
+--	db_pakavail: 			out std_logic;
+--	db_cnti:					out unsigned(11 downto 0)
 	
 );
 end in_FSM;
@@ -56,14 +59,25 @@ architecture arch of in_FSM is
 	signal cnti: unsigned(11 downto 0);
 	signal cntot: unsigned(11 downto 0);
 	signal cntit: unsigned(11 downto 0);
-	signal last: std_logic;
+	signal last, lastl: std_logic;
 	signal lastm: std_logic;
 	signal opri: std_logic;
 	signal outstart: std_logic;
-	signal outstartas: std_logic;
+	signal outstartas, dissig, wrensig, stopl: std_logic;
 	signal dir: unsigned(11 downto 0) := "000000000001";
 	signal transen: std_logic := '1';
 	signal txen, txone, pakavails, firsttrans, txen2: std_logic;
+	
+	component discard_logic is
+		port(
+			num_used_hi:	in std_logic_vector(7 downto 0);
+			num_used_lo:	in std_logic_vector(7 downto 0);
+			discard_en:		out std_logic;
+			wren:				out std_logic;
+			priority:		in std_logic;
+			frame_len:		in std_logic_vector(11 downto 0)
+		);
+	end component;
 	
 	component pakstak
 		port(
@@ -128,36 +142,36 @@ architecture arch of in_FSM is
 	
 begin
 
-	process(clk_sys, reset, ctrl_ctrl_prev, in_ctrl_ctrl) begin
-		if(reset = '1') then
-			ctrl_ctrl_prev <= '0';
-		elsif(rising_edge(clk_sys)) then
-			ctrl_ctrl_prev <= in_ctrl_ctrl;
-		else
-			ctrl_ctrl_prev <= ctrl_ctrl_prev;
-		end if;
-	end process;
-	
-	process(clk_sys, reset)
-	begin
-		if(reset = '1') then
-			out_m_discard_en <= '0';	
-			--out_wren <= '0';	
-		elsif(clk_sys'event and clk_sys='1') then
-			if ((in_lo_overflow = '1' and in_priority='0') or (in_hi_overflow='1' and in_priority='1')) then
-				--out_wren <= '0';
-				out_m_discard_en <= in_ctrl_ctrl;
-			else
-				--out_wren <= in_ctrl_ctrl;
-				out_m_discard_en <= '0';
-			end if;
-		else
-			out_m_discard_en <= out_m_discard_en;
-			--out_wren <= out_wren;
-		end if;
-		
-		--out_priority<=in_priority;
-	end process;
+--	process(clk_sys, reset, ctrl_ctrl_prev, in_ctrl_ctrl) begin
+--		if(reset = '1') then
+--			ctrl_ctrl_prev <= '0';
+--		elsif(rising_edge(clk_sys)) then
+--			ctrl_ctrl_prev <= in_ctrl_ctrl;
+--		else
+--			ctrl_ctrl_prev <= ctrl_ctrl_prev;
+--		end if;
+--	end process;
+--	
+--	process(clk_sys, reset)
+--	begin
+--		if(reset = '1') then
+--			out_m_discard_en <= '0';	
+--			--out_wren <= '0';	
+--		elsif(clk_sys'event and clk_sys='1') then
+--			if ((in_lo_overflow = '1' and in_priority='0') or (in_hi_overflow='1' and in_priority='1')) then
+--				--out_wren <= '0';
+--				out_m_discard_en <= in_ctrl_ctrl;
+--			else
+--				--out_wren <= in_ctrl_ctrl;
+--				out_m_discard_en <= '0';
+--			end if;
+--		else
+--			out_m_discard_en <= out_m_discard_en;
+--			--out_wren <= out_wren;
+--		end if;
+--		
+--		--out_priority<=in_priority;
+--	end process;
 	
 	---------------- buffer logic ----------------
 	
@@ -165,81 +179,99 @@ begin
 		aclr <= reset;
 		sysclk <= clk_sys;
 		phyclk <= clk_phy;
-		--db_ctrlm <= ctrlm;
-		--db_last <= last;
-		--db_lastm <= lastm;
-		--db_txen <= txen;
-		--db_txone <= txone;
-		--db_pakavail <= pakavails;
+--		db_ctrlm <= ctrlm;
+--		db_last <= last;
+--		db_lastm <= lastm;
+--		db_txen <= txen;
+--		db_txone <= txone;
+--		db_pakavail <= pakavails;
+--		db_cnti <= cnti;
 		dir <="000000000001";
 	end process;
 	
 	PROCESS (sysclk, controli, wrenc, aclr, cnti, cntit) --incounter	
 	BEGIN		
 		if(aclr = '1') then
-			cnti <= "111111111111";
+--			cnti <= "111111111111";
 			cntit <="111111111111";
-			incountdone <= '0';
+--			incountdone <= '0';
+			last <='0';
+			lastl <= '0';
 		elsif (sysclk'EVENT AND sysclk = '1') THEN
 			if (wrenc = '1') then
-				cnti <= not (unsigned(controli(11 downto 0)))+dir; -- SOMETHING HERE IS BREAKING TRIES TO ASSIGN 00F TO FF0
-				cntit <= not (unsigned(controli(11 downto 0)))+dir+dir;
+--				cnti <= (unsigned(controli(11 downto 0)))-dir; -- SOMETHING HERE IS BREAKING TRIES TO ASSIGN 00F TO FF0
+				cntit <= (unsigned(controli(11 downto 0)));
 			else
-				if (to_integer(cnti)>2) then
-					cnti <= cnti + dir;
-				end if;
+--				if (to_integer(cnti)>2) then
+--					cnti <= cnti - dir;
+--				end if;
 				if (to_integer(cntit)>2) then
-					cntit <= cntit +dir;
+					cntit <= cntit -dir;
 				end if;
 			end if;
+			if (to_integer(cntit) <= 2) then
+				if (last = '1' and lastl = '0') then
+					lastl <= '0';
+				else
+					lastl <= '1';
+				end if;
+			else 
+				lastl <= '0';
+			end if;
 		END IF;
-		if (to_integer(cnti) <= 2) then
-			incountdone <= '1';
-		else 
-			incountdone <= '0';
-		end if;
+--		if (to_integer(cnti) <= 2) then
+--			incountdone <= '1';
+--		else 
+--			incountdone <= '0';
+--		end if;
 		if (to_integer(cntit) <= 2) then
-			last <= '1';
-		else
+			if (lastl = '0') then
+				last <= '1';
+			else
+				last <= '0';
+			end if;
+		else 
 			last <= '0';
-		end if;
-		if (aclr = '1') then
-			last <='0';
 		end if;
 	END PROCESS;
 
-	PROCESS (phyclk, ctrlm, aclr, cnto, firsttrans) --outcounter
-	BEGIN	
-		if (aclr = '1') then
-			cnto <= "111111111111";
-			outcountdone <= '0'; 
-			firsttrans <= '0';
-		elsif (phyclk'EVENT AND phyclk = '1') THEN
-			if (txen = '0' and pakavails = '1') then -- if transmit enable
-				cnto <= not (unsigned(ctrlm(11 downto 0)));	-- SOMETHING HERE IS ALSO BREAKING
-				firsttrans <='1';
-			else
-				if (to_integer(cnto)>2) then
-					cnto <= cnto + dir;
-				end if;
-			end if;
-		END IF;
-		if (to_integer(cnto) <= 2 and firsttrans = '1') then
-			outcountdone <= '1';
-		else 
-			outcountdone <= '0';
-		end if;
-	END PROCESS;
+--	PROCESS (phyclk, ctrlm, aclr, cnto, firsttrans) --outcounter
+--	BEGIN	
+--		if (aclr = '1') then
+--			cnto <= "111111111111";
+--			outcountdone <= '0'; 
+--			firsttrans <= '0';
+--		elsif (phyclk'EVENT AND phyclk = '1') THEN
+--			if (txen = '0' and pakavails = '1') then -- if transmit enable
+--				cnto <= not (unsigned(ctrlm(11 downto 0)));	-- SOMETHING HERE IS ALSO BREAKING
+--				firsttrans <='1';
+--			else
+--				if (to_integer(cnto)>1) then
+--					cnto <= cnto + dir;
+--				end if;
+--			end if;
+--		END IF;
+--		if (to_integer(cnto) <= 1 and firsttrans = '1') then
+--			outcountdone <= '1';
+--		else 
+--			outcountdone <= '0';
+--		end if;
+--	END PROCESS;
 	
 	
-	process(phyclk, emptyd, aclr) --ctrlout
+	process(phyclk, emptyd, aclr, txone) --ctrlout
 	begin
 		if(aclr = '1') then
 			out_priority <= '0';
 			controlo <= "000000000000000000000000";
 		elsif (phyclk'event AND phyclk = '1') then
-			controlo <= ctrlm;
-			out_priority <= opri;
+--			if (stopl = '1') then
+--				out_priority <= '0';
+--				controlo <= "000000000000000000000000";
+--			else
+				controlo <= ctrlm;
+				out_priority <= opri;
+--			end if;
 		end if;
 	end process;
 	
@@ -249,13 +281,26 @@ begin
 			datao <= "00000000";
 			stop <= '0';
 			out_wren <= '0';
+			out_m_discard_en <= '0';
 		elsif (phyclk'event AND phyclk = '1') then
 			datao <= datam;
 			stop <= lastm;
-			out_wren <= txen2;
+			out_wren <= wrensig and txen2;-- and not stopl;
 			txen2 <= txen;
+			out_m_discard_en <= dissig and txen2;-- and not stopl;
+			stopl <= lastm;
 		end if;
 	end process;
+	
+	dislog: 	discard_logic
+		port map (
+		num_used_hi => numusedhi,
+		num_used_lo => numusedlo,
+		discard_en => dissig,
+		wren => wrensig,
+		priority => opri,
+		frame_len => ctrlm(11 downto 0)
+		);
 	
 	inbuff_comp : inbuff
 		port map (
