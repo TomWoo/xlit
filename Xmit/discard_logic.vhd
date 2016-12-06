@@ -6,8 +6,8 @@ use ieee.numeric_std.all;
 
 entity discard_logic is
 port(
-	num_used_hi:	in std_logic_vector(7 downto 0);
-	num_used_lo:	in std_logic_vector(7 downto 0);
+	num_used_hi:	in std_logic_vector(10 downto 0);
+	num_used_lo:	in std_logic_vector(10 downto 0);
 	discard_en:		out std_logic;
 	wren:				out std_logic;
 	priority:		in std_logic;
@@ -16,8 +16,8 @@ port(
 end entity;
 
 architecture arch of discard_logic is
-	signal num_used_hi_int:	integer range 0 to 1023;
-	signal num_used_lo_int:	integer range 0 to 1023;
+	signal num_used_hi_int:	integer range 0 to 2048;
+	signal num_used_lo_int:	integer range 0 to 2048;
 	signal frame_len_int:	integer range 0 to 4095;
 begin
 

@@ -9,11 +9,9 @@ port(
 	
 	data_lo_in			: in std_logic_vector(7 downto 0);
 	ctrl_block_lo_in	: in std_logic_vector(23 downto 0);
-	lo_empty_in 		: in std_logic;
 	pop_lo				: out std_logic;
 	data_hi_in			: in std_logic_vector(7 downto 0);
 	ctrl_block_hi_in	: in std_logic_vector(23 downto 0);
---	hi_empty_in 		: in std_logic;
 	pop_hi				: out std_logic;
 	
 	data_out				: out std_logic_vector(7 downto 0);
