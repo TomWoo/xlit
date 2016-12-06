@@ -4,179 +4,403 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "phy_data_out[0]",
+					"name" : "pop_hi",
 					"strict" : false
 				},
 				{
-					"name" : "phy_data_out[1]",
+					"name" : "data_out[0]",
 					"strict" : false
 				},
 				{
-					"name" : "phy_data_out[2]",
+					"name" : "data_out[1]",
 					"strict" : false
 				},
 				{
-					"name" : "phy_data_out[3]",
+					"name" : "data_out[2]",
 					"strict" : false
 				},
 				{
-					"name" : "phy_tx_en",
+					"name" : "data_out[3]",
 					"strict" : false
 				},
 				{
-					"name" : "m_discard_en",
+					"name" : "data_out[4]",
 					"strict" : false
 				},
 				{
-					"name" : "m_discard_frame[0]",
+					"name" : "data_out[5]",
 					"strict" : false
 				},
 				{
-					"name" : "m_discard_frame[1]",
+					"name" : "data_out[6]",
 					"strict" : false
 				},
 				{
-					"name" : "m_discard_frame[2]",
+					"name" : "data_out[7]",
 					"strict" : false
 				},
 				{
-					"name" : "m_discard_frame[3]",
+					"name" : "ctrl_block_out[0]",
 					"strict" : false
 				},
 				{
-					"name" : "m_discard_frame[4]",
+					"name" : "ctrl_block_out[1]",
 					"strict" : false
 				},
 				{
-					"name" : "m_discard_frame[5]",
+					"name" : "ctrl_block_out[2]",
 					"strict" : false
 				},
 				{
-					"name" : "m_discard_frame[6]",
+					"name" : "ctrl_block_out[3]",
 					"strict" : false
 				},
 				{
-					"name" : "m_discard_frame[7]",
+					"name" : "ctrl_block_out[4]",
 					"strict" : false
 				},
 				{
-					"name" : "m_discard_frame[8]",
+					"name" : "ctrl_block_out[5]",
 					"strict" : false
 				},
 				{
-					"name" : "m_discard_frame[9]",
+					"name" : "ctrl_block_out[6]",
 					"strict" : false
 				},
 				{
-					"name" : "m_discard_frame[10]",
+					"name" : "ctrl_block_out[7]",
 					"strict" : false
 				},
 				{
-					"name" : "m_discard_frame[11]",
+					"name" : "ctrl_block_out[8]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[0]",
+					"name" : "ctrl_block_out[9]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[1]",
+					"name" : "ctrl_block_out[10]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[2]",
+					"name" : "ctrl_block_out[11]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[3]",
+					"name" : "ctrl_block_out[12]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[4]",
+					"name" : "ctrl_block_out[13]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[5]",
+					"name" : "ctrl_block_out[14]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[6]",
+					"name" : "ctrl_block_out[15]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[7]",
+					"name" : "ctrl_block_out[16]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[8]",
+					"name" : "ctrl_block_out[17]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[9]",
+					"name" : "ctrl_block_out[18]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[10]",
+					"name" : "ctrl_block_out[19]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[11]",
+					"name" : "ctrl_block_out[20]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[12]",
+					"name" : "ctrl_block_out[21]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[13]",
+					"name" : "ctrl_block_out[22]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[14]",
+					"name" : "ctrl_block_out[23]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[15]",
+					"name" : "data_hi_in[0]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[16]",
+					"name" : "data_lo_in[0]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[17]",
+					"name" : "data_hi_in[1]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[18]",
+					"name" : "data_lo_in[1]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[19]",
+					"name" : "data_hi_in[2]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[20]",
+					"name" : "data_lo_in[2]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[21]",
+					"name" : "data_hi_in[3]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[22]",
+					"name" : "data_lo_in[3]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[23]",
+					"name" : "data_hi_in[4]",
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_done",
+					"name" : "data_lo_in[4]",
 					"strict" : false
 				},
 				{
-					"name" : "clk_phy",
+					"name" : "data_hi_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_lo_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_hi_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_lo_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_hi_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_lo_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[16]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[16]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[17]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[17]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[18]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[18]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[19]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[19]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[20]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[20]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[21]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[21]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[22]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[22]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[23]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[23]",
+					"strict" : false
+				},
+				{
+					"name" : "hi_fifo_used_in[8]",
+					"strict" : false
+				},
+				{
+					"name" : "hi_fifo_used_in[9]",
+					"strict" : false
+				},
+				{
+					"name" : "hi_fifo_used_in[10]",
 					"strict" : false
 				},
 				{
@@ -184,147 +408,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk_sys",
+					"name" : "stop_in",
 					"strict" : false
 				},
 				{
-					"name" : "f_hi_priority",
-					"strict" : false
-				},
-				{
-					"name" : "f_rec_frame_valid",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[12]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[13]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[14]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[15]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[16]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[17]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[18]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[19]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[20]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[21]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[22]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[23]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[4]",
-					"strict" : false
-				},
-				{
-					"name" : "f_rec_data_valid",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[4]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[0]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[0]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[8]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[1]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[9]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[5]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[5]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[1]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[2]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[6]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[10]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[6]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[2]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[3]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[11]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[7]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[7]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[3]",
+					"name" : "clk_phy",
 					"strict" : false
 				}
 			]

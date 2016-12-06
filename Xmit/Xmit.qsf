@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CEBA4F23C7
-set_global_assignment -name TOP_LEVEL_ENTITY xmitTop
+set_global_assignment -name TOP_LEVEL_ENTITY priority_FSM
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 16.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:40:26  OCTOBER 15, 2016"
 set_global_assignment -name LAST_QUARTUS_VERSION 16.0.0
@@ -98,4 +98,5 @@ set_global_assignment -name QIP_FILE ctrlFIFO.qip
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE priority_FSM.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

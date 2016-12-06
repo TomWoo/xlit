@@ -20,14 +20,16 @@ port(
 	ctrl_block_out		: out std_logic_vector(23 downto 0);
 	
 	stop_in				: in std_logic;
-	hi_fifo_used_in	: in std_logic_vector(9 downto 0)
+	hi_fifo_used_in	: in std_logic_vector(10 downto 0);
+	lo_fifo_used_in	: in std_logic_vector(10 downto 0)
 );
 end entity;
 
 architecture rtl of priority_FSM is
 	type state is (s_off, s_lo, s_hi);
 	signal my_state				: state;
-	signal hi_fifo_used_int		: integer range 0 to 1023;
+	signal hi_fifo_used_int		: integer range 0 to 2048;
+	signal lo_fifo_used_int		: integer range 0 to 2048;
 begin
 
 -- Asynchronous signals
@@ -49,13 +51,13 @@ end process;
 process(clk_phy, reset) begin
 	if (reset = '1') then
 	elsif(rising_edge(clk_phy)) then
-		if(hi_fifo_used_int = 0 and lo_empty_in = '1') then
-			my_state <= s_off;
-		elsif(stop_in = '1') then
-			if(hi_fifo_used_int<256 and lo_empty_in = '0') then
-				my_state <= s_lo;
-			elsif(hi_fifo_used_int>0 and lo_empty_in = '1') then
+		if(stop_in = '1') then
+			if(hi_fifo_used_int > 255) then
 				my_state <= s_hi;
+			elsif(lo_fifo_used_int > 255) then
+				my_state <= s_lo;
+			else
+				my_state <= s_off;
 			end if;
 		end if;
 	end if;

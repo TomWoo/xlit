@@ -21,8 +21,8 @@ port(
 	datao: 					out std_logic_vector(7 downto 0);
 	controlo: 				out std_logic_vector(23 downto 0);
 	stop:						out std_logic;
-	numusedhi:				in std_logic_vector(7 downto 0);
-	numusedlo: 				in std_logic_vector(7 downto 0)--;
+	numusedhi:				in std_logic_vector(10 downto 0);
+	numusedlo: 				in std_logic_vector(10 downto 0)
 --	db_ctrlm:				out std_logic_vector(23 downto 0);
 --	db_last:					out std_logic;
 --	db_lastm:				out std_logic;
@@ -70,8 +70,8 @@ architecture arch of in_FSM is
 	
 	component discard_logic is
 		port(
-			num_used_hi:	in std_logic_vector(7 downto 0);
-			num_used_lo:	in std_logic_vector(7 downto 0);
+			num_used_hi:	in std_logic_vector(10 downto 0);
+			num_used_lo:	in std_logic_vector(10 downto 0);
 			discard_en:		out std_logic;
 			wren:				out std_logic;
 			priority:		in std_logic;

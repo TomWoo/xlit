@@ -44,7 +44,11 @@ architecture rtl of xmitTop is
 		controlo: 				out std_logic_vector(23 downto 0);
 		out_m_discard_en:		out std_logic;
 		out_wren:				out std_logic;
-		out_priority: 			out std_logic
+		out_priority: 			out std_logic;
+		
+		stop:						out std_logic;
+		numusedhi:				in std_logic_vector(10 downto 0);
+		numusedlo: 				in std_logic_vector(10 downto 0)
 	);
 	end component;
 	
@@ -72,16 +76,18 @@ architecture rtl of xmitTop is
 		
 		data_lo_in			: in std_logic_vector(7 downto 0);
 		ctrl_block_lo_in	: in std_logic_vector(23 downto 0);
-		lo_empty_in 		: in std_logic;
 		data_hi_in			: in std_logic_vector(7 downto 0);
 		ctrl_block_hi_in	: in std_logic_vector(23 downto 0);
-		hi_empty_in 		: in std_logic;
 		
 		pop_lo				: out std_logic;
 		pop_hi				: out std_logic;
 		
 		data_out				: out std_logic_vector(7 downto 0);
-		ctrl_block_out		: out std_logic_vector(23 downto 0)
+		ctrl_block_out		: out std_logic_vector(23 downto 0);
+		
+		stop_in				: in std_logic;
+		hi_fifo_used_in	: in std_logic_vector(10 downto 0);
+		lo_fifo_used_in	: in std_logic_vector(10 downto 0)
 	);
 	end component;
 	
@@ -191,6 +197,10 @@ architecture rtl of xmitTop is
 	SIGNAL hi_rereq:				STD_LOGIC;
 	SIGNAL lo_rereq:				STD_LOGIC;
 	
+	signal stop			: std_logic;
+	signal numusedhi	: std_logic_vector(10 downto 0);
+	signal numusedlo	: std_logic_vector(10 downto 0);
+	
 	
 	
 	begin
@@ -223,8 +233,11 @@ architecture rtl of xmitTop is
 		wrenc							=> f_rec_frame_valid,
 		datai							=> f_data_in,
 		datao							=> inBuffer_data_out,
-		controlo						=> inBuffer_ctrl_out
+		controlo						=> inBuffer_ctrl_out,
 		
+		stop							=> stop,
+		numusedhi					=> numusedhi,
+		numusedlo					=> numusedlo
 	);
 	
 	monitoring_logic_inst: monitoring_logic PORT MAP (
@@ -248,16 +261,17 @@ architecture rtl of xmitTop is
 		
 		data_lo_in				=> lilo_data,
 		ctrl_block_lo_in		=> lilo_ctrl,
-		lo_empty_in 			=> lo_empty,
 		pop_lo					=> lo_rereq,
 		data_hi_in				=> hiho_data,
 		ctrl_block_hi_in		=> hiho_ctrl,
-		hi_empty_in 			=> hi_empty,
 		pop_hi					=> hi_rereq,
 		
 		data_out					=> between_out_data,
-		ctrl_block_out			=> between_out_ctrl
+		ctrl_block_out			=> between_out_ctrl,
 
+		stop_in					=> stop,
+		hi_fifo_used_in		=> numusedhi,
+		lo_fifo_used_in		=> numusedlo
 	);
 	
 	output_FSM_inst: out_FSM PORT MAP(
