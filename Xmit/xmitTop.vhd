@@ -114,7 +114,7 @@ architecture rtl of xmitTop is
 		rdfull				: OUT STD_LOGIC ;
 		wrempty				: OUT STD_LOGIC ;
 		wrfull				: OUT STD_LOGIC ;
-		wrusedw				: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+		wrusedw				: OUT STD_LOGIC_VECTOR (10 DOWNTO 0)
 	);
 	end component;
 	
@@ -132,7 +132,7 @@ architecture rtl of xmitTop is
 		rdfull				: OUT STD_LOGIC ;
 		wrempty				: OUT STD_LOGIC ;
 		wrfull				: OUT STD_LOGIC ;
-		wrusedw				: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+		wrusedw				: OUT STD_LOGIC_VECTOR (10 DOWNTO 0)
 	);
 	end component;
 	
