@@ -2,16 +2,16 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module xmitTop
+# -- Compiling module priority_FSM
 # 
 # Top level modules:
-# 	xmitTop
+# 	priority_FSM
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module xmitTop_vlg_vec_tst
+# -- Compiling module priority_FSM_vlg_vec_tst
 # 
 # Top level modules:
-# 	xmitTop_vlg_vec_tst
-# vsim -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver -c -voptargs=\"+acc\" -t 1ps -novopt work.xmitTop_vlg_vec_tst 
+# 	priority_FSM_vlg_vec_tst
+# vsim -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver -c -voptargs=\"+acc\" -t 1ps -novopt work.priority_FSM_vlg_vec_tst 
 # //  ModelSim ALTERA 10.1d Nov  2 2012 
 # //
 # //  Copyright 1991-2012 Mentor Graphics Corporation
@@ -21,15 +21,9 @@
 # //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
-# Loading work.xmitTop_vlg_vec_tst
-# Loading work.xmitTop
+# Loading work.priority_FSM_vlg_vec_tst
+# Loading work.priority_FSM
 # Loading altera_ver.dffeas
-# Loading sv_std.std
-# Loading altera_lnsim_ver.generic_m10k
-# Loading altera_lnsim_ver.altera_lnsim_functions
-# Loading altera_lnsim_ver.common_28nm_ram_block
-# Loading altera_lnsim_ver.common_28nm_ram_register
-# Loading altera_lnsim_ver.common_28nm_ram_pulse_generator
 # Loading altera_ver.PRIM_GDFF_LOW
-# ** Note: $finish    : top_level.vwf.vt(69)
-#    Time: 1 us  Iteration: 0  Instance: /xmitTop_vlg_vec_tst
+# ** Note: $finish    : Waveform4.vwf.vt(67)
+#    Time: 1 us  Iteration: 0  Instance: /priority_FSM_vlg_vec_tst

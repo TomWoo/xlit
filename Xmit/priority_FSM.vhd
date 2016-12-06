@@ -1,8 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.std_logic_unsigned.all;
-use ieee.std_logic_arith.all;
 
 entity priority_FSM is
 port(
@@ -15,21 +13,30 @@ port(
 	pop_lo				: out std_logic;
 	data_hi_in			: in std_logic_vector(7 downto 0);
 	ctrl_block_hi_in	: in std_logic_vector(23 downto 0);
-	hi_empty_in 		: in std_logic;
+--	hi_empty_in 		: in std_logic;
 	pop_hi				: out std_logic;
 	
 	data_out				: out std_logic_vector(7 downto 0);
-	ctrl_block_out		: out std_logic_vector(23 downto 0)
+	ctrl_block_out		: out std_logic_vector(23 downto 0);
+	
+	stop_in				: in std_logic;
+	hi_fifo_used_in	: in std_logic_vector(9 downto 0)
 );
 end entity;
 
 architecture rtl of priority_FSM is
-	signal data_sel	: std_logic;
+	type state is (s_off, s_lo, s_hi);
+	signal my_state				: state;
+	signal hi_fifo_used_int		: integer range 0 to 1023;
 begin
 
 -- Asynchronous signals
-process(data_sel) begin
-	if(data_sel = '0') then
+process(hi_fifo_used_in) begin
+	hi_fifo_used_int <= to_integer(unsigned(hi_fifo_used_in));
+end process;
+
+process(pop_lo, pop_hi) begin
+	if(pop_hi = '0') then
 		data_out <= data_lo_in;
 		ctrl_block_out <= ctrl_block_lo_in;
 	else
@@ -38,35 +45,35 @@ process(data_sel) begin
 	end if;
 end process;
 
--- Synchronous signals
+-- State machine
 process(clk_phy, reset) begin
 	if (reset = '1') then
+	elsif(rising_edge(clk_phy)) then
+		if(hi_fifo_used_int = 0 and lo_empty_in = '1') then
+			my_state <= s_off;
+		elsif(stop_in = '1') then
+			if(hi_fifo_used_int<256 and lo_empty_in = '0') then
+				my_state <= s_lo;
+			elsif(hi_fifo_used_int>0 and lo_empty_in = '1') then
+				my_state <= s_hi;
+			end if;
+		end if;
+	end if;
+end process;
+
+-- Output signals
+process(my_state) begin
+	case my_state is
+	when s_lo =>
+		pop_hi <= '0';
+		pop_lo <= '1';
+	when s_hi =>
+		pop_hi <= '1';
+		pop_lo <= '0';
+	when others => -- s_off
 		pop_hi <= '0';
 		pop_lo <= '0';
-		data_sel <= '0';
-	elsif(rising_edge(clk_phy)) then
-		if(lo_empty_in = '0' and hi_empty_in = '0') then
-			pop_hi <= '1';
-			pop_lo <= '0';
-			data_sel <= '1';
-		elsif(lo_empty_in = '0' and hi_empty_in = '1') then
-			pop_hi <= '0';
-			pop_lo <= '1';
-			data_sel <= '0';
-		elsif(lo_empty_in = '1' and hi_empty_in = '0') then
-			pop_hi <= '1';
-			pop_lo <= '0';
-			data_sel <= '1';
-		else -- both empty
-			pop_hi <= '0';
-			pop_lo <= '0';
-			data_sel <= '0';
-		end if;
-	else
-		pop_hi <= pop_hi;
-		pop_lo <= pop_lo;
-		data_sel <= data_sel;
-	end if;
+	end case;
 end process;
 
 end architecture;

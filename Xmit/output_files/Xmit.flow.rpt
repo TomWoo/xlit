@@ -1,5 +1,5 @@
 Flow report for Xmit
-Wed Nov 23 12:37:43 2016
+Tue Dec 06 01:26:52 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Nov 23 12:37:43 2016       ;
+; Flow Status                     ; Successful - Tue Dec 06 01:26:52 2016       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; Xmit                                        ;
-; Top-level Entity Name           ; out_FSM                                     ;
+; Top-level Entity Name           ; priority_FSM                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 55                                          ;
-; Total pins                      ; 64                                          ;
+; Total registers                 ; 2                                           ;
+; Total pins                      ; 112                                         ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 45,056                                      ;
+; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -68,40 +68,40 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/23/2016 12:36:55 ;
+; Start date & time ; 12/06/2016 01:21:18 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Xmit                ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                           ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 85987529690756.147992261509500        ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                                  ; --            ; --          ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
-; MISC_FILE                           ; shift_register_4.cmp                  ; --            ; --          ; --             ;
-; MISC_FILE                           ; fifo_8.cmp                            ; --            ; --          ; --             ;
-; MISC_FILE                           ; output_buffer_inst.vhd                ; --            ; --          ; --             ;
-; MISC_FILE                           ; output_buffer.cmp                     ; --            ; --          ; --             ;
-; MISC_FILE                           ; inbuff.cmp                            ; --            ; --          ; --             ;
-; MISC_FILE                           ; inbuffcon.cmp                         ; --            ; --          ; --             ;
-; MISC_FILE                           ; FIFO_1.cmp                            ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; out_FSM     ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; out_FSM     ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; out_FSM     ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; out_FSM                               ; Xmit          ; --          ; --             ;
-; VHDL_INPUT_VERSION                  ; VHDL_2008                             ; VHDL_1993     ; --          ; --             ;
-; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                   ; --            ; --          ; --             ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                            ;
++-------------------------------------+---------------------------------------+---------------+--------------+----------------+
+; Assignment Name                     ; Value                                 ; Default Value ; Entity Name  ; Section Id     ;
++-------------------------------------+---------------------------------------+---------------+--------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 85987529690756.148100527806180        ; --            ; --           ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --           ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --           ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                  ; --            ; --           ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --           ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --           ; --             ;
+; MISC_FILE                           ; shift_register_4.cmp                  ; --            ; --           ; --             ;
+; MISC_FILE                           ; fifo_8.cmp                            ; --            ; --           ; --             ;
+; MISC_FILE                           ; output_buffer_inst.vhd                ; --            ; --           ; --             ;
+; MISC_FILE                           ; output_buffer.cmp                     ; --            ; --           ; --             ;
+; MISC_FILE                           ; inbuff.cmp                            ; --            ; --           ; --             ;
+; MISC_FILE                           ; inbuffcon.cmp                         ; --            ; --           ; --             ;
+; MISC_FILE                           ; FIFO_1.cmp                            ; --            ; --           ; --             ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; priority_FSM ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; priority_FSM ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; priority_FSM ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --           ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --           ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --           ; --             ;
+; TOP_LEVEL_ENTITY                    ; priority_FSM                          ; Xmit          ; --           ; --             ;
+; VHDL_INPUT_VERSION                  ; VHDL_2008                             ; VHDL_1993     ; --           ; --             ;
+; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                   ; --            ; --           ; --             ;
++-------------------------------------+---------------------------------------+---------------+--------------+----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -109,8 +109,14 @@ agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:48     ; 1.0                     ; 939 MB              ; 00:01:35                           ;
-; Total                ; 00:00:48     ; --                      ; --                  ; 00:01:35                           ;
+; Analysis & Synthesis ; 00:00:24     ; 1.0                     ; 904 MB              ; 00:00:54                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 769 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 773 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 769 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 773 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 769 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 773 MB              ; 00:00:01                           ;
+; Total                ; 00:00:32     ; --                      ; --                  ; 00:01:00                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -120,6 +126,12 @@ agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +----------------------+------------------+-----------+------------+----------------+
 ; Analysis & Synthesis ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; User-PC          ; Windows 7 ; 6.1        ; x86_64         ;
 +----------------------+------------------+-----------+------------+----------------+
 
 
@@ -127,6 +139,12 @@ agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Xmit -c Xmit
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Xmit -c Xmit --vector_source=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/Waveform4.vwf --testbench_file=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/Waveform4.vwf.vt
+quartus_eda --write_settings_files=off --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/ Xmit -c Xmit
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Xmit -c Xmit --vector_source=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/Waveform4.vwf --testbench_file=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/Waveform4.vwf.vt
+quartus_eda --write_settings_files=off --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/ Xmit -c Xmit
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Xmit -c Xmit --vector_source=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/Waveform4.vwf --testbench_file=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/Waveform4.vwf.vt
+quartus_eda --write_settings_files=off --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/ Xmit -c Xmit
 
 
 

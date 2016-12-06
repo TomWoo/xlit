@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Xmit
-Wed Nov 23 12:37:43 2016
+Tue Dec 06 01:21:42 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -13,19 +13,13 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis IP Cores Summary
- 10. State Machine - |out_FSM|my_state
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram
- 15. Parameter Settings for User Entity Instance: output_buffer:output_buffer_inst|scfifo:scfifo_component
- 16. scfifo Parameter Settings by Entity Instance
- 17. Port Connectivity Checks: "output_buffer:output_buffer_inst"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+  8. State Machine - |priority_FSM|my_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -52,16 +46,16 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Nov 23 12:37:43 2016       ;
+; Analysis & Synthesis Status     ; Successful - Tue Dec 06 01:21:42 2016       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; Xmit                                        ;
-; Top-level Entity Name           ; out_FSM                                     ;
+; Top-level Entity Name           ; priority_FSM                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 55                                          ;
-; Total pins                      ; 64                                          ;
+; Total registers                 ; 2                                           ;
+; Total pins                      ; 112                                         ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 45,056                                      ;
+; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -78,7 +72,7 @@ agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CEBA4F23C7        ;                    ;
-; Top-level entity name                                                           ; out_FSM            ; Xmit               ;
+; Top-level entity name                                                           ; priority_FSM       ; Xmit               ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; VHDL Show LMF Mapping Messages                                                  ; Off                ;                    ;
 ; VHDL Version                                                                    ; VHDL_2008          ; VHDL_1993          ;
@@ -170,35 +164,20 @@ agreement for further details.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                     ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
-; out_FSM.vhd                      ; yes             ; User VHDL File               ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd            ;         ;
-; output_buffer.vhd                ; yes             ; User Wizard-Generated File   ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd      ;         ;
-; scfifo.tdf                       ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/scfifo.tdf                                   ;         ;
-; a_regfifo.inc                    ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_regfifo.inc                                ;         ;
-; a_dpfifo.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_dpfifo.inc                                 ;         ;
-; a_i2fifo.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_i2fifo.inc                                 ;         ;
-; a_fffifo.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_fffifo.inc                                 ;         ;
-; a_f2fifo.inc                     ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_f2fifo.inc                                 ;         ;
-; aglobal160.inc                   ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc                               ;         ;
-; db/scfifo_4fa1.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/scfifo_4fa1.tdf     ;         ;
-; db/a_dpfifo_bla1.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_dpfifo_bla1.tdf   ;         ;
-; db/a_fefifo_jaf.tdf              ; yes             ; Auto-Generated Megafunction  ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_fefifo_jaf.tdf    ;         ;
-; db/cntr_op7.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/cntr_op7.tdf        ;         ;
-; db/altsyncram_m3t1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf ;         ;
-; db/cntr_uhb.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/cntr_uhb.tdf        ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
+; priority_FSM.vhd                 ; yes             ; User VHDL File  ; C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------+
@@ -206,82 +185,58 @@ agreement for further details.
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimate of Logic utilization (ALMs needed) ; 59            ;
+; Estimate of Logic utilization (ALMs needed) ; 19            ;
 ;                                             ;               ;
-; Combinational ALUT usage for logic          ; 102           ;
-;     -- 7 input functions                    ; 1             ;
-;     -- 6 input functions                    ; 13            ;
-;     -- 5 input functions                    ; 20            ;
-;     -- 4 input functions                    ; 10            ;
-;     -- <=3 input functions                  ; 58            ;
+; Combinational ALUT usage for logic          ; 38            ;
+;     -- 7 input functions                    ; 0             ;
+;     -- 6 input functions                    ; 0             ;
+;     -- 5 input functions                    ; 3             ;
+;     -- 4 input functions                    ; 2             ;
+;     -- <=3 input functions                  ; 33            ;
 ;                                             ;               ;
-; Dedicated logic registers                   ; 55            ;
+; Dedicated logic registers                   ; 2             ;
 ;                                             ;               ;
-; I/O pins                                    ; 64            ;
-; Total MLAB memory bits                      ; 0             ;
-; Total block memory bits                     ; 45056         ;
+; I/O pins                                    ; 112           ;
 ;                                             ;               ;
 ; Total DSP Blocks                            ; 0             ;
 ;                                             ;               ;
-; Maximum fan-out node                        ; clk_phy~input ;
-; Maximum fan-out                             ; 98            ;
-; Total fan-out                               ; 1705          ;
-; Average fan-out                             ; 5.18          ;
+; Maximum fan-out node                        ; my_state.s_hi ;
+; Maximum fan-out                             ; 33            ;
+; Total fan-out                               ; 274           ;
+; Average fan-out                             ; 1.04          ;
 +---------------------------------------------+---------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                  ;
-+------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                            ; Entity Name     ; Library Name ;
-+------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |out_FSM                                 ; 102 (67)          ; 55 (23)      ; 45056             ; 0          ; 64   ; 0            ; |out_FSM                                                                                                                                                       ; out_FSM         ; work         ;
-;    |output_buffer:output_buffer_inst|    ; 35 (0)            ; 32 (0)       ; 45056             ; 0          ; 0    ; 0            ; |out_FSM|output_buffer:output_buffer_inst                                                                                                                      ; output_buffer   ; work         ;
-;       |scfifo:scfifo_component|          ; 35 (0)            ; 32 (0)       ; 45056             ; 0          ; 0    ; 0            ; |out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component                                                                                              ; scfifo          ; work         ;
-;          |scfifo_4fa1:auto_generated|    ; 35 (0)            ; 32 (0)       ; 45056             ; 0          ; 0    ; 0            ; |out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated                                                                   ; scfifo_4fa1     ; work         ;
-;             |a_dpfifo_bla1:dpfifo|       ; 35 (1)            ; 32 (0)       ; 45056             ; 0          ; 0    ; 0            ; |out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo                                              ; a_dpfifo_bla1   ; work         ;
-;                |a_fefifo_jaf:fifo_state| ; 14 (4)            ; 12 (2)       ; 0                 ; 0          ; 0    ; 0            ; |out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state                      ; a_fefifo_jaf    ; work         ;
-;                   |cntr_op7:count_usedw| ; 10 (10)           ; 10 (10)      ; 0                 ; 0          ; 0    ; 0            ; |out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state|cntr_op7:count_usedw ; cntr_op7        ; work         ;
-;                |altsyncram_m3t1:FIFOram| ; 0 (0)             ; 0 (0)        ; 45056             ; 0          ; 0    ; 0            ; |out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram                      ; altsyncram_m3t1 ; work         ;
-;                |cntr_uhb:rd_ptr_count|   ; 10 (10)           ; 10 (10)      ; 0                 ; 0          ; 0    ; 0            ; |out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|cntr_uhb:rd_ptr_count                        ; cntr_uhb        ; work         ;
-;                |cntr_uhb:wr_ptr|         ; 10 (10)           ; 10 (10)      ; 0                 ; 0          ; 0    ; 0            ; |out_FSM|output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|cntr_uhb:wr_ptr                              ; cntr_uhb        ; work         ;
-+------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                      ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
+; |priority_FSM              ; 38 (38)           ; 2 (2)        ; 0                 ; 0          ; 112  ; 0            ; |priority_FSM       ; priority_FSM ; work         ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                 ;
-+---------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
-; Name                                                                                                                                        ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
-+---------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
-; output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 64           ; 1024         ; 64           ; 65536 ; None ;
-+---------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                         ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------------+-------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                           ; IP Include File   ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------------+-------------------+
-; Altera ; FIFO         ; 16.0    ; N/A          ; N/A          ; |out_FSM|output_buffer:output_buffer_inst ; output_buffer.vhd ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------------+-------------------+
-
-
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |out_FSM|my_state                                                                                                                                  ;
-+---------------------+----------------+-----------------+-------------------+---------------+---------------+----------------+---------------------+----------------+
-; Name                ; my_state.s_FCS ; my_state.s_data ; my_state.s_length ; my_state.s_SA ; my_state.s_DA ; my_state.s_SFD ; my_state.s_preamble ; my_state.s_gap ;
-+---------------------+----------------+-----------------+-------------------+---------------+---------------+----------------+---------------------+----------------+
-; my_state.s_gap      ; 0              ; 0               ; 0                 ; 0             ; 0             ; 0              ; 0                   ; 0              ;
-; my_state.s_preamble ; 0              ; 0               ; 0                 ; 0             ; 0             ; 0              ; 1                   ; 1              ;
-; my_state.s_SFD      ; 0              ; 0               ; 0                 ; 0             ; 0             ; 1              ; 0                   ; 1              ;
-; my_state.s_DA       ; 0              ; 0               ; 0                 ; 0             ; 1             ; 0              ; 0                   ; 1              ;
-; my_state.s_SA       ; 0              ; 0               ; 0                 ; 1             ; 0             ; 0              ; 0                   ; 1              ;
-; my_state.s_length   ; 0              ; 0               ; 1                 ; 0             ; 0             ; 0              ; 0                   ; 1              ;
-; my_state.s_data     ; 0              ; 1               ; 0                 ; 0             ; 0             ; 0              ; 0                   ; 1              ;
-; my_state.s_FCS      ; 1              ; 0               ; 0                 ; 0             ; 0             ; 0              ; 0                   ; 1              ;
-+---------------------+----------------+-----------------+-------------------+---------------+---------------+----------------+---------------------+----------------+
++-----------------------------------------------------------------+
+; State Machine - |priority_FSM|my_state                          ;
++----------------+---------------+---------------+----------------+
+; Name           ; my_state.s_hi ; my_state.s_lo ; my_state.s_off ;
++----------------+---------------+---------------+----------------+
+; my_state.s_off ; 0             ; 0             ; 0              ;
+; my_state.s_lo  ; 0             ; 1             ; 1              ;
+; my_state.s_hi  ; 1             ; 0             ; 1              ;
++----------------+---------------+---------------+----------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; my_state.s_off                        ; Lost fanout        ;
+; Total Number of Removed Registers = 1 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -289,103 +244,23 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 55    ;
-; Number of registers using Synchronous Clear  ; 12    ;
+; Total registers                              ; 2     ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 55    ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 30    ;
+; Number of registers using Clock Enable       ; 2     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; clk_phy_2                              ; 2       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 14:1               ; 12 bits   ; 108 LEs       ; 0 LEs                ; 108 LEs                ; Yes        ; |out_FSM|count[11]         ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |out_FSM|Selector22        ;
-; 14:1               ; 6 bits    ; 54 LEs        ; 30 LEs               ; 24 LEs                 ; No         ; |out_FSM|Selector0         ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; No         ; |out_FSM|Selector4         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                        ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                         ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: output_buffer:output_buffer_inst|scfifo:scfifo_component ;
-+-------------------------+-------------+---------------------------------------------------------------+
-; Parameter Name          ; Value       ; Type                                                          ;
-+-------------------------+-------------+---------------------------------------------------------------+
-; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                    ;
-; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                  ;
-; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                  ;
-; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                                ;
-; lpm_width               ; 64          ; Signed Integer                                                ;
-; LPM_NUMWORDS            ; 1024        ; Signed Integer                                                ;
-; LPM_WIDTHU              ; 10          ; Signed Integer                                                ;
-; LPM_SHOWAHEAD           ; OFF         ; Untyped                                                       ;
-; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                       ;
-; OVERFLOW_CHECKING       ; ON          ; Untyped                                                       ;
-; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                       ;
-; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                       ;
-; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                       ;
-; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                       ;
-; ENABLE_ECC              ; FALSE       ; Untyped                                                       ;
-; USE_EAB                 ; ON          ; Untyped                                                       ;
-; MAXIMIZE_SPEED          ; 5           ; Untyped                                                       ;
-; DEVICE_FAMILY           ; Cyclone V   ; Untyped                                                       ;
-; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                       ;
-; CBXI_PARAMETER          ; scfifo_4fa1 ; Untyped                                                       ;
-+-------------------------+-------------+---------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------+
-; scfifo Parameter Settings by Entity Instance                                          ;
-+----------------------------+----------------------------------------------------------+
-; Name                       ; Value                                                    ;
-+----------------------------+----------------------------------------------------------+
-; Number of entity instances ; 1                                                        ;
-; Entity Instance            ; output_buffer:output_buffer_inst|scfifo:scfifo_component ;
-;     -- FIFO Type           ; Single Clock                                             ;
-;     -- lpm_width           ; 64                                                       ;
-;     -- LPM_NUMWORDS        ; 1024                                                     ;
-;     -- LPM_SHOWAHEAD       ; OFF                                                      ;
-;     -- USE_EAB             ; ON                                                       ;
-+----------------------------+----------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "output_buffer:output_buffer_inst"                                                           ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; data[63..32] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; wrreq        ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; empty        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; full         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; q[63..44]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; usedw        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |priority_FSM|my_state.s_off ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
 
 
 +-----------------------------------------------------+
@@ -393,29 +268,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 55                          ;
-;     CLR               ; 13                          ;
-;     CLR SCLR          ; 12                          ;
-;     ENA CLR           ; 30                          ;
-; arriav_lcell_comb     ; 102                         ;
-;     arith             ; 42                          ;
-;         1 data inputs ; 33                          ;
-;         2 data inputs ; 9                           ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 59                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 10                          ;
-;         5 data inputs ; 20                          ;
-;         6 data inputs ; 13                          ;
-; boundary_port         ; 64                          ;
-; stratixv_ram_block    ; 44                          ;
+; arriav_ff             ; 2                           ;
+;     ENA               ; 2                           ;
+; arriav_lcell_comb     ; 38                          ;
+;     normal            ; 38                          ;
+;         3 data inputs ; 33                          ;
+;         4 data inputs ; 2                           ;
+;         5 data inputs ; 3                           ;
+; boundary_port         ; 112                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 1.87                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.13                        ;
 +-----------------------+-----------------------------+
 
 
@@ -424,7 +287,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -434,7 +297,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Wed Nov 23 12:36:54 2016
+    Info: Processing started: Tue Dec 06 01:21:17 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Xmit -c Xmit
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -442,7 +305,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file shift_r
     Info (12022): Found design unit 1: shift_register_4-SYN File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/shift_register_4.vhd Line: 56
     Info (12023): Found entity 1: shift_register_4 File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/shift_register_4.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file xmittop.vhd
-    Info (12022): Found design unit 1: xmitTop-rtl File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd Line: 26
+    Info (12022): Found design unit 1: xmitTop-rtl File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd Line: 25
     Info (12023): Found entity 1: xmitTop File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file in_fsm.vhd
     Info (12022): Found design unit 1: in_FSM-arch File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd Line: 26
@@ -472,75 +335,30 @@ Info (12021): Found 2 design units, including 1 entities, in source file inbuffc
 Info (12021): Found 2 design units, including 1 entities, in source file fifo_1.vhd
     Info (12022): Found design unit 1: fifo_1-SYN File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/FIFO_1.vhd Line: 59
     Info (12023): Found entity 1: FIFO_1 File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/FIFO_1.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file discard_logic.vhd
+    Info (12022): Found design unit 1: discard_logic-arch File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd Line: 18
+    Info (12023): Found entity 1: discard_logic File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file priority_fsm.vhd
+    Info (12022): Found design unit 1: priority_FSM-rtl File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd Line: 27
+    Info (12023): Found entity 1: priority_FSM File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd Line: 5
 Warning (10236): Verilog HDL Implicit Net warning at out_FSM_tester.v(13): created implicit net for "clock" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM_tester.v Line: 13
-Info (12127): Elaborating entity "out_FSM" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at out_FSM.vhd(28): used explicit default value for signal "wren" because signal was never assigned a value File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 28
-Info (12128): Elaborating entity "output_buffer" for hierarchy "output_buffer:output_buffer_inst" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd Line: 76
-Info (12128): Elaborating entity "scfifo" for hierarchy "output_buffer:output_buffer_inst|scfifo:scfifo_component" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd Line: 100
-Info (12130): Elaborated megafunction instantiation "output_buffer:output_buffer_inst|scfifo:scfifo_component" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd Line: 100
-Info (12133): Instantiated megafunction "output_buffer:output_buffer_inst|scfifo:scfifo_component" with the following parameter: File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd Line: 100
-    Info (12134): Parameter "add_ram_output_register" = "OFF"
-    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
-    Info (12134): Parameter "lpm_numwords" = "1024"
-    Info (12134): Parameter "lpm_showahead" = "OFF"
-    Info (12134): Parameter "lpm_type" = "scfifo"
-    Info (12134): Parameter "lpm_width" = "64"
-    Info (12134): Parameter "lpm_widthu" = "10"
-    Info (12134): Parameter "overflow_checking" = "ON"
-    Info (12134): Parameter "underflow_checking" = "ON"
-    Info (12134): Parameter "use_eab" = "ON"
-Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_4fa1.tdf
-    Info (12023): Found entity 1: scfifo_4fa1 File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/scfifo_4fa1.tdf Line: 25
-Info (12128): Elaborating entity "scfifo_4fa1" for hierarchy "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated" File: c:/altera_lite/16.0/quartus/libraries/megafunctions/scfifo.tdf Line: 300
-Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_bla1.tdf
-    Info (12023): Found entity 1: a_dpfifo_bla1 File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_dpfifo_bla1.tdf Line: 29
-Info (12128): Elaborating entity "a_dpfifo_bla1" for hierarchy "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/scfifo_4fa1.tdf Line: 38
-Info (12021): Found 1 design units, including 1 entities, in source file db/a_fefifo_jaf.tdf
-    Info (12023): Found entity 1: a_fefifo_jaf File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_fefifo_jaf.tdf Line: 25
-Info (12128): Elaborating entity "a_fefifo_jaf" for hierarchy "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_dpfifo_bla1.tdf Line: 43
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_op7.tdf
-    Info (12023): Found entity 1: cntr_op7 File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/cntr_op7.tdf Line: 26
-Info (12128): Elaborating entity "cntr_op7" for hierarchy "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|a_fefifo_jaf:fifo_state|cntr_op7:count_usedw" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_fefifo_jaf.tdf Line: 39
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m3t1.tdf
-    Info (12023): Found entity 1: altsyncram_m3t1 File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_m3t1" for hierarchy "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_dpfifo_bla1.tdf Line: 44
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_uhb.tdf
-    Info (12023): Found entity 1: cntr_uhb File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/cntr_uhb.tdf Line: 26
-Info (12128): Elaborating entity "cntr_uhb" for hierarchy "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|cntr_uhb:rd_ptr_count" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/a_dpfifo_bla1.tdf Line: 45
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[44]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1360
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[45]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1390
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[46]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1420
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[47]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1450
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[48]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1480
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[49]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1510
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[50]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1540
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[51]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1570
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[52]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1600
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[53]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1630
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[54]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1660
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[55]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1690
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[56]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1720
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[57]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1750
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[58]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1780
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[59]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1810
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[60]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1840
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[61]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1870
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[62]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1900
-        Warning (14320): Synthesized away node "output_buffer:output_buffer_inst|scfifo:scfifo_component|scfifo_4fa1:auto_generated|a_dpfifo_bla1:dpfifo|altsyncram_m3t1:FIFOram|q_b[63]" File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/db/altsyncram_m3t1.tdf Line: 1930
+Info (12127): Elaborating entity "priority_FSM" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at priority_FSM.vhd(40): signal "data_lo_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd Line: 40
+Warning (10492): VHDL Process Statement warning at priority_FSM.vhd(41): signal "ctrl_block_lo_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at priority_FSM.vhd(43): signal "data_hi_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd Line: 43
+Warning (10492): VHDL Process Statement warning at priority_FSM.vhd(44): signal "ctrl_block_hi_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd Line: 44
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 212 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 34 input pins
-    Info (21059): Implemented 30 output pins
-    Info (21061): Implemented 104 logic cells
-    Info (21064): Implemented 44 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
-    Info: Peak virtual memory: 939 megabytes
-    Info: Processing ended: Wed Nov 23 12:37:43 2016
-    Info: Elapsed time: 00:00:49
-    Info: Total CPU time (on all processors): 00:01:36
+Info (21057): Implemented 151 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 78 input pins
+    Info (21059): Implemented 34 output pins
+    Info (21061): Implemented 39 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 904 megabytes
+    Info: Processing ended: Tue Dec 06 01:21:42 2016
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:54
 
 

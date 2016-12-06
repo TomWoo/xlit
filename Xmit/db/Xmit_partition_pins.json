@@ -4,107 +4,11 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "tx_en",
+					"name" : "pop_lo",
 					"strict" : false
 				},
 				{
-					"name" : "frame_seq_out[0]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[1]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[2]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[3]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[4]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[5]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[6]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[7]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[8]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[9]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[10]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[11]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[12]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[13]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[14]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[15]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[16]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[17]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[18]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[19]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[20]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[21]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[22]",
-					"strict" : false
-				},
-				{
-					"name" : "frame_seq_out[23]",
-					"strict" : false
-				},
-				{
-					"name" : "xmit_done_out",
+					"name" : "pop_hi",
 					"strict" : false
 				},
 				{
@@ -124,139 +28,427 @@
 					"strict" : false
 				},
 				{
+					"name" : "data_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[16]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[17]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[18]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[19]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[20]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[21]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[22]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_out[23]",
+					"strict" : false
+				},
+				{
+					"name" : "data_hi_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_lo_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_hi_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_lo_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_hi_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_lo_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_hi_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_lo_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_hi_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_lo_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_hi_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_lo_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_hi_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_lo_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_hi_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_lo_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[16]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[16]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[17]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[17]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[18]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[18]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[19]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[19]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[20]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[20]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[21]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[21]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[22]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[22]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_hi_in[23]",
+					"strict" : false
+				},
+				{
+					"name" : "ctrl_block_lo_in[23]",
+					"strict" : false
+				},
+				{
+					"name" : "lo_empty_in",
+					"strict" : false
+				},
+				{
+					"name" : "hi_fifo_used_in[8]",
+					"strict" : false
+				},
+				{
+					"name" : "hi_fifo_used_in[9]",
+					"strict" : false
+				},
+				{
 					"name" : "clk_phy",
 					"strict" : false
 				},
 				{
+					"name" : "hi_fifo_used_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "stop_in",
+					"strict" : false
+				},
+				{
+					"name" : "hi_fifo_used_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hi_fifo_used_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hi_fifo_used_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hi_fifo_used_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hi_fifo_used_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hi_fifo_used_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hi_fifo_used_in[7]",
+					"strict" : false
+				},
+				{
 					"name" : "reset",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[12]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[13]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[14]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[15]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[16]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[17]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[18]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[19]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[20]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[21]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[22]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[23]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[4]",
-					"strict" : false
-				},
-				{
-					"name" : "data_in[4]",
-					"strict" : false
-				},
-				{
-					"name" : "data_in[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[8]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[9]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[5]",
-					"strict" : false
-				},
-				{
-					"name" : "data_in[5]",
-					"strict" : false
-				},
-				{
-					"name" : "data_in[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[6]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[10]",
-					"strict" : false
-				},
-				{
-					"name" : "data_in[6]",
-					"strict" : false
-				},
-				{
-					"name" : "data_in[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[11]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_block_in[7]",
-					"strict" : false
-				},
-				{
-					"name" : "data_in[7]",
-					"strict" : false
-				},
-				{
-					"name" : "data_in[3]",
 					"strict" : false
 				}
 			]
