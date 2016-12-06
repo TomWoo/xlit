@@ -20,13 +20,13 @@ port(
 	datai: 					in std_logic_vector(7 downto 0);
 	datao: 					out std_logic_vector(7 downto 0);
 	controlo: 				out std_logic_vector(23 downto 0);
-	stop:						out std_logic;
-	db_ctrlm:				out std_logic_vector(23 downto 0);
-	db_last:					out std_logic;
-	db_lastm:				out std_logic;
-	db_txen:					out std_logic;
-	db_txone:				out std_logic;
-	db_pakavail: 			out std_logic
+	stop:						out std_logic-;
+	--db_ctrlm:				out std_logic_vector(23 downto 0);
+	--db_last:					out std_logic;
+	--db_lastm:				out std_logic;
+	--db_txen:					out std_logic;
+	--db_txone:				out std_logic;
+	--db_pakavail: 			out std_logic
 	
 );
 end in_FSM;
@@ -165,12 +165,12 @@ begin
 		aclr <= reset;
 		sysclk <= clk_sys;
 		phyclk <= clk_phy;
-		db_ctrlm <= ctrlm;
-		db_last <= last;
-		db_lastm <= lastm;
-		db_txen <= txen;
-		db_txone <= txone;
-		db_pakavail <= pakavails;
+		--db_ctrlm <= ctrlm;
+		--db_last <= last;
+		--db_lastm <= lastm;
+		--db_txen <= txen;
+		--db_txone <= txone;
+		--db_pakavail <= pakavails;
 		dir <="000000000001";
 	end process;
 	
