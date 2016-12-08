@@ -8,259 +8,415 @@ z2
 !i10f 100
 cModel Technology
 dC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim
+Ectrlfifo
+Z0 w1481005718
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/top_test
+Z4 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/ctrlFIFO.vhd
+Z5 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/ctrlFIFO.vhd
+l0
+L43
+VaAiV:TVU>EkZS3<X;lZl>1
+!s100 oI?HHR:_2RSoTBP:T^ZL10
+Z6 OV;C;10.4d;61
+32
+Z7 !s110 1481214590
+!i10b 1
+Z8 !s108 1481214590.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/ctrlFIFO.vhd|
+Z10 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/ctrlFIFO.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1
+Asyn
+R1
+R2
+DEx4 work 8 ctrlfifo 0 22 aAiV:TVU>EkZS3<X;lZl>1
+l105
+L62
+VePfWczi^IIPVXbTKQIj6o0
+!s100 RKk_0=aPGiDJD64Vz_hPW0
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edatafifo
+R0
+R1
+R2
+R3
+Z13 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/dataFIFO.vhd
+Z14 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/dataFIFO.vhd
+l0
+L43
+Vi9If:>@>IF:Ik0V_g6PIG3
+!s100 Kg^@YcT42B3[?8cKI:`h<3
+R6
+32
+Z15 !s110 1481214591
+!i10b 1
+Z16 !s108 1481214591.000000
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/dataFIFO.vhd|
+Z18 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/dataFIFO.vhd|
+!i113 1
+R11
+R12
+Asyn
+R1
+R2
+DEx4 work 8 datafifo 0 22 i9If:>@>IF:Ik0V_g6PIG3
+l105
+L62
+VeRzn`k9gFK5zFhWAd4Dd30
+!s100 jj6C2ehQ7U5<;2L70@l:H3
+R6
+32
+R15
+!i10b 1
+R16
+R17
+R18
+!i113 1
+R11
+R12
 Ediscard_logic
-Z0 w1481043561
-Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
-Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z4 dC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/top_test
-Z5 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd
-Z6 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd
+Z19 w1481215382
+Z20 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R1
+R2
+R3
+Z21 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd
+Z22 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd
 l0
 L7
 Vi=KfiIjX2RK>VYC28C0XO3
 !s100 QcZNS0>63iVPJ__0iS9f50
-Z7 OV;C;10.4d;61
+R6
 33
-Z8 !s110 1481043583
+Z23 !s110 1481215507
 !i10b 1
-Z9 !s108 1481043583.000000
-Z10 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd|
-Z11 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd|
+Z24 !s108 1481215507.000000
+Z25 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd|
+Z26 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd|
 !i113 1
-Z12 o-work work -2008 -explicit
-Z13 tExplicit 1
+Z27 o-work work -2008 -explicit
+R12
 Aarch
+R20
 R1
 R2
-R3
 DEx4 work 13 discard_logic 0 22 i=KfiIjX2RK>VYC28C0XO3
 l22
 L18
-VI:^7ff0eo5c;zDBgze3YC2
-!s100 2cn`:ED4Q_ahg8;PW8AiU2
-R7
+VU@0K^3Kfb33nUSX:]L=z30
+!s100 >2n`I^nEbZ;F9DEREZiI42
+R6
 33
-R8
+R23
 !i10b 1
-R9
-R10
-R11
+R24
+R25
+R26
 !i113 1
+R27
 R12
-R13
-Ein_fsm
-Z14 w1481016680
+Efifo_1
+R0
 R1
 R2
 R3
-R4
-Z15 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd
-Z16 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd
+Z28 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/FIFO_1.vhd
+Z29 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/FIFO_1.vhd
+l0
+L43
+V4;WSIf`eI:I1=je>7VlOS3
+!s100 Rb_g?=^eR5T^c0EInN=@z0
+R6
+32
+Z30 !s110 1481214965
+!i10b 1
+Z31 !s108 1481214965.000000
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/FIFO_1.vhd|
+Z33 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/FIFO_1.vhd|
+!i113 1
+R11
+R12
+Asyn
+R1
+R2
+DEx4 work 6 fifo_1 0 22 4;WSIf`eI:I1=je>7VlOS3
+l96
+L59
+VGSe6W7i>Jn@ACciPOS<H_2
+!s100 _BICjJHHa5M>@X`QiV_2;0
+R6
+32
+R30
+!i10b 1
+R31
+R32
+R33
+!i113 1
+R11
+R12
+Efifo_8
+Z34 w1479802342
+R1
+R2
+R3
+Z35 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/fifo_8.vhd
+Z36 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/fifo_8.vhd
+l0
+L43
+V:h>PhADEiNAL8z;1Yzb7:3
+!s100 G_a4HM:]c@Bkb9b6E<kBl1
+R6
+32
+R7
+!i10b 1
+R8
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/fifo_8.vhd|
+Z38 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/fifo_8.vhd|
+!i113 1
+R11
+R12
+Asyn
+R1
+R2
+DEx4 work 6 fifo_8 0 22 :h>PhADEiNAL8z;1Yzb7:3
+l94
+L59
+V3<L=;>THD_@SWz=Q7]WlW2
+!s100 OJJWL9K41fWI?VKQ`]M::1
+R6
+32
+R7
+!i10b 1
+R8
+R37
+R38
+!i113 1
+R11
+R12
+Ein_fsm
+Z39 w1481216054
+R20
+R1
+R2
+R3
+Z40 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd
+Z41 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd
 l0
 L5
 V>[?3MbFgd3N;<dn;6a6c`1
 !s100 WK:D5Rz`ZXD28<5df>TSB1
-R7
+R6
 33
-Z17 !s110 1481043258
+Z42 !s110 1481216057
 !i10b 1
-Z18 !s108 1481043258.000000
-Z19 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd|
-Z20 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd|
+Z43 !s108 1481216057.000000
+Z44 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd|
+Z45 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd|
 !i113 1
+R27
 R12
-R13
 Aarch
+R20
+R1
+R2
+Z46 DEx4 work 6 in_fsm 0 22 >[?3MbFgd3N;<dn;6a6c`1
+l143
+L37
+V@6T23MH:6c`hQenl_4aG72
+!s100 EW0SGF93Kz_D:[dW=OLDD3
+R6
+33
+R42
+!i10b 1
+R43
+R44
+R45
+!i113 1
+R27
+R12
+Emonitoring_logic
+R34
 R1
 R2
 R3
-DEx4 work 6 in_fsm 0 22 >[?3MbFgd3N;<dn;6a6c`1
-l143
-L37
-VJ5]lU^GTb^n:ED4IEB>zz1
-!s100 jV:Mz0;GKgKj:9A4g[aij0
-R7
-33
-R17
-!i10b 1
-R18
-R19
-R20
-!i113 1
-R12
-R13
-Emonitoring_logic
-Z21 w1479802342
-R2
-R3
-R4
-Z22 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/monitoring_logic.vhd
-Z23 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/monitoring_logic.vhd
+Z47 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/monitoring_logic.vhd
+Z48 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/monitoring_logic.vhd
 l0
 L3
 V58maImV6>9X`h@kalomLW2
 !s100 g_fnPNS^ec`2<lUe6l?991
-R7
+R6
 33
-R17
+Z49 !s110 1481043258
 !i10b 1
-R18
-Z24 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/monitoring_logic.vhd|
-Z25 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/monitoring_logic.vhd|
+Z50 !s108 1481043258.000000
+Z51 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/monitoring_logic.vhd|
+Z52 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/monitoring_logic.vhd|
 !i113 1
+R27
 R12
-R13
 Abuffered
+R1
 R2
-R3
 DEx4 work 16 monitoring_logic 0 22 58maImV6>9X`h@kalomLW2
 l18
 L16
 VBN3=[kIbI[P1;k[9?e>B40
 !s100 X[cG1jj]NMn<6>V99[c[P0
-R7
+R6
 33
-R17
+R49
 !i10b 1
-R18
-R24
-R25
+R50
+R51
+R52
 !i113 1
+R27
 R12
-R13
 Eout_fsm
-Z26 w1480998352
-Z27 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z28 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z53 w1480998352
+Z54 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z55 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R20
 R1
 R2
 R3
-R4
-Z29 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd
-Z30 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd
+Z56 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd
+Z57 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd
 l0
 L7
 V5Rdf[]z9^CcFES2PLgC8R0
 !s100 DWoDMPJA6I5LaAUN?9AZi3
-R7
+R6
 33
-R17
+R49
 !i10b 1
-R18
-Z31 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd|
-Z32 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd|
+R50
+Z58 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd|
+Z59 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd|
 !i113 1
-R12
-R13
-Artl
 R27
-R28
+R12
+Artl
+R54
+R55
+R20
 R1
 R2
-R3
 DEx4 work 7 out_fsm 0 22 5Rdf[]z9^CcFES2PLgC8R0
 l53
 L20
 V203V_zfXk34OY@3OUmN`<1
 !s100 oEh?:cg>?mWEG3KGNP]T^0
-R7
+R6
 33
-R17
+R49
 !i10b 1
-R18
-R31
-R32
+R50
+R58
+R59
 !i113 1
+R27
 R12
-R13
 Epriority_fsm
-Z33 w1481043616
+Z60 w1481044142
+R20
 R1
 R2
 R3
-R4
-Z34 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd
-Z35 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd
+Z61 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd
+Z62 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd
 l0
 L5
 VlJU^YnK1ZELeN`bGIfOEV1
 !s100 1bad;IDTEJ0LleWCJBHb70
-R7
+R6
 33
-Z36 !s110 1481043620
+Z63 !s110 1481214368
 !i10b 1
-Z37 !s108 1481043620.000000
-Z38 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd|
-Z39 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd|
+Z64 !s108 1481214368.000000
+Z65 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd|
+Z66 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd|
 !i113 1
+R27
 R12
-R13
 Artl
+R20
 R1
 R2
-R3
 DEx4 work 12 priority_fsm 0 22 lJU^YnK1ZELeN`bGIfOEV1
 l31
 L26
 V2Ae>40??=VYlE8WX4a^DF0
 !s100 NR5abXl^WiahQ:C5Z=h1H1
-R7
+R6
 33
-R36
+R63
 !i10b 1
-R37
-R38
-R39
+R64
+R65
+R66
 !i113 1
+R27
 R12
-R13
 Exmittop
-Z40 w1481018064
+Z67 w1481044143
+R1
 R2
 R3
-R4
-Z41 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd
-Z42 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd
+Z68 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd
+Z69 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd
 l0
 L4
 V^;7WjNX3D^GW5CnbK:9;e2
 !s100 WASUFP:MU5K^K?zl?Da:^2
-R7
+R6
 33
-Z43 !s110 1481018163
+Z70 !s110 1481214367
 !i10b 1
-Z44 !s108 1481018163.000000
-Z45 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd|
-Z46 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd|
+Z71 !s108 1481214367.000000
+Z72 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd|
+Z73 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd|
 !i113 1
+R27
 R12
-R13
 Artl
+R1
 R2
-R3
 DEx4 work 7 xmittop 0 22 ^;7WjNX3D^GW5CnbK:9;e2
 l206
 L25
 VEL45]<JAKJVLdCin9]Y4`0
 !s100 2P?Jnk4`_glHeGazC>7k@2
-R7
+R6
 33
-R43
+R70
 !i10b 1
-R44
-R45
-R46
+R71
+R72
+R73
 !i113 1
+R27
 R12
-R13
 vxmitTop_vlg_vec_tst
 !s110 1481010939
 !i10b 1
 !s100 V8@NC@Vc7zN3W5:5C`E@b2
 Igce26oF:2bBG9VH8V<5F_1
 VDg1SIo80bB@j0V0VzS_@n1
-R4
+R3
 w1481005418
 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/Waveform-High.vwf.vt
 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/simulation/qsim/Waveform-High.vwf.vt

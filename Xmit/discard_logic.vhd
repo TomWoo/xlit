@@ -27,7 +27,7 @@ process(num_used_hi, num_used_lo, priority, frame_len) begin
 	num_used_lo_int <= to_integer(unsigned(num_used_lo));
 	frame_len_int   <= to_integer(unsigned(frame_len  ));
 	
-	if((1023-num_used_hi_int<frame_len_int and priority='1') or (1023-num_used_lo_int<frame_len_int and priority='0')) then
+	if((2047-num_used_hi_int<frame_len_int and priority='1') or (2047-num_used_lo_int<frame_len_int and priority='0')) then
 		discard_en <= '1';
 		wren <= '0';
 	else

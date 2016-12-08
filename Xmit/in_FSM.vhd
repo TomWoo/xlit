@@ -129,12 +129,12 @@ architecture arch of in_FSM is
 	
 	component FIFO_1
 		port(	aclr		: IN STD_LOGIC;
-			data		: IN STD_LOGIC;
+			data		: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
 			rdclk		: IN STD_LOGIC ;
 			rdreq		: IN STD_LOGIC ;
 			wrclk		: IN STD_LOGIC ;
 			wrreq		: IN STD_LOGIC ;
-			q			: OUT STD_LOGIC;
+			q			: OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
 			rdempty		: OUT STD_LOGIC ;
 			wrfull		: OUT STD_LOGIC 
 		);
@@ -333,8 +333,8 @@ begin
 			aclr => aclr,
 			wrclk => sysclk,
 			rdclk => phyclk,
-			q => opri,
-			data => in_priority,
+			q(0) => opri,
+			data(0) => in_priority,
 			wrreq => wrenc,
 			rdreq => hi and txone, -- transmit enable clock 1
 			rdempty => empty_priority,
@@ -346,8 +346,8 @@ begin
 			aclr => aclr,
 			wrclk => sysclk,
 			rdclk => phyclk,
-			q => lastm,
-			data => last,
+			q(0) => lastm,
+			data(0) => last,
 			wrreq => wrend,
 			rdreq => hi and txen, -- transmit enable
 			rdempty => empty_stop,
