@@ -115,7 +115,8 @@ architecture arch of in_FSM is
 	end component;   
 	
 	component inbuffcon
-		port(	aclr		: IN STD_LOGIC;
+		port(
+			aclr		: IN STD_LOGIC;
 			data		: IN STD_LOGIC_VECTOR (23 DOWNTO 0);
 			rdclk		: IN STD_LOGIC ;
 			rdreq		: IN STD_LOGIC ;
@@ -128,7 +129,8 @@ architecture arch of in_FSM is
 	END component;
 	
 	component FIFO_1
-		port(	aclr		: IN STD_LOGIC;
+		port(
+			aclr		: IN STD_LOGIC;
 			data		: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
 			rdclk		: IN STD_LOGIC ;
 			rdreq		: IN STD_LOGIC ;
