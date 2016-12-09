@@ -82,11 +82,13 @@ architecture rtl of xmitTop is
 		pop_lo				: out std_logic;
 		pop_hi				: out std_logic;
 		
+		wren_out				: out std_logic;
 		data_out				: out std_logic_vector(7 downto 0);
 		ctrl_block_out		: out std_logic_vector(23 downto 0);
 		
-		stop_in				: in std_logic;
+		hi_stop_in			: in std_logic;
 		hi_fifo_used_in	: in std_logic_vector(10 downto 0);
+		lo_stop_in			: in std_logic;
 		lo_fifo_used_in	: in std_logic_vector(10 downto 0)
 	);
 	end component;
@@ -96,6 +98,7 @@ architecture rtl of xmitTop is
 		clk_phy				: in std_logic;
 		reset					: in std_logic;
 		
+		wren					: in std_logic;
 		data_in				: in std_logic_vector(7 downto 0);
 		ctrl_block_in		: in std_logic_vector(23 downto 0);
 		
@@ -191,9 +194,6 @@ architecture rtl of xmitTop is
 	SIGNAL lilo_ctrl:				STD_LOGIC_VECTOR (23 DOWNTO 0);
 	SIGNAL lilo_stop:				STD_LOGIC_VECTOR (0 DOWNTO 0);
 	
-	SIGNAL input_hi_stop:		STD_LOGIC_VECTOR (0 DOWNTO 0);
-	SIGNAL input_lo_stop:		STD_LOGIC_VECTOR (0 DOWNTO 0);
-	
 	SIGNAL hi_rereq:				STD_LOGIC;
 	SIGNAL lo_rereq:				STD_LOGIC;
 	
@@ -201,7 +201,7 @@ architecture rtl of xmitTop is
 	signal numusedhi	: std_logic_vector(10 downto 0);
 	signal numusedlo	: std_logic_vector(10 downto 0);
 	
-	
+	signal wren_priority_out_FSM: std_logic;
 	
 	begin
 	process(out_wren_wire, out_priority_wire, clk_sys)
@@ -266,12 +266,12 @@ architecture rtl of xmitTop is
 		ctrl_block_hi_in		=> hiho_ctrl,
 		pop_hi					=> hi_rereq,
 		
+		wren_out					=> wren_priority_out_FSM,
 		data_out					=> between_out_data,
 		ctrl_block_out			=> between_out_ctrl,
-		-- NEED TO MAKE CHANGE HERE
-		stop_in					=> stop(0),
-		--lilo_stop, -hiho_stop
-		-- NEED TO MAKE CHANGE HERE
+		
+		hi_stop_in				=> hiho_stop(0),
+		lo_stop_in				=> lilo_stop(0),
 		hi_fifo_used_in		=> numusedhi,
 		lo_fifo_used_in		=> numusedlo
 	);
@@ -280,8 +280,10 @@ architecture rtl of xmitTop is
 		clk_phy					=> clk_phy,
 		reset						=> reset,
 		
+		wren						=> wren_priority_out_FSM,
 		data_in					=> between_out_data,	
 		ctrl_block_in			=> between_out_ctrl,
+		
 		tx_en						=> phy_tx_en,
 		frame_seq_out			=> xmit_sequence_wire,
 		xmit_done_out			=> xmit_done_wire,

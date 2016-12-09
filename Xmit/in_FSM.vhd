@@ -47,7 +47,6 @@ architecture arch of in_FSM is
 	signal outcountdone: std_logic:='0';
 	signal datam: std_logic_vector (7 downto 0);
 	signal ctrlm: std_logic_vector (23 downto 0);
-	signal cnti: unsigned(11 downto 0);
 	signal cntit: unsigned(11 downto 0);
 	signal last, lastl: std_logic;
 	signal lastm: std_logic;
@@ -180,7 +179,7 @@ begin
 		dir <="000000000001";
 	end process;
 	
-	PROCESS (sysclk, controli, wrenc, aclr, cnti, cntit) --incounter	
+	PROCESS (sysclk, controli, wrenc, aclr, cntit) --incounter	
 	BEGIN		
 		if(aclr = '1') then
 --			cnti <= "111111111111";
