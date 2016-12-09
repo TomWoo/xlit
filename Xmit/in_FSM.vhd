@@ -36,16 +36,10 @@ end in_FSM;
 
 architecture arch of in_FSM is
 --	type numstate is (start_state, frame_state, end_state);
-	signal discard_en_next: std_logic;
-	signal wren_next:			std_logic;
-	signal priority_next:	std_logic;
-	
 	signal aclr:				std_logic;
 	signal sysclk: 			std_logic;
 	signal phyclk:				std_logic;
-	
-	signal ctrl_ctrl_prev:	std_logic;
-	
+		
 	signal hi: std_logic := '1';
 	signal emptyd, emptyc, empty_priority, empty_stop: std_logic;
 	signal fulld, fullc, full_priority, full_stop: std_logic;
@@ -53,20 +47,15 @@ architecture arch of in_FSM is
 	signal outcountdone: std_logic:='0';
 	signal datam: std_logic_vector (7 downto 0);
 	signal ctrlm: std_logic_vector (23 downto 0);
-	signal readen: std_logic;
-	signal canout: std_logic;
-	signal cnto: unsigned(11 downto 0);
 	signal cnti: unsigned(11 downto 0);
-	signal cntot: unsigned(11 downto 0);
 	signal cntit: unsigned(11 downto 0);
 	signal last, lastl: std_logic;
 	signal lastm: std_logic;
 	signal opri: std_logic;
-	signal outstart: std_logic;
-	signal outstartas, dissig, wrensig, stopl: std_logic;
+	signal dissig, wrensig, stopl: std_logic;
 	signal dir: unsigned(11 downto 0) := "000000000001";
 	signal transen: std_logic := '1';
-	signal txen, txone, pakavails, firsttrans, txen2: std_logic;
+	signal txen, txone, pakavails, txen2: std_logic;
 	
 	component discard_logic is
 		port(
