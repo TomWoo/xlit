@@ -25,6 +25,8 @@ port(
 	numusedlo: 				in std_logic_vector(10 downto 0)
 --	db_ctrlm:				out std_logic_vector(23 downto 0);
 --	db_last:					out std_logic;
+--	db_lastl:				out std_logic;
+--	db_stopint:				out std_logic
 --	db_lastm:				out std_logic;
 --	db_txen:					out std_logic;
 --	db_txone:				out std_logic;
@@ -55,7 +57,7 @@ architecture arch of in_FSM is
 	signal dissig, wrensig, stopl: std_logic;
 	signal dir: unsigned(11 downto 0) := "000000000001";
 	signal transen: std_logic := '1';
-	signal txen, txone, pakavails, txen2: std_logic;
+	signal txen, txone, pakavails, txen2, stopint: std_logic;
 	
 	component discard_logic is
 		port(
@@ -172,7 +174,8 @@ begin
 		phyclk <= clk_phy;
 --		db_ctrlm <= ctrlm;
 --		db_last <= last;
---		db_lastm <= lastm;
+--		db_lastl <= lastl;
+--		db_stopint <= stopint;
 --		db_txen <= txen;
 --		db_txone <= txone;
 --		db_pakavail <= pakavails;
@@ -180,7 +183,7 @@ begin
 		dir <="000000000001";
 	end process;
 	
-	PROCESS (sysclk, controli, wrenc, aclr, cnti, cntit) --incounter	
+	PROCESS (sysclk, controli, wrenc, aclr, cnti, cntit, last, lastl) --incounter	
 	BEGIN		
 		if(aclr = '1') then
 --			cnti <= "111111111111";
@@ -198,17 +201,20 @@ begin
 --				end if;
 				if (to_integer(cntit)>2) then
 					cntit <= cntit -dir;
-				end if;
-			end if;
-			if (to_integer(cntit) <= 2) then
-				if (last = '1' and lastl = '0') then
 					lastl <= '0';
-				else
-					lastl <= '1';
+				else 
+					if ((last = '1' and lastl = '0') or lastl = '1') then
+						lastl <= '1';
+					else
+						lastl <= '0';
+					end if;
 				end if;
-			else 
-				lastl <= '0';
 			end if;
+--			if (to_integer(cntit) <= 2) then
+--				
+--			else 
+--				
+--			end if;
 		END IF;
 --		if (to_integer(cnti) <= 2) then
 --			incountdone <= '1';
@@ -225,6 +231,17 @@ begin
 			last <= '0';
 		end if;
 	END PROCESS;
+	
+	process(lastm, stopl, stopint)
+	begin
+		if (lastm = '1' and stopl = '0') then 
+			stopint <= '0';
+		elsif(lastm = '1' and stopl = '1') then 
+			stopint <= '1';
+		else 
+			stopint <= '0';
+		end if;
+	end process;
 
 --	PROCESS (phyclk, ctrlm, aclr, cnto, firsttrans) --outcounter
 --	BEGIN	
@@ -275,10 +292,10 @@ begin
 			out_m_discard_en <= '0';
 		elsif (phyclk'event AND phyclk = '1') then
 			datao <= datam;
-			stop <= lastm;
-			out_wren <= wrensig and txen2;-- and not stopl;
+			out_wren <= wrensig and txen2 and not stopint;
 			txen2 <= txen;
-			out_m_discard_en <= dissig and txen2;-- and not stopl;
+			out_m_discard_en <= dissig and txen2 and not stopint;
+			stop <= lastm;
 			stopl <= lastm;
 		end if;
 	end process;
@@ -338,7 +355,7 @@ begin
 			wrclk => sysclk,
 			rdclk => phyclk,
 			q(0) => lastm,
-			data(0) => last,
+			data(0) => last and not lastl,
 			wrreq => wrend,
 			rdreq => hi and txen, -- transmit enable
 			rdempty => empty_stop,
