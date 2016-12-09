@@ -21,7 +21,8 @@ port(
 	hi_stop_in			: in std_logic;
 	hi_fifo_used_in	: in std_logic_vector(10 downto 0);
 	lo_stop_in			: in std_logic;
-	lo_fifo_used_in	: in std_logic_vector(10 downto 0)
+	lo_fifo_used_in	: in std_logic_vector(10 downto 0);
+	stop_out				: out std_logic
 );
 end entity;
 
@@ -35,6 +36,11 @@ begin
 -- Asynchronous signals
 process(hi_fifo_used_in) begin
 	hi_fifo_used_int <= to_integer(unsigned(hi_fifo_used_in));
+	if((my_state = s_hi and hi_stop_in = '1') or (my_state = s_lo and lo_stop_in = '1')) then
+		stop_out <= '1';
+	else
+		stop_out <= '0';
+	end if;
 end process;
 
 -- State machine
@@ -42,14 +48,23 @@ process(clk_phy, reset) begin
 	if (reset = '1') then
 		my_state <= s_off;
 	elsif(rising_edge(clk_phy)) then
-		-- TODO: check
-		if(hi_stop_in = '1' or lo_stop_in = '1') then
+		-- TODO: check -- hi_stop_in = '1' or lo_stop_in = '1'
+		case my_state is
+		when s_lo =>
+			if(lo_stop_in = '1') then
+				my_state <= s_off;
+			end if;
+		when s_hi =>
+			if(hi_stop_in = '1') then
+				my_state <= s_off;
+			end if;
+		when others => -- s_off
 			if(hi_fifo_used_int > 255) then
 				my_state <= s_hi;
 			elsif(lo_fifo_used_int > 255) then
 				my_state <= s_lo;
 			end if;
-		end if;
+		end case;
 	end if;
 end process;
 
@@ -61,14 +76,14 @@ process(my_state) begin
 		pop_lo <= '1';
 		
 		wren_out <= '1';
-		data_out <= data_hi_in;
+		data_out <= data_lo_in;
 		ctrl_block_out <= ctrl_block_hi_in;
 	when s_hi =>
 		pop_hi <= '1';
 		pop_lo <= '0';
 		
 		wren_out <= '1';
-		data_out <= data_lo_in;
+		data_out <= data_hi_in;
 		ctrl_block_out <= ctrl_block_lo_in;
 	when others => -- s_off
 		pop_hi <= '0';

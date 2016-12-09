@@ -9,23 +9,23 @@ z2
 cModel Technology
 dC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Homework/2/sim
 Ectrlfifo
-Z0 w1481257649
+Z0 w1481260771
 Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z3 dC:/altera_lite/hoho/ECE559final/xlit/Xmit/modelsim
-Z4 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/ctrlFIFO.vhd
-Z5 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/ctrlFIFO.vhd
+Z3 dC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim
+Z4 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/ctrlFIFO.vhd
+Z5 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/ctrlFIFO.vhd
 l0
 L43
 Va8EQGcEz@Sh5QKR5o@L122
 !s100 oI?HHR:_2RSoTBP:T^ZL10
 Z6 OV;C;10.4d;61
 33
-Z7 !s110 1481261823
+Z7 !s110 1481263371
 !i10b 1
-Z8 !s108 1481261823.000000
-Z9 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/ctrlFIFO.vhd|
-Z10 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/ctrlFIFO.vhd|
+Z8 !s108 1481263371.000000
+Z9 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/ctrlFIFO.vhd|
+Z10 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/ctrlFIFO.vhd|
 !i113 1
 Z11 o-work work -2008 -explicit
 Z12 tExplicit 1
@@ -52,99 +52,99 @@ R0
 R1
 R2
 R3
-Z13 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/dataFIFO.vhd
-Z14 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/dataFIFO.vhd
+Z13 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/dataFIFO.vhd
+Z14 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/dataFIFO.vhd
 l0
 L43
-Vi9If:>@>IF:Ik0V_g6PIG3
+VjJI[FgDmJ2[f55@;e]W8b2
 !s100 Kg^@YcT42B3[?8cKI:`h<3
 R6
-32
+33
 R7
 !i10b 1
 R8
-Z15 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/dataFIFO.vhd|
-Z16 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/dataFIFO.vhd|
+Z15 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/dataFIFO.vhd|
+Z16 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/dataFIFO.vhd|
 !i113 1
-Z17 o-work work -2002 -explicit
+R11
 R12
 Asyn
 R1
 R2
-DEx4 work 8 datafifo 0 22 i9If:>@>IF:Ik0V_g6PIG3
+DEx4 work 8 datafifo 0 22 jJI[FgDmJ2[f55@;e]W8b2
 l105
 L62
-VeRzn`k9gFK5zFhWAd4Dd30
+Vf]9XialM3LTR^;lgnbCZU2
 !s100 jj6C2ehQ7U5<;2L70@l:H3
 R6
-32
+33
 R7
 !i10b 1
 R8
 R15
 R16
 !i113 1
-R17
+R11
 R12
 Ediscard_logic
-Z18 w1481257650
-Z19 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R0
+Z17 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 R1
 R2
 R3
-Z20 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/discard_logic.vhd
-Z21 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/discard_logic.vhd
+Z18 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd
+Z19 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd
 l0
 L7
-V:VCbfMKH^jLcl[cZC^]IU1
+Vi=KfiIjX2RK>VYC28C0XO3
 !s100 QcZNS0>63iVPJ__0iS9f50
 R6
-32
+33
 R7
 !i10b 1
 R8
-Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/discard_logic.vhd|
-Z23 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/discard_logic.vhd|
+Z20 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd|
+Z21 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd|
 !i113 1
-R17
+R11
 R12
 Aarch
-R19
+R17
 R1
 R2
-DEx4 work 13 discard_logic 0 22 :VCbfMKH^jLcl[cZC^]IU1
+DEx4 work 13 discard_logic 0 22 i=KfiIjX2RK>VYC28C0XO3
 l22
 L18
-V=d7]WN<:kV[H?TjZ;4ljl3
+VU@0K^3Kfb33nUSX:]L=z30
 !s100 >2n`I^nEbZ;F9DEREZiI42
 R6
-32
+33
 R7
 !i10b 1
 R8
-R22
-R23
+R20
+R21
 !i113 1
-R17
+R11
 R12
 Efifo_1
 R0
 R1
 R2
 R3
-Z24 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/FIFO_1.vhd
-Z25 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/FIFO_1.vhd
+Z22 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/FIFO_1.vhd
+Z23 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/FIFO_1.vhd
 l0
 L43
 VT^bLhFY<Ikc>97>9oUYEM3
 !s100 Rb_g?=^eR5T^c0EInN=@z0
 R6
 33
-Z26 !s110 1481261824
+R7
 !i10b 1
 R8
-Z27 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/FIFO_1.vhd|
-Z28 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/FIFO_1.vhd|
+Z24 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/FIFO_1.vhd|
+Z25 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/FIFO_1.vhd|
 !i113 1
 R11
 R12
@@ -158,32 +158,32 @@ Vz@NPoiDnF:`AgDO7C@j;h2
 !s100 _BICjJHHa5M>@X`QiV_2;0
 R6
 33
-R26
+R7
 !i10b 1
 R8
-R27
-R28
+R24
+R25
 !i113 1
 R11
 R12
 Efifo_8
-R18
+R0
 R1
 R2
 R3
-Z29 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/fifo_8.vhd
-Z30 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/fifo_8.vhd
+Z26 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/fifo_8.vhd
+Z27 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/fifo_8.vhd
 l0
 L43
 VeLd6@jlm;;KWI2f^0kRlh3
 !s100 G_a4HM:]c@Bkb9b6E<kBl1
 R6
 33
-R26
+R7
 !i10b 1
-Z31 !s108 1481261824.000000
-Z32 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/fifo_8.vhd|
-Z33 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/fifo_8.vhd|
+R8
+Z28 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/fifo_8.vhd|
+Z29 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/fifo_8.vhd|
 !i113 1
 R11
 R12
@@ -197,38 +197,38 @@ VdJ7UPA3jN9?eW5GScA6YD2
 !s100 OJJWL9K41fWI?VKQ`]M::1
 R6
 33
-R26
+R7
 !i10b 1
-R31
-R32
-R33
+R8
+R28
+R29
 !i113 1
 R11
 R12
 Ein_fsm
-Z34 w1481257793
-R19
+R0
+R17
 R1
 R2
 R3
-Z35 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/in_FSM.vhd
-Z36 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/in_FSM.vhd
+Z30 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd
+Z31 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd
 l0
 L5
 Vc]mJ6aoI>T>oSBfD_4Rk12
 !s100 K_Hgf01?g?Mh69QCU<D?]2
 R6
 33
-R26
+R7
 !i10b 1
-R31
-Z37 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/in_FSM.vhd|
-Z38 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/in_FSM.vhd|
+R8
+Z32 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd|
+Z33 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd|
 !i113 1
 R11
 R12
 Aarch
-R19
+R17
 R1
 R2
 DEx4 work 6 in_fsm 0 22 c]mJ6aoI>T>oSBfD_4Rk12
@@ -238,32 +238,32 @@ VDMRa78S8zj[3jjSOB`zm@2
 !s100 3gP8`kM;_Sn2YVKHznUje0
 R6
 33
-R26
+R7
 !i10b 1
-R31
-R37
-R38
+R8
+R32
+R33
 !i113 1
 R11
 R12
 Einbuff
-R18
+R0
 R1
 R2
 R3
-Z39 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/inbuff.vhd
-Z40 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/inbuff.vhd
+Z34 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/inbuff.vhd
+Z35 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/inbuff.vhd
 l0
 L43
 V=XZK5]S[6@;F=8mgd=7Ha0
 !s100 0LF29:A0;0o4Wf]DQ3T5:1
 R6
 33
-R26
+R7
 !i10b 1
-R31
-Z41 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/inbuff.vhd|
-Z42 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/inbuff.vhd|
+R8
+Z36 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/inbuff.vhd|
+Z37 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/inbuff.vhd|
 !i113 1
 R11
 R12
@@ -277,32 +277,32 @@ Vg:mYcL4=FJn1]hbz6PBo=1
 !s100 ;VCeTo;fU>9CEgGPo]BPo0
 R6
 33
-R26
+R7
 !i10b 1
-R31
-R41
-R42
+R8
+R36
+R37
 !i113 1
 R11
 R12
 Einbuffcon
-R18
+R0
 R1
 R2
 R3
-Z43 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/inbuffcon.vhd
-Z44 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/inbuffcon.vhd
+Z38 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/inbuffcon.vhd
+Z39 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/inbuffcon.vhd
 l0
 L43
 V]gbb1fgg];I19nXb]QIL]3
 !s100 c>d>lPcT4lAAQdCZ8geeI0
 R6
 33
-R26
+R7
 !i10b 1
-R31
-Z45 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/inbuffcon.vhd|
-Z46 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/inbuffcon.vhd|
+R8
+Z40 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/inbuffcon.vhd|
+Z41 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/inbuffcon.vhd|
 !i113 1
 R11
 R12
@@ -316,20 +316,20 @@ Vj=3]9aNmIC4T<GYFQ]9U23
 !s100 ZQ1l`1jOJ_cocook>U;4K3
 R6
 33
-R26
+R7
 !i10b 1
-R31
-R45
-R46
+R8
+R40
+R41
 !i113 1
 R11
 R12
 Einbuffer
-R18
-R19
+Z42 w1481257650
+R17
 R1
 R2
-R3
+Z43 dC:/altera_lite/hoho/ECE559final/xlit/Xmit/modelsim
 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/inBuffer.vhd
 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/inBuffer.vhd
 l0
@@ -344,26 +344,26 @@ R6
 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/inBuffer.vhd|
 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/inBuffer.vhd|
 !i113 1
-R17
+o-work work -2002 -explicit
 R12
 Einput_buffer
-R18
+R42
 R1
 R2
-R3
-Z47 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/input_buffer.vhd
-Z48 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/input_buffer.vhd
+R43
+Z44 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/input_buffer.vhd
+Z45 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/input_buffer.vhd
 l0
 L3
 Vd>0K:2PkA2^ekGW_^f_8M1
 !s100 L=`_P;:EF4?4083lXkCW32
 R6
 33
-R26
+Z46 !s110 1481261824
 !i10b 1
-R31
-Z49 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/input_buffer.vhd|
-Z50 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/input_buffer.vhd|
+Z47 !s108 1481261824.000000
+Z48 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/input_buffer.vhd|
+Z49 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/input_buffer.vhd|
 !i113 1
 R11
 R12
@@ -377,32 +377,32 @@ VMB[1LbF[fX8:^bFgoM6eO1
 !s100 A2mm@249h[^cVIEWIz>:93
 R6
 33
-R26
+R46
 !i10b 1
-R31
+R47
+R48
 R49
-R50
 !i113 1
 R11
 R12
 Emonitoring_logic
-R18
+R0
 R1
 R2
 R3
-Z51 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/monitoring_logic.vhd
-Z52 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/monitoring_logic.vhd
+Z50 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/monitoring_logic.vhd
+Z51 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/monitoring_logic.vhd
 l0
 L3
 V58maImV6>9X`h@kalomLW2
 !s100 g_fnPNS^ec`2<lUe6l?991
 R6
 33
-R26
+R7
 !i10b 1
-R31
-Z53 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/monitoring_logic.vhd|
-Z54 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/monitoring_logic.vhd|
+R8
+Z52 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/monitoring_logic.vhd|
+Z53 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/monitoring_logic.vhd|
 !i113 1
 R11
 R12
@@ -416,77 +416,98 @@ VBN3=[kIbI[P1;k[9?e>B40
 !s100 X[cG1jj]NMn<6>V99[c[P0
 R6
 33
-R26
+R7
 !i10b 1
-R31
+R8
+R52
 R53
-R54
 !i113 1
 R11
 R12
 Eout_fsm
-Z55 w1481261813
-Z56 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z57 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
-R19
+Z54 w1481299968
+Z55 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z56 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R17
 R1
 R2
 R3
-Z58 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/out_FSM.vhd
-Z59 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/out_FSM.vhd
+Z57 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd
+Z58 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd
 l0
 L7
-Vmijc6ehcNUR`0Tn145aSU0
-!s100 OmSmLcC1P_f2`jH=lgOAi1
+V8e1i@hgMR;A;LI3k8fj0>2
+!s100 [YA1ickESR0CnefXQm11c0
 R6
-32
-Z60 !s110 1481261825
+33
+Z59 !s110 1481299994
 !i10b 1
-Z61 !s108 1481261825.000000
-Z62 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/out_FSM.vhd|
-Z63 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/out_FSM.vhd|
+Z60 !s108 1481299994.000000
+Z61 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd|
+Z62 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd|
 !i113 1
-R17
+R11
 R12
 Artl
+R55
 R56
-R57
-R19
+R17
 R1
 R2
-DEx4 work 7 out_fsm 0 22 mijc6ehcNUR`0Tn145aSU0
-l53
-L21
-VC3lUBFXNn7RdXd4Ji:J0e1
-!s100 c>D2_9>JkMDN=lWNoGlID3
+DEx4 work 7 out_fsm 0 22 8e1i@hgMR;A;LI3k8fj0>2
+l54
+L22
+VzFW^jz^1Lga=H[i]i00i33
+!s100 ZMh;Y?W_o[I1dP:]OjlbD3
 R6
-32
-R60
+33
+R59
 !i10b 1
+R60
 R61
 R62
-R63
 !i113 1
-R17
+R11
 R12
+vout_FSM_tester
+!s110 1481263259
+!i10b 1
+!s100 ;m;hRm;fRLmW9?DFO402M0
+I92`YFU@Doi2HY0A7F_KUf3
+Z63 VDg1SIo80bB@j0V0VzS_@n1
+R3
+R0
+8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM_tester.v
+FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM_tester.v
+L0 1
+Z64 OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1481263259.000000
+!s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM_tester.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM_tester.v|
+!i113 1
+Z65 o-work work
+nout_@f@s@m_tester
 Eoutput_buffer
-R18
+R0
 R1
 R2
 R3
-Z64 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/output_buffer.vhd
-Z65 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/output_buffer.vhd
+Z66 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd
+Z67 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd
 l0
 L43
 VM<:cH?HEn]3HEzoh=LX7m1
 !s100 YCCFFZBMcA9h?F44b_8?E2
 R6
 33
-R26
+Z68 !s110 1481263372
 !i10b 1
-R31
-Z66 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/output_buffer.vhd|
-Z67 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/output_buffer.vhd|
+Z69 !s108 1481263372.000000
+Z70 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd|
+Z71 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd|
 !i113 1
 R11
 R12
@@ -500,42 +521,81 @@ V>z^:Im_R:d1VIRmS0z>W61
 !s100 4QXNhDh9`@nkl>BFTc:cn1
 R6
 33
-R26
+R68
 !i10b 1
-R31
-R66
-R67
+R69
+R70
+R71
+!i113 1
+R11
+R12
+Eoutput_fsm
+Z72 w1481263456
+R1
+R2
+R3
+Z73 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_fsm.vhd
+Z74 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_fsm.vhd
+l0
+L3
+VkfT;;=J6B9VC;JO0<io4j0
+!s100 R3O<SzN^2e`<=B5ZVc?<B2
+R6
+33
+Z75 !s110 1481263459
+!i10b 1
+Z76 !s108 1481263459.000000
+Z77 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_fsm.vhd|
+Z78 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_fsm.vhd|
+!i113 1
+R11
+R12
+Amachine
+R1
+R2
+DEx4 work 10 output_fsm 0 22 kfT;;=J6B9VC;JO0<io4j0
+l15
+L13
+V;NETTljCS_4SPMkWCfOOT1
+!s100 Xk1Q>b`=YM6K]UNQCf5WE0
+R6
+33
+R75
+!i10b 1
+R76
+R77
+R78
 !i113 1
 R11
 R12
 Epakstak
-R18
+Z79 w1481260772
+R55
 R56
-R57
-R19
+R17
 R1
 R2
 R3
-Z68 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/pakstak.vhd
-Z69 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/pakstak.vhd
+Z80 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/pakstak.vhd
+Z81 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/pakstak.vhd
 l0
 L7
 VLFV>z:Rm`Ym0CMD]YDKPM3
 !s100 AbZ5EBKD<AgfIn_<S@K@R2
 R6
 33
-R26
+R68
 !i10b 1
-R31
-Z70 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/pakstak.vhd|
-Z71 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/pakstak.vhd|
+R69
+Z82 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/pakstak.vhd|
+Z83 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/pakstak.vhd|
 !i113 1
 R11
 R12
 Aarch
+R55
 R56
-R57
-R19
+R17
 R1
 R2
 DEx4 work 7 pakstak 0 22 LFV>z:Rm`Ym0CMD]YDKPM3
@@ -545,73 +605,73 @@ VS4W52`?J>iX4J7NA>Co533
 !s100 8GUmb7;2X=`SniLkRzhG83
 R6
 33
-R60
+R68
 !i10b 1
-R31
-R70
-R71
+R69
+R82
+R83
 !i113 1
 R11
 R12
 Epriority_fsm
-R18
-R19
+Z84 w1481300296
+R17
 R1
 R2
 R3
-Z72 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/priority_FSM.vhd
-Z73 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/priority_FSM.vhd
+Z85 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd
+Z86 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd
 l0
 L5
-VDb^a[0P4Ik8mIj5i1k1C:1
-!s100 QiIXYI@^z]_lMhHoWk=YZ2
+Vfdz7FFE=OQQGm0B3H2J1l2
+!s100 c^z<kYOo^NdLJ95GRRSZB1
 R6
-32
-R60
+33
+Z87 !s110 1481300298
 !i10b 1
-R61
-Z74 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/priority_FSM.vhd|
-Z75 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/priority_FSM.vhd|
+Z88 !s108 1481300298.000000
+Z89 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd|
+Z90 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd|
 !i113 1
-R17
+R11
 R12
 Artl
-R19
+R17
 R1
 R2
-DEx4 work 12 priority_fsm 0 22 Db^a[0P4Ik8mIj5i1k1C:1
-l33
-L28
-V]>Bo@a[l;0PnY01[=m1]E1
-!s100 _F:_e;lmI`D]>LdYz9JK_3
+DEx4 work 12 priority_fsm 0 22 fdz7FFE=OQQGm0B3H2J1l2
+l34
+L29
+VcllZoN:9F_EPcHIlFdgKc3
+!s100 O>;hcGb0>Ka;P]^fh8no10
 R6
-32
-R60
+33
+R87
 !i10b 1
-R61
-R74
-R75
+R88
+R89
+R90
 !i113 1
-R17
+R11
 R12
 Eshift_register_4
-R18
+R42
 R1
 R2
-R3
-Z76 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/shift_register_4.vhd
-Z77 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/shift_register_4.vhd
+R43
+Z91 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/shift_register_4.vhd
+Z92 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/shift_register_4.vhd
 l0
 L43
 VhSdkm`=_YnNilYPD5aPo?1
 !s100 6;oCb0NXb[6T2KW?]fb072
 R6
 33
-R60
+Z93 !s110 1481261825
 !i10b 1
-R61
-Z78 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/shift_register_4.vhd|
-Z79 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/shift_register_4.vhd|
+Z94 !s108 1481261825.000000
+Z95 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/shift_register_4.vhd|
+Z96 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/shift_register_4.vhd|
 !i113 1
 R11
 R12
@@ -625,72 +685,72 @@ V0K;9OYaNmNVaII?9i9;2a2
 !s100 bnCXWoWkZgA]YIJY]5b1W0
 R6
 33
-R60
+R93
 !i10b 1
-R61
-R78
-R79
+R94
+R95
+R96
 !i113 1
 R11
 R12
 vtestbench
-!s110 1479921368
+!s110 1481263057
 !i10b 1
 !s100 S6W3Q=^3:Vi=FK_h3a[mS2
 I5Fl]659F^_bbZ^a>?>gmM3
-Z80 VDg1SIo80bB@j0V0VzS_@n1
-Z81 dC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim
-w1479921363
+R63
+R3
+R0
 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/testbench.v
 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/testbench.v
 L0 4
-Z82 OV;L;10.4d;61
+R64
 r1
 !s85 0
 31
-!s108 1479921368.000000
+!s108 1481263057.000000
 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/testbench.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/testbench.v|
 !i113 1
-Z83 o-work work
+R65
 vtestbench_top
-R7
+!s110 1481267828
 !i10b 1
-!s100 L[3iR^>L:1YE?liL?iYY=0
-IaNFc?zz5heE]gChd5;ekH0
-R80
+!s100 lVlZnh=V767eEY^]ZmTFm1
+I2?;_Z9HWEKce1@W[0O@IN2
+R63
 R3
-w1481261454
-8C:/altera_lite/hoho/ECE559final/xlit/Xmit/modelsim/testbench_top.v
-FC:/altera_lite/hoho/ECE559final/xlit/Xmit/modelsim/testbench_top.v
+w1481267815
+8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/testbench_top.v
+FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/testbench_top.v
 L0 4
-R82
+R64
 r1
 !s85 0
 31
-R8
-!s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/modelsim/testbench_top.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/modelsim/testbench_top.v|
+!s108 1481267828.000000
+!s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/testbench_top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/testbench_top.v|
 !i113 1
-R83
+R65
 Etren
-R18
+R79
 R1
 R2
 R3
-Z84 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/tren.vhd
-Z85 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/tren.vhd
+Z97 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/tren.vhd
+Z98 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/tren.vhd
 l0
 L4
 VgaO?<QdWbmGDWnD4h<F[f0
 !s100 N4fkaW8Efe37VVj7?II`U2
 R6
 33
-R60
+R68
 !i10b 1
-R61
-Z86 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/tren.vhd|
-Z87 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/tren.vhd|
+R69
+Z99 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/tren.vhd|
+Z100 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/tren.vhd|
 !i113 1
 R11
 R12
@@ -704,50 +764,50 @@ VW4EZYUVXXnPYI`ehO>S[d1
 !s100 T^LOcT1BEoogf?RncdJaQ0
 R6
 33
-R60
+R68
 !i10b 1
-R61
-R86
-R87
+R69
+R99
+R100
 !i113 1
 R11
 R12
 Exmittop
-R18
+Z101 w1481300318
 R1
 R2
 R3
-Z88 8C:/altera_lite/hoho/ECE559final/xlit/Xmit/xmitTop.vhd
-Z89 FC:/altera_lite/hoho/ECE559final/xlit/Xmit/xmitTop.vhd
+Z102 8C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd
+Z103 FC:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd
 l0
 L4
 V^;7WjNX3D^GW5CnbK:9;e2
 !s100 WASUFP:MU5K^K?zl?Da:^2
 R6
 33
-R60
+Z104 !s110 1481300320
 !i10b 1
-R61
-Z90 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/altera_lite/hoho/ECE559final/xlit/Xmit/xmitTop.vhd|
-Z91 !s107 C:/altera_lite/hoho/ECE559final/xlit/Xmit/xmitTop.vhd|
+Z105 !s108 1481300320.000000
+Z106 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd|
+Z107 !s107 C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd|
 !i113 1
 R11
 R12
 Artl
 R1
 R2
-DEx4 work 7 xmittop 0 22 ^;7WjNX3D^GW5CnbK:9;e2
-l206
+Z108 DEx4 work 7 xmittop 0 22 ^;7WjNX3D^GW5CnbK:9;e2
+l209
 L25
-VCY]l4Lfn`]K1TWXVOao9g2
-!s100 ^7@MkeA84oaldL3a]gIbk3
+VURfm=B1fi;MAZi2iinNzn0
+!s100 ZDL8I=<0BEDUn6`Hbi>^=3
 R6
 33
-R60
+R104
 !i10b 1
-R61
-R90
-R91
+R105
+R106
+R107
 !i113 1
 R11
 R12
@@ -756,13 +816,13 @@ vxmitTop_vlg_vec_tst
 !i10b 1
 !s100 V8@NC@Vc7zN3W5:5C`E@b2
 IFBDl<`7W1Rn8S^KIhBAkb2
-R80
+R63
 dC:/altera_lite/16.0/ECE559/final_project/xlit/Xmit/modelsim
 w1481005417
 8C:/altera_lite/16.0/ECE559/final_project/xlit/Xmit/simulation/qsim/Waveform-High.vwf.vt
 FC:/altera_lite/16.0/ECE559/final_project/xlit/Xmit/simulation/qsim/Waveform-High.vwf.vt
 L0 30
-R82
+R64
 r1
 !s85 0
 31
@@ -770,5 +830,5 @@ r1
 !s107 C:/altera_lite/16.0/ECE559/final_project/xlit/Xmit/simulation/qsim/Waveform-High.vwf.vt|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/altera_lite/16.0/ECE559/final_project/xlit/Xmit/simulation/qsim/Waveform-High.vwf.vt|
 !i113 1
-R83
+R65
 nxmit@top_vlg_vec_tst

@@ -89,7 +89,8 @@ architecture rtl of xmitTop is
 		hi_stop_in			: in std_logic;
 		hi_fifo_used_in	: in std_logic_vector(10 downto 0);
 		lo_stop_in			: in std_logic;
-		lo_fifo_used_in	: in std_logic_vector(10 downto 0)
+		lo_fifo_used_in	: in std_logic_vector(10 downto 0);
+		stop_out				: out std_logic
 	);
 	end component;
 	
@@ -101,6 +102,7 @@ architecture rtl of xmitTop is
 		wren					: in std_logic;
 		data_in				: in std_logic_vector(7 downto 0);
 		ctrl_block_in		: in std_logic_vector(23 downto 0);
+		stop_in				: in std_logic;
 		
 		tx_en					: out std_logic;
 		frame_seq_out		: out std_logic_vector(23 downto 0);
@@ -202,6 +204,7 @@ architecture rtl of xmitTop is
 	signal numusedlo	: std_logic_vector(10 downto 0);
 	
 	signal wren_priority_out_FSM: std_logic;
+	signal stop_priority_out_FSM: std_logic;
 	
 	begin
 	process(out_wren_wire, out_priority_wire, clk_sys)
@@ -273,7 +276,8 @@ architecture rtl of xmitTop is
 		hi_stop_in				=> hiho_stop(0),
 		lo_stop_in				=> lilo_stop(0),
 		hi_fifo_used_in		=> numusedhi,
-		lo_fifo_used_in		=> numusedlo
+		lo_fifo_used_in		=> numusedlo,
+		stop_out					=> stop_priority_out_FSM
 	);
 	
 	output_FSM_inst: out_FSM PORT MAP(
@@ -283,6 +287,7 @@ architecture rtl of xmitTop is
 		wren						=> wren_priority_out_FSM,
 		data_in					=> between_out_data,	
 		ctrl_block_in			=> between_out_ctrl,
+		stop_in					=> stop_priority_out_FSM,
 		
 		tx_en						=> phy_tx_en,
 		frame_seq_out			=> xmit_sequence_wire,
