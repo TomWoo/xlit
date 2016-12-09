@@ -8,6 +8,7 @@ entity out_FSM is
 port(
 	clk_phy				: in std_logic;
 	reset					: in std_logic;
+	wren					: in std_logic;
 	data_in				: in std_logic_vector(7 downto 0);
 	ctrl_block_in		: in std_logic_vector(23 downto 0);
 	tx_en					: out std_logic;
@@ -25,7 +26,6 @@ architecture rtl of out_FSM is
 	
 	signal data_in_fifo	: std_logic_vector(63 downto 0);
 	signal rden				: std_logic;
-	signal wren				: std_logic := '1';
 --	signal is_empty		: std_logic;
 --	signal is_full			: std_logic;
 	signal data_out_fifo	: std_logic_vector(63 downto 0);
@@ -136,7 +136,7 @@ process(clk_phy, reset) begin
 			end if;
 		when s_data =>
 			if(count >= 12000/4) then -- TODO: constants
-				my_state <= s_FCS;
+				my_state <= s_gap; --s_FCS;
 				count <= 0;
 			else
 				count <= count + 1;

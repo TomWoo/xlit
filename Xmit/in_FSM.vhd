@@ -49,7 +49,6 @@ architecture arch of in_FSM is
 	signal outcountdone: std_logic:='0';
 	signal datam: std_logic_vector (7 downto 0);
 	signal ctrlm: std_logic_vector (23 downto 0);
-	signal cnti: unsigned(11 downto 0);
 	signal cntit: unsigned(11 downto 0);
 	signal last, lastl: std_logic;
 	signal lastm: std_logic;
