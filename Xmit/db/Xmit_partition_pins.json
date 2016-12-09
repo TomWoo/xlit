@@ -200,6 +200,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "f_rec_data_valid",
+					"strict" : false
+				},
+				{
 					"name" : "f_ctrl_in[8]",
 					"strict" : false
 				},
@@ -285,10 +289,6 @@
 				},
 				{
 					"name" : "f_ctrl_in[23]",
-					"strict" : false
-				},
-				{
-					"name" : "f_rec_data_valid",
 					"strict" : false
 				},
 				{

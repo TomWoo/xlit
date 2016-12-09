@@ -182,7 +182,7 @@ begin
 		dir <="000000000001";
 	end process;
 	
-	PROCESS (sysclk, controli, wrenc, aclr, cnti, cntit, last, lastl) --incounter	
+	PROCESS (sysclk, controli, wrenc, aclr, cntit, last, lastl) --incounter	
 	BEGIN		
 		if(aclr = '1') then
 --			cnti <= "111111111111";
