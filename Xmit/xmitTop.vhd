@@ -197,7 +197,7 @@ architecture rtl of xmitTop is
 	SIGNAL hi_rereq:				STD_LOGIC;
 	SIGNAL lo_rereq:				STD_LOGIC;
 	
-	signal stop			: std_logic;
+	signal stop			: std_logic_vector(0 DOWNTO 0);
 	signal numusedhi	: std_logic_vector(10 downto 0);
 	signal numusedlo	: std_logic_vector(10 downto 0);
 	
@@ -235,7 +235,7 @@ architecture rtl of xmitTop is
 		datao							=> inBuffer_data_out,
 		controlo						=> inBuffer_ctrl_out,
 		
-		stop							=> stop,
+		stop							=> stop(0),
 		numusedhi					=> numusedhi,
 		numusedlo					=> numusedlo
 	);
@@ -268,8 +268,10 @@ architecture rtl of xmitTop is
 		
 		data_out					=> between_out_data,
 		ctrl_block_out			=> between_out_ctrl,
-
-		stop_in					=> stop,
+		-- NEED TO MAKE CHANGE HERE
+		stop_in					=> stop(0),
+		--lilo_stop, -hiho_stop
+		-- NEED TO MAKE CHANGE HERE
 		hi_fifo_used_in		=> numusedhi,
 		lo_fifo_used_in		=> numusedlo
 	);
@@ -297,8 +299,8 @@ architecture rtl of xmitTop is
 		rdempty					=> hi_empty,
 --		rdfull					=> ,
 --		wrempty					=> ,
-		wrfull					=> hi_overflow
---		wrusedw					=> 
+		wrfull					=> hi_overflow,
+		wrusedw					=> numusedhi
 	);
 	
 	ctrl_hi_fifo: ctrlFIFO PORT MAP(
@@ -318,7 +320,7 @@ architecture rtl of xmitTop is
 	
 	stop_hi_fifo: FIFO_1 PORT MAP(
 		aclr						=> reset,
-		data						=> input_hi_stop,
+		data						=> stop,
 		rdclk						=> clk_phy,
 		rdreq						=> hi_rereq,
 		wrclk						=> clk_sys,
@@ -342,8 +344,8 @@ architecture rtl of xmitTop is
 		rdempty					=> lo_empty,
 --		rdfull					=> ,
 --		wrempty					=> ,
-		wrfull					=> lo_overflow
---		wrusedw					=> 
+		wrfull					=> lo_overflow,
+		wrusedw					=> numusedhi
 		);
 	
 	ctrl_lo_fifo: ctrlFIFO PORT MAP(
@@ -363,7 +365,7 @@ architecture rtl of xmitTop is
 	
 	stop_lo_fifo: FIFO_1 PORT MAP(
 		aclr						=> reset,
-		data						=> input_lo_stop,
+		data						=> stop,
 		rdclk						=> clk_phy,
 		rdreq						=> lo_rereq,
 		wrclk						=> clk_sys,
