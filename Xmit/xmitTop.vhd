@@ -345,7 +345,7 @@ architecture rtl of xmitTop is
 --		rdfull					=> ,
 --		wrempty					=> ,
 		wrfull					=> lo_overflow,
-		wrusedw					=> numusedhi
+		wrusedw					=> numusedlo
 		);
 	
 	ctrl_lo_fifo: ctrlFIFO PORT MAP(
