@@ -34,7 +34,7 @@ architecture rtl of priority_FSM is
 begin
 
 -- Asynchronous signals
-process(hi_fifo_used_in) begin
+process(hi_fifo_used_in, my_state, hi_stop_in, lo_stop_in) begin
 	hi_fifo_used_int <= to_integer(unsigned(hi_fifo_used_in));
 	if((my_state = s_hi and hi_stop_in = '1') or (my_state = s_lo and lo_stop_in = '1')) then
 		stop_out <= '1';

@@ -18,7 +18,6 @@ entity xmitTop is port(
 	m_discard_frame:	out std_logic_vector(11 downto 0);
 	m_tx_frame:			out std_logic_vector(23 downto 0);
 	m_tx_done:			out std_logic
-
 );
 end entity;
 
