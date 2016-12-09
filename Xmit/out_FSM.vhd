@@ -180,28 +180,28 @@ process(my_state, count, data_out_fifo) begin
 			data_out <= "1011";
 		end if;
 		tx_en <= '1';
-	/*
-	when s_DA | s_SA | s_length =>
-		case count_mod is -- TODO: generate
-		when 0 =>
-			data_out <= data_out_fifo(3 downto 0);
-		when 1 =>
-			data_out <= data_out_fifo(7 downto 4);
-		when 2 =>
-			data_out <= data_out_fifo(11 downto 8);
-		when 3 =>
-			data_out <= data_out_fifo(15 downto 12);
-		when 4 =>
-			data_out <= data_out_fifo(19 downto 16);
-		when 5 =>
-			data_out <= data_out_fifo(23 downto 20);
-		when 6 =>
-			data_out <= data_out_fifo(27 downto 24);
-		when others => -- when 7
-			data_out <= data_out_fifo(31 downto 28);
-		end case;
-		tx_en <= '1';
-	*/
+--	
+--	when s_DA | s_SA | s_length =>
+--		case count_mod is -- TODO: generate
+--		when 0 =>
+--			data_out <= data_out_fifo(3 downto 0);
+--		when 1 =>
+--			data_out <= data_out_fifo(7 downto 4);
+--		when 2 =>
+--			data_out <= data_out_fifo(11 downto 8);
+--		when 3 =>
+--			data_out <= data_out_fifo(15 downto 12);
+--		when 4 =>
+--			data_out <= data_out_fifo(19 downto 16);
+--		when 5 =>
+--			data_out <= data_out_fifo(23 downto 20);
+--		when 6 =>
+--			data_out <= data_out_fifo(27 downto 24);
+--		when others => -- when 7
+--			data_out <= data_out_fifo(31 downto 28);
+--		end case;
+--		tx_en <= '1';
+	
 	when s_length =>
 		if(count = 0) then
 			data_out <= data_out_fifo(11 downto 8);

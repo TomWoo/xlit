@@ -1,7 +1,7 @@
 `timescale 1ns/10ps
 `define CLK_PER 20
 
-model testbench_top;
+module testbench_top;
 
 // Clock and POR
 reg clk_sys, clk_phy, rst;
@@ -89,7 +89,7 @@ initial begin
 	#(512*`CLK_PER);
 	hi_priority_en = 1'b1;
 	#(512*`CLK_PER);
-	ctrl_block_in = 24'hGGG;
+	ctrl_block_in = 24'h555;
 	#(`CLK_PER);
 	ctrl_block_in = 24'h000;
 	#(511*`CLK_PER);
