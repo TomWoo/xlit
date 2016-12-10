@@ -26,9 +26,6 @@ architecture rtl of xmitTop is
 	component in_FSM
 	PORT(
 		in_priority:			in std_logic;
-		in_lo_overflow:		in std_logic;
-		in_hi_overflow:		in std_logic;
-		in_ctrl_ctrl:			in std_logic;
 
 		clk_sys:					in std_logic;
 		clk_phy:					in std_logic;
@@ -220,9 +217,6 @@ architecture rtl of xmitTop is
 	
 	in_FSM_inst: in_FSM PORT MAP (
 		in_priority					=> f_hi_priority,
-		in_lo_overflow				=> lo_overflow,
-		in_hi_overflow				=> hi_overflow,
-		in_ctrl_ctrl				=> f_rec_frame_valid,
 
 		out_m_discard_en			=> inFSM_discard_out,
 		out_wren						=> out_wren_wire,
