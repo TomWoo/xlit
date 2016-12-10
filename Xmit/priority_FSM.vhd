@@ -59,9 +59,9 @@ process(clk_phy, reset) begin
 				my_state <= s_off;
 			end if;
 		when others => -- s_off
-			if(hi_fifo_used_int > 255) then
+			if(hi_fifo_used_int >= 512) then
 				my_state <= s_hi;
-			elsif(lo_fifo_used_int > 255) then
+			elsif(lo_fifo_used_int >= 512) then
 				my_state <= s_lo;
 			end if;
 		end case;

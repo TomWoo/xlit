@@ -75,22 +75,22 @@ initial begin
 
 		data_in = 8'hAA;
 		data_valid = 1'b1;
-		hi_priority_en = 1'b1;
+		hi_priority_en = 1'b0;
 		#(num_cycles_1*`CLK_PER);
 
 		data_in = 8'h11;
 		data_valid = 1'b1;
-		hi_priority_en = 1'b1;
+		hi_priority_en = 1'b0;
 		#(num_cycles_2*`CLK_PER);
 
 		data_in = 8'hEE;
 		data_valid = 1'b1;
-		hi_priority_en = 1'b1;
+		hi_priority_en = 1'b0;
 		#(num_cycles_3*`CLK_PER);
 
 		data_in = 8'h55;
 		data_valid = 1'b1;
-		hi_priority_en = 1'b1;
+		hi_priority_en = 1'b0;
 		#(num_cycles*`CLK_PER);
 
 	end

@@ -64,49 +64,49 @@ reset => FIFO_1:stop_hi_fifo.aclr
 reset => dataFIFO:data_lo_fifo.aclr
 reset => ctrlFIFO:ctrl_lo_fifo.aclr
 reset => FIFO_1:stop_lo_fifo.aclr
-phy_data_out[0] << out_FSM:output_FSM_inst.data_out[0]
-phy_data_out[1] << out_FSM:output_FSM_inst.data_out[1]
-phy_data_out[2] << out_FSM:output_FSM_inst.data_out[2]
-phy_data_out[3] << out_FSM:output_FSM_inst.data_out[3]
-phy_tx_en << out_FSM:output_FSM_inst.tx_en
-m_discard_en << monitoring_logic:monitoring_logic_inst.discard_looknow
-m_discard_frame[0] << monitoring_logic:monitoring_logic_inst.discard_frame_out[0]
-m_discard_frame[1] << monitoring_logic:monitoring_logic_inst.discard_frame_out[1]
-m_discard_frame[2] << monitoring_logic:monitoring_logic_inst.discard_frame_out[2]
-m_discard_frame[3] << monitoring_logic:monitoring_logic_inst.discard_frame_out[3]
-m_discard_frame[4] << monitoring_logic:monitoring_logic_inst.discard_frame_out[4]
-m_discard_frame[5] << monitoring_logic:monitoring_logic_inst.discard_frame_out[5]
-m_discard_frame[6] << monitoring_logic:monitoring_logic_inst.discard_frame_out[6]
-m_discard_frame[7] << monitoring_logic:monitoring_logic_inst.discard_frame_out[7]
-m_discard_frame[8] << monitoring_logic:monitoring_logic_inst.discard_frame_out[8]
-m_discard_frame[9] << monitoring_logic:monitoring_logic_inst.discard_frame_out[9]
-m_discard_frame[10] << monitoring_logic:monitoring_logic_inst.discard_frame_out[10]
-m_discard_frame[11] << monitoring_logic:monitoring_logic_inst.discard_frame_out[11]
-m_tx_frame[0] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[0]
-m_tx_frame[1] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[1]
-m_tx_frame[2] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[2]
-m_tx_frame[3] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[3]
-m_tx_frame[4] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[4]
-m_tx_frame[5] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[5]
-m_tx_frame[6] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[6]
-m_tx_frame[7] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[7]
-m_tx_frame[8] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[8]
-m_tx_frame[9] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[9]
-m_tx_frame[10] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[10]
-m_tx_frame[11] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[11]
-m_tx_frame[12] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[12]
-m_tx_frame[13] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[13]
-m_tx_frame[14] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[14]
-m_tx_frame[15] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[15]
-m_tx_frame[16] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[16]
-m_tx_frame[17] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[17]
-m_tx_frame[18] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[18]
-m_tx_frame[19] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[19]
-m_tx_frame[20] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[20]
-m_tx_frame[21] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[21]
-m_tx_frame[22] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[22]
-m_tx_frame[23] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[23]
-m_tx_done << monitoring_logic:monitoring_logic_inst.xmit_looknow
+phy_data_out[0] <= out_FSM:output_FSM_inst.data_out[0]
+phy_data_out[1] <= out_FSM:output_FSM_inst.data_out[1]
+phy_data_out[2] <= out_FSM:output_FSM_inst.data_out[2]
+phy_data_out[3] <= out_FSM:output_FSM_inst.data_out[3]
+phy_tx_en <= out_FSM:output_FSM_inst.tx_en
+m_discard_en <= monitoring_logic:monitoring_logic_inst.discard_looknow
+m_discard_frame[0] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[0]
+m_discard_frame[1] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[1]
+m_discard_frame[2] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[2]
+m_discard_frame[3] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[3]
+m_discard_frame[4] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[4]
+m_discard_frame[5] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[5]
+m_discard_frame[6] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[6]
+m_discard_frame[7] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[7]
+m_discard_frame[8] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[8]
+m_discard_frame[9] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[9]
+m_discard_frame[10] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[10]
+m_discard_frame[11] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[11]
+m_tx_frame[0] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[0]
+m_tx_frame[1] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[1]
+m_tx_frame[2] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[2]
+m_tx_frame[3] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[3]
+m_tx_frame[4] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[4]
+m_tx_frame[5] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[5]
+m_tx_frame[6] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[6]
+m_tx_frame[7] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[7]
+m_tx_frame[8] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[8]
+m_tx_frame[9] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[9]
+m_tx_frame[10] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[10]
+m_tx_frame[11] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[11]
+m_tx_frame[12] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[12]
+m_tx_frame[13] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[13]
+m_tx_frame[14] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[14]
+m_tx_frame[15] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[15]
+m_tx_frame[16] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[16]
+m_tx_frame[17] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[17]
+m_tx_frame[18] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[18]
+m_tx_frame[19] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[19]
+m_tx_frame[20] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[20]
+m_tx_frame[21] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[21]
+m_tx_frame[22] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[22]
+m_tx_frame[23] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[23]
+m_tx_done <= monitoring_logic:monitoring_logic_inst.xmit_looknow
 
 
 |xmitTop|in_FSM:in_FSM_inst
@@ -3329,8 +3329,8 @@ xmit_looknow <= xmit_looknow~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |xmitTop|priority_FSM:priority_FSM_inst
-clk_phy => my_state~3.DATAIN
-reset => my_state~5.DATAIN
+clk_phy => my_state~1.DATAIN
+reset => my_state~3.DATAIN
 data_lo_in[0] => Selector10.IN1
 data_lo_in[1] => Selector9.IN1
 data_lo_in[2] => Selector8.IN1
@@ -3430,6 +3430,7 @@ ctrl_block_out[20] <= Selector14.DB_MAX_OUTPUT_PORT_TYPE
 ctrl_block_out[21] <= Selector13.DB_MAX_OUTPUT_PORT_TYPE
 ctrl_block_out[22] <= Selector12.DB_MAX_OUTPUT_PORT_TYPE
 ctrl_block_out[23] <= Selector11.DB_MAX_OUTPUT_PORT_TYPE
+hi_stop_in => process_0.IN0
 hi_stop_in => my_state.OUTPUTSELECT
 hi_stop_in => my_state.OUTPUTSELECT
 hi_stop_in => my_state.OUTPUTSELECT
@@ -3444,6 +3445,7 @@ hi_fifo_used_in[7] => LessThan0.IN17
 hi_fifo_used_in[8] => LessThan0.IN16
 hi_fifo_used_in[9] => LessThan0.IN15
 hi_fifo_used_in[10] => LessThan0.IN14
+lo_stop_in => process_0.IN0
 lo_stop_in => my_state.OUTPUTSELECT
 lo_stop_in => my_state.OUTPUTSELECT
 lo_stop_in => my_state.OUTPUTSELECT
@@ -3458,6 +3460,7 @@ lo_fifo_used_in[7] => ~NO_FANOUT~
 lo_fifo_used_in[8] => ~NO_FANOUT~
 lo_fifo_used_in[9] => ~NO_FANOUT~
 lo_fifo_used_in[10] => ~NO_FANOUT~
+stop_out <= process_0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |xmitTop|out_FSM:output_FSM_inst
@@ -3476,7 +3479,7 @@ clk_phy => count[9].CLK
 clk_phy => count[10].CLK
 clk_phy => count[11].CLK
 clk_phy => clk_phy_2.CLK
-clk_phy => my_state~8.DATAIN
+clk_phy => my_state~4.DATAIN
 reset => output_buffer:output_buffer_inst.aclr
 reset => xmit_done_out~reg0.ACLR
 reset => rden.ACLR
@@ -3493,7 +3496,7 @@ reset => count[9].ACLR
 reset => count[10].ACLR
 reset => count[11].ACLR
 reset => clk_phy_2.PRESET
-reset => my_state~10.DATAIN
+reset => my_state~6.DATAIN
 wren => output_buffer:output_buffer_inst.wrreq
 data_in[0] => output_buffer:output_buffer_inst.data[0]
 data_in[1] => output_buffer:output_buffer_inst.data[1]
@@ -3527,6 +3530,23 @@ ctrl_block_in[20] => output_buffer:output_buffer_inst.data[28]
 ctrl_block_in[21] => output_buffer:output_buffer_inst.data[29]
 ctrl_block_in[22] => output_buffer:output_buffer_inst.data[30]
 ctrl_block_in[23] => output_buffer:output_buffer_inst.data[31]
+stop_in => my_state.OUTPUTSELECT
+stop_in => my_state.OUTPUTSELECT
+stop_in => my_state.OUTPUTSELECT
+stop_in => my_state.OUTPUTSELECT
+stop_in => count.OUTPUTSELECT
+stop_in => count.OUTPUTSELECT
+stop_in => count.OUTPUTSELECT
+stop_in => count.OUTPUTSELECT
+stop_in => count.OUTPUTSELECT
+stop_in => count.OUTPUTSELECT
+stop_in => count.OUTPUTSELECT
+stop_in => count.OUTPUTSELECT
+stop_in => count.OUTPUTSELECT
+stop_in => count.OUTPUTSELECT
+stop_in => count.OUTPUTSELECT
+stop_in => count.OUTPUTSELECT
+stop_in => xmit_done_out~reg0.ENA
 tx_en <= tx_en.DB_MAX_OUTPUT_PORT_TYPE
 frame_seq_out[0] <= output_buffer:output_buffer_inst.q[20]
 frame_seq_out[1] <= output_buffer:output_buffer_inst.q[21]
@@ -3553,10 +3573,10 @@ frame_seq_out[21] <= output_buffer:output_buffer_inst.q[41]
 frame_seq_out[22] <= output_buffer:output_buffer_inst.q[42]
 frame_seq_out[23] <= output_buffer:output_buffer_inst.q[43]
 xmit_done_out <= xmit_done_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[0] <= Selector23.DB_MAX_OUTPUT_PORT_TYPE
-data_out[1] <= Selector22.DB_MAX_OUTPUT_PORT_TYPE
-data_out[2] <= Selector21.DB_MAX_OUTPUT_PORT_TYPE
-data_out[3] <= Selector20.DB_MAX_OUTPUT_PORT_TYPE
+data_out[0] <= Selector18.DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= Selector17.DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out.DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= Selector16.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |xmitTop|out_FSM:output_FSM_inst|output_buffer:output_buffer_inst

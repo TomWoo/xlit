@@ -172,6 +172,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "m_tx_done",
+					"strict" : false
+				},
+				{
 					"name" : "clk_phy",
 					"strict" : false
 				},
