@@ -205,7 +205,7 @@ architecture rtl of xmitTop is
 	begin
 	process(out_wren_wire, out_priority_wire, clk_sys)
 	begin
-		if(clk_sys'event and clk_sys='1') then
+		if(clk_phy'event and clk_phy='1') then
 			low_fifo_enable <= out_wren_wire and not out_priority_wire;
 			hi_fifo_enable <= out_wren_wire and out_priority_wire;
 		end if;
@@ -293,7 +293,7 @@ architecture rtl of xmitTop is
 		data						=> inBuffer_data_out,
 		rdclk						=> clk_phy,
 		rdreq						=> hi_rereq,
-		wrclk						=> clk_sys,
+		wrclk						=> clk_phy,
 		wrreq						=> hi_fifo_enable,
 		q							=> hiho_data,
 		rdempty					=> hi_empty,
@@ -308,7 +308,7 @@ architecture rtl of xmitTop is
 		data						=> inBuffer_ctrl_out,
 		rdclk						=> clk_phy,
 		rdreq						=> hi_rereq,
-		wrclk						=> clk_sys,
+		wrclk						=> clk_phy,
 		wrreq						=> hi_fifo_enable,
 		q							=> hiho_ctrl
 --		rdempty					=> ,
@@ -323,7 +323,7 @@ architecture rtl of xmitTop is
 		data						=> stop,
 		rdclk						=> clk_phy,
 		rdreq						=> hi_rereq,
-		wrclk						=> clk_sys,
+		wrclk						=> clk_phy,
 		wrreq						=> hi_fifo_enable,
 		q							=> hiho_stop
 --		rdempty					=> ,
@@ -338,7 +338,7 @@ architecture rtl of xmitTop is
 		data						=> inBuffer_data_out,
 		rdclk						=> clk_phy,
 		rdreq						=> lo_rereq,
-		wrclk						=> clk_sys,
+		wrclk						=> clk_phy,
 		wrreq						=> low_fifo_enable,
 		q							=> lilo_data,
 		rdempty					=> lo_empty,
@@ -353,7 +353,7 @@ architecture rtl of xmitTop is
 		data						=> inBuffer_ctrl_out,
 		rdclk						=> clk_phy,
 		rdreq						=> lo_rereq,
-		wrclk						=> clk_sys,
+		wrclk						=> clk_phy,
 		wrreq						=> low_fifo_enable,
 		q							=> lilo_ctrl
 --		rdempty					=> ,
@@ -368,7 +368,7 @@ architecture rtl of xmitTop is
 		data						=> stop,
 		rdclk						=> clk_phy,
 		rdreq						=> lo_rereq,
-		wrclk						=> clk_sys,
+		wrclk						=> clk_phy,
 		wrreq						=> low_fifo_enable,
 		q							=> lilo_stop
 --		rdempty					=> ,
