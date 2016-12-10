@@ -4,35 +4,25 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity in_FSM is 
 port(
-	in_priority:			in std_logic;
-	in_lo_overflow:		in std_logic;
-	in_hi_overflow:		in std_logic;
-	in_ctrl_ctrl:			in std_logic;
-	out_m_discard_en:		out std_logic;
-	out_wren:				out std_logic;
-	out_priority: 			out std_logic;
 	clk_phy:					in std_logic;
 	clk_sys:					in std_logic;
 	reset:					in std_logic;
-	controli: 				in std_logic_vector(23 downto 0);
+
 	wrend: 					in std_logic; --data write enable;
 	wrenc: 					in std_logic; --ctrl write enable;
 	datai: 					in std_logic_vector(7 downto 0);
+	controli: 				in std_logic_vector(23 downto 0);
+	in_priority:			in std_logic;
+	
+	numusedhi:				in std_logic_vector(10 downto 0);
+	numusedlo: 				in std_logic_vector(10 downto 0);	
+
+	out_m_discard_en:		out std_logic;
+	out_wren:				out std_logic;
+	out_priority: 			out std_logic;
 	datao: 					out std_logic_vector(7 downto 0);
 	controlo: 				out std_logic_vector(23 downto 0);
-	stop:						out std_logic;
-	numusedhi:				in std_logic_vector(10 downto 0);
-	numusedlo: 				in std_logic_vector(10 downto 0)
---	db_ctrlm:				out std_logic_vector(23 downto 0);
---	db_last:					out std_logic;
---	db_lastl:				out std_logic;
---	db_stopint:				out std_logic
---	db_lastm:				out std_logic;
---	db_txen:					out std_logic;
---	db_txone:				out std_logic;
---	db_pakavail: 			out std_logic;
---	db_cnti:					out unsigned(11 downto 0)
-	
+	stop:						out std_logic
 );
 end in_FSM;
 
