@@ -2,7 +2,7 @@
 `define CLK_PHY 20
 `define CLK_SYS 40
 
-module testbench_short_hi;
+module testbench_long_hi;
 
 // signals
 reg clk_sys, clk_phy, rst;
@@ -10,7 +10,7 @@ integer i, j, num_packets, packet_length, priority;
 
 initial begin
 	// parameters
-	packet_length = 64; // also modify packet length in control block!!!
+	packet_length = 512; // also modify packet length in control block!!!
 	num_packets = 64;
 	priority = 1;
 
@@ -61,7 +61,7 @@ xmitTop topLevel(
 initial begin // assigning value of data, data valid, and priority
 	data_in = 8'h00;
 	data_valid = 1'b0;
-	hi_priority_en = 1'b1;
+	hi_priority_en = 1'b0;
 	#(6*`CLK_SYS);
 
 	for (i=0; i < num_packets; i=i+1)
@@ -75,7 +75,7 @@ initial begin // assigning value of data, data valid, and priority
 		data_in = 8'hFF;
 		data_valid = 1'b1;
 		hi_priority_en = priority;
-		#(56*`CLK_SYS);
+		#((packet_length-8)*`CLK_SYS);
 
 		// x00 again for last four cycles
 		data_in = 8'h00;
@@ -91,7 +91,7 @@ initial begin // assigning value of ctrl, ctrl valid
 
 	for (j=0; j < num_packets; j=j+1)
 		// turn on control block for first cycle
-		ctrl_block_in = 24'h040040;
+		ctrl_block_in = 24'h200200;
 		ctrl_block_valid = 1'b1;
 		#(`CLK_SYS);
 
@@ -99,7 +99,6 @@ initial begin // assigning value of ctrl, ctrl valid
 		ctrl_block_in = 24'h000000;
 		ctrl_block_valid = 1'b0;
 		#((packet_length-1)*`CLK_SYS);
-	
 end
 
 endmodule

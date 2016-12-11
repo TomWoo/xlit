@@ -2,7 +2,7 @@
 `define CLK_PHY 20
 `define CLK_SYS 40
 
-module testbench_short_hi;
+module testbench_short_lo;
 
 // signals
 reg clk_sys, clk_phy, rst;
@@ -12,7 +12,7 @@ initial begin
 	// parameters
 	packet_length = 64; // also modify packet length in control block!!!
 	num_packets = 64;
-	priority = 1;
+	priority = 0;
 
 	clk_sys = 1'b1;
 	clk_phy = 1'b1;
@@ -65,20 +65,20 @@ initial begin // assigning value of data, data valid, and priority
 	#(6*`CLK_SYS);
 
 	for (i=0; i < num_packets; i=i+1)
-		// x00 for first four cycles
-		data_in = 8'h00;
+		// xFF for first four cycles
+		data_in = 8'hFF;
 		data_valid = 1'b1;
 		hi_priority_en = priority;
 		#(4*`CLK_SYS);
 
-		// xFF for intermediate 56 cycles
-		data_in = 8'hFF;
+		// x00 for intermediate 56 cycles
+		data_in = 8'h00;
 		data_valid = 1'b1;
 		hi_priority_en = priority;
 		#(56*`CLK_SYS);
 
-		// x00 again for last four cycles
-		data_in = 8'h00;
+		// xFF again for last four cycles
+		data_in = 8'hFF;
 		data_valid = 1'b1;
 		hi_priority_en = priority;
 		#(4*`CLK_SYS);
@@ -99,7 +99,7 @@ initial begin // assigning value of ctrl, ctrl valid
 		ctrl_block_in = 24'h000000;
 		ctrl_block_valid = 1'b0;
 		#((packet_length-1)*`CLK_SYS);
-	
+
 end
 
 endmodule
