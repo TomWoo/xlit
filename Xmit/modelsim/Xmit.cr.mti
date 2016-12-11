@@ -38,16 +38,7 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity fifo_8
 -- Compiling architecture SYN of fifo_8
 
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd {1 {vcom -work work -2008 -explicit -stats=none {C:\Users\User\OneDrive\Duke\7_Fall_2016\ECE_559\Ethernet_switch\xlit\Xmit\in_FSM.vhd}
-Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity in_FSM
--- Compiling architecture arch of in_FSM
-
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd
+} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\User\OneDrive\Duke\7_Fall_2016\ECE_559\Ethernet_switch\xlit\Xmit\xmitTop.vhd}
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -122,6 +113,13 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package std_logic_1164
 -- Compiling entity FIFO_1
 -- Compiling architecture SYN of fifo_1
+
+} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/toplevel/testbench_high_priority_long_packet.v {1 {vlog -work work -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/toplevel/testbench_high_priority_long_packet.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module testbench_high_priority_long_packet
+
+Top level modules:
+	testbench_high_priority_long_packet
 
 } {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/dataFIFO.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/dataFIFO.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015

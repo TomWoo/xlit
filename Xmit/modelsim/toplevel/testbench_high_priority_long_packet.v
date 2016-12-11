@@ -60,27 +60,23 @@ xmitTop topLevel(
 );
 
 initial begin
-
 	ctrl_block_in = 24'd512;
 	hi_priority_en = 1'b1;
 
-	i = 0;
-
-	#(6*`CLK_PER);
+	#(10*`CLK_PER);
 
 	for (i=0; i<num_packets; i=i+1) begin
-
-		if (i==0) begin
-			ctrl_block_valid = 1'b1;
-			data_valid = 1'b1;
-		end else begin
-			ctrl_block_valid = 1'b0;
-			data_valid = 1'b1;
-		end
-
 		for (j=0; j<n; j=j+1) begin
+			if (j==0) begin
+				ctrl_block_valid = 1'b1;
+				data_valid = 1'b1;
+			end else begin
+				ctrl_block_valid = 1'b0;
+				data_valid = 1'b1;
+			end
+
 			if (j<4 || j>=n-4) begin
-				data_in = 8'h00;
+				data_in = 8'h33;
 			end else begin
 				data_in = 8'hFF;
 			end
@@ -88,9 +84,7 @@ initial begin
 			#(`CLK_PER);
 		end
 		// #(`CLK_PER);
-
 	end
-
 end
 
 endmodule

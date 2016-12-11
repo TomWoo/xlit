@@ -91,7 +91,7 @@ architecture rtl of xmitTop is
 	end component;
 	
 	component out_FSM 
-	port(
+	PORT(
 		clk_phy				: in std_logic;
 		reset					: in std_logic;
 		
@@ -202,18 +202,15 @@ architecture rtl of xmitTop is
 	signal wren_priority_out_FSM: std_logic;
 	signal stop_priority_out_FSM: std_logic;
 	
-	begin
-	process(out_wren_wire, out_priority_wire, clk_sys)
-	begin
-		if(clk_phy'event and clk_phy='1') then
+begin
+
+	-- asynchronous logic
+	process(out_wren_wire, out_priority_wire, clk_sys) begin
+--		if(clk_phy'event and clk_phy='1') then
 			low_fifo_enable <= out_wren_wire and not out_priority_wire;
 			hi_fifo_enable <= out_wren_wire and out_priority_wire;
-		end if;
-
-
-	
+--		end if;
 	end process;
-	
 	
 	in_FSM_inst: in_FSM PORT MAP (
 		in_priority					=> f_hi_priority,
