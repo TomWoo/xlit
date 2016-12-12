@@ -1,7 +1,6 @@
 |xmitTop
 f_hi_priority => in_FSM:in_FSM_inst.in_priority
 f_rec_data_valid => in_FSM:in_FSM_inst.wrend
-f_rec_frame_valid => in_FSM:in_FSM_inst.in_ctrl_ctrl
 f_rec_frame_valid => in_FSM:in_FSM_inst.wrenc
 f_data_in[0] => in_FSM:in_FSM_inst.datai[0]
 f_data_in[1] => in_FSM:in_FSM_inst.datai[1]
@@ -36,24 +35,22 @@ f_ctrl_in[21] => in_FSM:in_FSM_inst.controli[21]
 f_ctrl_in[22] => in_FSM:in_FSM_inst.controli[22]
 f_ctrl_in[23] => in_FSM:in_FSM_inst.controli[23]
 clk_sys => in_FSM:in_FSM_inst.clk_sys
-clk_sys => hi_fifo_enable.CLK
-clk_sys => low_fifo_enable.CLK
-clk_sys => dataFIFO:data_hi_fifo.wrclk
-clk_sys => ctrlFIFO:ctrl_hi_fifo.wrclk
-clk_sys => FIFO_1:stop_hi_fifo.wrclk
-clk_sys => dataFIFO:data_lo_fifo.wrclk
-clk_sys => ctrlFIFO:ctrl_lo_fifo.wrclk
-clk_sys => FIFO_1:stop_lo_fifo.wrclk
 clk_phy => in_FSM:in_FSM_inst.clk_phy
 clk_phy => monitoring_logic:monitoring_logic_inst.clk
 clk_phy => priority_FSM:priority_FSM_inst.clk_phy
 clk_phy => out_FSM:output_FSM_inst.clk_phy
 clk_phy => dataFIFO:data_hi_fifo.rdclk
+clk_phy => dataFIFO:data_hi_fifo.wrclk
 clk_phy => ctrlFIFO:ctrl_hi_fifo.rdclk
+clk_phy => ctrlFIFO:ctrl_hi_fifo.wrclk
 clk_phy => FIFO_1:stop_hi_fifo.rdclk
+clk_phy => FIFO_1:stop_hi_fifo.wrclk
 clk_phy => dataFIFO:data_lo_fifo.rdclk
+clk_phy => dataFIFO:data_lo_fifo.wrclk
 clk_phy => ctrlFIFO:ctrl_lo_fifo.rdclk
+clk_phy => ctrlFIFO:ctrl_lo_fifo.wrclk
 clk_phy => FIFO_1:stop_lo_fifo.rdclk
+clk_phy => FIFO_1:stop_lo_fifo.wrclk
 reset => in_FSM:in_FSM_inst.reset
 reset => monitoring_logic:monitoring_logic_inst.reset
 reset => priority_FSM:priority_FSM_inst.reset
@@ -64,349 +61,207 @@ reset => FIFO_1:stop_hi_fifo.aclr
 reset => dataFIFO:data_lo_fifo.aclr
 reset => ctrlFIFO:ctrl_lo_fifo.aclr
 reset => FIFO_1:stop_lo_fifo.aclr
-phy_data_out[0] <= out_FSM:output_FSM_inst.data_out[0]
-phy_data_out[1] <= out_FSM:output_FSM_inst.data_out[1]
-phy_data_out[2] <= out_FSM:output_FSM_inst.data_out[2]
-phy_data_out[3] <= out_FSM:output_FSM_inst.data_out[3]
-phy_tx_en <= out_FSM:output_FSM_inst.tx_en
-m_discard_en <= monitoring_logic:monitoring_logic_inst.discard_looknow
-m_discard_frame[0] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[0]
-m_discard_frame[1] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[1]
-m_discard_frame[2] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[2]
-m_discard_frame[3] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[3]
-m_discard_frame[4] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[4]
-m_discard_frame[5] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[5]
-m_discard_frame[6] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[6]
-m_discard_frame[7] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[7]
-m_discard_frame[8] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[8]
-m_discard_frame[9] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[9]
-m_discard_frame[10] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[10]
-m_discard_frame[11] <= monitoring_logic:monitoring_logic_inst.discard_frame_out[11]
-m_tx_frame[0] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[0]
-m_tx_frame[1] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[1]
-m_tx_frame[2] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[2]
-m_tx_frame[3] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[3]
-m_tx_frame[4] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[4]
-m_tx_frame[5] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[5]
-m_tx_frame[6] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[6]
-m_tx_frame[7] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[7]
-m_tx_frame[8] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[8]
-m_tx_frame[9] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[9]
-m_tx_frame[10] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[10]
-m_tx_frame[11] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[11]
-m_tx_frame[12] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[12]
-m_tx_frame[13] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[13]
-m_tx_frame[14] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[14]
-m_tx_frame[15] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[15]
-m_tx_frame[16] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[16]
-m_tx_frame[17] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[17]
-m_tx_frame[18] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[18]
-m_tx_frame[19] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[19]
-m_tx_frame[20] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[20]
-m_tx_frame[21] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[21]
-m_tx_frame[22] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[22]
-m_tx_frame[23] <= monitoring_logic:monitoring_logic_inst.ctrl_block_out[23]
-m_tx_done <= monitoring_logic:monitoring_logic_inst.xmit_looknow
+phy_data_out[0] << out_FSM:output_FSM_inst.data_out[0]
+phy_data_out[1] << out_FSM:output_FSM_inst.data_out[1]
+phy_data_out[2] << out_FSM:output_FSM_inst.data_out[2]
+phy_data_out[3] << out_FSM:output_FSM_inst.data_out[3]
+phy_tx_en << out_FSM:output_FSM_inst.tx_en
+m_discard_en << monitoring_logic:monitoring_logic_inst.discard_looknow
+m_discard_frame[0] << monitoring_logic:monitoring_logic_inst.discard_frame_out[0]
+m_discard_frame[1] << monitoring_logic:monitoring_logic_inst.discard_frame_out[1]
+m_discard_frame[2] << monitoring_logic:monitoring_logic_inst.discard_frame_out[2]
+m_discard_frame[3] << monitoring_logic:monitoring_logic_inst.discard_frame_out[3]
+m_discard_frame[4] << monitoring_logic:monitoring_logic_inst.discard_frame_out[4]
+m_discard_frame[5] << monitoring_logic:monitoring_logic_inst.discard_frame_out[5]
+m_discard_frame[6] << monitoring_logic:monitoring_logic_inst.discard_frame_out[6]
+m_discard_frame[7] << monitoring_logic:monitoring_logic_inst.discard_frame_out[7]
+m_discard_frame[8] << monitoring_logic:monitoring_logic_inst.discard_frame_out[8]
+m_discard_frame[9] << monitoring_logic:monitoring_logic_inst.discard_frame_out[9]
+m_discard_frame[10] << monitoring_logic:monitoring_logic_inst.discard_frame_out[10]
+m_discard_frame[11] << monitoring_logic:monitoring_logic_inst.discard_frame_out[11]
+m_tx_frame[0] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[0]
+m_tx_frame[1] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[1]
+m_tx_frame[2] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[2]
+m_tx_frame[3] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[3]
+m_tx_frame[4] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[4]
+m_tx_frame[5] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[5]
+m_tx_frame[6] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[6]
+m_tx_frame[7] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[7]
+m_tx_frame[8] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[8]
+m_tx_frame[9] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[9]
+m_tx_frame[10] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[10]
+m_tx_frame[11] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[11]
+m_tx_frame[12] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[12]
+m_tx_frame[13] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[13]
+m_tx_frame[14] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[14]
+m_tx_frame[15] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[15]
+m_tx_frame[16] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[16]
+m_tx_frame[17] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[17]
+m_tx_frame[18] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[18]
+m_tx_frame[19] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[19]
+m_tx_frame[20] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[20]
+m_tx_frame[21] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[21]
+m_tx_frame[22] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[22]
+m_tx_frame[23] << monitoring_logic:monitoring_logic_inst.ctrl_block_out[23]
+m_tx_done << monitoring_logic:monitoring_logic_inst.xmit_looknow
 
 
 |xmitTop|in_FSM:in_FSM_inst
-in_priority => FIFO_1:inbuff_priority.data[0]
-in_lo_overflow => ~NO_FANOUT~
-in_hi_overflow => ~NO_FANOUT~
-in_ctrl_ctrl => ~NO_FANOUT~
-out_m_discard_en <= out_m_discard_en~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out_wren <= out_wren~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out_priority <= out_priority~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clk_phy => stopl.CLK
-clk_phy => txen2.CLK
-clk_phy => out_m_discard_en~reg0.CLK
-clk_phy => out_wren~reg0.CLK
 clk_phy => stop~reg0.CLK
-clk_phy => datao[0]~reg0.CLK
-clk_phy => datao[1]~reg0.CLK
-clk_phy => datao[2]~reg0.CLK
-clk_phy => datao[3]~reg0.CLK
-clk_phy => datao[4]~reg0.CLK
-clk_phy => datao[5]~reg0.CLK
-clk_phy => datao[6]~reg0.CLK
-clk_phy => datao[7]~reg0.CLK
-clk_phy => controlo[0]~reg0.CLK
-clk_phy => controlo[1]~reg0.CLK
-clk_phy => controlo[2]~reg0.CLK
-clk_phy => controlo[3]~reg0.CLK
-clk_phy => controlo[4]~reg0.CLK
-clk_phy => controlo[5]~reg0.CLK
-clk_phy => controlo[6]~reg0.CLK
-clk_phy => controlo[7]~reg0.CLK
-clk_phy => controlo[8]~reg0.CLK
-clk_phy => controlo[9]~reg0.CLK
-clk_phy => controlo[10]~reg0.CLK
-clk_phy => controlo[11]~reg0.CLK
-clk_phy => controlo[12]~reg0.CLK
-clk_phy => controlo[13]~reg0.CLK
-clk_phy => controlo[14]~reg0.CLK
-clk_phy => controlo[15]~reg0.CLK
-clk_phy => controlo[16]~reg0.CLK
-clk_phy => controlo[17]~reg0.CLK
-clk_phy => controlo[18]~reg0.CLK
-clk_phy => controlo[19]~reg0.CLK
-clk_phy => controlo[20]~reg0.CLK
-clk_phy => controlo[21]~reg0.CLK
-clk_phy => controlo[22]~reg0.CLK
-clk_phy => controlo[23]~reg0.CLK
-clk_phy => out_priority~reg0.CLK
-clk_phy => inbuff:inbuff_comp.rdclk
-clk_phy => inbuffcon:inbuffcon_comp.rdclk
+clk_phy => count[0].CLK
+clk_phy => count[1].CLK
+clk_phy => count[2].CLK
+clk_phy => count[3].CLK
+clk_phy => count[4].CLK
+clk_phy => count[5].CLK
+clk_phy => count[6].CLK
+clk_phy => count[7].CLK
+clk_phy => count[8].CLK
+clk_phy => count_prev[0].CLK
+clk_phy => count_prev[1].CLK
+clk_phy => count_prev[2].CLK
+clk_phy => count_prev[3].CLK
+clk_phy => count_prev[4].CLK
+clk_phy => count_prev[5].CLK
+clk_phy => count_prev[6].CLK
+clk_phy => count_prev[7].CLK
+clk_phy => count_prev[8].CLK
+clk_phy => my_state.CLK
+clk_phy => inbuff:inbuff_data.rdclk
+clk_phy => inbuffcon:inbuff_ctrl.rdclk
 clk_phy => FIFO_1:inbuff_priority.rdclk
-clk_phy => FIFO_1:inbuff_stop.rdclk
-clk_phy => pakstak:packetstack.phyclk
-clk_phy => tren:transmitenable.phyclk
-clk_sys => lastl.CLK
-clk_sys => cntit[0].CLK
-clk_sys => cntit[1].CLK
-clk_sys => cntit[2].CLK
-clk_sys => cntit[3].CLK
-clk_sys => cntit[4].CLK
-clk_sys => cntit[5].CLK
-clk_sys => cntit[6].CLK
-clk_sys => cntit[7].CLK
-clk_sys => cntit[8].CLK
-clk_sys => cntit[9].CLK
-clk_sys => cntit[10].CLK
-clk_sys => cntit[11].CLK
-clk_sys => inbuff:inbuff_comp.wrclk
-clk_sys => inbuffcon:inbuffcon_comp.wrclk
+clk_sys => inbuff:inbuff_data.wrclk
+clk_sys => inbuffcon:inbuff_ctrl.wrclk
 clk_sys => FIFO_1:inbuff_priority.wrclk
-clk_sys => FIFO_1:inbuff_stop.wrclk
-reset => out_m_discard_en~reg0.ACLR
-reset => out_wren~reg0.ACLR
-reset => stop~reg0.ACLR
-reset => datao[0]~reg0.ACLR
-reset => datao[1]~reg0.ACLR
-reset => datao[2]~reg0.ACLR
-reset => datao[3]~reg0.ACLR
-reset => datao[4]~reg0.ACLR
-reset => datao[5]~reg0.ACLR
-reset => datao[6]~reg0.ACLR
-reset => datao[7]~reg0.ACLR
-reset => controlo[0]~reg0.ACLR
-reset => controlo[1]~reg0.ACLR
-reset => controlo[2]~reg0.ACLR
-reset => controlo[3]~reg0.ACLR
-reset => controlo[4]~reg0.ACLR
-reset => controlo[5]~reg0.ACLR
-reset => controlo[6]~reg0.ACLR
-reset => controlo[7]~reg0.ACLR
-reset => controlo[8]~reg0.ACLR
-reset => controlo[9]~reg0.ACLR
-reset => controlo[10]~reg0.ACLR
-reset => controlo[11]~reg0.ACLR
-reset => controlo[12]~reg0.ACLR
-reset => controlo[13]~reg0.ACLR
-reset => controlo[14]~reg0.ACLR
-reset => controlo[15]~reg0.ACLR
-reset => controlo[16]~reg0.ACLR
-reset => controlo[17]~reg0.ACLR
-reset => controlo[18]~reg0.ACLR
-reset => controlo[19]~reg0.ACLR
-reset => controlo[20]~reg0.ACLR
-reset => controlo[21]~reg0.ACLR
-reset => controlo[22]~reg0.ACLR
-reset => controlo[23]~reg0.ACLR
-reset => out_priority~reg0.ACLR
-reset => lastl.ACLR
-reset => cntit[0].PRESET
-reset => cntit[1].PRESET
-reset => cntit[2].PRESET
-reset => cntit[3].PRESET
-reset => cntit[4].PRESET
-reset => cntit[5].PRESET
-reset => cntit[6].PRESET
-reset => cntit[7].PRESET
-reset => cntit[8].PRESET
-reset => cntit[9].PRESET
-reset => cntit[10].PRESET
-reset => cntit[11].PRESET
-reset => inbuff:inbuff_comp.aclr
-reset => inbuffcon:inbuffcon_comp.aclr
+reset => count[0].PRESET
+reset => count[1].PRESET
+reset => count[2].PRESET
+reset => count[3].PRESET
+reset => count[4].PRESET
+reset => count[5].PRESET
+reset => count[6].PRESET
+reset => count[7].PRESET
+reset => count[8].PRESET
+reset => count_prev[0].ACLR
+reset => count_prev[1].ACLR
+reset => count_prev[2].ACLR
+reset => count_prev[3].ACLR
+reset => count_prev[4].ACLR
+reset => count_prev[5].ACLR
+reset => count_prev[6].ACLR
+reset => count_prev[7].ACLR
+reset => count_prev[8].ACLR
+reset => my_state.ACLR
+reset => inbuff:inbuff_data.aclr
+reset => inbuffcon:inbuff_ctrl.aclr
 reset => FIFO_1:inbuff_priority.aclr
-reset => FIFO_1:inbuff_stop.aclr
-reset => pakstak:packetstack.aclr
-reset => tren:transmitenable.aclr
-reset => txen2.ENA
-reset => stopl.ENA
-controli[0] => cntit.DATAB
-controli[0] => inbuffcon:inbuffcon_comp.data[0]
-controli[1] => cntit.DATAB
-controli[1] => inbuffcon:inbuffcon_comp.data[1]
-controli[2] => cntit.DATAB
-controli[2] => inbuffcon:inbuffcon_comp.data[2]
-controli[3] => cntit.DATAB
-controli[3] => inbuffcon:inbuffcon_comp.data[3]
-controli[4] => cntit.DATAB
-controli[4] => inbuffcon:inbuffcon_comp.data[4]
-controli[5] => cntit.DATAB
-controli[5] => inbuffcon:inbuffcon_comp.data[5]
-controli[6] => cntit.DATAB
-controli[6] => inbuffcon:inbuffcon_comp.data[6]
-controli[7] => cntit.DATAB
-controli[7] => inbuffcon:inbuffcon_comp.data[7]
-controli[8] => cntit.DATAB
-controli[8] => inbuffcon:inbuffcon_comp.data[8]
-controli[9] => cntit.DATAB
-controli[9] => inbuffcon:inbuffcon_comp.data[9]
-controli[10] => cntit.DATAB
-controli[10] => inbuffcon:inbuffcon_comp.data[10]
-controli[11] => cntit.DATAB
-controli[11] => inbuffcon:inbuffcon_comp.data[11]
-controli[12] => inbuffcon:inbuffcon_comp.data[12]
-controli[13] => inbuffcon:inbuffcon_comp.data[13]
-controli[14] => inbuffcon:inbuffcon_comp.data[14]
-controli[15] => inbuffcon:inbuffcon_comp.data[15]
-controli[16] => inbuffcon:inbuffcon_comp.data[16]
-controli[17] => inbuffcon:inbuffcon_comp.data[17]
-controli[18] => inbuffcon:inbuffcon_comp.data[18]
-controli[19] => inbuffcon:inbuffcon_comp.data[19]
-controli[20] => inbuffcon:inbuffcon_comp.data[20]
-controli[21] => inbuffcon:inbuffcon_comp.data[21]
-controli[22] => inbuffcon:inbuffcon_comp.data[22]
-controli[23] => inbuffcon:inbuffcon_comp.data[23]
-wrend => inbuff:inbuff_comp.wrreq
-wrend => FIFO_1:inbuff_stop.wrreq
-wrenc => cntit.OUTPUTSELECT
-wrenc => cntit.OUTPUTSELECT
-wrenc => cntit.OUTPUTSELECT
-wrenc => cntit.OUTPUTSELECT
-wrenc => cntit.OUTPUTSELECT
-wrenc => cntit.OUTPUTSELECT
-wrenc => cntit.OUTPUTSELECT
-wrenc => cntit.OUTPUTSELECT
-wrenc => cntit.OUTPUTSELECT
-wrenc => cntit.OUTPUTSELECT
-wrenc => cntit.OUTPUTSELECT
-wrenc => cntit.OUTPUTSELECT
-wrenc => inbuffcon:inbuffcon_comp.wrreq
-wrenc => FIFO_1:inbuff_priority.wrreq
-wrenc => lastl.ENA
-datai[0] => inbuff:inbuff_comp.data[0]
-datai[1] => inbuff:inbuff_comp.data[1]
-datai[2] => inbuff:inbuff_comp.data[2]
-datai[3] => inbuff:inbuff_comp.data[3]
-datai[4] => inbuff:inbuff_comp.data[4]
-datai[5] => inbuff:inbuff_comp.data[5]
-datai[6] => inbuff:inbuff_comp.data[6]
-datai[7] => inbuff:inbuff_comp.data[7]
-datao[0] <= datao[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-datao[1] <= datao[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-datao[2] <= datao[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-datao[3] <= datao[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-datao[4] <= datao[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-datao[5] <= datao[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-datao[6] <= datao[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-datao[7] <= datao[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[0] <= controlo[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[1] <= controlo[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[2] <= controlo[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[3] <= controlo[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[4] <= controlo[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[5] <= controlo[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[6] <= controlo[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[7] <= controlo[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[8] <= controlo[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[9] <= controlo[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[10] <= controlo[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[11] <= controlo[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[12] <= controlo[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[13] <= controlo[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[14] <= controlo[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[15] <= controlo[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[16] <= controlo[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[17] <= controlo[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[18] <= controlo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[19] <= controlo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[20] <= controlo[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[21] <= controlo[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[22] <= controlo[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-controlo[23] <= controlo[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reset => stop~reg0.ENA
+wrend => inbuff:inbuff_data.wrreq
+wrend => inbuffcon:inbuff_ctrl.wrreq
+wrend => FIFO_1:inbuff_priority.wrreq
+wrenc => count.OUTPUTSELECT
+wrenc => count.OUTPUTSELECT
+wrenc => count.OUTPUTSELECT
+wrenc => count.OUTPUTSELECT
+wrenc => count.OUTPUTSELECT
+wrenc => count.OUTPUTSELECT
+wrenc => count.OUTPUTSELECT
+wrenc => count.OUTPUTSELECT
+wrenc => count.OUTPUTSELECT
+datai[0] => inbuff:inbuff_data.data[0]
+datai[1] => inbuff:inbuff_data.data[1]
+datai[2] => inbuff:inbuff_data.data[2]
+datai[3] => inbuff:inbuff_data.data[3]
+datai[4] => inbuff:inbuff_data.data[4]
+datai[5] => inbuff:inbuff_data.data[5]
+datai[6] => inbuff:inbuff_data.data[6]
+datai[7] => inbuff:inbuff_data.data[7]
+controli[0] => inbuffcon:inbuff_ctrl.data[0]
+controli[1] => inbuffcon:inbuff_ctrl.data[1]
+controli[2] => inbuffcon:inbuff_ctrl.data[2]
+controli[3] => inbuffcon:inbuff_ctrl.data[3]
+controli[4] => inbuffcon:inbuff_ctrl.data[4]
+controli[5] => inbuffcon:inbuff_ctrl.data[5]
+controli[6] => inbuffcon:inbuff_ctrl.data[6]
+controli[7] => inbuffcon:inbuff_ctrl.data[7]
+controli[8] => inbuffcon:inbuff_ctrl.data[8]
+controli[9] => inbuffcon:inbuff_ctrl.data[9]
+controli[10] => inbuffcon:inbuff_ctrl.data[10]
+controli[11] => inbuffcon:inbuff_ctrl.data[11]
+controli[12] => inbuffcon:inbuff_ctrl.data[12]
+controli[13] => inbuffcon:inbuff_ctrl.data[13]
+controli[14] => inbuffcon:inbuff_ctrl.data[14]
+controli[15] => inbuffcon:inbuff_ctrl.data[15]
+controli[16] => inbuffcon:inbuff_ctrl.data[16]
+controli[17] => inbuffcon:inbuff_ctrl.data[17]
+controli[18] => inbuffcon:inbuff_ctrl.data[18]
+controli[19] => inbuffcon:inbuff_ctrl.data[19]
+controli[20] => inbuffcon:inbuff_ctrl.data[20]
+controli[21] => inbuffcon:inbuff_ctrl.data[21]
+controli[22] => inbuffcon:inbuff_ctrl.data[22]
+controli[23] => inbuffcon:inbuff_ctrl.data[23]
+in_priority => FIFO_1:inbuff_priority.data[0]
+numusedhi[0] => discard_logic:discard_logic_async.num_used_hi[0]
+numusedhi[1] => discard_logic:discard_logic_async.num_used_hi[1]
+numusedhi[2] => discard_logic:discard_logic_async.num_used_hi[2]
+numusedhi[3] => discard_logic:discard_logic_async.num_used_hi[3]
+numusedhi[4] => discard_logic:discard_logic_async.num_used_hi[4]
+numusedhi[5] => discard_logic:discard_logic_async.num_used_hi[5]
+numusedhi[6] => discard_logic:discard_logic_async.num_used_hi[6]
+numusedhi[7] => discard_logic:discard_logic_async.num_used_hi[7]
+numusedhi[8] => discard_logic:discard_logic_async.num_used_hi[8]
+numusedhi[9] => discard_logic:discard_logic_async.num_used_hi[9]
+numusedhi[10] => discard_logic:discard_logic_async.num_used_hi[10]
+numusedlo[0] => discard_logic:discard_logic_async.num_used_lo[0]
+numusedlo[1] => discard_logic:discard_logic_async.num_used_lo[1]
+numusedlo[2] => discard_logic:discard_logic_async.num_used_lo[2]
+numusedlo[3] => discard_logic:discard_logic_async.num_used_lo[3]
+numusedlo[4] => discard_logic:discard_logic_async.num_used_lo[4]
+numusedlo[5] => discard_logic:discard_logic_async.num_used_lo[5]
+numusedlo[6] => discard_logic:discard_logic_async.num_used_lo[6]
+numusedlo[7] => discard_logic:discard_logic_async.num_used_lo[7]
+numusedlo[8] => discard_logic:discard_logic_async.num_used_lo[8]
+numusedlo[9] => discard_logic:discard_logic_async.num_used_lo[9]
+numusedlo[10] => discard_logic:discard_logic_async.num_used_lo[10]
+out_m_discard_en <= my_state.DB_MAX_OUTPUT_PORT_TYPE
+out_wren <= my_state.DB_MAX_OUTPUT_PORT_TYPE
+out_priority <= FIFO_1:inbuff_priority.q[0]
+datao[0] <= inbuff:inbuff_data.q[0]
+datao[1] <= inbuff:inbuff_data.q[1]
+datao[2] <= inbuff:inbuff_data.q[2]
+datao[3] <= inbuff:inbuff_data.q[3]
+datao[4] <= inbuff:inbuff_data.q[4]
+datao[5] <= inbuff:inbuff_data.q[5]
+datao[6] <= inbuff:inbuff_data.q[6]
+datao[7] <= inbuff:inbuff_data.q[7]
+controlo[0] <= inbuffcon:inbuff_ctrl.q[0]
+controlo[1] <= inbuffcon:inbuff_ctrl.q[1]
+controlo[2] <= inbuffcon:inbuff_ctrl.q[2]
+controlo[3] <= inbuffcon:inbuff_ctrl.q[3]
+controlo[4] <= inbuffcon:inbuff_ctrl.q[4]
+controlo[5] <= inbuffcon:inbuff_ctrl.q[5]
+controlo[6] <= inbuffcon:inbuff_ctrl.q[6]
+controlo[7] <= inbuffcon:inbuff_ctrl.q[7]
+controlo[8] <= inbuffcon:inbuff_ctrl.q[8]
+controlo[9] <= inbuffcon:inbuff_ctrl.q[9]
+controlo[10] <= inbuffcon:inbuff_ctrl.q[10]
+controlo[11] <= inbuffcon:inbuff_ctrl.q[11]
+controlo[12] <= inbuffcon:inbuff_ctrl.q[12]
+controlo[13] <= inbuffcon:inbuff_ctrl.q[13]
+controlo[14] <= inbuffcon:inbuff_ctrl.q[14]
+controlo[15] <= inbuffcon:inbuff_ctrl.q[15]
+controlo[16] <= inbuffcon:inbuff_ctrl.q[16]
+controlo[17] <= inbuffcon:inbuff_ctrl.q[17]
+controlo[18] <= inbuffcon:inbuff_ctrl.q[18]
+controlo[19] <= inbuffcon:inbuff_ctrl.q[19]
+controlo[20] <= inbuffcon:inbuff_ctrl.q[20]
+controlo[21] <= inbuffcon:inbuff_ctrl.q[21]
+controlo[22] <= inbuffcon:inbuff_ctrl.q[22]
+controlo[23] <= inbuffcon:inbuff_ctrl.q[23]
 stop <= stop~reg0.DB_MAX_OUTPUT_PORT_TYPE
-numusedhi[0] => discard_logic:dislog.num_used_hi[0]
-numusedhi[1] => discard_logic:dislog.num_used_hi[1]
-numusedhi[2] => discard_logic:dislog.num_used_hi[2]
-numusedhi[3] => discard_logic:dislog.num_used_hi[3]
-numusedhi[4] => discard_logic:dislog.num_used_hi[4]
-numusedhi[5] => discard_logic:dislog.num_used_hi[5]
-numusedhi[6] => discard_logic:dislog.num_used_hi[6]
-numusedhi[7] => discard_logic:dislog.num_used_hi[7]
-numusedhi[8] => discard_logic:dislog.num_used_hi[8]
-numusedhi[9] => discard_logic:dislog.num_used_hi[9]
-numusedhi[10] => discard_logic:dislog.num_used_hi[10]
-numusedlo[0] => discard_logic:dislog.num_used_lo[0]
-numusedlo[1] => discard_logic:dislog.num_used_lo[1]
-numusedlo[2] => discard_logic:dislog.num_used_lo[2]
-numusedlo[3] => discard_logic:dislog.num_used_lo[3]
-numusedlo[4] => discard_logic:dislog.num_used_lo[4]
-numusedlo[5] => discard_logic:dislog.num_used_lo[5]
-numusedlo[6] => discard_logic:dislog.num_used_lo[6]
-numusedlo[7] => discard_logic:dislog.num_used_lo[7]
-numusedlo[8] => discard_logic:dislog.num_used_lo[8]
-numusedlo[9] => discard_logic:dislog.num_used_lo[9]
-numusedlo[10] => discard_logic:dislog.num_used_lo[10]
 
 
-|xmitTop|in_FSM:in_FSM_inst|discard_logic:dislog
-num_used_hi[0] => LessThan0.IN13
-num_used_hi[1] => LessThan0.IN12
-num_used_hi[2] => LessThan0.IN11
-num_used_hi[3] => LessThan0.IN10
-num_used_hi[4] => LessThan0.IN9
-num_used_hi[5] => LessThan0.IN8
-num_used_hi[6] => LessThan0.IN7
-num_used_hi[7] => LessThan0.IN6
-num_used_hi[8] => LessThan0.IN5
-num_used_hi[9] => LessThan0.IN4
-num_used_hi[10] => LessThan0.IN3
-num_used_lo[0] => LessThan1.IN16
-num_used_lo[1] => LessThan1.IN15
-num_used_lo[2] => LessThan1.IN14
-num_used_lo[3] => LessThan1.IN13
-num_used_lo[4] => LessThan1.IN12
-num_used_lo[5] => LessThan1.IN11
-num_used_lo[6] => LessThan1.IN10
-num_used_lo[7] => LessThan1.IN9
-num_used_lo[8] => LessThan1.IN8
-num_used_lo[9] => LessThan1.IN7
-num_used_lo[10] => LessThan1.IN6
-discard_en <= process_0.DB_MAX_OUTPUT_PORT_TYPE
-wren <= process_0.DB_MAX_OUTPUT_PORT_TYPE
-priority => process_0.IN1
-priority => process_0.IN1
-frame_len[0] => LessThan0.IN28
-frame_len[0] => LessThan1.IN28
-frame_len[1] => LessThan0.IN27
-frame_len[1] => LessThan1.IN27
-frame_len[2] => LessThan0.IN26
-frame_len[2] => LessThan1.IN26
-frame_len[3] => LessThan0.IN25
-frame_len[3] => LessThan1.IN25
-frame_len[4] => LessThan0.IN24
-frame_len[4] => LessThan1.IN24
-frame_len[5] => LessThan0.IN23
-frame_len[5] => LessThan1.IN23
-frame_len[6] => LessThan0.IN22
-frame_len[6] => LessThan1.IN22
-frame_len[7] => LessThan0.IN21
-frame_len[7] => LessThan1.IN21
-frame_len[8] => LessThan0.IN20
-frame_len[8] => LessThan1.IN20
-frame_len[9] => LessThan0.IN19
-frame_len[9] => LessThan1.IN19
-frame_len[10] => LessThan0.IN18
-frame_len[10] => LessThan1.IN18
-frame_len[11] => LessThan0.IN17
-frame_len[11] => LessThan1.IN17
-
-
-|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_comp
+|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_data
 aclr => dcfifo:dcfifo_component.aclr
 data[0] => dcfifo:dcfifo_component.data[0]
 data[1] => dcfifo:dcfifo_component.data[1]
@@ -432,7 +287,7 @@ rdempty <= dcfifo:dcfifo_component.rdempty
 wrfull <= dcfifo:dcfifo_component.wrfull
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_comp|dcfifo:dcfifo_component
+|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_data|dcfifo:dcfifo_component
 data[0] => dcfifo_s3q1:auto_generated.data[0]
 data[1] => dcfifo_s3q1:auto_generated.data[1]
 data[2] => dcfifo_s3q1:auto_generated.data[2]
@@ -480,7 +335,7 @@ wrusedw[7] <= <GND>
 wrusedw[8] <= <GND>
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_comp|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated
+|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_data|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated
 aclr => a_graycounter_nv6:rdptr_g1p.aclr
 aclr => a_graycounter_jdc:wrptr_g1p.aclr
 aclr => altsyncram_a3d1:fifo_ram.aclr1
@@ -547,7 +402,7 @@ wrfull <= int_wrfull.DB_MAX_OUTPUT_PORT_TYPE
 wrreq => valid_wrreq.IN0
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_comp|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|a_graycounter_nv6:rdptr_g1p
+|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_data|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|a_graycounter_nv6:rdptr_g1p
 aclr => counter5a1.IN0
 aclr => counter5a0.IN0
 aclr => parity6.IN0
@@ -588,7 +443,7 @@ q[8] <= counter5a8.DB_MAX_OUTPUT_PORT_TYPE
 q[9] <= counter5a9.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_comp|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|a_graycounter_jdc:wrptr_g1p
+|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_data|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|a_graycounter_jdc:wrptr_g1p
 aclr => counter8a1.IN0
 aclr => counter8a0.IN0
 aclr => parity9.IN0
@@ -629,7 +484,7 @@ q[8] <= counter8a8.DB_MAX_OUTPUT_PORT_TYPE
 q[9] <= counter8a9.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_comp|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|altsyncram_a3d1:fifo_ram
+|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_data|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|altsyncram_a3d1:fifo_ram
 aclr1 => ram_block11a0.CLR1
 aclr1 => ram_block11a1.CLR1
 aclr1 => ram_block11a2.CLR1
@@ -848,7 +703,7 @@ wren_a => ram_block11a7.PORTAWE
 wren_a => ram_block11a7.ENA0
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_comp|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|alt_synch_pipe_8pl:rs_dgwp
+|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_data|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|alt_synch_pipe_8pl:rs_dgwp
 clock => dffpipe_pe9:dffpipe12.clock
 clrn => dffpipe_pe9:dffpipe12.clrn
 d[0] => dffpipe_pe9:dffpipe12.d[0]
@@ -873,7 +728,7 @@ q[8] <= dffpipe_pe9:dffpipe12.q[8]
 q[9] <= dffpipe_pe9:dffpipe12.q[9]
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_comp|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|alt_synch_pipe_8pl:rs_dgwp|dffpipe_pe9:dffpipe12
+|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_data|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|alt_synch_pipe_8pl:rs_dgwp|dffpipe_pe9:dffpipe12
 clock => dffe13a[9].CLK
 clock => dffe13a[8].CLK
 clock => dffe13a[7].CLK
@@ -936,7 +791,7 @@ q[8] <= dffe14a[8].DB_MAX_OUTPUT_PORT_TYPE
 q[9] <= dffe14a[9].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_comp|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|alt_synch_pipe_9pl:ws_dgrp
+|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_data|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|alt_synch_pipe_9pl:ws_dgrp
 clock => dffpipe_qe9:dffpipe15.clock
 clrn => dffpipe_qe9:dffpipe15.clrn
 d[0] => dffpipe_qe9:dffpipe15.d[0]
@@ -961,7 +816,7 @@ q[8] <= dffpipe_qe9:dffpipe15.q[8]
 q[9] <= dffpipe_qe9:dffpipe15.q[9]
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_comp|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|alt_synch_pipe_9pl:ws_dgrp|dffpipe_qe9:dffpipe15
+|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_data|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|alt_synch_pipe_9pl:ws_dgrp|dffpipe_qe9:dffpipe15
 clock => dffe16a[9].CLK
 clock => dffe16a[8].CLK
 clock => dffe16a[7].CLK
@@ -1024,7 +879,7 @@ q[8] <= dffe17a[8].DB_MAX_OUTPUT_PORT_TYPE
 q[9] <= dffe17a[9].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_comp|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|cmpr_906:rdempty_eq_comp
+|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_data|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|cmpr_906:rdempty_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -1048,7 +903,7 @@ datab[8] => data_wire[6].IN1
 datab[9] => data_wire[6].IN1
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_comp|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|cmpr_906:wrfull_eq_comp
+|xmitTop|in_FSM:in_FSM_inst|inbuff:inbuff_data|dcfifo:dcfifo_component|dcfifo_s3q1:auto_generated|cmpr_906:wrfull_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -1072,7 +927,7 @@ datab[8] => data_wire[6].IN1
 datab[9] => data_wire[6].IN1
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuffcon_comp
+|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuff_ctrl
 aclr => dcfifo:dcfifo_component.aclr
 data[0] => dcfifo:dcfifo_component.data[0]
 data[1] => dcfifo:dcfifo_component.data[1]
@@ -1130,7 +985,7 @@ rdempty <= dcfifo:dcfifo_component.rdempty
 wrfull <= dcfifo:dcfifo_component.wrfull
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuffcon_comp|dcfifo:dcfifo_component
+|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuff_ctrl|dcfifo:dcfifo_component
 data[0] => dcfifo_r6q1:auto_generated.data[0]
 data[1] => dcfifo_r6q1:auto_generated.data[1]
 data[2] => dcfifo_r6q1:auto_generated.data[2]
@@ -1208,7 +1063,7 @@ wrusedw[6] <= <GND>
 wrusedw[7] <= <GND>
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuffcon_comp|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated
+|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuff_ctrl|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated
 aclr => a_graycounter_fu6:rdptr_g1p.aclr
 aclr => a_graycounter_bcc:wrptr_g1p.aclr
 aclr => altsyncram_46d1:fifo_ram.aclr1
@@ -1304,7 +1159,7 @@ wrfull <= int_wrfull.DB_MAX_OUTPUT_PORT_TYPE
 wrreq => valid_wrreq.IN0
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuffcon_comp|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|a_graycounter_fu6:rdptr_g1p
+|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuff_ctrl|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|a_graycounter_fu6:rdptr_g1p
 aclr => counter5a1.IN0
 aclr => counter5a0.IN0
 aclr => parity6.IN0
@@ -1343,7 +1198,7 @@ q[7] <= counter5a7.DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= counter5a8.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuffcon_comp|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|a_graycounter_bcc:wrptr_g1p
+|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuff_ctrl|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|a_graycounter_bcc:wrptr_g1p
 aclr => counter8a1.IN0
 aclr => counter8a0.IN0
 aclr => parity9.IN0
@@ -1382,7 +1237,7 @@ q[7] <= counter8a7.DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= counter8a8.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuffcon_comp|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|altsyncram_46d1:fifo_ram
+|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuff_ctrl|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|altsyncram_46d1:fifo_ram
 aclr1 => ram_block11a0.CLR1
 aclr1 => ram_block11a1.CLR1
 aclr1 => ram_block11a2.CLR1
@@ -1985,7 +1840,7 @@ wren_a => ram_block11a23.PORTAWE
 wren_a => ram_block11a23.ENA0
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuffcon_comp|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|alt_synch_pipe_0ol:rs_dgwp
+|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuff_ctrl|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|alt_synch_pipe_0ol:rs_dgwp
 clock => dffpipe_hd9:dffpipe12.clock
 clrn => dffpipe_hd9:dffpipe12.clrn
 d[0] => dffpipe_hd9:dffpipe12.d[0]
@@ -2008,7 +1863,7 @@ q[7] <= dffpipe_hd9:dffpipe12.q[7]
 q[8] <= dffpipe_hd9:dffpipe12.q[8]
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuffcon_comp|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|alt_synch_pipe_0ol:rs_dgwp|dffpipe_hd9:dffpipe12
+|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuff_ctrl|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|alt_synch_pipe_0ol:rs_dgwp|dffpipe_hd9:dffpipe12
 clock => dffe13a[8].CLK
 clock => dffe13a[7].CLK
 clock => dffe13a[6].CLK
@@ -2065,7 +1920,7 @@ q[7] <= dffe14a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe14a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuffcon_comp|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|alt_synch_pipe_1ol:ws_dgrp
+|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuff_ctrl|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|alt_synch_pipe_1ol:ws_dgrp
 clock => dffpipe_id9:dffpipe15.clock
 clrn => dffpipe_id9:dffpipe15.clrn
 d[0] => dffpipe_id9:dffpipe15.d[0]
@@ -2088,7 +1943,7 @@ q[7] <= dffpipe_id9:dffpipe15.q[7]
 q[8] <= dffpipe_id9:dffpipe15.q[8]
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuffcon_comp|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|alt_synch_pipe_1ol:ws_dgrp|dffpipe_id9:dffpipe15
+|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuff_ctrl|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|alt_synch_pipe_1ol:ws_dgrp|dffpipe_id9:dffpipe15
 clock => dffe16a[8].CLK
 clock => dffe16a[7].CLK
 clock => dffe16a[6].CLK
@@ -2145,7 +2000,7 @@ q[7] <= dffe17a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe17a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuffcon_comp|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|cmpr_1v5:rdempty_eq_comp
+|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuff_ctrl|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|cmpr_1v5:rdempty_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -2167,7 +2022,7 @@ datab[7] => data_wire[5].IN1
 datab[8] => data_wire[6].IN1
 
 
-|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuffcon_comp|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|cmpr_1v5:wrfull_eq_comp
+|xmitTop|in_FSM:in_FSM_inst|inbuffcon:inbuff_ctrl|dcfifo:dcfifo_component|dcfifo_r6q1:auto_generated|cmpr_1v5:wrfull_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -2686,528 +2541,57 @@ datab[10] => data_wire[7].IN1
 datab[11] => data_wire[7].IN1
 
 
-|xmitTop|in_FSM:in_FSM_inst|FIFO_1:inbuff_stop
-aclr => dcfifo:dcfifo_component.aclr
-data[0] => dcfifo:dcfifo_component.data[0]
-rdclk => dcfifo:dcfifo_component.rdclk
-rdreq => dcfifo:dcfifo_component.rdreq
-wrclk => dcfifo:dcfifo_component.wrclk
-wrreq => dcfifo:dcfifo_component.wrreq
-q[0] <= dcfifo:dcfifo_component.q[0]
-rdempty <= dcfifo:dcfifo_component.rdempty
-wrfull <= dcfifo:dcfifo_component.wrfull
-
-
-|xmitTop|in_FSM:in_FSM_inst|FIFO_1:inbuff_stop|dcfifo:dcfifo_component
-data[0] => dcfifo_m7q1:auto_generated.data[0]
-q[0] <= dcfifo_m7q1:auto_generated.q[0]
-eccstatus[0] <= <GND>
-eccstatus[1] <= <GND>
-rdclk => dcfifo_m7q1:auto_generated.rdclk
-rdreq => dcfifo_m7q1:auto_generated.rdreq
-wrclk => dcfifo_m7q1:auto_generated.wrclk
-wrreq => dcfifo_m7q1:auto_generated.wrreq
-aclr => dcfifo_m7q1:auto_generated.aclr
-rdempty <= dcfifo_m7q1:auto_generated.rdempty
-rdfull <= <UNC>
-wrempty <= <GND>
-wrfull <= dcfifo_m7q1:auto_generated.wrfull
-rdusedw[0] <= <UNC>
-rdusedw[1] <= <UNC>
-rdusedw[2] <= <UNC>
-rdusedw[3] <= <UNC>
-rdusedw[4] <= <UNC>
-rdusedw[5] <= <UNC>
-rdusedw[6] <= <UNC>
-rdusedw[7] <= <UNC>
-rdusedw[8] <= <UNC>
-rdusedw[9] <= <UNC>
-rdusedw[10] <= <UNC>
-wrusedw[0] <= <GND>
-wrusedw[1] <= <GND>
-wrusedw[2] <= <GND>
-wrusedw[3] <= <GND>
-wrusedw[4] <= <GND>
-wrusedw[5] <= <GND>
-wrusedw[6] <= <GND>
-wrusedw[7] <= <GND>
-wrusedw[8] <= <GND>
-wrusedw[9] <= <GND>
-wrusedw[10] <= <GND>
-
-
-|xmitTop|in_FSM:in_FSM_inst|FIFO_1:inbuff_stop|dcfifo:dcfifo_component|dcfifo_m7q1:auto_generated
-aclr => a_graycounter_pv6:rdptr_g1p.aclr
-aclr => a_graycounter_ldc:wrptr_g1p.aclr
-aclr => altsyncram_e5d1:fifo_ram.aclr1
-aclr => delayed_wrptr_g[11].IN0
-aclr => rdptr_g[11].IN0
-aclr => wrptr_g[11].IN0
-aclr => _.IN0
-aclr => _.IN0
-data[0] => altsyncram_e5d1:fifo_ram.data_a[0]
-q[0] <= altsyncram_e5d1:fifo_ram.q_b[0]
-rdclk => a_graycounter_pv6:rdptr_g1p.clock
-rdclk => altsyncram_e5d1:fifo_ram.clock1
-rdclk => alt_synch_pipe_apl:rs_dgwp.clock
-rdclk => rdptr_g[11].CLK
-rdclk => rdptr_g[10].CLK
-rdclk => rdptr_g[9].CLK
-rdclk => rdptr_g[8].CLK
-rdclk => rdptr_g[7].CLK
-rdclk => rdptr_g[6].CLK
-rdclk => rdptr_g[5].CLK
-rdclk => rdptr_g[4].CLK
-rdclk => rdptr_g[3].CLK
-rdclk => rdptr_g[2].CLK
-rdclk => rdptr_g[1].CLK
-rdclk => rdptr_g[0].CLK
-rdempty <= int_rdempty.DB_MAX_OUTPUT_PORT_TYPE
-rdreq => valid_rdreq.IN0
-wrclk => a_graycounter_ldc:wrptr_g1p.clock
-wrclk => altsyncram_e5d1:fifo_ram.clock0
-wrclk => alt_synch_pipe_bpl:ws_dgrp.clock
-wrclk => delayed_wrptr_g[11].CLK
-wrclk => delayed_wrptr_g[10].CLK
-wrclk => delayed_wrptr_g[9].CLK
-wrclk => delayed_wrptr_g[8].CLK
-wrclk => delayed_wrptr_g[7].CLK
-wrclk => delayed_wrptr_g[6].CLK
-wrclk => delayed_wrptr_g[5].CLK
-wrclk => delayed_wrptr_g[4].CLK
-wrclk => delayed_wrptr_g[3].CLK
-wrclk => delayed_wrptr_g[2].CLK
-wrclk => delayed_wrptr_g[1].CLK
-wrclk => delayed_wrptr_g[0].CLK
-wrclk => wrptr_g[11].CLK
-wrclk => wrptr_g[10].CLK
-wrclk => wrptr_g[9].CLK
-wrclk => wrptr_g[8].CLK
-wrclk => wrptr_g[7].CLK
-wrclk => wrptr_g[6].CLK
-wrclk => wrptr_g[5].CLK
-wrclk => wrptr_g[4].CLK
-wrclk => wrptr_g[3].CLK
-wrclk => wrptr_g[2].CLK
-wrclk => wrptr_g[1].CLK
-wrclk => wrptr_g[0].CLK
-wrfull <= int_wrfull.DB_MAX_OUTPUT_PORT_TYPE
-wrreq => valid_wrreq.IN0
-
-
-|xmitTop|in_FSM:in_FSM_inst|FIFO_1:inbuff_stop|dcfifo:dcfifo_component|dcfifo_m7q1:auto_generated|a_graycounter_pv6:rdptr_g1p
-aclr => counter5a1.IN0
-aclr => counter5a0.IN0
-aclr => parity6.IN0
-aclr => sub_parity7a[1].IN0
-aclr => sub_parity7a[0].IN0
-clock => counter5a0.CLK
-clock => counter5a1.CLK
-clock => counter5a2.CLK
-clock => counter5a3.CLK
-clock => counter5a4.CLK
-clock => counter5a5.CLK
-clock => counter5a6.CLK
-clock => counter5a7.CLK
-clock => counter5a8.CLK
-clock => counter5a9.CLK
-clock => counter5a10.CLK
-clock => counter5a11.CLK
-clock => parity6.CLK
-clock => sub_parity7a[1].CLK
-clock => sub_parity7a[0].CLK
-cnt_en => _.IN0
-cnt_en => _.IN0
-cnt_en => _.IN0
-cnt_en => _.IN0
-cnt_en => _.IN0
-cnt_en => _.IN0
-cnt_en => _.IN0
-cnt_en => _.IN0
-cnt_en => cntr_cout[0].IN0
-cnt_en => parity_cout.IN1
-q[0] <= counter5a0.DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= counter5a1.DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= counter5a2.DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= counter5a3.DB_MAX_OUTPUT_PORT_TYPE
-q[4] <= counter5a4.DB_MAX_OUTPUT_PORT_TYPE
-q[5] <= counter5a5.DB_MAX_OUTPUT_PORT_TYPE
-q[6] <= counter5a6.DB_MAX_OUTPUT_PORT_TYPE
-q[7] <= counter5a7.DB_MAX_OUTPUT_PORT_TYPE
-q[8] <= counter5a8.DB_MAX_OUTPUT_PORT_TYPE
-q[9] <= counter5a9.DB_MAX_OUTPUT_PORT_TYPE
-q[10] <= counter5a10.DB_MAX_OUTPUT_PORT_TYPE
-q[11] <= counter5a11.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|xmitTop|in_FSM:in_FSM_inst|FIFO_1:inbuff_stop|dcfifo:dcfifo_component|dcfifo_m7q1:auto_generated|a_graycounter_ldc:wrptr_g1p
-aclr => counter8a1.IN0
-aclr => counter8a0.IN0
-aclr => parity9.IN0
-aclr => sub_parity10a[1].IN0
-aclr => sub_parity10a[0].IN0
-clock => counter8a0.CLK
-clock => counter8a1.CLK
-clock => counter8a2.CLK
-clock => counter8a3.CLK
-clock => counter8a4.CLK
-clock => counter8a5.CLK
-clock => counter8a6.CLK
-clock => counter8a7.CLK
-clock => counter8a8.CLK
-clock => counter8a9.CLK
-clock => counter8a10.CLK
-clock => counter8a11.CLK
-clock => parity9.CLK
-clock => sub_parity10a[1].CLK
-clock => sub_parity10a[0].CLK
-cnt_en => _.IN0
-cnt_en => _.IN0
-cnt_en => _.IN0
-cnt_en => _.IN0
-cnt_en => _.IN0
-cnt_en => _.IN0
-cnt_en => _.IN0
-cnt_en => _.IN0
-cnt_en => cntr_cout[0].IN0
-cnt_en => parity_cout.IN1
-q[0] <= counter8a0.DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= counter8a1.DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= counter8a2.DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= counter8a3.DB_MAX_OUTPUT_PORT_TYPE
-q[4] <= counter8a4.DB_MAX_OUTPUT_PORT_TYPE
-q[5] <= counter8a5.DB_MAX_OUTPUT_PORT_TYPE
-q[6] <= counter8a6.DB_MAX_OUTPUT_PORT_TYPE
-q[7] <= counter8a7.DB_MAX_OUTPUT_PORT_TYPE
-q[8] <= counter8a8.DB_MAX_OUTPUT_PORT_TYPE
-q[9] <= counter8a9.DB_MAX_OUTPUT_PORT_TYPE
-q[10] <= counter8a10.DB_MAX_OUTPUT_PORT_TYPE
-q[11] <= counter8a11.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|xmitTop|in_FSM:in_FSM_inst|FIFO_1:inbuff_stop|dcfifo:dcfifo_component|dcfifo_m7q1:auto_generated|altsyncram_e5d1:fifo_ram
-aclr1 => ram_block11a0.CLR1
-address_a[0] => ram_block11a0.PORTAADDR
-address_a[1] => ram_block11a0.PORTAADDR1
-address_a[2] => ram_block11a0.PORTAADDR2
-address_a[3] => ram_block11a0.PORTAADDR3
-address_a[4] => ram_block11a0.PORTAADDR4
-address_a[5] => ram_block11a0.PORTAADDR5
-address_a[6] => ram_block11a0.PORTAADDR6
-address_a[7] => ram_block11a0.PORTAADDR7
-address_a[8] => ram_block11a0.PORTAADDR8
-address_a[9] => ram_block11a0.PORTAADDR9
-address_a[10] => ram_block11a0.PORTAADDR10
-address_b[0] => ram_block11a0.PORTBADDR
-address_b[1] => ram_block11a0.PORTBADDR1
-address_b[2] => ram_block11a0.PORTBADDR2
-address_b[3] => ram_block11a0.PORTBADDR3
-address_b[4] => ram_block11a0.PORTBADDR4
-address_b[5] => ram_block11a0.PORTBADDR5
-address_b[6] => ram_block11a0.PORTBADDR6
-address_b[7] => ram_block11a0.PORTBADDR7
-address_b[8] => ram_block11a0.PORTBADDR8
-address_b[9] => ram_block11a0.PORTBADDR9
-address_b[10] => ram_block11a0.PORTBADDR10
-addressstall_b => ram_block11a0.PORTBADDRSTALL
-clock0 => ram_block11a0.CLK0
-clock1 => ram_block11a0.CLK1
-clocken1 => ram_block11a0.ENA1
-data_a[0] => ram_block11a0.PORTADATAIN
-q_b[0] <= ram_block11a0.PORTBDATAOUT
-wren_a => ram_block11a0.PORTAWE
-wren_a => ram_block11a0.ENA0
-
-
-|xmitTop|in_FSM:in_FSM_inst|FIFO_1:inbuff_stop|dcfifo:dcfifo_component|dcfifo_m7q1:auto_generated|alt_synch_pipe_apl:rs_dgwp
-clock => dffpipe_re9:dffpipe12.clock
-clrn => dffpipe_re9:dffpipe12.clrn
-d[0] => dffpipe_re9:dffpipe12.d[0]
-d[1] => dffpipe_re9:dffpipe12.d[1]
-d[2] => dffpipe_re9:dffpipe12.d[2]
-d[3] => dffpipe_re9:dffpipe12.d[3]
-d[4] => dffpipe_re9:dffpipe12.d[4]
-d[5] => dffpipe_re9:dffpipe12.d[5]
-d[6] => dffpipe_re9:dffpipe12.d[6]
-d[7] => dffpipe_re9:dffpipe12.d[7]
-d[8] => dffpipe_re9:dffpipe12.d[8]
-d[9] => dffpipe_re9:dffpipe12.d[9]
-d[10] => dffpipe_re9:dffpipe12.d[10]
-d[11] => dffpipe_re9:dffpipe12.d[11]
-q[0] <= dffpipe_re9:dffpipe12.q[0]
-q[1] <= dffpipe_re9:dffpipe12.q[1]
-q[2] <= dffpipe_re9:dffpipe12.q[2]
-q[3] <= dffpipe_re9:dffpipe12.q[3]
-q[4] <= dffpipe_re9:dffpipe12.q[4]
-q[5] <= dffpipe_re9:dffpipe12.q[5]
-q[6] <= dffpipe_re9:dffpipe12.q[6]
-q[7] <= dffpipe_re9:dffpipe12.q[7]
-q[8] <= dffpipe_re9:dffpipe12.q[8]
-q[9] <= dffpipe_re9:dffpipe12.q[9]
-q[10] <= dffpipe_re9:dffpipe12.q[10]
-q[11] <= dffpipe_re9:dffpipe12.q[11]
-
-
-|xmitTop|in_FSM:in_FSM_inst|FIFO_1:inbuff_stop|dcfifo:dcfifo_component|dcfifo_m7q1:auto_generated|alt_synch_pipe_apl:rs_dgwp|dffpipe_re9:dffpipe12
-clock => dffe13a[11].CLK
-clock => dffe13a[10].CLK
-clock => dffe13a[9].CLK
-clock => dffe13a[8].CLK
-clock => dffe13a[7].CLK
-clock => dffe13a[6].CLK
-clock => dffe13a[5].CLK
-clock => dffe13a[4].CLK
-clock => dffe13a[3].CLK
-clock => dffe13a[2].CLK
-clock => dffe13a[1].CLK
-clock => dffe13a[0].CLK
-clock => dffe14a[11].CLK
-clock => dffe14a[10].CLK
-clock => dffe14a[9].CLK
-clock => dffe14a[8].CLK
-clock => dffe14a[7].CLK
-clock => dffe14a[6].CLK
-clock => dffe14a[5].CLK
-clock => dffe14a[4].CLK
-clock => dffe14a[3].CLK
-clock => dffe14a[2].CLK
-clock => dffe14a[1].CLK
-clock => dffe14a[0].CLK
-clrn => dffe13a[11].ACLR
-clrn => dffe13a[10].ACLR
-clrn => dffe13a[9].ACLR
-clrn => dffe13a[8].ACLR
-clrn => dffe13a[7].ACLR
-clrn => dffe13a[6].ACLR
-clrn => dffe13a[5].ACLR
-clrn => dffe13a[4].ACLR
-clrn => dffe13a[3].ACLR
-clrn => dffe13a[2].ACLR
-clrn => dffe13a[1].ACLR
-clrn => dffe13a[0].ACLR
-clrn => dffe14a[11].ACLR
-clrn => dffe14a[10].ACLR
-clrn => dffe14a[9].ACLR
-clrn => dffe14a[8].ACLR
-clrn => dffe14a[7].ACLR
-clrn => dffe14a[6].ACLR
-clrn => dffe14a[5].ACLR
-clrn => dffe14a[4].ACLR
-clrn => dffe14a[3].ACLR
-clrn => dffe14a[2].ACLR
-clrn => dffe14a[1].ACLR
-clrn => dffe14a[0].ACLR
-d[0] => dffe13a[0].IN0
-d[1] => dffe13a[1].IN0
-d[2] => dffe13a[2].IN0
-d[3] => dffe13a[3].IN0
-d[4] => dffe13a[4].IN0
-d[5] => dffe13a[5].IN0
-d[6] => dffe13a[6].IN0
-d[7] => dffe13a[7].IN0
-d[8] => dffe13a[8].IN0
-d[9] => dffe13a[9].IN0
-d[10] => dffe13a[10].IN0
-d[11] => dffe13a[11].IN0
-q[0] <= dffe14a[0].DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= dffe14a[1].DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= dffe14a[2].DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= dffe14a[3].DB_MAX_OUTPUT_PORT_TYPE
-q[4] <= dffe14a[4].DB_MAX_OUTPUT_PORT_TYPE
-q[5] <= dffe14a[5].DB_MAX_OUTPUT_PORT_TYPE
-q[6] <= dffe14a[6].DB_MAX_OUTPUT_PORT_TYPE
-q[7] <= dffe14a[7].DB_MAX_OUTPUT_PORT_TYPE
-q[8] <= dffe14a[8].DB_MAX_OUTPUT_PORT_TYPE
-q[9] <= dffe14a[9].DB_MAX_OUTPUT_PORT_TYPE
-q[10] <= dffe14a[10].DB_MAX_OUTPUT_PORT_TYPE
-q[11] <= dffe14a[11].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|xmitTop|in_FSM:in_FSM_inst|FIFO_1:inbuff_stop|dcfifo:dcfifo_component|dcfifo_m7q1:auto_generated|alt_synch_pipe_bpl:ws_dgrp
-clock => dffpipe_se9:dffpipe15.clock
-clrn => dffpipe_se9:dffpipe15.clrn
-d[0] => dffpipe_se9:dffpipe15.d[0]
-d[1] => dffpipe_se9:dffpipe15.d[1]
-d[2] => dffpipe_se9:dffpipe15.d[2]
-d[3] => dffpipe_se9:dffpipe15.d[3]
-d[4] => dffpipe_se9:dffpipe15.d[4]
-d[5] => dffpipe_se9:dffpipe15.d[5]
-d[6] => dffpipe_se9:dffpipe15.d[6]
-d[7] => dffpipe_se9:dffpipe15.d[7]
-d[8] => dffpipe_se9:dffpipe15.d[8]
-d[9] => dffpipe_se9:dffpipe15.d[9]
-d[10] => dffpipe_se9:dffpipe15.d[10]
-d[11] => dffpipe_se9:dffpipe15.d[11]
-q[0] <= dffpipe_se9:dffpipe15.q[0]
-q[1] <= dffpipe_se9:dffpipe15.q[1]
-q[2] <= dffpipe_se9:dffpipe15.q[2]
-q[3] <= dffpipe_se9:dffpipe15.q[3]
-q[4] <= dffpipe_se9:dffpipe15.q[4]
-q[5] <= dffpipe_se9:dffpipe15.q[5]
-q[6] <= dffpipe_se9:dffpipe15.q[6]
-q[7] <= dffpipe_se9:dffpipe15.q[7]
-q[8] <= dffpipe_se9:dffpipe15.q[8]
-q[9] <= dffpipe_se9:dffpipe15.q[9]
-q[10] <= dffpipe_se9:dffpipe15.q[10]
-q[11] <= dffpipe_se9:dffpipe15.q[11]
-
-
-|xmitTop|in_FSM:in_FSM_inst|FIFO_1:inbuff_stop|dcfifo:dcfifo_component|dcfifo_m7q1:auto_generated|alt_synch_pipe_bpl:ws_dgrp|dffpipe_se9:dffpipe15
-clock => dffe16a[11].CLK
-clock => dffe16a[10].CLK
-clock => dffe16a[9].CLK
-clock => dffe16a[8].CLK
-clock => dffe16a[7].CLK
-clock => dffe16a[6].CLK
-clock => dffe16a[5].CLK
-clock => dffe16a[4].CLK
-clock => dffe16a[3].CLK
-clock => dffe16a[2].CLK
-clock => dffe16a[1].CLK
-clock => dffe16a[0].CLK
-clock => dffe17a[11].CLK
-clock => dffe17a[10].CLK
-clock => dffe17a[9].CLK
-clock => dffe17a[8].CLK
-clock => dffe17a[7].CLK
-clock => dffe17a[6].CLK
-clock => dffe17a[5].CLK
-clock => dffe17a[4].CLK
-clock => dffe17a[3].CLK
-clock => dffe17a[2].CLK
-clock => dffe17a[1].CLK
-clock => dffe17a[0].CLK
-clrn => dffe16a[11].ACLR
-clrn => dffe16a[10].ACLR
-clrn => dffe16a[9].ACLR
-clrn => dffe16a[8].ACLR
-clrn => dffe16a[7].ACLR
-clrn => dffe16a[6].ACLR
-clrn => dffe16a[5].ACLR
-clrn => dffe16a[4].ACLR
-clrn => dffe16a[3].ACLR
-clrn => dffe16a[2].ACLR
-clrn => dffe16a[1].ACLR
-clrn => dffe16a[0].ACLR
-clrn => dffe17a[11].ACLR
-clrn => dffe17a[10].ACLR
-clrn => dffe17a[9].ACLR
-clrn => dffe17a[8].ACLR
-clrn => dffe17a[7].ACLR
-clrn => dffe17a[6].ACLR
-clrn => dffe17a[5].ACLR
-clrn => dffe17a[4].ACLR
-clrn => dffe17a[3].ACLR
-clrn => dffe17a[2].ACLR
-clrn => dffe17a[1].ACLR
-clrn => dffe17a[0].ACLR
-d[0] => dffe16a[0].IN0
-d[1] => dffe16a[1].IN0
-d[2] => dffe16a[2].IN0
-d[3] => dffe16a[3].IN0
-d[4] => dffe16a[4].IN0
-d[5] => dffe16a[5].IN0
-d[6] => dffe16a[6].IN0
-d[7] => dffe16a[7].IN0
-d[8] => dffe16a[8].IN0
-d[9] => dffe16a[9].IN0
-d[10] => dffe16a[10].IN0
-d[11] => dffe16a[11].IN0
-q[0] <= dffe17a[0].DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= dffe17a[1].DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= dffe17a[2].DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= dffe17a[3].DB_MAX_OUTPUT_PORT_TYPE
-q[4] <= dffe17a[4].DB_MAX_OUTPUT_PORT_TYPE
-q[5] <= dffe17a[5].DB_MAX_OUTPUT_PORT_TYPE
-q[6] <= dffe17a[6].DB_MAX_OUTPUT_PORT_TYPE
-q[7] <= dffe17a[7].DB_MAX_OUTPUT_PORT_TYPE
-q[8] <= dffe17a[8].DB_MAX_OUTPUT_PORT_TYPE
-q[9] <= dffe17a[9].DB_MAX_OUTPUT_PORT_TYPE
-q[10] <= dffe17a[10].DB_MAX_OUTPUT_PORT_TYPE
-q[11] <= dffe17a[11].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|xmitTop|in_FSM:in_FSM_inst|FIFO_1:inbuff_stop|dcfifo:dcfifo_component|dcfifo_m7q1:auto_generated|cmpr_b06:rdempty_eq_comp
-aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
-dataa[0] => data_wire[2].IN0
-dataa[1] => data_wire[2].IN0
-dataa[2] => data_wire[3].IN0
-dataa[3] => data_wire[3].IN0
-dataa[4] => data_wire[4].IN0
-dataa[5] => data_wire[4].IN0
-dataa[6] => data_wire[5].IN0
-dataa[7] => data_wire[5].IN0
-dataa[8] => data_wire[6].IN0
-dataa[9] => data_wire[6].IN0
-dataa[10] => data_wire[7].IN0
-dataa[11] => data_wire[7].IN0
-datab[0] => data_wire[2].IN1
-datab[1] => data_wire[2].IN1
-datab[2] => data_wire[3].IN1
-datab[3] => data_wire[3].IN1
-datab[4] => data_wire[4].IN1
-datab[5] => data_wire[4].IN1
-datab[6] => data_wire[5].IN1
-datab[7] => data_wire[5].IN1
-datab[8] => data_wire[6].IN1
-datab[9] => data_wire[6].IN1
-datab[10] => data_wire[7].IN1
-datab[11] => data_wire[7].IN1
-
-
-|xmitTop|in_FSM:in_FSM_inst|FIFO_1:inbuff_stop|dcfifo:dcfifo_component|dcfifo_m7q1:auto_generated|cmpr_b06:wrfull_eq_comp
-aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
-dataa[0] => data_wire[2].IN0
-dataa[1] => data_wire[2].IN0
-dataa[2] => data_wire[3].IN0
-dataa[3] => data_wire[3].IN0
-dataa[4] => data_wire[4].IN0
-dataa[5] => data_wire[4].IN0
-dataa[6] => data_wire[5].IN0
-dataa[7] => data_wire[5].IN0
-dataa[8] => data_wire[6].IN0
-dataa[9] => data_wire[6].IN0
-dataa[10] => data_wire[7].IN0
-dataa[11] => data_wire[7].IN0
-datab[0] => data_wire[2].IN1
-datab[1] => data_wire[2].IN1
-datab[2] => data_wire[3].IN1
-datab[3] => data_wire[3].IN1
-datab[4] => data_wire[4].IN1
-datab[5] => data_wire[4].IN1
-datab[6] => data_wire[5].IN1
-datab[7] => data_wire[5].IN1
-datab[8] => data_wire[6].IN1
-datab[9] => data_wire[6].IN1
-datab[10] => data_wire[7].IN1
-datab[11] => data_wire[7].IN1
-
-
-|xmitTop|in_FSM:in_FSM_inst|pakstak:packetstack
-incountdone => process_1.IN1
-incountdone => process_1.IN1
-outcountdone => process_2.IN1
-outcountdone => process_2.IN1
-pakavail <= pakavail.DB_MAX_OUTPUT_PORT_TYPE
-aclr => currst~3.DATAIN
-aclr => outonl.ENA
-aclr => inonl.ENA
-phyclk => outonl.CLK
-phyclk => inonl.CLK
-phyclk => currst~1.DATAIN
-
-
-|xmitTop|in_FSM:in_FSM_inst|tren:transmitenable
-pakavail => ncurr.DATAB
-pakavail => ncurr.DATAB
-aclr => curr~3.DATAIN
-aclr => stopl.ENA
-phyclk => stopl.CLK
-phyclk => curr~1.DATAIN
-txen <= txen.DB_MAX_OUTPUT_PORT_TYPE
-txone <= txone.DB_MAX_OUTPUT_PORT_TYPE
-stop => process_0.IN1
-stop => stopl.DATAIN
+|xmitTop|in_FSM:in_FSM_inst|discard_logic:discard_logic_async
+num_used_hi[0] => Add0.IN13
+num_used_hi[1] => Add0.IN12
+num_used_hi[2] => Add0.IN11
+num_used_hi[3] => Add0.IN10
+num_used_hi[4] => Add0.IN9
+num_used_hi[5] => Add0.IN8
+num_used_hi[6] => Add0.IN7
+num_used_hi[7] => Add0.IN6
+num_used_hi[8] => Add0.IN5
+num_used_hi[9] => Add0.IN4
+num_used_hi[10] => Add0.IN3
+num_used_lo[0] => Add1.IN13
+num_used_lo[1] => Add1.IN12
+num_used_lo[2] => Add1.IN11
+num_used_lo[3] => Add1.IN10
+num_used_lo[4] => Add1.IN9
+num_used_lo[5] => Add1.IN8
+num_used_lo[6] => Add1.IN7
+num_used_lo[7] => Add1.IN6
+num_used_lo[8] => Add1.IN5
+num_used_lo[9] => Add1.IN4
+num_used_lo[10] => Add1.IN3
+discard_en <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+wren_out <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+priority => process_0.IN1
+priority => process_0.IN1
+frame_len[0] => LessThan0.IN28
+frame_len[0] => LessThan1.IN28
+frame_len[1] => LessThan0.IN27
+frame_len[1] => LessThan1.IN27
+frame_len[2] => LessThan0.IN26
+frame_len[2] => LessThan1.IN26
+frame_len[3] => LessThan0.IN25
+frame_len[3] => LessThan1.IN25
+frame_len[4] => LessThan0.IN24
+frame_len[4] => LessThan1.IN24
+frame_len[5] => LessThan0.IN23
+frame_len[5] => LessThan1.IN23
+frame_len[6] => LessThan0.IN22
+frame_len[6] => LessThan1.IN22
+frame_len[7] => LessThan0.IN21
+frame_len[7] => LessThan1.IN21
+frame_len[8] => LessThan0.IN20
+frame_len[8] => LessThan1.IN20
+frame_len[9] => LessThan0.IN19
+frame_len[9] => LessThan1.IN19
+frame_len[10] => LessThan0.IN18
+frame_len[10] => LessThan1.IN18
+frame_len[11] => LessThan0.IN17
+frame_len[11] => LessThan1.IN17
 
 
 |xmitTop|monitoring_logic:monitoring_logic_inst
@@ -3449,17 +2833,17 @@ lo_stop_in => process_0.IN0
 lo_stop_in => my_state.OUTPUTSELECT
 lo_stop_in => my_state.OUTPUTSELECT
 lo_stop_in => my_state.OUTPUTSELECT
-lo_fifo_used_in[0] => ~NO_FANOUT~
-lo_fifo_used_in[1] => ~NO_FANOUT~
-lo_fifo_used_in[2] => ~NO_FANOUT~
-lo_fifo_used_in[3] => ~NO_FANOUT~
-lo_fifo_used_in[4] => ~NO_FANOUT~
-lo_fifo_used_in[5] => ~NO_FANOUT~
-lo_fifo_used_in[6] => ~NO_FANOUT~
-lo_fifo_used_in[7] => ~NO_FANOUT~
-lo_fifo_used_in[8] => ~NO_FANOUT~
-lo_fifo_used_in[9] => ~NO_FANOUT~
-lo_fifo_used_in[10] => ~NO_FANOUT~
+lo_fifo_used_in[0] => LessThan1.IN24
+lo_fifo_used_in[1] => LessThan1.IN23
+lo_fifo_used_in[2] => LessThan1.IN22
+lo_fifo_used_in[3] => LessThan1.IN21
+lo_fifo_used_in[4] => LessThan1.IN20
+lo_fifo_used_in[5] => LessThan1.IN19
+lo_fifo_used_in[6] => LessThan1.IN18
+lo_fifo_used_in[7] => LessThan1.IN17
+lo_fifo_used_in[8] => LessThan1.IN16
+lo_fifo_used_in[9] => LessThan1.IN15
+lo_fifo_used_in[10] => LessThan1.IN14
 stop_out <= process_0.DB_MAX_OUTPUT_PORT_TYPE
 
 

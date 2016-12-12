@@ -11,7 +11,7 @@ integer j, n;
 initial begin
 	// Parameters
 	n = 512;
-	num_packets = 2048;
+	num_packets = 10;
 
 	clk_sys = 1'b1;
 	clk_phy = 1'b1;
@@ -24,12 +24,12 @@ end
 
 always begin
 	clk_phy <= !clk_phy;
-	#(`CLK_PER);
+	#(2*`CLK_PER);
 end
 
 always begin
 	clk_sys <= !clk_sys;
-	#(2*`CLK_PER);
+	#(`CLK_PER);
 end
 
 // Input signals
@@ -63,7 +63,7 @@ initial begin
 	ctrl_block_in = 24'd512;
 	hi_priority_en = 1'b1;
 
-	#(10*`CLK_PER);
+	#(8*`CLK_PER);
 
 	for (i=0; i<num_packets; i=i+1) begin
 		for (j=0; j<n; j=j+1) begin

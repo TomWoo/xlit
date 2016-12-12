@@ -9,17 +9,17 @@ port(
 	clk_phy:					in std_logic;
 	clk_sys:					in std_logic;
 	reset:					in std_logic;
-
+	-- from sys_clk domain
 	wrend: 					in std_logic; --data write enable;
 	wrenc: 					in std_logic; --ctrl write enable;
 	datai: 					in std_logic_vector(7 downto 0);
 	controli: 				in std_logic_vector(23 downto 0);
 	in_priority:			in std_logic;
-	
+	-- phy_clk domain
 	numusedhi:				in std_logic_vector(10 downto 0);
 	numusedlo: 				in std_logic_vector(10 downto 0);	
 	
-	out_m_discard_en:		out std_logic;
+	out_m_discard_en:		out std_logic; -- synchronized to sys_clk externally
 	out_wren:				out std_logic;
 	out_priority: 			out std_logic;
 	datao: 					out std_logic_vector(7 downto 0);
@@ -29,10 +29,56 @@ port(
 end in_FSM;
 
 architecture arch of in_FSM is
-	-- remapped inputs
+	-- Remapped inputs
 	signal aclr:				std_logic;
 	signal sysclk: 			std_logic;
 	signal phyclk:				std_logic;
+	
+	-- FIFO signals
+	signal emptyd, emptyc, empty_priority: std_logic;
+	signal  fulld,  fullc,  full_priority: std_logic;
+	
+	component inbuff 
+	port (
+		aclr		: IN STD_LOGIC ;
+		data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+		rdclk		: IN STD_LOGIC ;
+		rdreq		: IN STD_LOGIC ;
+		wrclk		: IN STD_LOGIC ;
+		wrreq		: IN STD_LOGIC ;
+		q			: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+		rdempty	: OUT STD_LOGIC ;
+		wrfull	: OUT STD_LOGIC 
+	);
+	end component;
+	
+	component inbuffcon
+	port(
+		aclr		: IN STD_LOGIC;
+		data		: IN STD_LOGIC_VECTOR (23 DOWNTO 0);
+		rdclk		: IN STD_LOGIC ;
+		rdreq		: IN STD_LOGIC ;
+		wrclk		: IN STD_LOGIC ;
+		wrreq		: IN STD_LOGIC ;
+		q			: OUT STD_LOGIC_VECTOR (23 DOWNTO 0);
+		rdempty	: OUT STD_LOGIC ;
+		wrfull	: OUT STD_LOGIC 
+	);
+	end component;
+	
+	component FIFO_1
+	port(
+		aclr		: IN STD_LOGIC;
+		data		: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+		rdclk		: IN STD_LOGIC ;
+		rdreq		: IN STD_LOGIC ;
+		wrclk		: IN STD_LOGIC ;
+		wrreq		: IN STD_LOGIC ;
+		q			: OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+		rdempty	: OUT STD_LOGIC ;
+		wrfull	: OUT STD_LOGIC 
+	);
+	end component;
 	
 	component discard_logic is
 	port(
@@ -45,225 +91,143 @@ architecture arch of in_FSM is
 	);
 	end component;
 	
-	component inbuff is
-	port (
-		aclr		: IN STD_LOGIC ;
-		data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-		rdclk		: IN STD_LOGIC ;
-		rdreq		: IN STD_LOGIC ;
-		wrclk		: IN STD_LOGIC ;
-		wrreq		: IN STD_LOGIC ;
-		q			: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-		rdempty	: OUT STD_LOGIC ;
-		wrfull	: OUT STD_LOGIC
-	);
-	end component;   
-	
-	component inbuffcon is
-	port(
-		aclr		: IN STD_LOGIC;
-		data		: IN STD_LOGIC_VECTOR (23 DOWNTO 0);
-		rdclk		: IN STD_LOGIC ;
-		rdreq		: IN STD_LOGIC ;
-		wrclk		: IN STD_LOGIC ;
-		wrreq		: IN STD_LOGIC ;
-		q			: OUT STD_LOGIC_VECTOR (23 DOWNTO 0);
-		rdempty	: OUT STD_LOGIC ;
-		wrfull	: OUT STD_LOGIC
-	);
-	end component;
-	
-	component FIFO_1 is
-	port(
-		aclr		: IN STD_LOGIC;
-		data		: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-		rdclk		: IN STD_LOGIC ;
-		rdreq		: IN STD_LOGIC ;
-		wrclk		: IN STD_LOGIC ;
-		wrreq		: IN STD_LOGIC ;
-		q			: OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-		rdempty	: OUT STD_LOGIC ;
-		wrfull	: OUT STD_LOGIC
-	);
-	end component;
-	
-	-- State signals
-	type state is (s_buffering, s_streaming);
+	-- State
+	type state is (s_discard, s_stream);
 	signal my_state	: state;
 	
+	-- Registered signals
+	signal count					: std_logic_vector(8 downto 0);
+	signal count_prev				: std_logic_vector(8 downto 0);
+	
 	-- Wires
-	signal frame_len		: std_logic_vector(11 downto 0);
-	signal buffering_en	: std_logic;
-	signal streaming_en	: std_logic;
-	
-	signal priority		: std_logic;
-	signal priority_wren	: std_logic;
-	signal priority_rden	: std_logic;
-	
-	signal stop_fifo_in	: std_logic;
-	signal stop_wren		: std_logic;
-	signal stop_rden		: std_logic;
-	
-	signal data_fifo_wren	: std_logic;
-	signal data_fifo_rden	: std_logic;
-	signal ctrl_fifo_wren	: std_logic;
-	signal ctrl_fifo_rden	: std_logic;
-	
-	signal fulld, emptyd, fullc, emptyc, full_priority, empty_priority, full_stop, empty_stop	: std_logic;
-	
-	-- Reg's
-	signal count			: std_logic_vector(8 downto 0);
+	signal frame_len				: std_logic_vector(11 downto 0);
+	signal is_zero					: std_logic;
+	signal discard_en				: std_logic;
+	signal stream_en				: std_logic;
+	signal ctrl_wren				: std_logic;
+	signal priority_fifo_out	: std_logic;
 begin
-
--- Remapped inputs
-process(reset, clk_sys, clk_phy) begin
-	aclr <= reset;
-	sysclk <= clk_sys;
-	phyclk <= clk_phy;
-end process;
 
 -- Asynchronous signals
 process(all) begin
-	frame_len <= controli(11 downto 0);
+	-- Remapped inputs
+	aclr <= reset;
+	sysclk <= clk_sys;
+	phyclk <= clk_phy;
 	
-	-- stop logic
+	frame_len <= controlo(11 downto 0);
+	
 	if(count = "000000000") then
-		stop_fifo_in <= '1';
+		is_zero <= '1';
 	else
-		stop_fifo_in <= '0';
+		is_zero <= '0';
 	end if;
+	
+	-- Remapped outputs
+	out_priority <= priority_fifo_out;
 end process;
 
--- Initializing FIFO read signals
-process(reset, wrenc) begin
+-- Moore FSM (phy_clk)
+process(reset, clk_phy) begin
 	if(reset = '1') then
-		data_fifo_rden <= '0';
-		ctrl_fifo_rden <= '0';
-		
-		priority_rden <= '0';
-		stop_rden <= '0';
-	elsif(rising_edge(wrenc)) then
-		data_fifo_rden <= '1';
-		ctrl_fifo_rden <= '1';
-		
-		priority_rden <= '1';
-		stop_rden <= '1';
-	end if;
-end process;
-
--- Moore FSM
-process(reset, clk_sys) begin
-	if(reset = '1') then
-		my_state <= s_buffering;
-		count <= "111111111"; -- highest value to guarantee correct initialization
-	elsif(rising_edge(clk_sys)) then
-		if(buffering_en) then
-			my_state <= s_buffering;
-		else
-			my_state <= s_streaming;
+		my_state <= s_discard;
+		count_prev <= "000000000";
+		count <= "111111111"; -- high value to guarantee correct initialization
+	elsif(rising_edge(clk_phy)) then
+		if(is_zero) then
+			if(discard_en) then
+				my_state <= s_discard;
+			else
+				my_state <= s_stream;
+			end if;
 		end if;
 		
-		if(wrenc = '1') then
+		count_prev <= count;
+		if(ctrl_wren = '1') then
 			count <= frame_len(8 downto 0);
-		else
+		elsif(not(is_zero)) then
 			count <= count - '1';
 		end if;
+		
+		-- stop logic
+		if(not(count_prev = "00000000")) then
+			stop <= is_zero;
+		else
+			stop <= '0';
+		end if;
 	end if;
 end process;
 
--- Moore FSM output signals
+-- Synchronous output signals
 process(my_state) begin
 	case my_state is
-	when s_buffering =>
+	when s_discard =>
 		out_wren <= '0';
-		
-		data_fifo_wren <= '0';
-		ctrl_fifo_wren <= '0';
-		
-		priority_wren <= '0';
-		stop_wren <= '0';
-	when others => -- s_streaming
+		out_m_discard_en <= '1';
+	when others => -- s_stream
 		out_wren <= '1';
-		
-		data_fifo_wren <= '1';
-		ctrl_fifo_wren <= '1';
-		
-		priority_wren <= '1';
-		stop_wren <= '1';
+		out_m_discard_en <= '0';
 	end case;
 end process;
 
--- Output signals
-process(priority, buffering_en, count) begin
-	out_priority <= priority;
-	
-	if(buffering_en = '1' and count = "000000000") then
-		out_m_discard_en <= '1';
-	else
-		out_m_discard_en <= '0';
-	end if;
-end process;
-
-buffer_logic: discard_logic
-port map (
-	num_used_hi => numusedhi,
-	num_used_lo => numusedlo,
-	discard_en => buffering_en,
-	wren_out => streaming_en,
-	priority => priority,
-	frame_len => frame_len
-);
-
-input_buffer_data: inbuff
+inbuff_data: inbuff
 port map (
 	aclr => aclr,
 	wrclk => sysclk,
 	rdclk => phyclk,
 	q => datao,
 	data => datai,
-	wrreq => data_fifo_wren,
-	rdreq => data_fifo_rden,
+	wrreq => wrend,
+	rdreq => '1',
 	rdempty => emptyd,
 	wrfull => fulld
 );
 
-input_buffer_ctrl: inbuffcon
+inbuff_ctrl: inbuffcon
 port map(
 	aclr => aclr,
 	wrclk => sysclk,
 	rdclk => phyclk,
 	q => controlo,
 	data => controli,
-	wrreq => ctrl_fifo_wren,
-	rdreq => ctrl_fifo_rden,
+	wrreq => wrend,
+	rdreq => '1',
 	rdempty => emptyc,
 	wrfull => fullc
 );
 
-priority_fifo: FIFO_1
+inbuff_priority: FIFO_1
 port map(
 	aclr => aclr,
 	wrclk => sysclk,
 	rdclk => phyclk,
-	q(0) => priority,
+	q(0) => priority_fifo_out,
 	data(0) => in_priority,
-	wrreq => priority_wren,
-	rdreq => priority_rden,
+	wrreq => wrend,
+	rdreq => '1',
 	rdempty => empty_priority,
 	wrfull => full_priority
 );
 
-stop_fifo: FIFO_1
+ctrl_wren_fifo: FIFO_1
 port map(
 	aclr => aclr,
 	wrclk => sysclk,
 	rdclk => phyclk,
-	q(0) => stop,
-	data(0) => stop_fifo_in,
-	wrreq => stop_wren,
-	rdreq => stop_rden,
-	rdempty => empty_stop,
-	wrfull => full_stop
+	q(0) => ctrl_wren,
+	data(0) => wrenc,
+	wrreq => wrend,
+	rdreq => '1'
+);
+
+discard_logic_async: discard_logic
+port map (
+	num_used_hi => numusedhi,
+	num_used_lo => numusedlo,
+	discard_en => discard_en,
+	wren_out => stream_en,
+	priority => priority_fifo_out,
+	frame_len => frame_len
 );
 
 end architecture;

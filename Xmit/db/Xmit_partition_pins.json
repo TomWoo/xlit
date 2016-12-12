@@ -184,67 +184,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk_sys",
-					"strict" : false
-				},
-				{
-					"name" : "f_rec_frame_valid",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[9]",
-					"strict" : false
-				},
-				{
-					"name" : "f_hi_priority",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[10]",
-					"strict" : false
-				},
-				{
 					"name" : "f_rec_data_valid",
 					"strict" : false
 				},
 				{
-					"name" : "f_ctrl_in[8]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[11]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[4]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[3]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[2]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[1]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[0]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[7]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[6]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[5]",
+					"name" : "clk_sys",
 					"strict" : false
 				},
 				{
@@ -296,6 +240,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "f_hi_priority",
+					"strict" : false
+				},
+				{
 					"name" : "f_data_in[4]",
 					"strict" : false
 				},
@@ -325,6 +273,58 @@
 				},
 				{
 					"name" : "f_data_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "f_rec_frame_valid",
+					"strict" : false
+				},
+				{
+					"name" : "f_ctrl_in[11]",
+					"strict" : false
+				},
+				{
+					"name" : "f_ctrl_in[10]",
+					"strict" : false
+				},
+				{
+					"name" : "f_ctrl_in[9]",
+					"strict" : false
+				},
+				{
+					"name" : "f_ctrl_in[8]",
+					"strict" : false
+				},
+				{
+					"name" : "f_ctrl_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "f_ctrl_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "f_ctrl_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "f_ctrl_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "f_ctrl_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "f_ctrl_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "f_ctrl_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "f_ctrl_in[5]",
 					"strict" : false
 				}
 			]

@@ -29,21 +29,24 @@ end entity;
 architecture rtl of priority_FSM is
 	type state is (s_off, s_lo, s_hi);
 	signal my_state				: state;
+	
 	signal hi_fifo_used_int		: integer range 0 to 2048;
 	signal lo_fifo_used_int		: integer range 0 to 2048;
 begin
 
 -- Asynchronous signals
 process(hi_fifo_used_in, my_state, hi_stop_in, lo_stop_in) begin
-	hi_fifo_used_int <= to_integer(unsigned(hi_fifo_used_in));
 	if((my_state = s_hi and hi_stop_in = '1') or (my_state = s_lo and lo_stop_in = '1')) then
 		stop_out <= '1';
 	else
 		stop_out <= '0';
 	end if;
+	
+	hi_fifo_used_int <= to_integer(unsigned(hi_fifo_used_in));
+	lo_fifo_used_int <= to_integer(unsigned(lo_fifo_used_in));
 end process;
 
--- State machine
+-- Moore machine
 process(clk_phy, reset) begin
 	if (reset = '1') then
 		my_state <= s_off;

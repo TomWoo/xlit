@@ -22,7 +22,7 @@ architecture arch of discard_logic is
 	signal frame_len_int:	integer range 0 to 4095;
 begin
 
-process(num_used_hi, num_used_lo, priority, frame_len) begin
+process(num_used_hi_int, num_used_lo_int, priority, frame_len_int) begin
 	num_used_hi_int <= to_integer(unsigned(num_used_hi));
 	num_used_lo_int <= to_integer(unsigned(num_used_lo));
 	frame_len_int   <= to_integer(unsigned(frame_len  ));
