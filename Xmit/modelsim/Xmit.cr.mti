@@ -104,13 +104,6 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity fifo_8
 -- Compiling architecture SYN of fifo_8
 
-} {} {}} C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_long_hi.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_long_hi.v
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module testbench_long_hi
-
-Top level modules:
-	testbench_long_hi
-
 } {} {}} C:/altera_lite/16.0/xlit/Xmit/in_FSM.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/in_FSM.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package STANDARD

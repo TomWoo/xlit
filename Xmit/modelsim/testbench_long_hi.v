@@ -13,7 +13,7 @@ initial begin
 	packet_length = 512; // also modify packet length in control block!!!
 	num_packets = 64;
 	priority = 1;
-
+	start_lo = 0
 	clk_sys = 1'b1;
 	clk_phy = 1'b1;
 	rst = 1'b1;
@@ -72,7 +72,7 @@ initial begin // assigning value of data, data valid, and priority
 		#(4*`CLK_SYS);
 
 		// xFF for intermediate 56 cycles
-		data_in = 8'hFF;
+		data_in = start_lo;
 		data_valid = 1'b1;
 		hi_priority_en = priority;
 		#((packet_length-8)*`CLK_SYS);
@@ -82,6 +82,8 @@ initial begin // assigning value of data, data valid, and priority
 		data_valid = 1'b1;
 		hi_priority_en = priority;
 		#(4*`CLK_SYS);
+		
+		start_lo=(start_lo+1);
 	end
 end
 
