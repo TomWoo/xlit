@@ -26,12 +26,12 @@ initial begin
 end
 
 always begin
-	clk_phy <= !clk_phy;
+	clk_sys <= !clk_sys;
 	#(`CLK_PER);
 end
 
 always begin
-	clk_sys <= !clk_sys;
+	clk_phy <= !clk_phy;
 	#(2*`CLK_PER);
 end
 

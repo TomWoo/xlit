@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
-`define CLK_PHY 20
-`define CLK_SYS 40
+`define CLK_PHY 40
+`define CLK_SYS 20
 
 module testbench_long_lo;
 
