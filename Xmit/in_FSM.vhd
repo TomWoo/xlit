@@ -160,7 +160,7 @@ begin
 	process(reset, clk_sys, clk_phy, ctrlm, incountdone, outcountdone, last, lastm, txen, txone, pakavails) begin
 		aclr <= reset;
 		sysclk <= clk_sys;
-		phyclk <= clk_phy;
+		phyclk <= clk_sys;
 --		db_ctrlm <= ctrlm;
 --		db_last <= last;
 --		db_lastl <= lastl;
@@ -256,12 +256,12 @@ begin
 --	END PROCESS;
 	
 	
-	process(phyclk, emptyd, aclr, txone) --ctrlout
+	process(sysclk, emptyd, aclr, txone) --ctrlout
 	begin
 		if(aclr = '1') then
 			out_priority <= '0';
 			controlo <= "000000000000000000000000";
-		elsif (phyclk'event AND phyclk = '1') then
+		elsif (sysclk'event AND sysclk = '1') then
 --			if (stopl = '1') then
 --				out_priority <= '0';
 --				controlo <= "000000000000000000000000";
@@ -272,14 +272,14 @@ begin
 		end if;
 	end process;
 	
-	process(phyclk, emptyd, aclr) --dataout always outputs data from the buffer
+	process(sysclk, emptyd, aclr) --dataout always outputs data from the buffer
 	begin
 		if (aclr = '1') then
 			datao <= "00000000";
 			stop <= '0';
 			out_wren <= '0';
 			out_m_discard_en <= '0';
-		elsif (phyclk'event AND phyclk = '1') then
+		elsif (sysclk'event AND sysclk = '1') then
 			datao <= datam;
 			out_wren <= wrensig and txen2 and not stopint;
 			txen2 <= txen;
@@ -303,7 +303,7 @@ begin
 		port map (
 			aclr => aclr,
 			wrclk => sysclk,
-			rdclk => phyclk,
+			rdclk => sysclk,
 			q => datam,
 			data => datai,
 			wrreq => wrend,
@@ -316,7 +316,7 @@ begin
 		port map(
 			aclr => aclr,
 			wrclk => sysclk,
-			rdclk => phyclk,
+			rdclk => sysclk,
 			q => ctrlm,
 			data => controli,
 			wrreq => wrenc,
@@ -329,7 +329,7 @@ begin
 		port map(
 			aclr => aclr,
 			wrclk => sysclk,
-			rdclk => phyclk,
+			rdclk => sysclk,
 			q(0) => opri,
 			data(0) => in_priority,
 			wrreq => wrenc,
@@ -342,7 +342,7 @@ begin
 		port map(
 			aclr => aclr,
 			wrclk => sysclk,
-			rdclk => phyclk,
+			rdclk => sysclk,
 			q(0) => lastm,
 			data(0) => last and not lastl,
 			wrreq => wrend,
@@ -356,7 +356,7 @@ begin
 			aclr => aclr,
 			incountdone => last,
 			outcountdone => lastm,
-			phyclk => phyclk,
+			phyclk => sysclk,
 			pakavail => pakavails
 		);
 		 
@@ -364,7 +364,7 @@ begin
 		port map(
 			pakavail => pakavails,
 			aclr => aclr,
-			phyclk => phyclk,
+			phyclk => sysclk,
 			txen => txen,
 			txone => txone,
 			stop => lastm

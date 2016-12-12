@@ -222,7 +222,7 @@ architecture rtl of xmitTop is
 		out_wren						=> out_wren_wire,
 		out_priority				=> out_priority_wire,
 		clk_sys						=> clk_sys,
-		clk_phy						=> clk_phy,
+		clk_phy						=> clk_sys,
 		reset							=> reset,
 		controli						=> f_ctrl_in,
 		wrend							=> f_rec_data_valid,
@@ -237,7 +237,7 @@ architecture rtl of xmitTop is
 	);
 	
 	monitoring_logic_inst: monitoring_logic PORT MAP (
-		clk						=> clk_phy, 
+		clk						=> clk_sys, 
 		reset						=> reset,
 		discard_enable			=> inFSM_discard_out,
 		xmit_done				=> xmit_done_wire,
@@ -291,7 +291,7 @@ architecture rtl of xmitTop is
 	data_hi_fifo: dataFIFO PORT MAP(
 		aclr						=> reset,
 		data						=> inBuffer_data_out,
-		rdclk						=> clk_phy,
+		rdclk						=> clk_sys,
 		rdreq						=> hi_rereq,
 		wrclk						=> clk_phy,
 		wrreq						=> hi_fifo_enable,
@@ -306,7 +306,7 @@ architecture rtl of xmitTop is
 	ctrl_hi_fifo: ctrlFIFO PORT MAP(
 		aclr						=> reset,
 		data						=> inBuffer_ctrl_out,
-		rdclk						=> clk_phy,
+		rdclk						=> clk_sys,
 		rdreq						=> hi_rereq,
 		wrclk						=> clk_phy,
 		wrreq						=> hi_fifo_enable,
@@ -321,7 +321,7 @@ architecture rtl of xmitTop is
 	stop_hi_fifo: FIFO_1 PORT MAP(
 		aclr						=> reset,
 		data						=> stop,
-		rdclk						=> clk_phy,
+		rdclk						=> clk_sys,
 		rdreq						=> hi_rereq,
 		wrclk						=> clk_phy,
 		wrreq						=> hi_fifo_enable,
@@ -336,7 +336,7 @@ architecture rtl of xmitTop is
 	data_lo_fifo: dataFIFO PORT MAP(
 		aclr						=> reset,
 		data						=> inBuffer_data_out,
-		rdclk						=> clk_phy,
+		rdclk						=> clk_sys,
 		rdreq						=> lo_rereq,
 		wrclk						=> clk_phy,
 		wrreq						=> low_fifo_enable,
@@ -351,7 +351,7 @@ architecture rtl of xmitTop is
 	ctrl_lo_fifo: ctrlFIFO PORT MAP(
 		aclr						=> reset,
 		data						=> inBuffer_ctrl_out,
-		rdclk						=> clk_phy,
+		rdclk						=> clk_sys,
 		rdreq						=> lo_rereq,
 		wrclk						=> clk_phy,
 		wrreq						=> low_fifo_enable,
@@ -366,7 +366,7 @@ architecture rtl of xmitTop is
 	stop_lo_fifo: FIFO_1 PORT MAP(
 		aclr						=> reset,
 		data						=> stop,
-		rdclk						=> clk_phy,
+		rdclk						=> clk_sys,
 		rdreq						=> lo_rereq,
 		wrclk						=> clk_phy,
 		wrreq						=> low_fifo_enable,
