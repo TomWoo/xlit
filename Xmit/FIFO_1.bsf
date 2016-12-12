@@ -88,7 +88,7 @@ agreement for further details.
 		(line (pt 176 136)(pt 160 136))
 	)
 	(drawing
-		(text "1 bit x 2048 words" (rect 83 157 240 325)(font "Arial" ))
+		(text "1 bit x 131072 words" (rect 73 157 230 325)(font "Arial" ))
 		(line (pt 16 100)(pt 160 100))
 		(line (pt 16 148)(pt 160 148))
 		(line (pt 16 32)(pt 160 32))

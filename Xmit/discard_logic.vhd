@@ -6,8 +6,8 @@ use ieee.numeric_std.all;
 
 entity discard_logic is
 port(
-	num_used_hi:	in std_logic_vector(10 downto 0);
-	num_used_lo:	in std_logic_vector(10 downto 0);
+	num_used_hi:	in std_logic_vector(16 downto 0);
+	num_used_lo:	in std_logic_vector(16 downto 0);
 	discard_en:		out std_logic;
 	wren:				out std_logic;
 	priority:		in std_logic;

@@ -43,8 +43,8 @@ architecture rtl of xmitTop is
 		out_priority: 			out std_logic;
 		
 		stop:						out std_logic;
-		numusedhi:				in std_logic_vector(10 downto 0);
-		numusedlo: 				in std_logic_vector(10 downto 0)
+		numusedhi:				in std_logic_vector(16 downto 0);
+		numusedlo: 				in std_logic_vector(16 downto 0)
 	);
 	end component;
 	
@@ -83,9 +83,9 @@ architecture rtl of xmitTop is
 		ctrl_block_out		: out std_logic_vector(23 downto 0);
 		
 		hi_stop_in			: in std_logic;
-		hi_fifo_used_in	: in std_logic_vector(10 downto 0);
+		hi_fifo_used_in	: in std_logic_vector(16 downto 0);
 		lo_stop_in			: in std_logic;
-		lo_fifo_used_in	: in std_logic_vector(10 downto 0);
+		lo_fifo_used_in	: in std_logic_vector(16 downto 0);
 		stop_out				: out std_logic
 	);
 	end component;
@@ -121,7 +121,7 @@ architecture rtl of xmitTop is
 		rdfull				: OUT STD_LOGIC ;
 		wrempty				: OUT STD_LOGIC ;
 		wrfull				: OUT STD_LOGIC ;
-		wrusedw				: OUT STD_LOGIC_VECTOR (10 DOWNTO 0)
+		wrusedw				: OUT STD_LOGIC_VECTOR (16 DOWNTO 0)
 	);
 	end component;
 	
@@ -139,7 +139,7 @@ architecture rtl of xmitTop is
 		rdfull				: OUT STD_LOGIC ;
 		wrempty				: OUT STD_LOGIC ;
 		wrfull				: OUT STD_LOGIC ;
-		wrusedw				: OUT STD_LOGIC_VECTOR (10 DOWNTO 0)
+		wrusedw				: OUT STD_LOGIC_VECTOR (16 DOWNTO 0)
 	);
 	end component;
 	
@@ -196,8 +196,8 @@ architecture rtl of xmitTop is
 	SIGNAL lo_rereq:				STD_LOGIC;
 	
 	signal stop			: std_logic_vector(0 DOWNTO 0);
-	signal numusedhi	: std_logic_vector(10 downto 0);
-	signal numusedlo	: std_logic_vector(10 downto 0);
+	signal numusedhi	: std_logic_vector(16 downto 0);
+	signal numusedlo	: std_logic_vector(16 downto 0);
 	
 	signal wren_priority_out_FSM: std_logic;
 	signal stop_priority_out_FSM: std_logic;
@@ -205,7 +205,7 @@ architecture rtl of xmitTop is
 	begin
 	process(out_wren_wire, out_priority_wire, clk_sys)
 	begin
-		if(clk_phy'event and clk_phy='1') then
+		if(clk_sys'event and clk_sys='1') then
 			low_fifo_enable <= out_wren_wire and not out_priority_wire;
 			hi_fifo_enable <= out_wren_wire and out_priority_wire;
 		end if;

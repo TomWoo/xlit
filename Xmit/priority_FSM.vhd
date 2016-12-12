@@ -19,9 +19,9 @@ port(
 	ctrl_block_out		: out std_logic_vector(23 downto 0);
 	
 	hi_stop_in			: in std_logic;
-	hi_fifo_used_in	: in std_logic_vector(10 downto 0);
+	hi_fifo_used_in	: in std_logic_vector(16 downto 0);
 	lo_stop_in			: in std_logic;
-	lo_fifo_used_in	: in std_logic_vector(10 downto 0);
+	lo_fifo_used_in	: in std_logic_vector(16 downto 0);
 	stop_out				: out std_logic
 );
 end entity;
