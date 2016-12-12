@@ -26,12 +26,12 @@ end
 
 always begin
 	clk_sys <= !clk_sys;
-	#`CLK_SYS;
+	#(`CLK_SYS/2);
 end
 
 always begin
 	clk_phy = !clk_phy;
-	#`CLK_PHY;
+	#(`CLK_PHY/2);
 end
 
 // Input signals

@@ -6,14 +6,14 @@ module testbench_long_hi;
 
 // signals
 reg clk_sys, clk_phy, rst;
-integer i, j, num_packets, packet_length, priority;
+integer i, j, num_packets, packet_length, priority, start_lo;
 
 initial begin
 	// parameters
 	packet_length = 512; // also modify packet length in control block!!!
 	num_packets = 64;
 	priority = 1;
-	start_lo = 0
+	start_lo = 0;
 	clk_sys = 1'b1;
 	clk_phy = 1'b1;
 	rst = 1'b1;
@@ -23,12 +23,12 @@ end
 
 always begin
 	clk_sys <= !clk_sys;
-	#`CLK_SYS;
+	#(`CLK_SYS/2);
 end
 
 always begin
 	clk_phy = !clk_phy;
-	#`CLK_PHY;
+	#(`CLK_PHY/2);
 end
 
 // Input signals

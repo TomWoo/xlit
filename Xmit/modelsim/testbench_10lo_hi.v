@@ -26,12 +26,12 @@ end
 
 always begin
 	clk_sys <= !clk_sys;
-	#`CLK_SYS;
+	#(`CLK_SYS/2);
 end
 
 always begin
 	clk_phy = !clk_phy;
-	#`CLK_PHY;
+	#(`CLK_PHY/2);
 end
 
 // Input signals
@@ -94,22 +94,22 @@ initial begin // assigning value of ctrl, ctrl valid
 			// turn on control block for first cycle
 			ctrl_block_in = 24'h040040;
 			ctrl_block_valid = 1'b1;
-			#(`CLK_SYS);
+			#(2*`CLK_SYS);
 
 			// turn off control block again
 			ctrl_block_in = 24'h000000;
 			ctrl_block_valid = 1'b0;
 			#((packet_length-1)*`CLK_SYS);
 
-		// turn on control block for short cycle
-		ctrl_block_in = 24'h200200;
-		ctrl_block_valid = 1'b1;
-		#(`CLK_SYS);
+			// turn on control block for short cycle
+			ctrl_block_in = 24'h200200;
+			ctrl_block_valid = 1'b1;	
+			#(2*`CLK_SYS);
 
-		// turn off control block again
-		ctrl_block_in = 24'h000000;
-		ctrl_block_valid = 1'b0;
-		#((packet_length-1)*`CLK_SYS);
+			// turn off control block again
+			ctrl_block_in = 24'h000000;
+			ctrl_block_valid = 1'b0;
+			#((packet_length-1)*`CLK_SYS);
 		end
 	end
 end
