@@ -1,4 +1,61 @@
-C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/tren.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/tren.vhd
+C:/altera_lite/16.0/xlit/Xmit/output_buffer.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/output_buffer.vhd
+Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity output_buffer
+-- Compiling architecture SYN of output_buffer
+
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/inbuffcon.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/inbuffcon.vhd
+Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity inbuffcon
+-- Compiling architecture SYN of inbuffcon
+
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/FIFO_1.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/FIFO_1.vhd
+Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity FIFO_1
+-- Compiling architecture SYN of fifo_1
+
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/dataFIFO.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/dataFIFO.vhd
+Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity dataFIFO
+-- Compiling architecture SYN of datafifo
+
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_top.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_top.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module testbench_top
+
+Top level modules:
+	testbench_top
+
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/priority_FSM.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/priority_FSM.vhd
+Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity priority_FSM
+-- Compiling architecture rtl of priority_FSM
+
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/discard_logic.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/discard_logic.vhd
+Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity discard_logic
+-- Compiling architecture arch of discard_logic
+
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/tren.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/tren.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -6,7 +63,16 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity tren
 -- Compiling architecture arch of tren
 
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/ctrlFIFO.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/ctrlFIFO.vhd
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/inBuffer.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/inBuffer.vhd
+Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity inBuffer
+-- Compiling architecture arch of inBuffer
+
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/ctrlFIFO.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/ctrlFIFO.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -14,7 +80,7 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity ctrlFIFO
 -- Compiling architecture SYN of ctrlfifo
 
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/inbuff.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/inbuff.vhd
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/inbuff.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/inbuff.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -22,7 +88,7 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity inbuff
 -- Compiling architecture SYN of inbuff
 
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/monitoring_logic.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/monitoring_logic.vhd
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/monitoring_logic.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/monitoring_logic.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -30,7 +96,7 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity monitoring_logic
 -- Compiling architecture buffered of monitoring_logic
 
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/fifo_8.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/fifo_8.vhd
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/fifo_8.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/fifo_8.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -38,7 +104,14 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity fifo_8
 -- Compiling architecture SYN of fifo_8
 
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/in_FSM.vhd
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_long_hi.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_long_hi.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module testbench_long_hi
+
+Top level modules:
+	testbench_long_hi
+
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/in_FSM.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/in_FSM.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -47,7 +120,7 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity in_FSM
 -- Compiling architecture arch of in_FSM
 
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/xmitTop.vhd
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/xmitTop.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/xmitTop.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -55,7 +128,7 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity xmitTop
 -- Compiling architecture rtl of xmitTop
 
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM.vhd
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/out_FSM.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/out_FSM.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -66,7 +139,7 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity out_FSM
 -- Compiling architecture rtl of out_FSM
 
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_fsm.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_fsm.vhd
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/output_fsm.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/output_fsm.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -74,7 +147,7 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity output_fsm
 -- Compiling architecture machine of output_fsm
 
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/pakstak.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/pakstak.vhd
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/pakstak.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/pakstak.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -85,75 +158,19 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity pakstak
 -- Compiling architecture arch of pakstak
 
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM_tester.v {1 {vlog -work work -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/out_FSM_tester.v
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/out_FSM_tester.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/out_FSM_tester.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module out_FSM_tester
 
 Top level modules:
 	out_FSM_tester
 
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/testbench_diff_packet_lengths.v {1 {vlog -work work -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/testbench_diff_packet_lengths.v
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module testbench_diff_packet_lengths
-
-Top level modules:
-	testbench_diff_packet_lengths
-
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/inbuffcon.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/inbuffcon.vhd
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/input_buffer.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/input_buffer.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity inbuffcon
--- Compiling architecture SYN of inbuffcon
-
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/output_buffer.vhd
-Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity output_buffer
--- Compiling architecture SYN of output_buffer
-
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/FIFO_1.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/FIFO_1.vhd
-Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity FIFO_1
--- Compiling architecture SYN of fifo_1
-
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/dataFIFO.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/dataFIFO.vhd
-Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity dataFIFO
--- Compiling architecture SYN of datafifo
-
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/priority_FSM.vhd
-Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity priority_FSM
--- Compiling architecture rtl of priority_FSM
-
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/testbench_top.v {1 {vlog -work work -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/modelsim/testbench_top.v
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module testbench_top
-
-Top level modules:
-	testbench_top
-
-} {} {}} C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/User/OneDrive/Duke/7_Fall_2016/ECE_559/Ethernet_switch/xlit/Xmit/discard_logic.vhd
-Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity discard_logic
--- Compiling architecture arch of discard_logic
+-- Compiling entity input_buffer
+-- Compiling architecture buffered of input_buffer
 
 } {} {}}
