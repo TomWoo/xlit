@@ -1,33 +1,32 @@
-`timescale 1ns/10ps
+`timescale 1ns/100ps
 `define CLK_PER 20
+`define CLK_PER_PHY 40
 
 module testbench_high_priority_long_packet;
 
 // Clock and POR
 reg clk_sys, clk_phy, rst;
 integer i, num_packets;
-integer j, n;
+integer j, packet_len;
 
 initial begin
 	// Parameters
-	n = 512;
-	num_packets = 2048;
+	packet_len = 512;
+	num_packets = 64;
 
+	// Clock
 	clk_sys = 1'b1;
 	clk_phy = 1'b1;
-	rst = 1'b1;
-	#(6*`CLK_PER);
-	rst = 1'b0;
 end
 
 always begin
 	clk_phy <= !clk_phy;
-	#(`CLK_PER);
+	#(`CLK_PER_PHY/2);
 end
 
 always begin
 	clk_sys <= !clk_sys;
-	#(2*`CLK_PER);
+	#(`CLK_PER/2);
 end
 
 // Input signals
@@ -59,13 +58,21 @@ xmitTop topLevel(
 
 initial begin
 
-ctrl_block_in = 24'd512;
-hi_priority_en = 1'b1;
+data_in = 8'h00;
+data_valid = 1'b0;
 
-for (i = 0; i<num_packets; i=i+1)
+// POR
+rst = 1'b1;
+#(6*`CLK_PER);
+rst = 1'b0;
 
-	for (j = 0; j < n; j = j+1) begin
-		if(j>0) begin
+// Stimuli
+for (i=0; i<num_packets; i=i+1) begin
+	hi_priority_en = 1'b1;
+	ctrl_block_in = packet_len;
+
+	for (j=0; j<packet_len; j=j+1) begin
+		if(j==0) begin
 			ctrl_block_valid = 1'b1;
 			data_valid = 1'b1;
 		end else begin
@@ -73,14 +80,17 @@ for (i = 0; i<num_packets; i=i+1)
 			data_valid = 1'b1;
 		end
 
-		if(j<4 || j>=n-4) begin
-			data_in = 8'h00;
+		if(j<4 || j>=packet_len-4) begin
+			data_in = 8'h33;
 		end else begin
-			data_in = 8'hFF;
+			data_in = {3'b0, hi_priority_en, j[3:0]};
 		end
 
 		#(`CLK_PER);
 	end
+
+	#(`CLK_PER);
+end
 
 end
 
