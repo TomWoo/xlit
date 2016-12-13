@@ -2,7 +2,7 @@
 `define CLK_PHY 40
 `define CLK_SYS 20
 
-module testbench_long_hi;
+module testbench_increments;
 
 // signals
 reg clk_sys, clk_phy, rst;
@@ -66,26 +66,13 @@ initial begin // assigning value of data, data valid, and priority
 
 	for (i=0; i < num_packets; i=i+1) begin
 		// xFF for intermediate 56 cycles
-			data_in = 8'hFF;
-			data_valid = 1'b1;
-			hi_priority_en = priority;
-			#(4*`CLK_SYS);
-		
-		
+		for (j=0; j < packet_length; j=j+1) begin
 			data_in = start_lo;
 			data_valid = 1'b1;
 			hi_priority_en = priority;
-			#((num_packets-8)*`CLK_SYS);
-			
-			
-			
-			data_in = 8'h00;
-			data_valid = 1'b1;
-			hi_priority_en = priority;
-			#(4*`CLK_SYS);
-
+			#(`CLK_SYS);
 			start_lo=(start_lo+1);
-	
+		end
 	end
 end
 
