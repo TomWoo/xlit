@@ -1,5 +1,5 @@
 Flow report for Xmit
-Tue Dec 13 14:19:28 2016
+Tue Dec 13 14:30:10 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Dec 13 14:19:27 2016       ;
+; Flow Status                     ; Successful - Tue Dec 13 14:30:10 2016       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; Xmit                                        ;
 ; Top-level Entity Name           ; xmitTop                                     ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/13/2016 14:18:32 ;
+; Start date & time ; 12/13/2016 14:28:57 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Xmit                ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 176047623401795.148165671213552       ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 176047623401795.148165733714836       ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                  ; --            ; --          ; eda_simulation ;
@@ -119,8 +119,8 @@ agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:53     ; 1.0                     ; 1043 MB             ; 00:01:27                           ;
-; Total                ; 00:00:53     ; --                      ; --                  ; 00:01:27                           ;
+; Analysis & Synthesis ; 00:01:10     ; 1.0                     ; 1057 MB             ; 00:01:39                           ;
+; Total                ; 00:01:10     ; --                      ; --                  ; 00:01:39                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
