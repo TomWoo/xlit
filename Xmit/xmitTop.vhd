@@ -291,9 +291,9 @@ architecture rtl of xmitTop is
 	data_hi_fifo: dataFIFO PORT MAP(
 		aclr						=> reset,
 		data						=> inBuffer_data_out,
-		rdclk						=> clk_sys,
+		rdclk						=> clk_phy,
 		rdreq						=> hi_rereq,
-		wrclk						=> clk_phy,
+		wrclk						=> clk_sys,
 		wrreq						=> hi_fifo_enable,
 		q							=> hiho_data,
 		rdempty					=> hi_empty,
@@ -306,9 +306,9 @@ architecture rtl of xmitTop is
 	ctrl_hi_fifo: ctrlFIFO PORT MAP(
 		aclr						=> reset,
 		data						=> inBuffer_ctrl_out,
-		rdclk						=> clk_sys,
+		rdclk						=> clk_phy,
 		rdreq						=> hi_rereq,
-		wrclk						=> clk_phy,
+		wrclk						=> clk_sys,
 		wrreq						=> hi_fifo_enable,
 		q							=> hiho_ctrl
 --		rdempty					=> ,
@@ -321,9 +321,9 @@ architecture rtl of xmitTop is
 	stop_hi_fifo: FIFO_1 PORT MAP(
 		aclr						=> reset,
 		data						=> stop,
-		rdclk						=> clk_sys,
+		rdclk						=> clk_phy,
 		rdreq						=> hi_rereq,
-		wrclk						=> clk_phy,
+		wrclk						=> clk_sys,
 		wrreq						=> hi_fifo_enable,
 		q							=> hiho_stop
 --		rdempty					=> ,
@@ -336,9 +336,9 @@ architecture rtl of xmitTop is
 	data_lo_fifo: dataFIFO PORT MAP(
 		aclr						=> reset,
 		data						=> inBuffer_data_out,
-		rdclk						=> clk_sys,
+		rdclk						=> clk_phy,
 		rdreq						=> lo_rereq,
-		wrclk						=> clk_phy,
+		wrclk						=> clk_sys,
 		wrreq						=> low_fifo_enable,
 		q							=> lilo_data,
 		rdempty					=> lo_empty,
@@ -351,9 +351,9 @@ architecture rtl of xmitTop is
 	ctrl_lo_fifo: ctrlFIFO PORT MAP(
 		aclr						=> reset,
 		data						=> inBuffer_ctrl_out,
-		rdclk						=> clk_sys,
+		rdclk						=> clk_phy,
 		rdreq						=> lo_rereq,
-		wrclk						=> clk_phy,
+		wrclk						=> clk_sys,
 		wrreq						=> low_fifo_enable,
 		q							=> lilo_ctrl
 --		rdempty					=> ,
@@ -366,9 +366,9 @@ architecture rtl of xmitTop is
 	stop_lo_fifo: FIFO_1 PORT MAP(
 		aclr						=> reset,
 		data						=> stop,
-		rdclk						=> clk_sys,
+		rdclk						=> clk_phy,
 		rdreq						=> lo_rereq,
-		wrclk						=> clk_phy,
+		wrclk						=> clk_sys,
 		wrreq						=> low_fifo_enable,
 		q							=> lilo_stop
 --		rdempty					=> ,
