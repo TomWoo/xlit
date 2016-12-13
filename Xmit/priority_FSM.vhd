@@ -77,7 +77,7 @@ process(clk_phy, reset) begin
 end process;
 
 -- Output signals
-process(my_state, data_hi_in, ctrl_block_lo_in, data_hi_in, ctrl_block_hi_in) begin
+process(my_state, data_lo_in, ctrl_block_lo_in, data_hi_in, ctrl_block_hi_in) begin
 	case my_state is
 	when s_lo =>
 		pop_hi_ena <= '0';

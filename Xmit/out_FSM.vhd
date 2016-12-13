@@ -57,6 +57,7 @@ process(all) begin
 --	count_mod <= count mod 32;
 --	count_int <= to_integer(unsigned(count));
 	count <= std_logic_vector(to_unsigned(count_int, 12));
+	frame_count <= std_logic_vector(to_unsigned(frame_count_int, 12));
 
 	-- TODO: check
 	frame_seq_out <= data_out_fifo(43 downto 20); -- std_logic_vector(to_unsigned(frame_count_int, 12));
