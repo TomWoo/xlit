@@ -1,8 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.std_logic_unsigned.all;
-use ieee.std_logic_arith.all;
 
 entity out_FSM is
 port(
@@ -23,10 +21,10 @@ architecture rtl of out_FSM is
 	type state is (s_gap, s_preamble, s_SFD, s_data);
 	signal my_state		: state;
 	-- 12-bit counters
---	signal count			: integer range 0 to 4095;
---	signal frame_count	: integer range 0 to 4095;
-	signal count			: std_logic_vector(11 downto 0);
-	signal frame_count	: std_logic_vector(11 downto 0);
+	signal count_int			: integer range 0 to 131071;
+	signal count				: std_logic_vector(11 downto 0);
+	signal frame_count_int	: integer range 0 to 131071;
+	signal frame_count		: std_logic_vector(11 downto 0);
 	
 	signal rden				: std_logic;
 	signal data_in_fifo	: std_logic_vector(63 downto 0);
@@ -51,14 +49,17 @@ architecture rtl of out_FSM is
 begin
 
 -- Asynchronous signals
-process(count, data_in, ctrl_block_in, frame_count, data_out_fifo) begin
+process(all) begin
 	data_in_fifo(7 downto 0) <= data_in;
 	data_in_fifo(31 downto 8) <= ctrl_block_in;
 	data_in_fifo(63 downto 32) <= X"00000000";
 	
 --	count_mod <= count mod 32;
+--	count_int <= to_integer(unsigned(count));
+	count <= std_logic_vector(to_unsigned(count_int, 12));
+
 	-- TODO: check
-	frame_seq_out <= data_out_fifo(43 downto 20); -- std_logic_vector(to_unsigned(frame_count, 12));
+	frame_seq_out <= data_out_fifo(43 downto 20); -- std_logic_vector(to_unsigned(frame_count_int, 12));
 end process;
 
 -- Clock divider register (half-rate)
@@ -87,36 +88,36 @@ output_buffer_inst : output_buffer PORT MAP (
 process(clk_phy, reset) begin
 	if(reset = '1') then
 		my_state <= s_gap;
-		count <= X"000";
+		count_int <= 0;
 	elsif(rising_edge(clk_phy)) then
 		case my_state is
 		when s_gap =>
-			if(count >= 96/4) then
+			if(count_int >= 96/4) then
 				my_state <= s_preamble;
-				count <= X"000";
+				count_int <= 0;
 			else
-				count <= count + '1';
+				count_int <= count_int + 1;
 			end if;
 		when s_preamble =>
-			if(count >= 56/4) then
+			if(count_int >= 56/4) then
 				my_state <= s_SFD;
-				count <= X"000";
+				count_int <= 0;
 			else
-				count <= count + '1';
+				count_int <= count_int + 1;
 			end if;
 		when s_SFD =>
-			if(count >= 8/4) then
+			if(count_int >= 8/4) then
 				my_state <= s_data;
-				count <= X"000";
+				count_int <= 0;
 			else
-				count <= count + '1';
+				count_int <= count_int + 1;
 			end if;
 		when others => -- s_data
 			if(stop_in = '1') then
 				my_state <= s_gap;
-				count <= X"000";
+				count_int <= 0;
 			else
-				count <= count + '1';
+				count_int <= count_int + 1;
 			end if;
 		end case;
 	end if;
@@ -132,7 +133,7 @@ process(clk_phy_2, reset) begin
 end process;
 
 -- Output signals
-process(my_state, count, data_out_fifo) begin
+process(my_state, count_int, data_out_fifo) begin
 	case my_state is
 	when s_gap =>
 		data_out <= "0000";
@@ -141,16 +142,14 @@ process(my_state, count, data_out_fifo) begin
 		data_out <= "1010";
 		tx_en <= '1';
 	when s_SFD =>
---		if(count = 0) then
-		if(count = X"000") then
+		if(count_int = 0) then
 			data_out <= "1010";
 		else -- count = 1
 			data_out <= "1011";
 		end if;
 		tx_en <= '1';
 	when others => -- s_data
---		if(count mod 2 = 0) then
-		if(count(0) = '0') then
+		if(count_int mod 2 = 0) then
 			data_out <= data_out_fifo(3 downto 0);
 		else
 			data_out <= data_out_fifo(7 downto 4);
@@ -162,11 +161,11 @@ end process;
 process(clk_phy, reset) begin
 	if (reset = '1') then
 		xmit_done_out <= '0';
-		frame_count <= X"000";
+		frame_count_int <= 0;
 	elsif(rising_edge(clk_phy)) then
 		if(stop_in = '1') then
 			xmit_done_out <= '1';
-			frame_count <= frame_count + '1';
+			frame_count_int <= frame_count_int + 1;
 		end if;
 	end if;
 end process;

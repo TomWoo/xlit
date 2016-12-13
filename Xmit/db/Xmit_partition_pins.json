@@ -196,11 +196,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "f_hi_priority",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[9]",
+					"name" : "f_ctrl_in[11]",
 					"strict" : false
 				},
 				{
@@ -208,7 +204,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "f_rec_data_valid",
+					"name" : "f_ctrl_in[9]",
+					"strict" : false
+				},
+				{
+					"name" : "f_ctrl_in[2]",
 					"strict" : false
 				},
 				{
@@ -217,10 +217,6 @@
 				},
 				{
 					"name" : "f_ctrl_in[3]",
-					"strict" : false
-				},
-				{
-					"name" : "f_ctrl_in[2]",
 					"strict" : false
 				},
 				{
@@ -244,7 +240,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "f_ctrl_in[11]",
+					"name" : "f_hi_priority",
+					"strict" : false
+				},
+				{
+					"name" : "f_rec_data_valid",
 					"strict" : false
 				},
 				{

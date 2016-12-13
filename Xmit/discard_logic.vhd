@@ -16,18 +16,18 @@ port(
 end entity;
 
 architecture arch of discard_logic is
-	signal num_used_hi_int:	integer range 0 to 2048;
-	signal num_used_lo_int:	integer range 0 to 2048;
+	signal num_used_hi_int:	integer range 0 to 131071;
+	signal num_used_lo_int:	integer range 0 to 131071;
 	signal frame_len_int:	integer range 0 to 4095;
 begin
 
 -- Asynchronous signals
-process(num_used_hi, num_used_lo, priority, frame_len) begin
+process(all) begin
 	num_used_hi_int <= to_integer(unsigned(num_used_hi));
 	num_used_lo_int <= to_integer(unsigned(num_used_lo));
 	frame_len_int   <= to_integer(unsigned(frame_len  ));
 	
-	if((2047-num_used_hi_int<frame_len_int and priority='1') or (2047-num_used_lo_int<frame_len_int and priority='0')) then
+	if((131072-num_used_hi_int<frame_len_int and priority='1') or (131072-num_used_lo_int<frame_len_int and priority='0')) then
 		discard_en <= '1';
 		wren <= '0';
 	else
