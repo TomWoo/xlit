@@ -6,7 +6,7 @@ module testbench_increments;
 
 // signals
 reg clk_sys, clk_phy, rst;
-integer i, j, num_packets, packet_length, priority, start_lo;
+integer i, j, k, num_packets, packet_length, priority, start_lo;
 
 initial begin
 	// parameters
@@ -81,7 +81,7 @@ initial begin // assigning value of ctrl, ctrl valid
 	ctrl_block_valid = 1'b0;
 	#(4*`CLK_SYS);
 
-	for (j=0; j < num_packets; j=j+1) begin
+	for (k=0; k < num_packets; k=k+1) begin
 		// turn on control block for first cycle
 		ctrl_block_in = 24'h200200;
 		ctrl_block_valid = 1'b1;

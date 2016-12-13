@@ -103,6 +103,13 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity monitoring_logic
 -- Compiling architecture buffered of monitoring_logic
 
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_short_hi.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_short_hi.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module testbench_short_hi
+
+Top level modules:
+	testbench_short_hi
+
 } {} {}} C:/altera_lite/16.0/xlit/Xmit/in_FSM.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/in_FSM.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Loading package STANDARD
@@ -112,12 +119,20 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity in_FSM
 -- Compiling architecture arch of in_FSM
 
-} {} {}} C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_short_hi.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_short_hi.v
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_long_hi.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_long_hi.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module testbench_short_hi
+-- Compiling module testbench_long_hi
 
 Top level modules:
-	testbench_short_hi
+	testbench_long_hi
+
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/xmitTop.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/xmitTop.vhd
+Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity xmitTop
+-- Compiling architecture rtl of xmitTop
 
 } {} {}} C:/altera_lite/16.0/xlit/Xmit/out_FSM.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/out_FSM.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
@@ -128,13 +143,12 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity out_FSM
 -- Compiling architecture rtl of out_FSM
 
-} {} {}} C:/altera_lite/16.0/xlit/Xmit/xmitTop.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/xmitTop.vhd
-Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity xmitTop
--- Compiling architecture rtl of xmitTop
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_alternating_priorities.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_alternating_priorities.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module testbench_alternating_priorities
+
+Top level modules:
+	testbench_alternating_priorities
 
 } {} {}} C:/altera_lite/16.0/xlit/Xmit/output_fsm.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/output_fsm.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
@@ -144,12 +158,12 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity output_fsm
 -- Compiling architecture machine of output_fsm
 
-} {} {}} C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_alternating_priorities.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_alternating_priorities.v
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/out_FSM_tester.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/out_FSM_tester.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module testbench_alternating_priorities
+-- Compiling module out_FSM_tester
 
 Top level modules:
-	testbench_alternating_priorities
+	out_FSM_tester
 
 } {} {}} C:/altera_lite/16.0/xlit/Xmit/pakstak.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/pakstak.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
@@ -162,19 +176,12 @@ Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling entity pakstak
 -- Compiling architecture arch of pakstak
 
-} {} {}} C:/altera_lite/16.0/xlit/Xmit/out_FSM_tester.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/out_FSM_tester.v
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_10hi_lo.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_10hi_lo.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module out_FSM_tester
+-- Compiling module testbench_10hi_lo
 
 Top level modules:
-	out_FSM_tester
-
-} {} {}} C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_single_frame.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_single_frame.v
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module testbench_single_frame
-
-Top level modules:
-	testbench_single_frame
+	testbench_10hi_lo
 
 } {} {}} C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_10lo_hi.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_10lo_hi.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -183,12 +190,12 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	testbench_10lo_hi
 
-} {} {}} C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_10hi_lo.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_10hi_lo.v
+} {} {}} C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_single_frame.v {1 {vlog -work work -stats=none C:/altera_lite/16.0/xlit/Xmit/modelsim/testbench_single_frame.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module testbench_10hi_lo
+-- Compiling module testbench_single_frame
 
 Top level modules:
-	testbench_10hi_lo
+	testbench_single_frame
 
 } {} {}} C:/altera_lite/16.0/xlit/Xmit/input_buffer.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/altera_lite/16.0/xlit/Xmit/input_buffer.vhd
 Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
