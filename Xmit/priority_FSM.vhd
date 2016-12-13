@@ -47,8 +47,8 @@ process(all) begin
 	end if;
 	
 	-- pop
-	pop_hi <= pop_hi_ena and clk_phy;
-	pop_lo <= pop_lo_ena and clk_phy;
+	pop_hi <= pop_hi_ena;-- and clk_phy;
+	pop_lo <= pop_lo_ena;-- and clk_phy;
 end process;
 
 -- State machine
