@@ -180,11 +180,9 @@ begin
 	process(sysclk, emptyd, aclr, txone) --ctrlout
 	begin
 		if(aclr = '1') then
-			out_priority <= '0';
 			controlo <= "000000000000000000000000";
 		elsif (sysclk'event AND sysclk = '1') then
 			controlo <= ctrlm;
-			out_priority <= opri;
 		end if;
 	end process;
 	
@@ -246,7 +244,7 @@ begin
 			aclr => aclr,
 			wrclk => sysclk,
 			rdclk => sysclk,
-			q(0) => opri,
+			q(0) => out_priority,
 			data(0) => in_priority,
 			wrreq => wrenc,
 			rdreq => hi and txone, -- transmit enable clock 1
