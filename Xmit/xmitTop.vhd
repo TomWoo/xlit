@@ -86,7 +86,9 @@ architecture rtl of xmitTop is
 		hi_fifo_used_in	: in std_logic_vector(14 downto 0);
 		lo_stop_in			: in std_logic;
 		lo_fifo_used_in	: in std_logic_vector(14 downto 0);
-		stop_out				: out std_logic
+		stop_out				: out std_logic;
+		
+		data_avail_out		: out std_logic
 	);
 	end component;
 	
@@ -105,7 +107,8 @@ architecture rtl of xmitTop is
 		xmit_done_out		: out std_logic;
 		data_out				: out std_logic_vector(3 downto 0);
 		
-		clk_phy_2			: in std_logic
+		clk_phy_2			: in std_logic;
+		data_avail_in		: in std_logic
 	);
 	end component;
 	
@@ -207,6 +210,9 @@ architecture rtl of xmitTop is
 	-- Half-rate phy_clk
 	signal clk_phy_2		: std_logic;
 	
+	-- Data available to transmit
+	signal data_avail		: std_logic;
+	
 	begin
 
 	
@@ -287,7 +293,9 @@ architecture rtl of xmitTop is
 		lo_stop_in				=> lilo_stop(0),
 		hi_fifo_used_in		=> numusedhi,
 		lo_fifo_used_in		=> numusedlo,
-		stop_out					=> stop_priority_out_FSM
+		stop_out					=> stop_priority_out_FSM,
+		
+		data_avail_out			=> data_avail
 	);
 	
 	output_FSM_inst: out_FSM PORT MAP(
@@ -304,7 +312,8 @@ architecture rtl of xmitTop is
 		xmit_done_out			=> xmit_done_wire,
 		data_out					=> phy_data_out,
 		
-		clk_phy_2				=> clk_phy_2
+		clk_phy_2				=> clk_phy_2,
+		data_avail_in			=> data_avail
 	);
 
 	data_hi_fifo: dataFIFO PORT MAP(
@@ -394,7 +403,5 @@ architecture rtl of xmitTop is
 --		wrempty					=> ,
 --		wrfull					=> ,
 		);
-	
-	
 	
 end architecture;

@@ -15,7 +15,8 @@ port(
 	xmit_done_out		: out std_logic;
 	data_out				: out std_logic_vector(3 downto 0);
 	
-	clk_phy_2			: in std_logic
+	clk_phy_2			: in std_logic;
+	data_avail_in		: in std_logic
 );
 end entity;
 
@@ -71,7 +72,7 @@ process(all) begin
 	frame_count <= std_logic_vector(to_unsigned(frame_count_int, 12));
 
 	-- TODO: check
-	frame_seq_out <= data_out_fifo(43 downto 20); -- std_logic_vector(to_unsigned(frame_count_int, 12));
+	frame_seq_out <= X"000" & frame_count;
 end process;
 
 /*
@@ -106,7 +107,7 @@ process(clk_phy, reset) begin
 	elsif(rising_edge(clk_phy)) then
 		case my_state is
 		when s_gap =>
-			if(count_int >= 96/4) then
+			if(count_int >= 96/4 and data_avail_in = '1') then
 				my_state <= s_preamble;
 				count_int <= 0;
 			else
@@ -175,14 +176,17 @@ end process;
 process(clk_phy, reset) begin
 	if (reset = '1') then
 		xmit_done_out <= '0';
-		frame_count_int <= 0;
 	elsif(rising_edge(clk_phy)) then
+		xmit_done_out <= stop_in;
+	end if;
+end process;
+
+process(clk_phy_2, reset) begin
+	if (reset = '1') then
+		frame_count_int <= 0;
+	elsif(rising_edge(clk_phy_2)) then
 		if(stop_in = '1') then
-			xmit_done_out <= '1';
 			frame_count_int <= frame_count_int + 1;
-		else
-			xmit_done_out <= '0';
-			frame_count_int <= frame_count_int;
 		end if;
 	end if;
 end process;

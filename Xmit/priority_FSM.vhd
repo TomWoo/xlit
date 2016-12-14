@@ -22,7 +22,9 @@ port(
 	hi_fifo_used_in	: in std_logic_vector(14 downto 0);
 	lo_stop_in			: in std_logic;
 	lo_fifo_used_in	: in std_logic_vector(14 downto 0);
-	stop_out				: out std_logic
+	stop_out				: out std_logic;
+	
+	data_avail_out		: out std_logic
 );
 end entity;
 
@@ -31,8 +33,6 @@ architecture rtl of priority_FSM is
 	signal my_state				: state;
 	signal hi_fifo_used_int		: integer range 0 to 32767;
 	signal lo_fifo_used_int		: integer range 0 to 32767;
-	signal pop_hi_ena				: std_logic;
-	signal pop_lo_ena				: std_logic;
 begin
 
 -- Asynchronous signals
@@ -47,10 +47,6 @@ process(all) begin
 	else
 		stop_out <= '0';
 	end if;
-	
-	-- pop
-	pop_hi <= pop_hi_ena;-- and clk_phy;
-	pop_lo <= pop_lo_ena;-- and clk_phy;
 end process;
 
 -- State machine
@@ -82,26 +78,32 @@ end process;
 process(my_state, data_lo_in, ctrl_block_lo_in, data_hi_in, ctrl_block_hi_in) begin
 	case my_state is
 	when s_lo =>
-		pop_hi_ena <= '0';
-		pop_lo_ena <= '1';
+		pop_hi <= '0';
+		pop_lo <= '1';
 		
 		wren_out <= '1';
 		data_out <= data_lo_in;
 		ctrl_block_out <= ctrl_block_lo_in;
+		
+		data_avail_out <= '1';
 	when s_hi =>
-		pop_hi_ena <= '1';
-		pop_lo_ena <= '0';
+		pop_hi <= '1';
+		pop_lo <= '0';
 		
 		wren_out <= '1';
 		data_out <= data_hi_in;
 		ctrl_block_out <= ctrl_block_hi_in;
+		
+		data_avail_out <= '1';
 	when others => -- s_off
-		pop_hi_ena <= '0';
-		pop_lo_ena <= '0';
+		pop_hi <= '0';
+		pop_lo <= '0';
 		
 		wren_out <= '0';
 		data_out <= X"00";
 		ctrl_block_out <= X"000000";
+		
+		data_avail_out <= '0';
 	end case;
 end process;
 
