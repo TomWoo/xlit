@@ -124,70 +124,25 @@ architecture arch of in_FSM is
 	
 begin
 
---	process(clk_sys, reset, ctrl_ctrl_prev, in_ctrl_ctrl) begin
---		if(reset = '1') then
---			ctrl_ctrl_prev <= '0';
---		elsif(rising_edge(clk_sys)) then
---			ctrl_ctrl_prev <= in_ctrl_ctrl;
---		else
---			ctrl_ctrl_prev <= ctrl_ctrl_prev;
---		end if;
---	end process;
---	
---	process(clk_sys, reset)
---	begin
---		if(reset = '1') then
---			out_m_discard_en <= '0';	
---			--out_wren <= '0';	
---		elsif(clk_sys'event and clk_sys='1') then
---			if ((in_lo_overflow = '1' and in_priority='0') or (in_hi_overflow='1' and in_priority='1')) then
---				--out_wren <= '0';
---				out_m_discard_en <= in_ctrl_ctrl;
---			else
---				--out_wren <= in_ctrl_ctrl;
---				out_m_discard_en <= '0';
---			end if;
---		else
---			out_m_discard_en <= out_m_discard_en;
---			--out_wren <= out_wren;
---		end if;
---		
---		--out_priority<=in_priority;
---	end process;
-	
 	---------------- buffer logic ----------------
 	
 	process(reset, clk_sys, clk_phy, ctrlm, incountdone, outcountdone, last, lastm, txen, txone, pakavails) begin
 		aclr <= reset;
 		sysclk <= clk_sys;
 		phyclk <= clk_sys;
---		db_ctrlm <= ctrlm;
---		db_last <= last;
---		db_lastl <= lastl;
---		db_stopint <= stopint;
---		db_txen <= txen;
---		db_txone <= txone;
---		db_pakavail <= pakavails;
---		db_cnti <= cnti;
 		dir <="000000000001";
 	end process;
 	
 	PROCESS (sysclk, controli, wrenc, aclr, cntit, last, lastl) --incounter	
 	BEGIN		
 		if(aclr = '1') then
---			cnti <= "111111111111";
 			cntit <="111111111111";
---			incountdone <= '0';
 			last <='0';
 			lastl <= '0';
 		elsif (sysclk'EVENT AND sysclk = '1') THEN
 			if (wrenc = '1') then
---				cnti <= (unsigned(controli(11 downto 0)))-dir; -- SOMETHING HERE IS BREAKING TRIES TO ASSIGN 00F TO FF0
 				cntit <= (unsigned(controli(11 downto 0)));
 			else
---				if (to_integer(cnti)>2) then
---					cnti <= cnti - dir;
---				end if;
 				if (to_integer(cntit)>2) then
 					cntit <= cntit -dir;
 					lastl <= '0';
@@ -199,17 +154,7 @@ begin
 					end if;
 				end if;
 			end if;
---			if (to_integer(cntit) <= 2) then
---				
---			else 
---				
---			end if;
 		END IF;
---		if (to_integer(cnti) <= 2) then
---			incountdone <= '1';
---		else 
---			incountdone <= '0';
---		end if;
 		if (to_integer(cntit) <= 2) then
 			if (lastl = '0') then
 				last <= '1';
@@ -231,30 +176,6 @@ begin
 			stopint <= '0';
 		end if;
 	end process;
-
---	PROCESS (phyclk, ctrlm, aclr, cnto, firsttrans) --outcounter
---	BEGIN	
---		if (aclr = '1') then
---			cnto <= "111111111111";
---			outcountdone <= '0'; 
---			firsttrans <= '0';
---		elsif (phyclk'EVENT AND phyclk = '1') THEN
---			if (txen = '0' and pakavails = '1') then -- if transmit enable
---				cnto <= not (unsigned(ctrlm(11 downto 0)));	-- SOMETHING HERE IS ALSO BREAKING
---				firsttrans <='1';
---			else
---				if (to_integer(cnto)>1) then
---					cnto <= cnto + dir;
---				end if;
---			end if;
---		END IF;
---		if (to_integer(cnto) <= 1 and firsttrans = '1') then
---			outcountdone <= '1';
---		else 
---			outcountdone <= '0';
---		end if;
---	END PROCESS;
-	
 	
 	process(sysclk, emptyd, aclr, txone) --ctrlout
 	begin
@@ -262,13 +183,8 @@ begin
 			out_priority <= '0';
 			controlo <= "000000000000000000000000";
 		elsif (sysclk'event AND sysclk = '1') then
---			if (stopl = '1') then
---				out_priority <= '0';
---				controlo <= "000000000000000000000000";
---			else
-				controlo <= ctrlm;
-				out_priority <= opri;
---			end if;
+			controlo <= ctrlm;
+			out_priority <= opri;
 		end if;
 	end process;
 	
