@@ -180,6 +180,9 @@ process(clk_phy, reset) begin
 		if(stop_in = '1') then
 			xmit_done_out <= '1';
 			frame_count_int <= frame_count_int + 1;
+		else
+			xmit_done_out <= '0';
+			frame_count_int <= frame_count_int;
 		end if;
 	end if;
 end process;
