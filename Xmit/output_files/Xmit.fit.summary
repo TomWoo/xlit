@@ -1,16 +1,16 @@
-Fitter Status : Successful - Sat Dec 03 03:03:30 2016
+Fitter Status : Successful - Tue Dec 13 20:23:14 2016
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : Xmit
-Top-level Entity Name : discard_logic
+Top-level Entity Name : xmitTop
 Family : Cyclone V
 Device : 5CEBA4F23C7
 Timing Models : Final
-Logic utilization (in ALMs) : 13 / 18,480 ( < 1 % )
-Total registers : 0
-Total pins : 31 / 224 ( 14 % )
+Logic utilization (in ALMs) : 727 / 18,480 ( 4 % )
+Total registers : 1922
+Total pins : 81 / 224 ( 36 % )
 Total virtual pins : 0
-Total block memory bits : 0 / 3,153,920 ( 0 % )
-Total RAM Blocks : 0 / 308 ( 0 % )
+Total block memory bits : 1,966,080 / 3,153,920 ( 62 % )
+Total RAM Blocks : 240 / 308 ( 78 % )
 Total DSP Blocks : 0 / 66 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

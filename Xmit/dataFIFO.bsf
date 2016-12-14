@@ -83,8 +83,8 @@ agreement for further details.
 	(port
 		(pt 176 88)
 		(output)
-		(text "wrusedw[16..0]" (rect 0 0 132 16)(font "Arial" (font_size 8)))
-		(text "wrusedw[16..0]" (rect 79 81 155 94)(font "Arial" (font_size 8)))
+		(text "wrusedw[14..0]" (rect 0 0 132 16)(font "Arial" (font_size 8)))
+		(text "wrusedw[14..0]" (rect 79 81 155 94)(font "Arial" (font_size 8)))
 		(line (pt 176 88)(pt 160 88)(line_width 3))
 	)
 	(port
@@ -109,7 +109,7 @@ agreement for further details.
 		(line (pt 176 152)(pt 160 152))
 	)
 	(drawing
-		(text "8 bits x 131072 words" (rect 68 173 225 357)(font "Arial" ))
+		(text "8 bits x 32768 words" (rect 73 173 230 357)(font "Arial" ))
 		(line (pt 16 100)(pt 160 100))
 		(line (pt 16 164)(pt 160 164))
 		(line (pt 16 32)(pt 160 32))

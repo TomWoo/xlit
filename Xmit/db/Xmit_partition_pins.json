@@ -124,54 +124,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "m_tx_frame[12]",
-					"strict" : false
-				},
-				{
-					"name" : "m_tx_frame[13]",
-					"strict" : false
-				},
-				{
-					"name" : "m_tx_frame[14]",
-					"strict" : false
-				},
-				{
-					"name" : "m_tx_frame[15]",
-					"strict" : false
-				},
-				{
-					"name" : "m_tx_frame[16]",
-					"strict" : false
-				},
-				{
-					"name" : "m_tx_frame[17]",
-					"strict" : false
-				},
-				{
-					"name" : "m_tx_frame[18]",
-					"strict" : false
-				},
-				{
-					"name" : "m_tx_frame[19]",
-					"strict" : false
-				},
-				{
-					"name" : "m_tx_frame[20]",
-					"strict" : false
-				},
-				{
-					"name" : "m_tx_frame[21]",
-					"strict" : false
-				},
-				{
-					"name" : "m_tx_frame[22]",
-					"strict" : false
-				},
-				{
-					"name" : "m_tx_frame[23]",
-					"strict" : false
-				},
-				{
 					"name" : "m_tx_done",
 					"strict" : false
 				},
@@ -185,6 +137,42 @@
 				},
 				{
 					"name" : "clk_sys",
+					"strict" : false
+				},
+				{
+					"name" : "f_rec_data_valid",
+					"strict" : false
+				},
+				{
+					"name" : "f_data_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "f_data_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "f_data_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "f_data_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "f_data_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "f_data_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "f_data_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "f_data_in[7]",
 					"strict" : false
 				},
 				{
@@ -244,10 +232,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "f_rec_data_valid",
-					"strict" : false
-				},
-				{
 					"name" : "f_ctrl_in[12]",
 					"strict" : false
 				},
@@ -293,38 +277,6 @@
 				},
 				{
 					"name" : "f_ctrl_in[23]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[4]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[0]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[5]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[1]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[6]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[2]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[7]",
-					"strict" : false
-				},
-				{
-					"name" : "f_data_in[3]",
 					"strict" : false
 				}
 			]

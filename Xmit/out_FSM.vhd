@@ -13,17 +13,20 @@ port(
 	tx_en					: out std_logic;
 	frame_seq_out		: out std_logic_vector(23 downto 0);
 	xmit_done_out		: out std_logic;
-	data_out				: out std_logic_vector(3 downto 0)
+	data_out				: out std_logic_vector(3 downto 0);
+	
+	clk_phy_2			: in std_logic
 );
 end entity;
 
 architecture rtl of out_FSM is
 	type state is (s_gap, s_preamble, s_SFD, s_data);
 	signal my_state		: state;
+	
 	-- 12-bit counters
-	signal count_int			: integer range 0 to 131071;
+	signal count_int			: integer range 0 to 32767;
 	signal count				: std_logic_vector(11 downto 0);
-	signal frame_count_int	: integer range 0 to 131071;
+	signal frame_count_int	: integer range 0 to 32767;
 	signal frame_count		: std_logic_vector(11 downto 0);
 	
 	signal rden				: std_logic;
@@ -31,8 +34,9 @@ architecture rtl of out_FSM is
 	signal data_out_fifo	: std_logic_vector(63 downto 0);
 	
 	-- Half-rate clock
-	signal clk_phy_2		: std_logic;
+--	signal clk_phy_2		: std_logic;
 	
+	/*
 	component output_buffer
 	port(
 		aclr			: in std_logic;
@@ -46,13 +50,20 @@ architecture rtl of out_FSM is
 		usedw			: out std_logic_vector(9 downto 0)
 	);
 	end component;
+	*/
 begin
 
 -- Asynchronous signals
 process(all) begin
+	/*
 	data_in_fifo(7 downto 0) <= data_in;
 	data_in_fifo(31 downto 8) <= ctrl_block_in;
 	data_in_fifo(63 downto 32) <= X"00000000";
+	*/
+	
+	data_out_fifo(7 downto 0) <= data_in;
+	data_out_fifo(31 downto 8) <= ctrl_block_in;
+	data_out_fifo(63 downto 32) <= X"00000000";
 	
 --	count_mod <= count mod 32;
 --	count_int <= to_integer(unsigned(count));
@@ -63,7 +74,8 @@ process(all) begin
 	frame_seq_out <= data_out_fifo(43 downto 20); -- std_logic_vector(to_unsigned(frame_count_int, 12));
 end process;
 
--- Clock divider register (half-rate)
+/*
+-- Clock divider DFF (half-rate)
 process(clk_phy, reset) begin
 	if(reset = '1') then
 		clk_phy_2 <= '1';
@@ -84,6 +96,7 @@ output_buffer_inst : output_buffer PORT MAP (
 	q		 => data_out_fifo
 --	usedw	 => length_fifo
 );
+*/
 
 -- Moore FSM
 process(clk_phy, reset) begin

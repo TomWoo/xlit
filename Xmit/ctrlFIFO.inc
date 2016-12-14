@@ -30,5 +30,5 @@ RETURNS (
 	rdfull,
 	wrempty,
 	wrfull,
-	wrusedw[16..0]
+	wrusedw[14..0]
 );

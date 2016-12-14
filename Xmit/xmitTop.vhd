@@ -43,8 +43,8 @@ architecture rtl of xmitTop is
 		out_priority: 			out std_logic;
 		
 		stop:						out std_logic;
-		numusedhi:				in std_logic_vector(16 downto 0);
-		numusedlo: 				in std_logic_vector(16 downto 0)
+		numusedhi:				in std_logic_vector(14 downto 0);
+		numusedlo: 				in std_logic_vector(14 downto 0)
 	);
 	end component;
 	
@@ -83,9 +83,9 @@ architecture rtl of xmitTop is
 		ctrl_block_out		: out std_logic_vector(23 downto 0);
 		
 		hi_stop_in			: in std_logic;
-		hi_fifo_used_in	: in std_logic_vector(16 downto 0);
+		hi_fifo_used_in	: in std_logic_vector(14 downto 0);
 		lo_stop_in			: in std_logic;
-		lo_fifo_used_in	: in std_logic_vector(16 downto 0);
+		lo_fifo_used_in	: in std_logic_vector(14 downto 0);
 		stop_out				: out std_logic
 	);
 	end component;
@@ -103,7 +103,9 @@ architecture rtl of xmitTop is
 		tx_en					: out std_logic;
 		frame_seq_out		: out std_logic_vector(23 downto 0);
 		xmit_done_out		: out std_logic;
-		data_out				: out std_logic_vector(3 downto 0)
+		data_out				: out std_logic_vector(3 downto 0);
+		
+		clk_phy_2			: in std_logic
 	);
 	end component;
 	
@@ -121,7 +123,7 @@ architecture rtl of xmitTop is
 		rdfull				: OUT STD_LOGIC ;
 		wrempty				: OUT STD_LOGIC ;
 		wrfull				: OUT STD_LOGIC ;
-		wrusedw				: OUT STD_LOGIC_VECTOR (16 DOWNTO 0)
+		wrusedw				: OUT STD_LOGIC_VECTOR (14 DOWNTO 0)
 	);
 	end component;
 	
@@ -139,7 +141,7 @@ architecture rtl of xmitTop is
 		rdfull				: OUT STD_LOGIC ;
 		wrempty				: OUT STD_LOGIC ;
 		wrfull				: OUT STD_LOGIC ;
-		wrusedw				: OUT STD_LOGIC_VECTOR (16 DOWNTO 0)
+		wrusedw				: OUT STD_LOGIC_VECTOR (14 DOWNTO 0)
 	);
 	end component;
 	
@@ -196,13 +198,28 @@ architecture rtl of xmitTop is
 	SIGNAL lo_rereq:				STD_LOGIC;
 	
 	signal stop			: std_logic_vector(0 DOWNTO 0);
-	signal numusedhi	: std_logic_vector(16 downto 0);
-	signal numusedlo	: std_logic_vector(16 downto 0);
+	signal numusedhi	: std_logic_vector(14 downto 0);
+	signal numusedlo	: std_logic_vector(14 downto 0);
 	
 	signal wren_priority_out_FSM: std_logic;
 	signal stop_priority_out_FSM: std_logic;
 	
+	-- Half-rate phy_clk
+	signal clk_phy_2		: std_logic;
+	
 	begin
+
+	
+	-- Clock divider DFF (half-rate)
+	process(clk_phy, reset) begin
+		if(reset = '1') then
+			clk_phy_2 <= clk_phy;
+		elsif(rising_edge(clk_phy)) then
+			clk_phy_2 <= not clk_phy_2;
+		end if;
+	end process;
+
+	
 	process(out_wren_wire, out_priority_wire, clk_sys)
 	begin
 		if(clk_sys'event and clk_sys='1') then
@@ -252,7 +269,7 @@ architecture rtl of xmitTop is
 	);
 	
 	priority_FSM_inst: priority_FSM PORT MAP(
-		clk_phy					=> clk_phy,
+		clk_phy					=> clk_phy_2,
 		reset						=> reset,
 		
 		data_lo_in				=> lilo_data,
@@ -285,13 +302,15 @@ architecture rtl of xmitTop is
 		tx_en						=> phy_tx_en,
 		frame_seq_out			=> xmit_sequence_wire,
 		xmit_done_out			=> xmit_done_wire,
-		data_out					=> phy_data_out
+		data_out					=> phy_data_out,
+		
+		clk_phy_2				=> clk_phy_2
 	);
 
 	data_hi_fifo: dataFIFO PORT MAP(
 		aclr						=> reset,
 		data						=> inBuffer_data_out,
-		rdclk						=> clk_phy,
+		rdclk						=> clk_phy_2,
 		rdreq						=> hi_rereq,
 		wrclk						=> clk_sys,
 		wrreq						=> hi_fifo_enable,
@@ -306,7 +325,7 @@ architecture rtl of xmitTop is
 	ctrl_hi_fifo: ctrlFIFO PORT MAP(
 		aclr						=> reset,
 		data						=> inBuffer_ctrl_out,
-		rdclk						=> clk_phy,
+		rdclk						=> clk_phy_2,
 		rdreq						=> hi_rereq,
 		wrclk						=> clk_sys,
 		wrreq						=> hi_fifo_enable,
@@ -321,7 +340,7 @@ architecture rtl of xmitTop is
 	stop_hi_fifo: FIFO_1 PORT MAP(
 		aclr						=> reset,
 		data						=> stop,
-		rdclk						=> clk_phy,
+		rdclk						=> clk_phy_2,
 		rdreq						=> hi_rereq,
 		wrclk						=> clk_sys,
 		wrreq						=> hi_fifo_enable,
@@ -336,7 +355,7 @@ architecture rtl of xmitTop is
 	data_lo_fifo: dataFIFO PORT MAP(
 		aclr						=> reset,
 		data						=> inBuffer_data_out,
-		rdclk						=> clk_phy,
+		rdclk						=> clk_phy_2,
 		rdreq						=> lo_rereq,
 		wrclk						=> clk_sys,
 		wrreq						=> low_fifo_enable,
@@ -351,7 +370,7 @@ architecture rtl of xmitTop is
 	ctrl_lo_fifo: ctrlFIFO PORT MAP(
 		aclr						=> reset,
 		data						=> inBuffer_ctrl_out,
-		rdclk						=> clk_phy,
+		rdclk						=> clk_phy_2,
 		rdreq						=> lo_rereq,
 		wrclk						=> clk_sys,
 		wrreq						=> low_fifo_enable,
@@ -366,7 +385,7 @@ architecture rtl of xmitTop is
 	stop_lo_fifo: FIFO_1 PORT MAP(
 		aclr						=> reset,
 		data						=> stop,
-		rdclk						=> clk_phy,
+		rdclk						=> clk_phy_2,
 		rdreq						=> lo_rereq,
 		wrclk						=> clk_sys,
 		wrreq						=> low_fifo_enable,

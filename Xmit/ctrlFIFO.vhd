@@ -54,7 +54,7 @@ ENTITY ctrlFIFO IS
 		rdfull		: OUT STD_LOGIC ;
 		wrempty		: OUT STD_LOGIC ;
 		wrfull		: OUT STD_LOGIC ;
-		wrusedw		: OUT STD_LOGIC_VECTOR (16 DOWNTO 0)
+		wrusedw		: OUT STD_LOGIC_VECTOR (14 DOWNTO 0)
 	);
 END ctrlFIFO;
 
@@ -66,7 +66,7 @@ ARCHITECTURE SYN OF ctrlfifo IS
 	SIGNAL sub_wire2	: STD_LOGIC ;
 	SIGNAL sub_wire3	: STD_LOGIC ;
 	SIGNAL sub_wire4	: STD_LOGIC ;
-	SIGNAL sub_wire5	: STD_LOGIC_VECTOR (16 DOWNTO 0);
+	SIGNAL sub_wire5	: STD_LOGIC_VECTOR (14 DOWNTO 0);
 
 
 
@@ -98,7 +98,7 @@ ARCHITECTURE SYN OF ctrlfifo IS
 			rdfull	: OUT STD_LOGIC ;
 			wrempty	: OUT STD_LOGIC ;
 			wrfull	: OUT STD_LOGIC ;
-			wrusedw	: OUT STD_LOGIC_VECTOR (16 DOWNTO 0)
+			wrusedw	: OUT STD_LOGIC_VECTOR (14 DOWNTO 0)
 	);
 	END COMPONENT;
 
@@ -108,16 +108,16 @@ BEGIN
 	rdfull    <= sub_wire2;
 	wrempty    <= sub_wire3;
 	wrfull    <= sub_wire4;
-	wrusedw    <= sub_wire5(16 DOWNTO 0);
+	wrusedw    <= sub_wire5(14 DOWNTO 0);
 
 	dcfifo_component : dcfifo
 	GENERIC MAP (
 		intended_device_family => "Cyclone V",
-		lpm_numwords => 131072,
+		lpm_numwords => 32768,
 		lpm_showahead => "OFF",
 		lpm_type => "dcfifo",
 		lpm_width => 24,
-		lpm_widthu => 17,
+		lpm_widthu => 15,
 		overflow_checking => "ON",
 		rdsync_delaypipe => 4,
 		read_aclr_synch => "OFF",
@@ -154,7 +154,7 @@ END SYN;
 -- Retrieval info: PRIVATE: AlmostFullThr NUMERIC "-1"
 -- Retrieval info: PRIVATE: CLOCKS_ARE_SYNCHRONIZED NUMERIC "0"
 -- Retrieval info: PRIVATE: Clock NUMERIC "4"
--- Retrieval info: PRIVATE: Depth NUMERIC "131072"
+-- Retrieval info: PRIVATE: Depth NUMERIC "32768"
 -- Retrieval info: PRIVATE: Empty NUMERIC "1"
 -- Retrieval info: PRIVATE: Full NUMERIC "1"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
@@ -182,11 +182,11 @@ END SYN;
 -- Retrieval info: PRIVATE: wsUsedW NUMERIC "1"
 -- Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
--- Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "131072"
+-- Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "32768"
 -- Retrieval info: CONSTANT: LPM_SHOWAHEAD STRING "OFF"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "dcfifo"
 -- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "24"
--- Retrieval info: CONSTANT: LPM_WIDTHU NUMERIC "17"
+-- Retrieval info: CONSTANT: LPM_WIDTHU NUMERIC "15"
 -- Retrieval info: CONSTANT: OVERFLOW_CHECKING STRING "ON"
 -- Retrieval info: CONSTANT: RDSYNC_DELAYPIPE NUMERIC "4"
 -- Retrieval info: CONSTANT: READ_ACLR_SYNCH STRING "OFF"
@@ -205,7 +205,7 @@ END SYN;
 -- Retrieval info: USED_PORT: wrempty 0 0 0 0 OUTPUT NODEFVAL "wrempty"
 -- Retrieval info: USED_PORT: wrfull 0 0 0 0 OUTPUT NODEFVAL "wrfull"
 -- Retrieval info: USED_PORT: wrreq 0 0 0 0 INPUT NODEFVAL "wrreq"
--- Retrieval info: USED_PORT: wrusedw 0 0 17 0 OUTPUT NODEFVAL "wrusedw[16..0]"
+-- Retrieval info: USED_PORT: wrusedw 0 0 15 0 OUTPUT NODEFVAL "wrusedw[14..0]"
 -- Retrieval info: CONNECT: @aclr 0 0 0 0 aclr 0 0 0 0
 -- Retrieval info: CONNECT: @data 0 0 24 0 data 0 0 24 0
 -- Retrieval info: CONNECT: @rdclk 0 0 0 0 rdclk 0 0 0 0
@@ -217,7 +217,7 @@ END SYN;
 -- Retrieval info: CONNECT: rdfull 0 0 0 0 @rdfull 0 0 0 0
 -- Retrieval info: CONNECT: wrempty 0 0 0 0 @wrempty 0 0 0 0
 -- Retrieval info: CONNECT: wrfull 0 0 0 0 @wrfull 0 0 0 0
--- Retrieval info: CONNECT: wrusedw 0 0 17 0 @wrusedw 0 0 17 0
+-- Retrieval info: CONNECT: wrusedw 0 0 15 0 @wrusedw 0 0 15 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL ctrlFIFO.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL ctrlFIFO.inc TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL ctrlFIFO.cmp TRUE
