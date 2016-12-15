@@ -1,0 +1,132 @@
+Archive Project report for Xmit
+Wed Dec 14 15:54:30 2016
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Wed Dec 14 15:54:30 2016 ;
+; Revision Name          ; Xmit                                  ;
+; Top-level Entity Name  ; xmitTop                               ;
+; Family                 ; Cyclone V                             ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory C:/Users/Kevin/Desktop/xlit/Xmit/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'C:/Users/Kevin/Desktop/xlit/Xmit/XmitFinal.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'Xmit.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/altera_lite/16.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 887 megabytes
+    Info: Processing ended: Wed Dec 14 15:54:30 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++---------------------------------+
+; Files Archived                  ;
++---------------------------------+
+; File Name                       ;
++---------------------------------+
+; ctrlFIFO.bsf                    ;
+; ctrlFIFO.cmp                    ;
+; ctrlFIFO.inc                    ;
+; ctrlFIFO.qip                    ;
+; ctrlFIFO.vhd                    ;
+; dataFIFO.bsf                    ;
+; dataFIFO.cmp                    ;
+; dataFIFO.inc                    ;
+; dataFIFO.qip                    ;
+; dataFIFO.vhd                    ;
+; db/Xmit.cmp.rdb                 ;
+; discard_logic.vhd               ;
+; FIFO_1.bsf                      ;
+; FIFO_1.cmp                      ;
+; FIFO_1.inc                      ;
+; FIFO_1.qip                      ;
+; FIFO_1.vhd                      ;
+; in_FSM.vhd                      ;
+; inbuff.qip                      ;
+; inbuff.vhd                      ;
+; inbuffcon.qip                   ;
+; inbuffcon.vhd                   ;
+; inBuffer.vhd                    ;
+; input_buffer.vhd                ;
+; inputbuffer.vwf                 ;
+; modelsim/testbench_increments.v ;
+; monitoring_logic.vhd            ;
+; out_FSM.vhd                     ;
+; out_FSM_tester.v                ;
+; output_buffer.cmp               ;
+; output_buffer.qip               ;
+; output_buffer.vhd               ;
+; output_files/Chain1.cdf         ;
+; output_fsm.vhd                  ;
+; pakstak.vhd                     ;
+; priority_FSM.vhd                ;
+; shift_register_4.cmp            ;
+; shift_register_4.qip            ;
+; testbench.vhd                   ;
+; testbench_files/count12bit.vhd  ;
+; testbench_files/crc32x8r.vhd    ;
+; testbench_files/crc32x8rtb.vhd  ;
+; testbench_files/crcreg32.vhd    ;
+; testbench_files/shift2.vhd      ;
+; testbench_files/tbrom8a1.vhd    ;
+; testbench_files/xmt_tb0.vhd     ;
+; top_level.vwf                   ;
+; tren.vhd                        ;
+; Waveform.vwf                    ;
+; Waveform1.vwf                   ;
+; Waveform2.vwf                   ;
+; Waveform3.vwf                   ;
+; Waveform_in_FSM.vwf             ;
+; Xmit.qpf                        ;
+; Xmit.qsf                        ;
+; Xmit_assignment_defaults.qdf    ;
+; xmitTop.vhd                     ;
++---------------------------------+
+
+

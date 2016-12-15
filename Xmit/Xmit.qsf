@@ -53,22 +53,15 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_location_assignment PIN_Y2 -to clk
-set_location_assignment PIN_AF25 -to data_in[7]
-set_location_assignment PIN_AB28 -to data_in[0]
-set_location_assignment PIN_AC28 -to data_in[1]
-set_location_assignment PIN_AC27 -to data_in[2]
-set_location_assignment PIN_AD27 -to data_in[3]
-set_location_assignment PIN_AD26 -to data_in[4]
-set_location_assignment PIN_AE26 -to data_in[5]
-set_location_assignment PIN_AE25 -to data_in[6]
-set_location_assignment PIN_AB21 -to data_out[0]
-set_location_assignment PIN_AC21 -to data_out[1]
-set_location_assignment PIN_AD21 -to data_out[2]
-set_location_assignment PIN_AD15 -to data_out[3]
-set_location_assignment PIN_H15 -to rst_out
-set_location_assignment PIN_AB22 -to clk_out
-set_location_assignment PIN_M23 -to rst_n
+set_global_assignment -name SOURCE_FILE output_buffer.cmp
+set_global_assignment -name SOURCE_FILE dataFIFO.cmp
+set_global_assignment -name SOURCE_FILE ctrlFIFO.cmp
+set_global_assignment -name VHDL_FILE tren.vhd
+set_global_assignment -name VHDL_FILE pakstak.vhd
+set_global_assignment -name VHDL_FILE output_fsm.vhd
+set_global_assignment -name VHDL_FILE monitoring_logic.vhd
+set_global_assignment -name VHDL_FILE input_buffer.vhd
+set_global_assignment -name VHDL_FILE discard_logic.vhd
 set_global_assignment -name SOURCE_FILE FIFO_1.cmp
 set_global_assignment -name SOURCE_FILE shift_register_4.cmp
 set_global_assignment -name SOURCE_FILE fifo_8.cmp
@@ -99,5 +92,4 @@ set_global_assignment -name VHDL_FILE priority_FSM.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VERILOG_FILE modelsim/testbench_increments.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

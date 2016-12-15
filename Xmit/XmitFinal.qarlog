@@ -1,0 +1,68 @@
+Quartus Prime Archive log --	C:/Users/Kevin/Desktop/xlit/Xmit/XmitFinal.qarlog
+
+Archive:	C:/Users/Kevin/Desktop/xlit/Xmit/XmitFinal.qar
+Date:		Wed Dec 14 15:54:30 2016
+Quartus Prime		16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/Kevin/Desktop/xlit/Xmit/FIFO_1.bsf
+C:/Users/Kevin/Desktop/xlit/Xmit/FIFO_1.cmp
+C:/Users/Kevin/Desktop/xlit/Xmit/FIFO_1.inc
+C:/Users/Kevin/Desktop/xlit/Xmit/FIFO_1.qip
+C:/Users/Kevin/Desktop/xlit/Xmit/FIFO_1.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/Waveform.vwf
+C:/Users/Kevin/Desktop/xlit/Xmit/Waveform1.vwf
+C:/Users/Kevin/Desktop/xlit/Xmit/Waveform2.vwf
+C:/Users/Kevin/Desktop/xlit/Xmit/Waveform3.vwf
+C:/Users/Kevin/Desktop/xlit/Xmit/Waveform_in_FSM.vwf
+C:/Users/Kevin/Desktop/xlit/Xmit/Xmit.qpf
+C:/Users/Kevin/Desktop/xlit/Xmit/Xmit.qsf
+C:/Users/Kevin/Desktop/xlit/Xmit/Xmit_assignment_defaults.qdf
+C:/Users/Kevin/Desktop/xlit/Xmit/ctrlFIFO.bsf
+C:/Users/Kevin/Desktop/xlit/Xmit/ctrlFIFO.cmp
+C:/Users/Kevin/Desktop/xlit/Xmit/ctrlFIFO.inc
+C:/Users/Kevin/Desktop/xlit/Xmit/ctrlFIFO.qip
+C:/Users/Kevin/Desktop/xlit/Xmit/ctrlFIFO.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/dataFIFO.bsf
+C:/Users/Kevin/Desktop/xlit/Xmit/dataFIFO.cmp
+C:/Users/Kevin/Desktop/xlit/Xmit/dataFIFO.inc
+C:/Users/Kevin/Desktop/xlit/Xmit/dataFIFO.qip
+C:/Users/Kevin/Desktop/xlit/Xmit/dataFIFO.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/db/Xmit.cmp.rdb
+C:/Users/Kevin/Desktop/xlit/Xmit/discard_logic.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/inBuffer.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/in_FSM.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/inbuff.qip
+C:/Users/Kevin/Desktop/xlit/Xmit/inbuff.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/inbuffcon.qip
+C:/Users/Kevin/Desktop/xlit/Xmit/inbuffcon.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/input_buffer.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/inputbuffer.vwf
+C:/Users/Kevin/Desktop/xlit/Xmit/modelsim/testbench_increments.v
+C:/Users/Kevin/Desktop/xlit/Xmit/monitoring_logic.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/out_FSM.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/out_FSM_tester.v
+C:/Users/Kevin/Desktop/xlit/Xmit/output_buffer.cmp
+C:/Users/Kevin/Desktop/xlit/Xmit/output_buffer.qip
+C:/Users/Kevin/Desktop/xlit/Xmit/output_buffer.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/output_files/Chain1.cdf
+C:/Users/Kevin/Desktop/xlit/Xmit/output_fsm.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/pakstak.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/priority_FSM.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/shift_register_4.cmp
+C:/Users/Kevin/Desktop/xlit/Xmit/shift_register_4.qip
+C:/Users/Kevin/Desktop/xlit/Xmit/testbench.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/testbench_files/count12bit.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/testbench_files/crc32x8r.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/testbench_files/crc32x8rtb.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/testbench_files/crcreg32.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/testbench_files/shift2.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/testbench_files/tbrom8a1.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/testbench_files/xmt_tb0.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/top_level.vwf
+C:/Users/Kevin/Desktop/xlit/Xmit/tren.vhd
+C:/Users/Kevin/Desktop/xlit/Xmit/xmitTop.vhd
+	======= Total: 57 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
